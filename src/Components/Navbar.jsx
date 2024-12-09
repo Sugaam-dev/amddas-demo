@@ -36,6 +36,7 @@ function Navbarr() {
   };
 
   return (
+      <div className="navv">
     <Navbar
       expand="lg"
       className=""
@@ -250,6 +251,7 @@ function Navbarr() {
         </Navbar.Offcanvas>
       </Container>
     </Navbar>
+            </div>
   );
 }
 
