@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.containerr {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(hsla(0, 100%, 0%, 0.65), hsla(0, 100%, 0%, 0.65)), url("/public/images/events-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px;
+}
+
+.slide1 {
+  height: 450px;
+  width:50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.slide_img1 {
+  background-image: url("/public/images/menu1.png");
+}
+
+.slide_img2 {
+  background-image: url("/public/images/menu2.png");
+}
+
+.slide_img3 {
+  background-image: url("/public/images/menu3.png");
+}
+
+.slide_img4 {
+  background-image: url("/public/images/menu4.png");
+}
+
+.slide_img5 {
+  background-image: url("/public/images/menu5.jpg");
+}
+
+.text {
+  flex: 1;
+  max-width: 500px;
+  padding: 20px;
+  color: white;
+}
+
+.heading {
+  color: white;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-family: 'Grand Hotel, serif';
+}
+
+.specialized-cuisines {
+  color: rgb(76, 110, 234);
+  font-size: 1.8rem;
+  margin-top: 20px;
+}
+
+.events-description h3 {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.heading {
+  margin-top: 20px;
+}
+.enquire-now {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.enquire-now:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+
+/* For tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .slide {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slide1 {
+    height: 250px;
+    width: 70%;
+  }
+
+  .text {
+    text-align: center;
+    padding: 15px;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .specialized-cuisines {
+    font-size: 1.5rem;
+  }
+
+  .events-description h3 {
+    font-size: 1rem;
+  }
+
+  .events-description p,
+  .events-description ul li {
+    font-size: 0.9rem;
+  }
+
+  .enquire-now {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+/* For large phones (max-width: 768px) */
+@media (max-width: 768px) {
+  .slide1 {
+    height: 200px;
+    width: 90%;
+  }
+
+  .text {
+    padding: 10px;
+  }
+
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .specialized-cuisines {
+    font-size: 1.2rem;
+  }
+
+  .events-description h3 {
+    font-size: 0.9rem;
+  }
+
+  .events-description p,
+  .events-description ul li {
+    font-size: 0.8rem;
+  }
+
+  .enquire-now {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+}
+
+/* For small phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .slide {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slide1 {
+    height: 150px;
+    width: 95%;
+  }
+
+  .text {
+    text-align: center;
+    padding: 5px;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .specialized-cuisines {
+    font-size: 1rem;
+  }
+
+  .events-description h3 {
+    font-size: 0.8rem;
+  }
+
+  .events-description p,
+  .events-description ul li {
+    font-size: 0.7rem;
+  }
+
+  .enquire-now {
+    font-size: 0.7rem;
+    padding: 5px 10px;
+  }
+}

@@ -1,0 +1,198 @@
+
+.about {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .about-image {
+    cursor: default;
+    border-radius:0px 30px 30px 0px;
+   
+  }
+  .icon{
+    color: rgb(44, 44, 196);
+    margin-right: 5px;
+  }
+  .content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .content ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .content ul li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  .content ul li .icon {
+    color: #4caf50;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    margin-top: 5px;
+  }
+  
+  .content p {
+    font-size: 1.1rem;
+    margin: 20px 0;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 992px) {
+    .content h3 {
+      font-size: 2rem;
+    }
+  
+    .content p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .about {
+      padding: 40px 0;
+    }
+  
+    .content h3 {
+      font-size: 1.8rem;
+    }
+  
+    .content p {
+      font-size: 0.95rem;
+    }
+  
+    .about-image {
+      min-height: 250px;
+    }
+  }
+  
+
+  /* src/App.css */
+
+/* Existing styles */
+
+/* Why Us Section */
+.why-us {
+    padding: 60px 0;
+    background: #fff;
+  }
+  
+  .why-us .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .why-us .section-title h2 {
+    font-size: 36px;
+    color: #333;
+  }
+  
+  .why-us .section-title h2 span {
+    color: #ff7f50; /* Adjust the color to match your theme */
+  }
+  
+  .why-us .section-title p {
+    font-size: 16px;
+    color: #777;
+    margin: 0 auto;
+    max-width: 700px;
+  }
+  
+  .why-us .box {
+    padding: 30px;
+    background: #f9f9f9;
+    text-align: center;
+    border-radius: 8px;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .why-us .box:hover {
+    background: #ff7f50;
+    color: #fff;
+  }
+  
+  .why-us .box span {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    color: #ff7f50;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 60px;
+    margin-bottom: 20px;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .why-us .box h4 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  
+  .why-us .box p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  
+  .why-us .box:hover span {
+    background: #fff;
+    color: #ff7f50;
+  }
+  
+  .why-us .box:hover h4,
+  .why-us .box:hover p {
+    color: #fff;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 992px) {
+    .why-us .section-title h2 {
+      font-size: 32px;
+    }
+  
+    .why-us .section-title p {
+      font-size: 15px;
+    }
+  
+    .why-us .box {
+      padding: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .why-us {
+      padding: 40px 0;
+    }
+  
+    .why-us .section-title h2 {
+      font-size: 28px;
+    }
+  
+    .why-us .section-title p {
+      font-size: 14px;
+    }
+  
+    .why-us .box span {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+  
+    .why-us .box h4 {
+      font-size: 20px;
+    }
+  
+    .why-us .box p {
+      font-size: 13px;
+    }
+  }
+  

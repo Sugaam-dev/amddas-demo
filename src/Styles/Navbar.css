@@ -1,0 +1,222 @@
+:root {
+  --nav-link-color: #ffffff; /* White */
+  --nav-link-hover-color: #00aaff; /* Professional Blue */
+  --nav-link-active-color: #00aaff; /* Professional Blue for active links */
+  --dropdown-bg-color: #ffffff; /* White */
+  --dropdown-item-color: #000000; /* Black */
+  --dropdown-item-hover-bg: #f1f1f1; /* Light Gray */
+  --button-bg-color: #ff5722; /* Vibrant Orange */
+  --button-hover-bg-color: #e64a19; /* Darker Orange on Hover */
+  --button-text-color: #ffffff; /* White */
+}
+
+.nav-link-custom {
+  color: var(--nav-link-color);
+  margin-right: 15px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.nav-link-custom:hover {
+  color: var(--nav-link-hover-color);
+  text-decoration: none; /* Ensure no underline on hover */
+}
+
+.nav-link-custom.active {
+  color: var(--nav-link-active-color);
+}
+
+nav {
+  background-image: url('/public/images/amd1.jpeg');
+  background-size: auto;
+  background-attachment: fixed;
+}
+
+.dropdown-custom .dropdown-toggle::after {
+  margin-left: 0.5rem;
+}
+
+.dropdown-custom .dropdown-menu {
+  background-color: var(--dropdown-bg-color);
+  border: none;
+  min-width: 200px;
+}
+
+.dropdown-custom .dropdown-item {
+  color: var(--dropdown-item-color);
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-custom .dropdown-item:hover {
+  background-color: var(--dropdown-item-hover-bg);
+}
+
+.email-link {
+  align-items: center;
+  color: var(--nav-link-color);
+  font-weight: bold;
+}
+
+.offcanvas-title {
+  color: #000000;
+  font-weight: bold;
+}
+
+.dropdown-custom .dropdown-toggle {
+  color: var(--nav-link-color) !important; /* Ensure color consistency */
+}
+
+.nav-link-custom svg {
+  color: inherit; /* Inherit color from parent */
+  transition: color 0.3s ease;
+}
+
+.dropdown-custom .dropdown-toggle svg {
+  color: inherit; /* Inherit color from parent */
+  transition: color 0.3s ease;
+}
+
+.navbar-toggler {
+  border-color: var(--nav-link-color);
+  background-color: transparent;
+}
+
+.navbar-toggler-icon {
+  background-image: none;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--nav-link-color);
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 700px) {
+  .nav-link-custom {
+    color: var(--nav-link-color);
+    font-size: 18px;
+  }
+
+  .nav-link-custom:hover {
+    color: var(--nav-link-hover-color);
+    text-decoration: none; /* Ensure no underline on hover */
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-toggler {
+    border-color: #ff5722;
+    background-color: #ffffff3f;
+  }
+
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after,
+  .navbar-toggler-icon span {
+    background-color: #ff5722;
+  }
+
+  #me {
+    color: var(--nav-link-color);
+    font-size: 40px;
+  }
+}
+
+.me {
+  display: none;
+}
+
+.dropdown-custom {
+  min-width: 200px;
+}
+
+.nav-dropdown-custom {
+  white-space: nowrap;
+}
+
+.login-button {
+  background-color: transparent;
+  color: var(--button-text-color);
+  border: 2px solid blue;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none; /* Remove underline */
+}
+
+.login-button:hover {
+  background-color: rgba(49, 49, 202, 0.881);
+  text-decoration: none; /* Ensure no underline on hover */
+}
+
+/* Remove underline and border from NavLink on all states */
+.nav-link-custom,
+.nav-link-custom:hover,
+.nav-link-custom:focus,
+.nav-link-custom:active {
+  text-decoration: none; /* Remove underline */
+  border: none;          /* Remove border */
+  outline: none;         /* Remove outline */
+}
+
+/* Remove underline and border from Dropdown Toggle on all states */
+.dropdown-custom .dropdown-toggle,
+.dropdown-custom .dropdown-toggle:hover,
+.dropdown-custom .dropdown-toggle:focus,
+.dropdown-custom .dropdown-toggle:active {
+  text-decoration: none; /* Remove underline */
+  border: none;          /* Remove border */
+  outline: none;         /* Remove outline */
+}
+
+/* Remove underline and border from Dropdown Items on all states */
+.nav-dropdown-custom .dropdown-item,
+.nav-dropdown-custom .dropdown-item:hover,
+.nav-dropdown-custom .dropdown-item:focus,
+.nav-dropdown-custom .dropdown-item:active {
+  text-decoration: none; /* Remove underline */
+  border: none;          /* Remove border */
+  outline: none;         /* Remove outline */
+}
+
+/* Ensure no text-decoration or border on any links inside dropdowns */
+.dropdown-custom .dropdown-menu a {
+  text-decoration: none;
+  border: none;
+}
+
+/* Optional: Remove box-shadow if Bootstrap adds any on focus */
+.nav-link-custom:focus,
+.dropdown-custom .dropdown-toggle:focus,
+.nav-dropdown-custom .dropdown-item:focus {
+  box-shadow: none; /* Remove box-shadow */
+}
+
+/* Override any residual Bootstrap styles using higher specificity if necessary */
+.navbar .nav-link-custom:hover,
+.navbar .nav-link-custom:focus,
+.navbar .nav-link-custom:active,
+.navbar .dropdown-custom .dropdown-toggle:hover,
+.navbar .dropdown-custom .dropdown-toggle:focus,
+.navbar .dropdown-custom .dropdown-toggle:active,
+.navbar .nav-dropdown-custom .dropdown-item:hover,
+.navbar .nav-dropdown-custom .dropdown-item:focus,
+.navbar .nav-dropdown-custom .dropdown-item:active {
+  text-decoration: none !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  /* color: rgb(13, 54, 167) !important; */
+}
