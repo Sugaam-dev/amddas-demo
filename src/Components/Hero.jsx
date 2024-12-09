@@ -198,7 +198,7 @@ const Hero = () => {
             <Modal.Title>Login Required</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>You need to be logged in to book a table. Please log in to continue.</p>
+            <p>You need to be logged in to view menu or order food. Please log in to continue.</p>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
