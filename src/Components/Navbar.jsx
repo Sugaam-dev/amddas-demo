@@ -46,7 +46,7 @@ function Navbarr() {
     >
       <Container fluid style={{ paddingLeft: '40px', paddingRight: '40px' }}>
         <Navbar.Brand as={Link} to="/">
-          <img src="./images/amd.png" alt="logo" style={{ width: '150px' }} />
+          <img src="./images/amd.png" alt="logo" style={{ width: '100px' }} />
         </Navbar.Brand>
         <CiMenuBurger 
           onClick={handleToggle} 
