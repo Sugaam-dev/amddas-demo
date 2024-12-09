@@ -56,7 +56,7 @@ const Hero = () => {
               <div className="carousel-content text-center text-white">
                 <h2
                   className="animate__animated animate__fadeInDown"
-                  style={{ fontFamily: 'Rakkas, serif' }}
+                style={{fontFamily: "junction"}}
                 >
                   <span></span>Delicious Food
                 </h2>
@@ -147,11 +147,11 @@ const Hero = () => {
                 </p>
                 <div>
                   <Button
-                    href="#menu"
+                 
                     className="btn-menu animate__animated animate__fadeInUp"
                     style={{ fontFamily: 'Rakkas, serif', fontSize: 'large' }}
                     variant="primary"
-                    onClick={() => navigate('#menu')}
+                    onClick={book}
                   >
                     Our Menu
                   </Button>{' '}
@@ -198,7 +198,7 @@ const Hero = () => {
             <Modal.Title>Login Required</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>You need to be logged in to book a table. Please log in to continue.</p>
+            <p>You need to be logged in to view menu or order food. Please log in to continue.</p>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>

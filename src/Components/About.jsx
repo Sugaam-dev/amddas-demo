@@ -26,7 +26,7 @@ const About = () => {
           {/* Right Column with Content */}
           <Col lg={7} className="d-flex flex-column justify-content-center align-items-stretch">
             <div className="content">
-              <h3 style={{ fontFamily: 'Grand Hotel, serif' }}>
+              <h3 >
                 Enjoy Your Healthy Delicious Food<strong>.....</strong>
               </h3>
 
@@ -80,7 +80,7 @@ const About = () => {
                 </ListGroup.Item>
                 <ListGroup.Item className="d-flex align-items-start">
                   <FaCheckDouble className="icon" />
-                  <span>24/8 Customer Support</span>
+                  <span>24/7 Customer Support</span>
                 </ListGroup.Item>
               </ListGroup>
             </div>
@@ -93,7 +93,7 @@ const About = () => {
     <section id="why-us" className="why-us">
       <Container>
         <div className="section-title">
-          <h2 style={{ fontFamily: 'Grand Hotel, serif' }}>
+          <h2 >
             Why choose <span>Amddas</span>
           </h2>
           <p>

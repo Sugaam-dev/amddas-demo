@@ -27,11 +27,11 @@ export default function Carousel() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <h1 className="heading" style={{ fontFamily: 'Grand Hotel, serif' }} >Our Social & Professional Events</h1>
+          <h1 className="heading"  >Our Social & Professional Events</h1>
           <div className="slide">
             <div className="slide_img1 slide1"></div>
             <div className="text">
-              <h2 className="specialized-cuisines"style={{ fontFamily: 'Grand Hotel, serif' }}>Private Events</h2>
+              <h2 className="specialized-cuisines">Private Events</h2>
               <div className="events-description">
                 <h3>Always fresh & high-quality food</h3>
                 <p>
@@ -52,11 +52,11 @@ export default function Carousel() {
         </SwiperSlide>
 
         <SwiperSlide>
-          <h1 className="heading"style={{ fontFamily: 'Grand Hotel, serif' }}>Our Social & Professional Events</h1>
+          <h1 className="heading">Our Social & Professional Events</h1>
           <div className="slide">
             <div className="slide_img2 slide1"></div>
             <div className="text">
-              <h2 className="specialized-cuisines"style={{ fontFamily: 'Grand Hotel, serif' }}>Weddings</h2>
+              <h2 className="specialized-cuisines">Weddings</h2>
               <div className="events-description">
                 <h3>Always fresh & high-quality food</h3>
                 <p>
@@ -71,11 +71,11 @@ export default function Carousel() {
         </SwiperSlide>
 
         <SwiperSlide>
-          <h1 className="heading"style={{ fontFamily: 'Grand Hotel, serif' }}>Our Social & Professional Events</h1>
+          <h1 className="heading">Our Social & Professional Events</h1>
           <div className="slide">
             <div className="slide_img3 slide1"></div>
             <div className="text">
-              <h2 className="specialized-cuisines"style={{ fontFamily: 'Grand Hotel, serif' }}>Corporate Events</h2>
+              <h2 className="specialized-cuisines">Corporate Events</h2>
               <div className="events-description">
                 <h3>Always fresh & high-quality food</h3>
                 <p>
@@ -96,11 +96,11 @@ export default function Carousel() {
         </SwiperSlide>
 
         <SwiperSlide>
-          <h1 className="heading"style={{ fontFamily: 'Grand Hotel, serif' }}>Our Social & Professional Events</h1>
+          <h1 className="heading">Our Social & Professional Events</h1>
           <div className="slide">
             <div className="slide_img4 slide1"></div>
             <div className="text">
-              <h2 className="specialized-cuisines"style={{ fontFamily: 'Grand Hotel, serif' }}>Birthday</h2>
+              <h2 className="specialized-cuisines">Birthday</h2>
               <div className="events-description">
                 <h3>Always fresh & high-quality food</h3>
                 <p>
@@ -115,11 +115,11 @@ export default function Carousel() {
         </SwiperSlide>
 
         <SwiperSlide>
-          <h1 className="heading"style={{ fontFamily: 'Grand Hotel, serif' }}>Our Social & Professional Events</h1>
+          <h1 className="heading">Our Social & Professional Events</h1>
           <div className="slide">
             <div className="slide_img5 slide1"></div>
             <div className="text">
-              <h2 className="specialized-cuisines"style={{ fontFamily: 'Grand Hotel, serif' }}>Specialized Cuisines</h2>
+              <h2 className="specialized-cuisines">Specialized Cuisines</h2>
               <div className="events-description">
                 <h3>Always fresh & high-quality food</h3>
                 <p>

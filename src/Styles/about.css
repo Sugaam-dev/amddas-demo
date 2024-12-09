@@ -2,6 +2,7 @@
 .about {
     padding: 60px 0;
     background-color: #f9f9f9;
+    font-family: "junction";
   }
   
   .about-image {
@@ -79,6 +80,7 @@
 .why-us {
     padding: 60px 0;
     background: #fff;
+    font-family: "junction";
   }
   
   .why-us .section-title {

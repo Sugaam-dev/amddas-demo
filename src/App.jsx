@@ -30,7 +30,7 @@ function App() {
       <Navbarr />
       <Routes>
         <Route path='/' element={<Home/>}/>
-        {/* <Route path='/' element={<Log />} /> */}
+      
         <Route path='/login' element={<Log />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/getotp' element={<Otp />} />

@@ -31,11 +31,14 @@
 }
 
 nav {
-  background-image: url('/public/images/amd1.jpeg');
+  /* background-image: url('/public/images/amd1.jpeg'); */
+  background-color: #333333;
   background-size: auto;
   background-attachment: fixed;
 }
-
+.navv{
+  background-color: #333333  ;
+}
 .dropdown-custom .dropdown-toggle::after {
   margin-left: 0.5rem;
 }
