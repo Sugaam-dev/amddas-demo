@@ -41,7 +41,7 @@ body {
 }
 @media (max-width:450px) {
   .scrolling-text-container{
-    margin-top: 70px;
+/*     margin-top: 70px; */
   }
 }
 .scrolling-text {
