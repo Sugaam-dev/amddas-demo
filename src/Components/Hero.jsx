@@ -65,7 +65,6 @@ const Hero = () => {
                 </p>
                 <div>
                   <Button
-                    href="#menu"
                     className="btn-menu animate__animated animate__fadeInUp"
                     style={{ fontFamily: 'Rakkas, serif', fontSize: 'large' }}
                     variant="primary"
@@ -107,7 +106,7 @@ const Hero = () => {
                     className="btn-menu animate__animated animate__fadeInUp"
                     style={{ fontFamily: 'Rakkas, serif', fontSize: 'large' }}
                     variant="primary"
-                    onClick={() => navigate('#menu')}
+                       onClick={book}
                   >
                     Our Menu
                   </Button>{' '}
