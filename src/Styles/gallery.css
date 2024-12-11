@@ -1,45 +1,19 @@
-/* src/Styles/gallery.css */
-
 .gallery-section {
-  padding: 60px 20px;
+  padding: 20px 10px; /* Reduced padding for compact design */
   background-color: #f9f9f9;
 }
 
-.container {
-  max-width: 1200px;
+.image-gallery-wrapper {
+  margin-top: 10px; /* Reduced top margin */
+  max-width: 600px; /* Narrower gallery width */
   margin: 0 auto;
 }
 
-.section-title {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.section-title h2 {
-  font-family: "Junction", sans-serif; /* Replace with your desired font */
-  font-size: 2.5rem;
-  color: #333;
-}
-
-.section-title p {
-  font-family: 'Rakkas', serif; /* Replace with your desired font */
-  font-size: 1.25rem;
-  color: #666;
-  margin-top: 10px;
-}
-
-.section-title .highlight {
-  color: #e63946; /* Accent color */
-}
-
-.image-gallery-wrapper {
-  margin-top: 20px;
-}
-
-/* Customize react-image-gallery components */
 .custom-image-gallery .image-gallery-slide img {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-height: 200px; /* Smaller height for images */
+  object-fit: cover; /* Ensure proper image proportions */
   transition: transform 0.3s ease;
 }
 
@@ -48,32 +22,14 @@
 }
 
 .custom-image-gallery .image-gallery-thumbnail img {
+  max-height: 50px; /* Reduce thumbnail size */
   border-radius: 5px;
-  transition: transform 0.3s ease;
-}
-
-.custom-image-gallery .image-gallery-thumbnail img:hover {
-  transform: scale(1.05);
-}
-
-.custom-image-gallery .image-gallery-icon {
-  color: #e63946; /* Match the accent color */
-}
-
-.custom-image-gallery .image-gallery-play-button,
-.custom-image-gallery .image-gallery-fullscreen-button {
-  background-color: #e63946;
-  border: none;
-  border-radius: 5px;
-  padding: 8px;
-}
-
-.custom-image-gallery .image-gallery-play-button:hover,
-.custom-image-gallery .image-gallery-fullscreen-button:hover {
-  background-color: #d62828;
 }
 
 .custom-image-gallery .image-gallery-bullets .image-gallery-bullet {
+  width: 8px; /* Smaller bullets */
+  height: 8px;
+  margin: 4px; /* Reduced spacing between bullets */
   background: #e63946;
 }
 
@@ -81,13 +37,25 @@
   background: #333;
 }
 
-/* Responsive Typography */
-@media (max-width: 768px) {
-  .section-title h2 {
-    font-size: 2rem;
-  }
+/* Heading styles remain unchanged */
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
-  .section-title p {
-    font-size: 1rem;
-  }
+.section-title h2 {
+  font-family: "Junction", sans-serif;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.section-title p {
+  font-family: 'Rakkas', serif;
+  font-size: 1.25rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.section-title .highlight {
+  color: #e63946;
 }

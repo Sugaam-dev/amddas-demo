@@ -1,3 +1,5 @@
+
+
 :root {
   --nav-link-color: #ffffff; /* White */
   --nav-link-hover-color: #00aaff; /* Professional Blue */
@@ -12,13 +14,22 @@
 
 .nav-link-custom {
   color: var(--nav-link-color);
-  margin-right: 15px;
+  margin-right: 50px;
   text-decoration: none;
   font-size: 20px;
   font-weight: bold;
   display: flex;
   align-items: center;
   transition: color 0.3s ease;
+}
+@media (max-width:1030px) {
+  .nav-link-custom {
+   
+    margin-right: 15px;
+   
+    font-size: 20px;
+   
+  }
 }
 
 .nav-link-custom:hover {
@@ -149,7 +160,7 @@ nav {
 .login-button {
   background-color: transparent;
   color: var(--button-text-color);
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   padding: 8px 16px;
   font-size: 16px;
   font-weight: bold;
@@ -160,7 +171,7 @@ nav {
 }
 
 .login-button:hover {
-  background-color: rgba(49, 49, 202, 0.881);
+  /* background-color: rgba(49, 49, 202, 0.881); */
   text-decoration: none; /* Ensure no underline on hover */
 }
 

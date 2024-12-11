@@ -45,11 +45,12 @@ function Navbarr() {
       expanded={expanded}
       style={{
         backgroundColor: 'transparent',
+     padding:"0px"
       }}
     >
-      <Container fluid style={{ paddingLeft: '40px', paddingRight: '40px' }}>
+      <Container fluid style={{ paddingLeft: '60px', paddingRight: '40px' }}>
         <Navbar.Brand as={Link} to="/">
-          <img src="./images/amd.png" alt="logo" style={{ width: '100px' }} />
+          <img src="./images/amd.png" alt="logo" style={{ width: '80px' }} />
         </Navbar.Brand>
         <CiMenuBurger 
           onClick={handleToggle} 
@@ -143,6 +144,12 @@ function Navbarr() {
                 to="/login" 
                 className="login-button" 
                 onClick={handleClose}
+                style={({ isActive }) => ({
+                  border: "none",
+                  backgroundColor: "transparent",
+                  fontSize:"20px",
+                  color: isActive ? 'var(--nav-link-active-color)' : 'var(--nav-link-color)',
+                })}
               >
                 Login
               </Button>
@@ -244,6 +251,13 @@ function Navbarr() {
                   to="/login" 
                   className="login-button" 
                   onClick={handleClose}
+                  style={({ isActive }) => ({
+                    border: "none",
+                    backgroundColor: "transparent",
+                    fontSize:"20px",
+                    color: isActive ? 'var(--nav-link-active-color)' : 'var(--nav-link-color)',
+                  })}
+                  
                 >
                   Login
                 </Button>

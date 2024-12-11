@@ -65,7 +65,7 @@ const Hero = () => {
                 </p>
                 <div>
                   <Button
-                    href="#menu"
+               
                     className="btn-menu animate__animated animate__fadeInUp"
                     style={{ fontFamily: 'Rakkas, serif', fontSize: 'large' }}
                     variant="primary"
@@ -103,7 +103,7 @@ const Hero = () => {
                 </p>
                 <div>
                   <Button
-                    href="#menu"
+               
                     className="btn-menu animate__animated animate__fadeInUp"
                     style={{ fontFamily: 'Rakkas, serif', fontSize: 'large' }}
                     variant="primary"

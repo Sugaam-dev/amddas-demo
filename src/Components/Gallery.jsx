@@ -1,12 +1,12 @@
-// src/Components/Gallery.jsx
+
 
 import React from 'react';
 import ImageGallery from 'react-image-gallery';
-import 'react-image-gallery/styles/css/image-gallery.css'; // Import default styles
-import '../Styles/gallery.css'; // Import your custom styles (optional)
+import 'react-image-gallery/styles/css/image-gallery.css'; 
+import '../Styles/gallery.css'; 
 
 const Gallery = () => {
-  // Define your images array
+  
   const images = [
     {
       original: '/images/amd10.jpg',
@@ -67,7 +67,7 @@ const Gallery = () => {
             autoPlay={true}
             slideInterval={3000}
             additionalClass="custom-image-gallery"
-            // Optional: Customize other props as needed
+            style={{ maxHeight: '200px' }}
           />
         </div>
       </div>
@@ -75,5 +75,4 @@ const Gallery = () => {
   );
 };
 
-// Optional: Inline styles or external CSS can be used for additional styling
 export default Gallery;

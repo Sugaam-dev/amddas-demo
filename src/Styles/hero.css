@@ -59,8 +59,8 @@
   }
   
   .btn-menu {
-    background-color: transparent;
-    border: 2px solid blue;
+    /* background-color: transparent;
+    border: 2px solid blue; */
     color: #fff;
     border-radius: 50px;
   }
@@ -70,8 +70,8 @@
   }
   
   .btn-book {
-    background-color: transparent;
-    border: 2px solid blue;
+    /* background-color: transparent;
+    border: 2px solid blue; */
     color: #fff;
     border-radius: 50px;
   }
