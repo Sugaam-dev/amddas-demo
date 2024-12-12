@@ -15,7 +15,7 @@ export default function Carousel() {
     <div className="containerr">
       <Swiper
         cssMode={true}
-        navigation={true}
+        navigation={false}
         pagination={{ clickable: true }}
         mousewheel={true}
         keyboard={true}

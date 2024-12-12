@@ -16,8 +16,9 @@ const Home = () => {
    
       <Hero/>
       <About/>
-     <Gallery/>
+  
      <Events/>
+     <Gallery/>
     </div>
     
     </>

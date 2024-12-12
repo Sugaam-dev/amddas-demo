@@ -56,9 +56,9 @@ const Hero = () => {
               <div className="carousel-content text-center text-white">
                 <h2
                   className="animate__animated animate__fadeInDown"
-                style={{fontFamily: "junction"}}
+              
                 >
-                  <span></span>Delicious Food
+                  <span>Delicious Food</span>
                 </h2>
                 <p className="animate__animated animate__fadeInUp">
                   AMDDAS Foods Catering Service offers the same elite service and quality dining experience for any occasion and for any number of Guests.
@@ -67,7 +67,7 @@ const Hero = () => {
                   <Button
                
                     className="btn-menu animate__animated animate__fadeInUp"
-                    style={{ fontFamily: 'Rakkas, serif', fontSize: 'large' }}
+                   
                     variant="primary"
                     onClick={book} 
                   >
@@ -75,7 +75,7 @@ const Hero = () => {
                   </Button>{' '}
                   <Button
                     className="btn-book animate__animated animate__fadeInUp"
-                    style={{ fontFamily: 'Rakkas, serif', fontSize: 'large' }}
+                 
                     variant="secondary"
                     onClick={book} 
                   >
@@ -98,14 +98,20 @@ const Hero = () => {
           >
             <div className="carousel-container d-flex align-items-center justify-content-center h-100">
               <div className="carousel-content text-center text-white">
+              <h2
+                  className="animate__animated animate__fadeInDown"
+              
+                >
+                  <span>Authentic Indian Flavors</span>
+                </h2>
                 <p className="animate__animated animate__fadeInUp">
-                  Over three years of culinary experience in Food Catering to add delicious tastes of India to any special event – big or small. We offer quality hygienic dishes that are not only authentic to the Indian subcontinent, but are also made with the fresh ingredients to bring out the true texture and flavor of Indian cuisine.
-                </p>
+                    Over three years of culinary experience in Food Catering to add delicious tastes of India to any special event – big or small. We offer quality hygienic dishes that are not only authentic to the Indian subcontinent, but are also made with the fresh ingredients to bring out the true texture and flavor of Indian cuisine.
+                  </p>
                 <div>
                   <Button
                
                     className="btn-menu animate__animated animate__fadeInUp"
-                    style={{ fontFamily: 'Rakkas, serif', fontSize: 'large' }}
+                  
                     variant="primary"
                     onClick={() => navigate('#menu')}
                   >
@@ -113,7 +119,7 @@ const Hero = () => {
                   </Button>{' '}
                   <Button
                     className="btn-book animate__animated animate__fadeInUp"
-                    style={{ fontFamily: 'Rakkas, serif', fontSize: 'large' }}
+                    
                     variant="secondary"
                     onClick={book}
                   >
@@ -138,7 +144,7 @@ const Hero = () => {
               <div className="carousel-content text-center text-white">
                 <h2
                   className="animate__animated animate__fadeInDown"
-                  style={{ fontFamily: 'Rakkas, serif' }}
+                
                 >
                   Feed your dreams…
                 </h2>
@@ -149,7 +155,7 @@ const Hero = () => {
                   <Button
                  
                     className="btn-menu animate__animated animate__fadeInUp"
-                    style={{ fontFamily: 'Rakkas, serif', fontSize: 'large' }}
+                   
                     variant="primary"
                     onClick={book}
                   >
@@ -157,7 +163,7 @@ const Hero = () => {
                   </Button>{' '}
                   <Button
                     className="btn-book animate__animated animate__fadeInUp"
-                    style={{ fontFamily: 'Rakkas, serif', fontSize: 'large' }}
+                  
                     variant="secondary"
                     onClick={book}
                   >

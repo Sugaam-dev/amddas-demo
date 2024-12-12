@@ -49,6 +49,9 @@ nav {
 }
 .navv{
   background-color: #333333  ;
+  /* position: fixed;
+  width: 100%;
+  z-index: 1000; */
 }
 .dropdown-custom .dropdown-toggle::after {
   margin-left: 0.5rem;
