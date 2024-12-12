@@ -50,7 +50,7 @@ const Gallery = () => {
       <div className="container">
         <div className="section-title">
           <h2>
-            Some photos from <span className="highlight">Amddas Food</span>
+           <span className="highlight">Amddas Foods</span> Gallery
           </h2>
           <p>Your favourite food delivered hot & fresh</p>
         </div>
