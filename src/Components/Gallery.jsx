@@ -46,22 +46,13 @@ const Gallery = () => {
   ];
 
   return (
-    <>
-    <div className="banner-section-gallery">
-        <h1 className="banner-title-gellery" style={{color:"white"}}>Amddas Foods Gallery</h1>
-      </div>
-
-  
     <section id="gallery" className="gallery-section">
-      <p className='gg'>Welcome to the visual journey of Amddas Foods! Explore our vibrant gallery showcasing beautifully crafted dishes, stunning event setups, and memorable moments from the celebrations we’ve been a part of. From intricately plated delicacies to themed culinary displays, each image reflects our passion for perfection, creativity, and uncompromising quality.
-
-Witness how Amddas Foods transforms every occasion into a feast for the senses, leaving lasting impressions through exceptional presentation and unparalleled flavors. Dive in and let our gallery inspire your next celebration with us!</p>
       <div className="container">
         <div className="section-title">
-          {/* <h2>
-            Some photos from <span className="highlight">Amddas Food</span>
+          <h2>
+           <span className="highlight">Amddas Foods</span> Gallery
           </h2>
-          <p>Your favourite food delivered hot & fresh</p> */}
+          <p>Your favourite food delivered hot & fresh</p>
         </div>
 
         <div className="image-gallery-wrapper">
@@ -81,7 +72,6 @@ Witness how Amddas Foods transforms every occasion into a feast for the senses, 
         </div>
       </div>
     </section>
-    </>
   );
 };
 
