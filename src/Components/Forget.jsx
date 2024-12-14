@@ -92,7 +92,7 @@ function Forget() {
               {isLoading ? 'Sending OTP...' : 'Get OTP'}
             </button>
             {/* Retained the <Link> for the Login button */}
-            <Link to="/">
+            <Link to="/login">
               <button type="button" className="signup-btn">
                 Login
               </button>

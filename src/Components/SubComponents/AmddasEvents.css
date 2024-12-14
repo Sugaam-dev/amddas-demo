@@ -1,0 +1,92 @@
+/* Main Container */
+
+
+.amddas-events-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff; /* Light beige background */
+    /* padding: 50px; */
+    flex-wrap: wrap; /* Ensures responsiveness for smaller screens */
+    gap: 20px; /* Space between image and text */
+  }
+  
+  /* Left Section: Image */
+  .amddas-events-image img {
+    width: 100%;
+    max-width: 500px; /* Limit image width */
+    height: auto;
+    border-radius: 0; /* Slightly rounded corners */
+    object-fit: cover;
+    padding-bottom: 50px;
+   
+  }
+  
+  /* Right Section: Content */
+  .amddas-events-content {
+    flex: 1;
+    text-align: center;
+    max-width: 1000px; /* Keep the text content responsive */
+    padding: 0px 50px;
+    padding-bottom: 50px;
+  }
+  
+  .events-title {
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-family: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+    color: #333;
+  }
+  
+  .events-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px; /* Space below the description */
+  }
+  
+  /* Button */
+  .events-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #ff4500; /* Bright orange color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .events-button:hover {
+    background-color: #e03d00; /* Darker orange on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .amddas-events-container {
+      flex-direction: column; /* Stack image and text vertically */
+      text-align: center; /* Center-align text on smaller screens */
+    }
+  
+    .amddas-events-image img {
+      max-width: 100%; /* Make the image take full width */
+      
+    }
+  
+    .amddas-events-content {
+      max-width: 100%; /* Make text content take full width */
+     
+    }
+  
+    .events-title {
+      font-size: 2rem; /* Reduce title size for smaller screens */
+    }
+  
+    .events-description {
+      font-size: 1rem; /* Reduce description size */
+    }
+  }
+  

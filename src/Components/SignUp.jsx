@@ -80,6 +80,7 @@ function SignUp() {
   }, []);
 
   return (
+    // style={{background:"#CCC096"}}
     <div className="login-container">
       <div className="login-left">
         <div className="intro">

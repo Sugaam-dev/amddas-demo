@@ -39,7 +39,7 @@ export default function Footer() {
                             <Link className="social-icon"><FaInstagram style={{ color: 'red' }} /></Link>
                             <Link className="social-icon"><FaFacebookF style={{ color: 'blue' }} /></Link>
                             <Link className="social-icon"><FaYoutube style={{ color: 'red' }} /></Link>
-                            <Link className="social-icon"><FaXTwitter style={{ color: '#fff' }} /></Link>
+                            <Link className="social-icon"><FaXTwitter style={{ color: '#000' }} /></Link>
                         </div>
                         <div className="contact-infoo">
                             <Link>{<MdEmail style={{ fontSize: "30px", marginRight: "10px" }} />} info@amddas.net</Link>
@@ -67,7 +67,7 @@ export default function Footer() {
                 <div className="footer-bottom">
                     <p>
                         copyright © {year} Designed by{" "}
-                        <a href="https://sugaam.in " target="_blank" style={{ color: "white", textDecoration: "none" }}>Sugaam.in</a> All Rights Reserved
+                        <a href="https://sugaam.in " target="_blank" style={{ color: "#000", textDecoration: "none" }}>Sugaam.in</a> All Rights Reserved
                     </p>
                 </div>
             </div>

@@ -22,6 +22,8 @@ import DeleteAccount from './Components/DeleteAccount';
 import About from './Components/About';
 import Gallery from './Components/Gallery';
 import Events from "./Components/Events";
+import OurStoryMain from './Components/OurStory-main';
+import MissionVisionValues from './Components/MissionVisionValues';
 
 
 function App() {
@@ -40,8 +42,19 @@ function App() {
         <Route path='/confirmpassword' element={<Cnfpassword />} />
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
 <Route path='/about' element={<About/>}/>
-<Route path='/gallery' element={<Gallery/>}/>
-<Route path='/events' element={<Events/>}/>
+<Route path='/amddas-gallery' element={<Gallery/>}/>
+<Route path='/amddas-events' element={<Events/>}/>
+
+
+<Route path='/ourstory' element={<OurStoryMain/>}/>
+<Route path='/our-mission' element={<MissionVisionValues/>}/>
+
+
+
+
+
+
+
 
 
         {/* Protected Routes */}

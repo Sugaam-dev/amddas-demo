@@ -1,77 +1,57 @@
-
-/* CSS */
-
-.about {
-  display: flex;
-  flex-direction: column;
-  padding: 60px 20px;
-  background-color: #ffffff;
-  font-family: "junction";
-}
-
-.about-container {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-}
-
-.about-image {
-  flex: 1;
+.banner-section-about {
+  background-image: url("https://b.zmtcdn.com/web/about/48fc8d7806d6a947fd041a8a1cf83bac1563875757.png"); /* Replace with actual image */
   background-size: cover;
   background-position: center;
-  border-radius: 0px 30px 30px 0px;
-  min-height: 400px;
-}
-
-.about-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px;
-}
-
-.about-content h3 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  font-family: 'IBM Plex Serif', Georgia, "Times New Roman", serif;
-}
-
-.about-list {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-}
-
-.list-item {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 10px;
-}
-
-.icon-wrapper {
-  flex-shrink: 0;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
 }
 
-.icon {
-  color: #000;
-  font-size: 24px;
-}
-
-.about-content p {
-  font-size: 1.4rem;
+.banner-title-about {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
   font-family: 'IBM Plex Serif', Georgia, "Times New Roman", serif;
 }
 
+/* about Section */
+.about-section {
+  padding: 50px 15%;
+  background-color: white;
+}
+.about-section p{
+  font-family: Open Sans, Arial, sans-serif;
+  line-height: 35px;
+}
+.about-block {
+  margin-bottom: 30px;
+}
+
+.about-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: 'IBM Plex Serif', Georgia, "Times New Roman", serif;
+}
+
+.about-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Highlight Bold Text */
+.about-text b {
+  font-weight: bold;
+  color: black;
+}
+
 .why-us {
-  padding: 60px 20px;
+  padding: 30px 20px;
   background-color: #ffffff;
-  font-family: "junction";
+ 
 }
 
 .why-us-container {
@@ -82,6 +62,7 @@
 .section-title {
   text-align: center;
   margin-bottom: 40px;
+  
 }
 
 .section-title h2 {

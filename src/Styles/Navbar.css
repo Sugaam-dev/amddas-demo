@@ -1,7 +1,7 @@
 
 
 :root {
-  --nav-link-color: #ffffff; /* White */
+  --nav-link-color: #0000008f; /* White */
   --nav-link-hover-color: #00aaff; /* Professional Blue */
   --nav-link-active-color: #00aaff; /* Professional Blue for active links */
   --dropdown-bg-color: #ffffff; /* White */
@@ -11,6 +11,8 @@
   --button-hover-bg-color: #e64a19; /* Darker Orange on Hover */
   --button-text-color: #ffffff; /* White */
 }
+
+
 
 .nav-link-custom {
   color: var(--nav-link-color);
@@ -43,15 +45,29 @@
 
 nav {
   /* background-image: url('/public/images/amd1.jpeg'); */
-  background-color: #333333;
+  background-color: #fff;
   background-size: auto;
   background-attachment: fixed;
 }
 .navv{
-  background-color: #333333  ;
+  background-color: #ffffff  ;
   /* position: fixed;
   width: 100%;
   z-index: 1000; */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+@media (max-width:768px) {
+  .navv{
+    background-color: #ffffff  ;
+    /* position: fixed;
+    width: 100%;
+    z-index: 1000; */
+    position:static;
+    top: 0;
+    z-index: 1000;
+  }
 }
 .dropdown-custom .dropdown-toggle::after {
   margin-left: 0.5rem;

@@ -1,220 +1,68 @@
-// src/components/Hero.js
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import "../Styles/hero.css";
 
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'animate.css/animate.min.css';
-import '../Styles/hero.css';
-import { Carousel, Button, Modal } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux'; // Import useSelector to access Redux state
+const slides = [
+  {
+    id: 1,
+    title: "Delicious Food",
+    description:
+      "AMDDAS Foods Catering Service offers the same elite service and quality dining experience for any occasion and for any number of Guests.",
+  },
+  {
+    id: 2,
+    title: "Authentic Indian Flavors",
+    description:
+      "Over three years of culinary experience in Food Catering to add delicious tastes of India to any special event – big or small. We offer quality hygienic dishes that are not only authentic to the Indian subcontinent, but are also made with fresh ingredients to bring out the true texture and flavor of Indian cuisine.",
+  },
+  {
+    id: 3,
+    title: "Feed your dreams…",
+    description:
+      "Name it a corporate event, office daily lunch & dinner, small lunch or get-together, evening dinner party, an office party or family reunions.",
+  },
+];
 
 const Hero = () => {
-  const navigate = useNavigate();
-  const jwtToken = useSelector((state) => state.auth.token); // Access the JWT token from Redux
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  // State to manage the visibility of the login prompt modal
-  const [showLoginPrompt, setShowLoginPrompt] = useState(false);
-
-  // Function to handle closing the modal
-  const handleClose = () => setShowLoginPrompt(false);
-
-  // Function to handle showing the modal
-  const handleShow = () => setShowLoginPrompt(true);
-
-  // Updated book function
-  const book = () => {
-    if (jwtToken) {
-      // If user is logged in, navigate to the booking page
-      navigate('/booking');
-    } else {
-      // If user is not logged in, show the login prompt modal
-      handleShow();
-    }
-  };
-
-  // Function to navigate to the login page from the modal
-  const navigateToLogin = () => {
-    handleClose(); // Close the modal
-    navigate('/login'); // Navigate to the login page
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section id="hero">
+    <section id="hero" style={{ height: "100vh", overflow: "hidden" }}>
       <div className="hero-container">
-        <Carousel fade interval={5000} controls={false} indicators>
-          {/* Slide 1 */}
-          <Carousel.Item
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={slides[currentSlide].id}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1 }}
             className="carousel-item"
             style={{
-            //   backgroundImage: `url(${process.env.PUBLIC_URL}/image/img1.jpg)`, 
-              height: '100vh',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+          
+              color: "#fff",
+              padding: "2rem",
+              textAlign: "center",
             }}
           >
-            <div className="carousel-container d-flex align-items-center justify-content-center h-100">
-              <div className="carousel-content text-center text-white">
-                <h2
-                  className="animate__animated animate__fadeInDown"
-              
-                >
-                  <span>Delicious Food</span>
-                </h2>
-                <p className="animate__animated animate__fadeInUp">
-                  AMDDAS Foods Catering Service offers the same elite service and quality dining experience for any occasion and for any number of Guests.
-                </p>
-                <div>
-                  <Button
-               
-                    className="btn-menu animate__animated animate__fadeInUp"
-                   
-                    variant="primary"
-                    onClick={book} 
-                  >
-                    Our Menu
-                  </Button>{' '}
-                  <Button
-                    className="btn-book animate__animated animate__fadeInUp"
-                 
-                    variant="secondary"
-                    onClick={book} 
-                  >
-                    Book Now
-                  </Button>
-                </div>
-              </div>
+            <div className="carousel-content">
+              <h2>{slides[currentSlide].title}</h2>
+              <p>{slides[currentSlide].description}</p>
             </div>
-          </Carousel.Item>
-
-          {/* Slide 2 */}
-          <Carousel.Item
-            className="carousel-item"
-            style={{
-            //   backgroundImage: `url(${process.env.PUBLIC_URL}/assets/img/slide2.jpg)`,
-              height: '100vh',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          >
-            <div className="carousel-container d-flex align-items-center justify-content-center h-100">
-              <div className="carousel-content text-center text-white">
-              <h2
-                  className="animate__animated animate__fadeInDown"
-              
-                >
-                  <span>Authentic Indian Flavors</span>
-                </h2>
-                <p className="animate__animated animate__fadeInUp">
-                    Over three years of culinary experience in Food Catering to add delicious tastes of India to any special event – big or small. We offer quality hygienic dishes that are not only authentic to the Indian subcontinent, but are also made with the fresh ingredients to bring out the true texture and flavor of Indian cuisine.
-                  </p>
-                <div>
-                  <Button
-               
-                    className="btn-menu animate__animated animate__fadeInUp"
-                  
-                    variant="primary"
-                    onClick={() => navigate('#menu')}
-                  >
-                    Our Menu
-                  </Button>{' '}
-                  <Button
-                    className="btn-book animate__animated animate__fadeInUp"
-                    
-                    variant="secondary"
-                    onClick={book}
-                  >
-                    Book Now
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </Carousel.Item>
-
-          {/* Slide 3 */}
-          <Carousel.Item
-            className="carousel-item"
-            style={{
-            //   backgroundImage: `url(${process.env.PUBLIC_URL}/assets/img/slide3.webp)`,
-              height: '100vh',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          >
-            <div className="carousel-container d-flex align-items-center justify-content-center h-100">
-              <div className="carousel-content text-center text-white">
-                <h2
-                  className="animate__animated animate__fadeInDown"
-                
-                >
-                  Feed your dreams…
-                </h2>
-                <p className="animate__animated animate__fadeInUp">
-                  Name it a corporate event, office daily lunch & dinner, small lunch or get-together, evening dinner party, an office party or family reunions
-                </p>
-                <div>
-                  <Button
-                 
-                    className="btn-menu animate__animated animate__fadeInUp"
-                   
-                    variant="primary"
-                    onClick={book}
-                  >
-                    Our Menu
-                  </Button>{' '}
-                  <Button
-                    className="btn-book animate__animated animate__fadeInUp"
-                  
-                    variant="secondary"
-                    onClick={book}
-                  >
-                    Book Now
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </Carousel.Item>
-        </Carousel>
-
-        {/* Removed Carousel Controls */}
-        {/*
-        <a
-          className="carousel-control-prev"
-          href="#heroCarousel"
-          role="button"
-          data-bs-slide="prev"
-        >
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Previous</span>
-        </a>
-
-        <a
-          className="carousel-control-next"
-          href="#heroCarousel"
-          role="button"
-          data-bs-slide="next"
-        >
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Next</span>
-        </a>
-        */}
-
-        {/* Modal for Login Prompt */}
-        <Modal show={showLoginPrompt} onHide={handleClose} centered>
-          <Modal.Header closeButton>
-            <Modal.Title>Login Required</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <p>You need to be logged in to view menu or order food. Please log in to continue.</p>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant="primary" onClick={navigateToLogin}>
-              Login
-            </Button>
-          </Modal.Footer>
-        </Modal>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );

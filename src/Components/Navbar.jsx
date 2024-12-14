@@ -12,6 +12,7 @@ import { MdRestaurantMenu } from "react-icons/md";
 import { GrGallery } from "react-icons/gr";
 
 function Navbarr() {
+  
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -55,7 +56,7 @@ function Navbarr() {
         <CiMenuBurger 
           onClick={handleToggle} 
           className="d-lg-none" 
-          style={{ cursor: 'pointer', fontSize: "40px" ,color:"#ffffff"}} 
+          style={{ cursor: 'pointer', fontSize: "40px" ,color:"#000"}} 
         />
         <Navbar.Collapse id="basic-navbar-nav" className="d-none d-lg-flex">
           <Nav className="ms-auto align-items-center">
@@ -85,7 +86,7 @@ function Navbarr() {
             </Nav.Link>
             <Nav.Link 
               as={NavLink} 
-              to="/events"  
+              to="/amddas-events"  
               className="nav-link-custom"
               onClick={handleClose}
               style={({ isActive }) => ({
@@ -97,7 +98,7 @@ function Navbarr() {
             </Nav.Link>
             <Nav.Link 
               as={NavLink} 
-              to="/gallery" 
+              to="/amddas-gallery" 
               className="nav-link-custom"
               onClick={handleClose}
               style={({ isActive }) => ({
@@ -107,7 +108,7 @@ function Navbarr() {
               <GrGallery aria-label="Gallery" style={{marginRight:'5px'}}/>
               Gallery
             </Nav.Link>
-            {jwtToken && (
+            {/* {jwtToken && (
               <Nav.Link 
                 as={NavLink} 
                 to="/booking" 
@@ -120,8 +121,8 @@ function Navbarr() {
                 <MdRestaurantMenu aria-label="Booking" style={{marginRight:'5px'}}/>
                 Menu
               </Nav.Link>
-            )}
-            {jwtToken ? (
+            )} */}
+            {/* {jwtToken ? (
               <NavDropdown
                 title={
                   <span className="email-link">
@@ -153,7 +154,7 @@ function Navbarr() {
               >
                 Login
               </Button>
-            )}
+            )} */}
           </Nav>
         </Navbar.Collapse>
         <Navbar.Offcanvas
@@ -226,7 +227,7 @@ function Navbarr() {
                 </Nav.Link>
               )}
               
-              {jwtToken ? (
+              {/* {jwtToken ? (
                 <NavDropdown
                   title={
                     <span className="email-link">
@@ -261,7 +262,7 @@ function Navbarr() {
                 >
                   Login
                 </Button>
-              )}
+              )} */}
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>

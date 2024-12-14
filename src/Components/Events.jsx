@@ -13,6 +13,37 @@ import '../Styles/events.css'; // Ensure this path matches your CSS file
 export default function Carousel() {
   return (
     <div className="containerr">
+
+<div className="banner-section-event">
+        <h1 className="banner-title-event">Amddas Foods Events</h1>
+      </div>
+      <div className="content-section">
+      <section>
+        <span>Amddas Foods offers personalized menus, premium-quality dishes, and exceptional service for all occasions, ensuring unforgettable culinary experiences through attention to detail, themed delicacies, and a commitment to customer satisfaction.</span>
+          <h2 className="section-heading">Uncompromising Quality</h2>
+     
+          <p>
+          We ensure every dish meets our unwavering standards of excellence, crafted with premium ingredients to provide a delightful dining experience that exceeds expectations and celebrates the art of fine cuisine.   </p>
+          <h2 className="section-heading">Diverse Event Offerings</h2>
+          <p>
+          From private events to weddings, birthdays, and corporate gatherings, we specialize in delivering versatile catering solutions tailored to your needs, offering exceptional service to make every occasion truly memorable.   </p>
+          <h2 className="section-heading">Attention to Detail</h2>
+          <p>
+          Every aspect of our service is meticulously planned and executed, including menu customization, presentation, and ambiance, ensuring your event is flawless and perfectly aligned with your vision.
+    </p>
+          <h2 className="section-heading">Convenience and Reliability    </h2>
+          <p>
+          Our dedicated team guarantees a hassle-free experience by managing every detail of your event, delivering seamless execution that you can trust for efficiency and dependability.       </p>
+          <h2 className="section-heading">Exquisite Themed Delicacies</h2>
+          <p>
+          We craft extraordinary dishes designed to complement your celebration’s theme, creating a culinary experience that resonates with the occasion and delights your guests. </p>
+          <h2 className="section-heading">Customer Satisfaction</h2>
+         <p> We prioritize your happiness by delivering exceptional food, impeccable service, and unforgettable experiences, ensuring you and your guests leave with cherished memories.</p>
+          <h2 className="section-heading">Trusted Partner for All Occasions</h2>
+          <p>Whether it’s a small gathering or a grand event, we are your reliable partner in creating extraordinary experiences that leave a lasting impression.</p>
+          <span>Let us transform your celebrations into timeless memories with our expertise, passion, and dedication to excellence.</span>
+        </section>
+        </div>
       <Swiper
         cssMode={true}
         navigation={false}
@@ -38,14 +69,14 @@ export default function Carousel() {
                   We ensure that the event is made memorable with exquisite delicacies prepared according to the theme
                   of the event.
                 </p>
-                <ul>
+                <ul >
                   <li>✅ Best Food delivery in your home. Easy. Fast. Reliable.</li>
                   <li>✅ We believe good food offers a great smile.</li>
                   <li>✅ Test our delicious best food that meets your needs.</li>
                 </ul>
-                <a href="#enquire" className="enquire-now">
+                <button href="#enquire" className="enquire-now">
                   Enquire Now
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -62,9 +93,9 @@ export default function Carousel() {
                 <p>
                   We make sure to make your wedding more memorable by serving the best food to you and your guests.
                 </p>
-                <a href="#enquire" className="enquire-now">
+                <button href="#enquire" className="enquire-now">
                   Enquire Now
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -87,9 +118,9 @@ export default function Carousel() {
                   <li>✅ We believe good food offers a great smile.</li>
                   <li>✅ Test our delicious best food that meets your needs.</li>
                 </ul>
-                <a href="#enquire" className="enquire-now">
+                <button href="#enquire" className="enquire-now">
                   Enquire Now
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -106,9 +137,9 @@ export default function Carousel() {
                 <p>
                   Our team is committed to making your events run smoothly by providing delicious food.
                 </p>
-                <a href="#enquire" className="enquire-now">
+                <button href="#enquire" className="enquire-now">
                   Enquire Now
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -126,9 +157,9 @@ export default function Carousel() {
                   We ensure that the event is made memorable with exquisite delicacies prepared according to the theme
                   of the event.
                 </p>
-                <a href="#enquire" className="enquire-now">
+                <button href="#enquire" className="enquire-now">
                   Enquire Now
-                </a>
+                </button>
               </div>
             </div>
           </div>

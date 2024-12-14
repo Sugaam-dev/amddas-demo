@@ -40,7 +40,8 @@ const Log = () => {
   }, [isAuthenticated, navigate]);
 
   return (
-    <div className="login-container">
+    // style={{background:"#CCC096"}}
+    <div className="login-container" >
       <div className="login-left">
         {/* <img src="./images/amd.png" alt="Office" className="office-image" /> */}
         <div className="intro">
