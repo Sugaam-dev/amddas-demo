@@ -13,13 +13,13 @@ const slides = [
     id: 2,
     title: "Authentic Indian Flavors",
     description:
-      "Over three years of culinary experience in Food Catering to add delicious tastes of India to any special event – big or small. We offer quality hygienic dishes that are not only authentic to the Indian subcontinent, but are also made with fresh ingredients to bring out the true texture and flavor of Indian cuisine.",
+      "Over three years of culinary experience in Food Catering to add delicious tastes of India to any special event – big or small.",
   },
   {
     id: 3,
     title: "Feed your dreams…",
     description:
-      "Name it a corporate event, office daily lunch & dinner, small lunch or get-together, evening dinner party, an office party or family reunions.",
+      "Name it a corporate event, office daily lunch & dinner, small lunch or get-together, evening dinner party, or family reunions.",
   },
 ];
 
@@ -29,21 +29,41 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 6000); // Change slide every 6 seconds
     return () => clearInterval(interval);
   }, []);
 
+  // Variants for animations
+  const slideVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
     <section id="hero" style={{ height: "100vh", overflow: "hidden" }}>
-      <div className="hero-container">
+      <div
+        className="hero-container"
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "relative",
+      
+        }}
+      >
         <AnimatePresence mode="wait">
           <motion.div
             key={slides[currentSlide].id}
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 1 }}
-            className="carousel-item"
+            variants={slideVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.8 }}
             style={{
               position: "absolute",
               width: "100%",
@@ -51,16 +71,38 @@ const Hero = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-          
+              textAlign: "center",
+        
               color: "#fff",
               padding: "2rem",
-              textAlign: "center",
             }}
           >
-            <div className="carousel-content">
-              <h2>{slides[currentSlide].title}</h2>
-              <p>{slides[currentSlide].description}</p>
-            </div>
+            <motion.div
+              className="carousel-content"
+              initial="hidden"
+              animate="visible"
+              variants={textVariants}
+            >
+              <h2
+                style={{
+                  fontSize: "2.5rem",
+                  fontWeight: "600",
+                  marginBottom: "1rem",
+                }}
+              >
+                {slides[currentSlide].title}
+              </h2>
+              <p
+                style={{
+                  fontSize: "1.25rem",
+                  lineHeight: "1.6",
+                  maxWidth: "600px",
+                  margin: "0 auto",
+                }}
+              >
+                {slides[currentSlide].description}
+              </p>
+            </motion.div>
           </motion.div>
         </AnimatePresence>
       </div>
