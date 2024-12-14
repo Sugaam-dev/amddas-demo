@@ -16,7 +16,7 @@ const AmddasGallery = () => {
       {/* Left Section: Image */}
       <div className="amddas-gallery-image">
         <img
-          src="http://localhost:3000/images/amd3.webp" /* Replace with your actual image URL */
+          src="./images/amd3.webp" /* Replace with your actual image URL */
           alt="Supply Chain"
         />
       </div>
