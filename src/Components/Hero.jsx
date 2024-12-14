@@ -53,7 +53,7 @@ const Hero = () => {
           width: "100%",
           height: "100%",
           position: "relative",
-      
+         
         }}
       >
         <AnimatePresence mode="wait">
@@ -72,9 +72,8 @@ const Hero = () => {
               alignItems: "center",
               justifyContent: "center",
               textAlign: "center",
-        
-              color: "#fff",
-              padding: "2rem",
+            
+          
             }}
           >
             <motion.div
@@ -82,6 +81,10 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
               variants={textVariants}
+              style={{
+                maxWidth: "600px",
+                margin: "0 auto",
+              }}
             >
               <h2
                 style={{
@@ -96,8 +99,6 @@ const Hero = () => {
                 style={{
                   fontSize: "1.25rem",
                   lineHeight: "1.6",
-                  maxWidth: "600px",
-                  margin: "0 auto",
                 }}
               >
                 {slides[currentSlide].description}
