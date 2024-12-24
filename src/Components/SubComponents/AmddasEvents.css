@@ -32,7 +32,7 @@
   }
   
   .events-title {
-    font-size: 48px;
+    font-size: 38px;
     font-weight: 500;
     margin-bottom: 15px;
     font-family: "IBM Plex Serif", Georgia, "Times New Roman", serif;
@@ -41,9 +41,10 @@
   
   .events-description {
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 36px;
     color: #333;
     margin-bottom: 30px; /* Space below the description */
+    padding: 0px 10px;
   }
   
   /* Button */

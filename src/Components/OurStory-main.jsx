@@ -12,14 +12,14 @@ const OurStoryMain = () => {
       {/* Content Section */}
       <div className="content-section">
         <div className="content-block">
-          <h3 className="content-heading">Compass History</h3>
+          <h3 className="content-heading">Amddas Foods History</h3>
           <p className="content-text">
             We can trace our roots back more than 75 years.
           </p>
         </div>
 
         <div className="content-block">
-          <h3 className="content-heading">Compass Group</h3>
+          <h3 className="content-heading">Amddas Foods</h3>
           <p className="content-text">
             From these humble beginnings to become the international business
             we are today, the commitment of our people to our customers, the
@@ -29,9 +29,9 @@ const OurStoryMain = () => {
         </div>
 
         <div className="content-block">
-          <h2 className="content-heading">Compass Group India</h2>
+          <h2 className="content-heading">Amddas Foods</h2>
           <p className="content-text">
-            Compass Group India is a wholly owned subsidiary of Compass Group
+           Amddas Foods India is a wholly owned subsidiary of Amddas Foods
             PLC and has been servicing the Indian Corporate, Healthcare, and
             Education market needs since 2008, maintaining world-class standards
             of delivery across India. It operates in 450+ client locations
@@ -40,7 +40,7 @@ const OurStoryMain = () => {
             best practices, and market-leading innovations.
           </p>
           <p className="content-text">
-            Compass Group India has won awards such as{" "}
+           Amddas Foods India has won awards such as{" "}
             <b>‘Most Admired Food Innovation of the Year Award’</b> for
             workplace food concepts at the India Food Forum Awards across all
             retail & food service categories; and{" "}

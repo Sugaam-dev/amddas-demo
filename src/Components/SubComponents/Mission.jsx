@@ -11,7 +11,8 @@ const Mission = () => {
     <div className="Our-mission-container">
       <h2 className="Our-mission-title">Mission & Vision</h2>
       <p className="Our-mission-description">
-      Every individual associated with Compass Group is committed to consistently delivering superior service in the most responsible and efficient way, for the shared benefit of our customers, stakeholders, and associates  </p>
+      Amddas Foods believes in the transformative power of food to enhance lives and health—physically, mentally, and spiritually. By prioritizing nutrition and well-being, we aim to foster improved health, greater happiness, and increased productivity.
+   </p>
       <button onClick={ourpage} className="Our-mission-button">READ MORE</button>
     </div>
   );

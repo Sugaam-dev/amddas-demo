@@ -16,8 +16,7 @@ const AmddasEvents = () => {
       <div className="amddas-events-content">
         <h2 className="events-title">Amddas Foods events</h2>
         <p className="events-description">
-          At Compass India, excellence in supply chain is defined by streamlined
-          processes & efficient logistics, supported by the latest technology.
+        Amddas transforms every event into a memorable experience with curated menus, exceptional service, and a vibrant ambiance. From personal milestones to corporate gatherings, we ensure every occasion is extraordinary.
         </p>
         <button className="events-button" onClick={event}>READ MORE</button>
       </div>

@@ -11,8 +11,8 @@ const OurStory = () => {
     <div className="our-story-container">
       <h2 className="our-story-title">Our Story</h2>
       <p className="our-story-description">
-        As part of the leading food service and support services company, Compass Group India believes in building great experiences for all of its customers. We serve corporate cafes, hospitals, schools & colleges with our specialised multi-sectoral approach.
-      </p>
+      Amddas Foods blends a legacy of culinary excellence with a focus on innovation, delivering a wide array of international flavors and exceptional service. We are dedicated to crafting memorable dining experiences for every special moment.
+        </p>
       <button onClick={ourpage} className="our-story-button">READ MORE</button>
     </div>
   );

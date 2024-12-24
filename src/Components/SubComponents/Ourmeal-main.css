@@ -22,7 +22,7 @@
   
   .meal-title {
     color: white;
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 400;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
     font-family: 'IBM Plex Serif', Georgia, "Times New Roman", serif;
@@ -32,8 +32,17 @@
   
   /* Content Section */
   .content-section {
-    padding: 50px 15%;
+    padding: 50px 18%;
     background-color: white;
+  }
+  @media (max-width:768px) {
+    .content-section {
+      padding: 50px 12%;
+      background-color: white;
+    }
+    .meal-section{
+      height: 200px;
+    }
   }
   .content-section p{
     font-family: Open Sans, Arial, sans-serif;

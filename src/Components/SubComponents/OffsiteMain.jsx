@@ -12,7 +12,7 @@ const OffsiteMain = () => {
       {/* Content Section */}
       <div className="content-section">
         <div className="content-block">
-          <h2 className="content-heading">Compass Group India</h2>
+          <h2 className="content-heading">Amddas Foods</h2>
           <p className="content-text">
             All our Central Kitchens are designed as a state of the art kitchens
             with a continuous and linear progression of food from receiving, pre

@@ -71,7 +71,11 @@
   align-items: center;
   justify-content: center;
 }
-
+@media (max-width:768px) {
+  .banner-section-gallery{
+    height: 200px;
+  }
+}
 .banner-title-gallery {
   color: white;
   font-size: 3rem;

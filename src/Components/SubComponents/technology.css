@@ -11,8 +11,8 @@
   }
   
   .Our-technology-title {
-    font-size: 48px;
-    font-weight: 700;
+    font-size: 38px;
+    font-weight: 500;
     margin-bottom: 20px;
     text-align: center;
     font-family: Open Sans, Arial, sans-serif;
@@ -24,8 +24,9 @@
     color: #333;
     max-width: 900px;
     margin-bottom: 30px;
-    line-height: 30px;
+    line-height: 36px;
     font-size: 16px;
+padding: 0px 15px;
   }
   
   .Our-technology-button {

@@ -25,7 +25,7 @@ const Amddassupply = () => {
       <div className="amddas-supply-content">
         <h2 className="supply-title">Supply Chain</h2>
         <p className="supply-description">
-        At Compass India excellence in supply chain is defined by streamlined process & efficient logistics, supported by the latest technology.
+        At Amddas Foods, supply chain excellence means ensuring seamless operations and highly efficient logistics through innovative technologies. Our streamlined processes enable us to maintain quality and reliability at every step. This dedication allows us to consistently meet and exceed expectations.
         </p>
         <button className="supply-button" onClick={supply}>READ MORE</button>
       </div>

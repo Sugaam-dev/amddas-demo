@@ -8,12 +8,12 @@
   }
   
   .Our-about-title {
-    font-size: 48px;
+    font-size: 38px;
     font-weight: 500;
     margin-bottom: 20px;
     text-align: center;
     font-family: 'IBM Plex Serif', Georgia, "Times New Roman", serif;
-    color: #fff;
+    color: #333;
   }
   
   .Our-about-description {
@@ -21,8 +21,9 @@
     color: #333;
     max-width: 900px;
     margin-bottom: 30px;
-    line-height: 30px;
+    line-height: 36px;
     font-size: 16px;
+    
   }
   
   .Our-about-button {

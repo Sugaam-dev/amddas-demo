@@ -25,8 +25,7 @@ const AmddasGallery = () => {
       <div className="amddas-gallery-content">
         <h2 className="gallery-title">Amddas Foods Gallery</h2>
         <p className="gallery-description">
-          At Compass India, excellence in supply chain is defined by streamlined
-          processes & efficient logistics, supported by the latest technology.
+        Discover the essence of Amddas Foods through our gallery, featuring delicious creations and moments of culinary excellence that define our corporate dining experience.
         </p>
         <button className="gallery-button" onClick={gallery}>READ MORE</button>
       </div>

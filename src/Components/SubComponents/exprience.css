@@ -14,8 +14,8 @@
   
   .banner-title-exprience {
     color: #fff;
-    font-size: 48px;
-    font-weight: 700;
+    font-size: 40px;
+    font-weight: 500;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
     font-family: 'Zilla Slab', Georgia, "Times New Roman", serif;
    
@@ -23,8 +23,19 @@
   
   /* exprience Section */
   .exprience-section {
-    padding: 50px 15%;
+    padding: 50px 18%;
     background-color: white;
+  }
+  @media (max-width:768px) {
+    .exprience-section {
+      padding: 50px 12%;
+      background-color: white;
+    }
+    .banner-section-exprience {
+
+      height: 200px;
+    
+    }
   }
   .exprience-section p{
     font-family: Open Sans, Arial, sans-serif;

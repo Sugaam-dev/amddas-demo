@@ -19,14 +19,18 @@
     align-items: center;
     justify-content: center;
   }
-  
+  @media (max-width:768px) {
+    .banner-section{
+      height: 200px;
+    }
+  }
   .banner-title {
     color: white;
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 400;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
     font-family: 'IBM Plex Serif', Georgia, "Times New Roman", serif;
-    
+    text-align: center;
     line-height: 48px;
   }
   

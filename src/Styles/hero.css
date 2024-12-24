@@ -6,18 +6,19 @@
 #hero {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
-    background-image: url('/public/images/amdback.jpg');
+    background-image: linear-gradient(hsla(0, 0%, 0%, 0.312), hsla(0, 0%, 0%, 0.449)),url('/public/images/amdback.jpg');
     background-size: cover;       
   background-repeat: no-repeat; 
-  background-attachment: fixed; 
+  background-attachment: scroll; 
   background-position: center;  
     
   /* font-family: "junction"; */
 
   }
   
+ 
   .hero-container {
     width: 100%;
     height: 100%;
@@ -26,7 +27,7 @@
   .carousel-item {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,18 +47,18 @@
   }
   
   .carousel-content h3 {
-    font-size: 42px;
+    font-size: 38px;
     margin-bottom: 20px;
-    color: #333;
+    color: #fff;
     font-family: Open Sans, Arial, sans-serif;
-    font-weight: 700;
+    font-weight: 500;
   }
 
   .carousel-content p {
     font-size: 16px;
     margin-bottom: 30px;
     font-family: Open Sans, Arial, sans-serif;
-    color: #474646;
+    color: #ffffff;
     font-weight: 500;
 
   }
@@ -108,6 +109,7 @@
       font-size: 1rem;
       padding: 8px 16px;
     }
+
   }
   
 
