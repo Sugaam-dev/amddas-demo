@@ -23,7 +23,7 @@ export default function Carousel() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const phoneNumber = '+917970496383'; 
+  const phoneNumber = '+919632764963'; 
   const whatsappURL = `https://wa.me/${phoneNumber.replace('+', '')}?text=Hello%20Amddas%20Foods!%20I%20would%20like%20to%20enquire%20about%20your%20services.`;
 
   const handleEnquireClick = () => {
