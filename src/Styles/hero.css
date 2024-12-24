@@ -6,7 +6,7 @@
 #hero {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 60vh;
     overflow: hidden;
     background-image: linear-gradient(hsla(0, 0%, 0%, 0.312), hsla(0, 0%, 0%, 0.449)),url('/public/images/amdback.jpg');
     background-size: cover;       
@@ -19,6 +19,11 @@
   }
   
  
+  @media (max-width:768px) {
+    #hero{
+      height: 50vh;
+    }
+  }
   .hero-container {
     width: 100%;
     height: 100%;
