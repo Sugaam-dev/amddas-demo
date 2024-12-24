@@ -1,3 +1,6 @@
+
+
+
 import React, { useEffect, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,7 +15,6 @@ import '../Styles/events.css'; // Ensure this path matches your CSS file
 
 export default function Carousel() {
   const [isMobile, setIsMobile] = useState(false);
-  const [showPhoneNumber, setShowPhoneNumber] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -21,13 +23,14 @@ export default function Carousel() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const phoneNumber = '+917970496383'; // Replace with your desired phone number
+  const phoneNumber = '+917970496383'; 
+  const whatsappURL = `https://wa.me/${phoneNumber.replace('+', '')}?text=Hello%20Amddas%20Foods!%20I%20would%20like%20to%20enquire%20about%20your%20services.`;
 
   const handleEnquireClick = () => {
     if (isMobile) {
-      window.location.href = `tel:${phoneNumber}`;
+      window.location.href = `tel:${phoneNumber}`; // Open the phone dialer
     } else {
-      setShowPhoneNumber(true);
+      window.open(whatsappURL, '_blank'); // Open WhatsApp in a new tab
     }
   };
 
@@ -134,16 +137,12 @@ export default function Carousel() {
                 <div className="events-description">
                   <h3>Always fresh & high-quality food</h3>
                   <p>{slide.description}</p>
-                  {showPhoneNumber && !isMobile ? (
-                    <div className="phone-number">Call Us: {phoneNumber}</div>
-                  ) : (
-                    <button
-                      className="enquire-now"
-                      onClick={handleEnquireClick}
-                    >
-                      Enquire Now
-                    </button>
-                  )}
+                  <button
+                    className="enquire-now"
+                    onClick={handleEnquireClick}
+                  >
+                    Enquire Now
+                  </button>
                 </div>
               </div>
             </div>
@@ -153,3 +152,4 @@ export default function Carousel() {
     </div>
   );
 }
+
