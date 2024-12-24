@@ -13,8 +13,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "IBM Plex Serif", Georgia, "Times New Roman", serif;
-  color: #333;
+
+}
+.banner-section-event h1{
+  font-family: Open Sans, Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 500;
 }
 .banner-title-event{
   color: #ffffff;
@@ -22,6 +26,9 @@
 .content-section {
   padding: 50px 10%;
   background-color: white;
+ 
+ 
+  
 }
 
 .introduction {
@@ -30,11 +37,11 @@
 }
 
 .section-heading {
-  font-size: 1.6rem;
-  font-weight: bold;
+  font-size: 33px;
+  font-weight: 400;
   margin-top: 30px;
   margin-bottom: 10px;
-  font-family: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+  /* font-family: "IBM Plex Serif", Georgia, "Times New Roman", serif; */
 }
 
 .content-section p {
@@ -150,6 +157,7 @@
 }
 .heading {
   margin-top: 20px;
+  color: #333333;
 }
 .enquire-now {
   padding: 12px 24px;

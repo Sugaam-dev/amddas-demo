@@ -1,5 +1,5 @@
-.banner-section-about {
-  background-image: url('/public/images/about.jpeg');
+.banner-section-supply {
+  background-image: url("https://compass-group.co.in/wp-content/uploads/2021/04/SupplyChain.png"); /* Replace with actual image */
   background-size: cover;
   background-position: center;
   height: 400px;
@@ -8,7 +8,7 @@
   justify-content: center;
 }
 
-.banner-title-about {
+.banner-title-supply {
   color: #fff;
   font-size: 48px;
   font-weight: 400;
@@ -16,27 +16,27 @@
   font-family: Open Sans, Arial, sans-serif;
 }
 
-/* about Section */
-.about-section {
+/* supply Section */
+.supply-section {
   padding: 50px 15%;
   background-color: white;
 }
-.about-section p{
+.supply-section p{
   font-family: Open Sans, Arial, sans-serif;
   line-height: 35px;
 }
-.about-block {
+.supply-block {
   margin-bottom: 30px;
 }
 
-.about-heading {
+.supply-heading {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
   font-family: 'IBM Plex Serif', Georgia, "Times New Roman", serif;
 }
 
-.about-text {
+.supply-text {
   font-size: 1rem;
   font-family: Open Sans, Arial, sans-serif;
   margin-bottom: 20px;
@@ -44,7 +44,7 @@
 }
 
 /* Highlight Bold Text */
-.about-text b {
+.supply-text b {
   font-weight: bold;
   color: black;
 }
@@ -139,11 +139,11 @@
 
 /* Responsive Styles */
 @media (max-width: 992px) {
-  .about-container {
+  .supply-container {
     flex-direction: column;
   }
 
-  .about-image {
+  .supply-image {
     min-height: 250px;
   }
 
@@ -154,11 +154,11 @@
 }
 
 @media (max-width: 768px) {
-  .about-content h3 {
+  .supply-content h3 {
     font-size: 1.8rem;
   }
 
-  .about-content p {
+  .supply-content p {
     font-size: 1rem;
   }
 

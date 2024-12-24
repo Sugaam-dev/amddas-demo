@@ -86,6 +86,7 @@ const Hero = () => {
                 margin: "0 auto",
               }}
             >
+<<<<<<< Updated upstream
               <h2
                 style={{
                   fontSize: "2.5rem",
@@ -95,6 +96,13 @@ const Hero = () => {
               >
                 {slides[currentSlide].title}
               </h2>
+=======
+              <h3
+             
+              >
+                {slides[currentSlide].title}
+              </h3>
+>>>>>>> Stashed changes
               <p
                 style={{
                   fontSize: "1.25rem",

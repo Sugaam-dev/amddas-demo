@@ -1,34 +1,38 @@
-.Our-about-container {
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+.Our-meal-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 50px 20px;
-    background-color: #CCC096;
+    background-color: #326E67;
+    padding: 5% 0%;
   }
   
-  .Our-about-title {
+  .Our-meal-title {
     font-size: 48px;
-    font-weight: 500;
+    font-weight: 700;
     margin-bottom: 20px;
     text-align: center;
-    font-family: 'IBM Plex Serif', Georgia, "Times New Roman", serif;
-    color: #fff;
+    /* font-family: 'IBM Plex Serif', Georgia, "Times New Roman", serif; */
+    color: #ffffff;
+    font-family: Open Sans, Arial, sans-serif;
   }
   
-  .Our-about-description {
+  .Our-meal-description {
     text-align: center;
-    color: #333;
+    color: #ffffff;
     max-width: 900px;
     margin-bottom: 30px;
     line-height: 30px;
     font-size: 16px;
   }
   
-  .Our-about-button {
+  .Our-meal-button {
     padding: 12px 24px;
     font-size: 1rem;
-   
+
     color: white;
     background-color: #ff4500; 
     border: none;
@@ -37,7 +41,7 @@
     transition: all 0.3s ease-in-out;
   }
   
-  .Our-about-button:hover {
+  .Our-meal-button:hover {
     background-color: #e03d00;
     transform: translateY(-2px); 
   }

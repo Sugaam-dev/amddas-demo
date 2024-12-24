@@ -12,14 +12,14 @@ const OurStoryMain = () => {
       {/* Content Section */}
       <div className="content-section">
         <div className="content-block">
-          <h2 className="content-heading">Compass History</h2>
+          <h3 className="content-heading">Compass History</h3>
           <p className="content-text">
             We can trace our roots back more than 75 years.
           </p>
         </div>
 
         <div className="content-block">
-          <h2 className="content-heading">Compass Group</h2>
+          <h3 className="content-heading">Compass Group</h3>
           <p className="content-text">
             From these humble beginnings to become the international business
             we are today, the commitment of our people to our customers, the

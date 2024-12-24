@@ -31,25 +31,25 @@ const MissionVisionValues = () => {
           </p>
         </section>
 
-        <section>
+        <section className="sp">
           <h2 className="section-heading">Our Guiding Principles</h2>
-          <p><b>Safety, Health, and Environment First</b></p>
+          <span>Safety, Health, and Environment First</span>
           <p>
             Never compromise on the health and safety of our customers and our people and manage responsibly the impact that our business has on the environment.
           </p>
-          <p><b>Delivering for Clients and Consumers</b></p>
+          <span>Delivering for Clients and Consumers</span>
           <p>
             Earn the continued loyalty of our customers by consistently demonstrating why we are the first choice for quality, service, value, and innovation.
           </p>
-          <p><b>Developing Our People and Valuing Diversity</b></p>
+          <span>Developing Our People and Valuing Diversity</span>
           <p>
             Recognize the diversity and contribution of our people. We create a work environment that is challenging and provides the opportunities and support for everyone to develop, learn, and succeed.
           </p>
-          <p><b>Profitable Growth</b></p>
+        <span>Profitable Growth</span>
           <p>
             Deliver shareholder value through disciplined, sustainable growth, underpinned by strong governance that contributes to and leverages the benefits of our global scale.
           </p>
-          <p><b>Constant Focus on Performance and Efficiency</b></p>
+          <span>Constant Focus on Performance and Efficiency</span>
           <p>
             Deliver the highest quality and performance, whilst relentlessly driving to be the lowest cost, most efficient provider.
           </p>

@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 .gallery-section {
   padding: 20px 10px; /* Reduced padding for compact design */
   background-color: #ffffff;
@@ -41,6 +43,7 @@
 .section-title {
   text-align: center;
   margin-bottom: 40px;
+  
 }
 
 .section-title h2 {
@@ -73,6 +76,7 @@
   color: white;
   font-size: 3rem;
   font-weight: bold;
+  font-family: Open Sans, Arial, sans-serif;
   /* text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); */
 }
 .banner-section-gallery h2{
@@ -85,5 +89,6 @@
   align-items: center;
   padding-left: 10%;
   padding-right: 10%;
-  font-size: 18px;
+  font-size: 16px;
+  font-family: Open Sans, Arial, sans-serif;
 }

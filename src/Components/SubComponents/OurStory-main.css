@@ -1,0 +1,68 @@
+
+  
+.body{
+    font-family: Open Sans, Arial, sans-serif;
+  }
+    /* Main Container */
+  .our-story-main-container {
+    
+    color: #333;
+  }
+  
+  /* Banner Section */
+  .banner-section {
+    background-image: url("https://compass-group.co.in/wp-content/uploads/2021/04/Compass_Our-Story_Image.jpg"); /* Replace with actual image */
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .banner-title {
+    color: white;
+    font-size: 48px;
+    font-weight: 400;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    font-family: 'IBM Plex Serif', Georgia, "Times New Roman", serif;
+    
+    line-height: 48px;
+  }
+  
+  /* Content Section */
+  .content-section {
+    padding: 50px 15%;
+    background-color: white;
+  }
+  .content-section p{
+    font-family: Open Sans, Arial, sans-serif;
+    line-height: 36px;
+    font-size: 16px;
+  }
+  .content-block {
+    margin-bottom: 30px;
+  }
+  
+  .content-block h2 {
+    font-size: 33px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family: 'IBM Plex Serif', Georgia, 'Times New Roman', serif;
+    color: #333333;
+  }
+  .content-block h3{
+    font-weight: 400;
+  }
+  .content-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  
+  /* Highlight Bold Text */
+  .content-text b {
+    font-weight: bold;
+    color: black;
+  }
+  

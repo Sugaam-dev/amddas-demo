@@ -1,128 +1,74 @@
-// src/Header.js
-import React, { useState } from 'react';
-import '../Styles/nav.css';
-import { FaBars, FaTimes } from 'react-icons/fa'; // Importing React Icons
+import React, { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import "../Styles/nav.css";
 
-const Nav = () => {
-  const [navOpen, setNavOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const handleNavToggle = () => {
-    setNavOpen(!navOpen);
-  };
-
-  const handleDropdownToggle = () => {
-    setDropdownOpen(!dropdownOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
   return (
-    <header>
-      <nav>
-        <div className="navbar">
-          {/* Hamburger Menu Icon */}
-          <div className="menu-icon" onClick={handleNavToggle} aria-label={navOpen ? 'Close Menu' : 'Open Menu'}>
-            {navOpen ? <FaTimes /> : <FaBars />}
-          </div>
-
-          {/* Logo */}
-          <div className="logo">
-            <a href="index.html">
-              <img src="/images/amd.png" alt="CATCHUP Logo" />
-            </a>
-          </div>
-
-          {/* Navigation Links */}
-          <div className={`nav-links ${navOpen ? 'active' : ''}`}>
-            {/* Sidebar Logo for Mobile */}
-            <div className="sidebar-logo">
-              <span className="logo-name">CATCHUP</span>
-              <div className="close-icon" onClick={handleNavToggle} aria-label="Close Menu">
-                <FaTimes />
-              </div>
-            </div>
-
-            {/* Menus */}
-            <ul className="menus">
-              <li>
-                <a className="waves" href="index.html">
-                  {'Home'.split('').map((char, index) => (
-                    <span key={index} style={{ '--spell': index + 1 }}>
-                      {char}
-                    </span>
-                  ))}
-                </a>
-              </li>
-              <li>
-                <a className="waves" href="about.html">
-                  {'About'.split('').map((char, index) => (
-                    <span key={index} style={{ '--spell': index + 1 }}>
-                      {char}
-                    </span>
-                  ))}
-                </a>
-              </li>
-              <li>
-                <a className="waves" href="gallery.html">
-                  {'GALLERY'.split('').map((char, index) => (
-                    <span key={index} style={{ '--spell': index + 1 }}>
-                      {char}
-                    </span>
-                  ))}
-                </a>
-              </li>
-              <li className={`dropdown ${dropdownOpen ? 'active' : ''}`}>
-                <a
-                  className="waves"
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleDropdownToggle();
-                  }}
-                >
-                  {'MENU'.split('').map((char, index) => (
-                    <span key={index} style={{ '--spell': index + 1 }}>
-                      {char}
-                    </span>
-                  ))}
-                </a>
-                <ul className="dropdown-content">
-                  <li>
-                    <a href="menu2.html">Al a Carte Menu</a>
-                  </li>
-                  <li>
-                    <a href="party.html">Party Packages</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a className="waves" href="events.html">
-                  {'EVENTS'.split('').map((char, index) => (
-                    <span key={index} style={{ '--spell': index + 1 }}>
-                      {char}
-                    </span>
-                  ))}
-                </a>
-              </li>
-              <li>
-                <a className="waves" href="contact.html">
-                  {'Contact-us'.split('').map((char, index) => (
-                    <span key={index} style={{ '--spell': index + 1 }}>
-                      {char}
-                    </span>
-                  ))}
-                </a>
-              </li>
-              <li>
-                <a className="book-now" href="contact.html">
-                  Book Now
-                </a>
-              </li>
-            </ul>
-          </div>
+    <nav className="navbar">
+      <div className="navbar-container" style={{display:"flex",justifyContent:"space-between"}}>
+        {/* Logo */}
+        <div className="logo">
+          <img
+            src="/images/amd.png"
+            alt="Compass Group"
+          />
         </div>
-      </nav>
-    </header>
+
+        {/* Menu Toggle Icon */}
+        <div className="menu-icon" onClick={toggleMenu}>
+          {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+        </div>
+
+        {/* Nav Links */}
+        <ul className={`nav-links ${isMenuOpen ? "nav-active" : ""}`}>
+          <li>
+            <a href="#story">Compass Story</a>
+          </li>
+          <li>
+            <a href="#people">People</a>
+          </li>
+          <li className="dropdown">
+            <a
+              href="#whatwedo"
+              onClick={(e) => {
+                e.preventDefault();
+                toggleDropdown();
+              }}
+            >
+              What We Do <span className="arrow">&#9662;</span>
+            </a>
+            {isDropdownOpen && (
+              <ul className="dropdown-menu">
+                <li>
+                  <a href="#service1">Service 1</a>
+                </li>
+                <li>
+                  <a href="#service2">Service 2</a>
+                </li>
+              </ul>
+            )}
+          </li>
+          <li>
+            <a href="#news">Compass in News</a>
+          </li>
+          <li>
+            <a href="#blog">Blog</a>
+          </li>
+          <li>
+            <a href="#contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
 };
 
-export default Nav;
+export default Navbar;
+
+

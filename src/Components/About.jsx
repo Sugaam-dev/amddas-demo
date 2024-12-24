@@ -1,9 +1,7 @@
 import React from 'react';
-import { FaCheckDouble } from 'react-icons/fa';
-import { PiDotOutlineFill } from "react-icons/pi";
+
 import '../Styles/about.css';
-import OurStory from './SubComponents/OurStory';
-import OurStoryMain from './OurStory-main';
+
 
 const About = () => {
   return (

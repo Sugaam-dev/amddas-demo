@@ -1,0 +1,48 @@
+.sustainability-container {
+    font-family: Open Sans, Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+
+  }
+  
+  .sustainability-banner {
+    background-image: url('https://compass-group.co.in/wp-content/uploads/2021/04/Compass_Sustainability_Image.jpg'); 
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 10% 0%;
+    color: white;
+  }
+  
+  .sustainability-banner h1 {
+    font-size: 48px;
+    font-weight: 400;
+
+  }
+  
+  .sustainability-content {
+    padding: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .sustainability-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .sustainability-content p {
+    margin-bottom: 20px;
+  }
+  
+  .sustainability-content ol {
+    margin: 0 0 20px 20px;
+    padding: 0;
+    list-style-type: decimal;
+  }
+  
+  .sustainability-content li {
+    margin-bottom: 10px;
+  }
+  

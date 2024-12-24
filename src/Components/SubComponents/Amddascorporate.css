@@ -1,16 +1,16 @@
 /* Main Container */
-.amddas-gallery-container {
+.amddas-corporate-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #EBE5D7; /* Light beige background */
+    background-color: #CCC096; /* Light beige background */
     /* padding: 50px; */
     flex-wrap: wrap; /* Ensures responsiveness for smaller screens */
     gap: 20px; /* Space between image and text */
   }
  
   /* Left Section: Image */
-  .amddas-gallery-image img {
+  .amddas-corporate-image img {
     width: 100%;
     max-width: 600px; /* Limit image width */
     height: auto;
@@ -21,7 +21,7 @@
   }
   
   /* Right Section: Content */
-  .amddas-gallery-content {
+  .amddas-corporate-content {
     flex: 1;
     text-align: center;
     max-width: 1000px; /* Keep the text content responsive */
@@ -29,26 +29,28 @@
     padding-bottom: 50px;
   }
   
-  .gallery-title {
+  .corporate-title {
     font-size: 48px;
-    font-weight: 500;
-    margin-bottom: 15px;
-    font-family: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    margin-bottom: 30px;
+   text-align: center;
     color: #333;
+
   }
   
-  .gallery-description {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #555;
+  .corporate-description {
+   
     margin-bottom: 30px; /* Space below the description */
+    font-family: Open Sans, Arial, sans-serif;
+    font-size: 14px;
+    color: #666;
   }
   
   /* Button */
-  .gallery-button {
+  .corporate-button {
     padding: 12px 24px;
-    font-size: 1rem;
-  
+    font-size: 20px;
+   
     color: white;
     background-color: #ff4500; /* Bright orange color */
     border: none;
@@ -57,33 +59,36 @@
     transition: all 0.3s ease-in-out;
   }
   
-  .gallery-button:hover {
+  .corporate-button:hover {
     background-color: #e03d00;
     transform: translateY(-2px); 
   }
   
   /* Responsive Design */
   @media (max-width: 768px) {
-    .amddas-gallery-container {
+    .amddas-corporate-container {
       flex-direction: column; /* Stack image and text vertically */
       text-align: center; /* Center-align text on smaller screens */
     }
   
-    .amddas-gallery-image img {
+    .amddas-corporate-image img {
       max-width: 100%; /* Make the image take full width */
       
     }
+    .amddas-corporate-image{
+        width: 100%;
+    }
   
-    .amddas-gallery-content {
+    .amddas-corporate-content {
       max-width: 100%; /* Make text content take full width */
      
     }
   
-    .gallery-title {
+    .corporate-title {
       font-size: 2rem; /* Reduce title size for smaller screens */
     }
   
-    .gallery-description {
+    .corporate-description {
       font-size: 1rem; /* Reduce description size */
     }
   }

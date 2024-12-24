@@ -1,18 +1,18 @@
 /* Main Container */
-.amddas-gallery-container {
+.amddas-supply-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #EBE5D7; /* Light beige background */
+    background-color: #fae1a6cb; /* Light beige background */
     /* padding: 50px; */
     flex-wrap: wrap; /* Ensures responsiveness for smaller screens */
     gap: 20px; /* Space between image and text */
   }
  
   /* Left Section: Image */
-  .amddas-gallery-image img {
+  .amddas-supply-image img {
     width: 100%;
-    max-width: 600px; /* Limit image width */
+    max-width: 500px; /* Limit image width */
     height: auto;
     border-radius: 0; /* Slightly rounded corners */
     object-fit: cover;
@@ -21,7 +21,7 @@
   }
   
   /* Right Section: Content */
-  .amddas-gallery-content {
+  .amddas-supply-content {
     flex: 1;
     text-align: center;
     max-width: 1000px; /* Keep the text content responsive */
@@ -29,7 +29,7 @@
     padding-bottom: 50px;
   }
   
-  .gallery-title {
+  .supply-title {
     font-size: 48px;
     font-weight: 500;
     margin-bottom: 15px;
@@ -37,7 +37,7 @@
     color: #333;
   }
   
-  .gallery-description {
+  .supply-description {
     font-size: 16px;
     line-height: 1.8;
     color: #555;
@@ -45,7 +45,7 @@
   }
   
   /* Button */
-  .gallery-button {
+  .supply-button {
     padding: 12px 24px;
     font-size: 1rem;
   
@@ -57,33 +57,33 @@
     transition: all 0.3s ease-in-out;
   }
   
-  .gallery-button:hover {
+  .supply-button:hover {
     background-color: #e03d00;
     transform: translateY(-2px); 
   }
   
   /* Responsive Design */
   @media (max-width: 768px) {
-    .amddas-gallery-container {
+    .amddas-supply-container {
       flex-direction: column; /* Stack image and text vertically */
       text-align: center; /* Center-align text on smaller screens */
     }
   
-    .amddas-gallery-image img {
+    .amddas-supply-image img {
       max-width: 100%; /* Make the image take full width */
       
     }
   
-    .amddas-gallery-content {
+    .amddas-supply-content {
       max-width: 100%; /* Make text content take full width */
      
     }
   
-    .gallery-title {
+    .supply-title {
       font-size: 2rem; /* Reduce title size for smaller screens */
     }
   
-    .gallery-description {
+    .supply-description {
       font-size: 1rem; /* Reduce description size */
     }
   }

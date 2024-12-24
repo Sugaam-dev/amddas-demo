@@ -26,8 +26,8 @@ const AmddasEvents = () => {
         {/* Left Section: Image */}
         <div className="amddas-events-image">
         <img
-          src="https://content.jdmagicbox.com/comp/nadiad/n3/9999px268.x268.230607001329.s8n3/catalogue/the-leaf-garden-cafe-and-events-nadiad-coffee-shops-xcwp75fi1l.jpg" /* Replace with your actual image URL */
-          alt="Supply Chain"
+          src="./images/events.jpg" /* Replace with your actual image URL */
+          alt="eventys"
         />
       </div>
     </div>

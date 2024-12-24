@@ -22,13 +22,13 @@
     max-width: 900px;
     margin-bottom: 30px;
     line-height: 30px;
-    font-size: 1.2rem;
+    font-size: 16px;
   }
   
   .Our-mission-button {
     padding: 12px 24px;
     font-size: 1rem;
-    font-weight: bold;
+
     color: white;
     background-color: #ff4500; 
     border: none;

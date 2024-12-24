@@ -24,12 +24,24 @@ import Gallery from './Components/Gallery';
 import Events from "./Components/Events";
 import OurStoryMain from './Components/OurStory-main';
 import MissionVisionValues from './Components/MissionVisionValues';
+import Navbar from './Components/Nav';
+import WhatWeDo from './Components/WhatWeDo';
+import CorporateMain from './Components/Corporate-main';
+import OffsiteMain from './Components/SubComponents/OffsiteMain';
+import MyMealMain from './Components/SubComponents/MyMealMain';
+import TechnologyPage from './Components/SubComponents/TechnologyPage';
+import CorporateExperience from './Components/SubComponents/CorporateExperience';
+import SupplyChain from './Components/SubComponents/SupplyChain';
+import Sustain from './Components/SubComponents/Sustain';
+import Contact from './Components/Contacts/Contact';
+
 
 
 function App() {
   return (
     <BrowserRouter>
       <Navbarr />
+{/* <Navbar/> */}
       <Routes>
         <Route path='/' element={<Home/>}/>
       
@@ -44,13 +56,18 @@ function App() {
 <Route path='/about' element={<About/>}/>
 <Route path='/amddas-gallery' element={<Gallery/>}/>
 <Route path='/amddas-events' element={<Events/>}/>
-
+<Route path='what-we-do' element={<WhatWeDo/>}/>
 
 <Route path='/ourstory' element={<OurStoryMain/>}/>
 <Route path='/our-mission' element={<MissionVisionValues/>}/>
-
-
-
+<Route path='/corporate' element={<CorporateMain/>}/>
+<Route path='/corporate-offsite' element={<OffsiteMain/>}/>
+<Route path='/meal' element={<MyMealMain/>}/>
+<Route path='/technology' element={<TechnologyPage/>}/>
+<Route path='/corporate-experience' element={<CorporateExperience/>}/>
+<Route path='/supply-chain' element={<SupplyChain/>}/>
+<Route path='/sustainability' element={<Sustain/>}/>
+<Route path='/contact' element={<Contact/>}/>
 
 
 

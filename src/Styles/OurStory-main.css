@@ -1,9 +1,11 @@
 
   
-
+.body{
+  font-family: Open Sans, Arial, sans-serif;
+}
   /* Main Container */
 .our-story-main-container {
-  font-family: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+  
   color: #333;
 }
 
@@ -20,9 +22,10 @@
 
 .banner-title {
   color: white;
-  font-size: 3rem;
-  font-weight: bold;
+  font-size: 48px;
+  font-weight: 400;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+
 }
 
 /* Content Section */
@@ -37,12 +40,16 @@
   margin-bottom: 30px;
 }
 
-.content-heading {
-  font-size: 1.5rem;
-  font-weight: bold;
+.content-block h2 {
+  font-size: 33px;
+  font-weight: 500;
   margin-bottom: 10px;
+  font-family: 'IBM Plex Serif', Georgia, 'Times New Roman', serif;
+  color: #333333;
 }
-
+.content-block h3{
+  font-weight: 400;
+}
 .content-text {
   font-size: 1rem;
   line-height: 1.8;

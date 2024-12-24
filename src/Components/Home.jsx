@@ -12,6 +12,9 @@ import AmddasGallery from "./SubComponents/AmddasGallery";
 import AmddasEvents from "./SubComponents/AmddasEvents";
 import AboutAmddas from "./SubComponents/AbouAmddas";
 import OurStory from "./SubComponents/OurStory";
+import Amddassupply from "./SubComponents/Supply";
+import Sustainability from "./SubComponents/Sustainability";
+
 
 // HomePage Component
 const Home = () => {
@@ -24,6 +27,9 @@ const Home = () => {
   <OurStory/>
  
   <Mission/>
+  <Sustainability/>
+<Amddassupply/>
+
   <AmddasEvents/>
   <AmddasGallery/>
     
