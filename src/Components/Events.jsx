@@ -24,7 +24,9 @@ export default function Carousel() {
   const phoneNumber = '+917970496383'; // Replace with your desired phone number
 
   const handleEnquireClick = () => {
-    if (!isMobile) {
+    if (isMobile) {
+      window.location.href = `tel:${phoneNumber}`;
+    } else {
       setShowPhoneNumber(true);
     }
   };
@@ -132,23 +134,15 @@ export default function Carousel() {
                 <div className="events-description">
                   <h3>Always fresh & high-quality food</h3>
                   <p>{slide.description}</p>
-                  {isMobile ? (
-                    <button href={`tel:${phoneNumber}`} className="enquire-now">
+                  {showPhoneNumber && !isMobile ? (
+                    <div className="phone-number">Call Us: {phoneNumber}</div>
+                  ) : (
+                    <button
+                      className="enquire-now"
+                      onClick={handleEnquireClick}
+                    >
                       Enquire Now
                     </button>
-                  ) : (
-                    <>
-                      {showPhoneNumber ? (
-                        <div className="phone-number">Call Us: {phoneNumber}</div>
-                      ) : (
-                        <button
-                          className="enquire-now"
-                          onClick={handleEnquireClick}
-                        >
-                          Enquire Now
-                        </button>
-                      )}
-                    </>
                   )}
                 </div>
               </div>
