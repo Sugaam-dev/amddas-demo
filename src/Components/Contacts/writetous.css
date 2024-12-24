@@ -1,0 +1,43 @@
+.Our-writetous-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+  /* background-image: url('https://compass-group.co.in/wp-content/uploads/2021/02/WriteBottomBannerBanner.jpg'); */
+  background-position: center;
+  background-size: cover;
+  padding: 8% 0%;
+  background-color: #ffffff;
+  }
+  
+  .Our-writetous-title {
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Open Sans', Arial, sans-serif;
+    color:#333;
+  }
+  
+
+
+
+.Our-writetous-description {
+    text-align: center;
+    color:#666;
+    max-width: 900px;
+    margin-bottom: 10px;
+    line-height: 30px;
+    font-size: 16px;
+    font-family: 'Open Sans', Arial, sans-serif;
+  }
+  .Our-writeto-description{
+    text-align: center;
+    color:rgb(235, 109, 7);
+    max-width: 900px;
+    margin-bottom: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    font-family: 'Open Sans', Arial, sans-serif;
+  }

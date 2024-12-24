@@ -93,7 +93,7 @@ const Hero = () => {
               </h3>
               <p
                 style={{
-                  fontSize: "1.25rem",
+                  fontSize: "18px",
                   lineHeight: "1.6",
                 }}
               >

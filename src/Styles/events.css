@@ -6,7 +6,7 @@
 }
 
 .banner-section-event {
-  background-image: url("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/bb/e0/eb/the-restaurant.jpg?w=900&h=500&s=1"); /* Replace with actual image */
+  background-image:linear-gradient(hsla(0, 0%, 0%, 0.303), hsla(0, 0%, 0%, 0.407)), url("/public/images/events.webp"); /* Replace with actual image */
   background-size: cover;
   background-position: center;
   height: 400px;

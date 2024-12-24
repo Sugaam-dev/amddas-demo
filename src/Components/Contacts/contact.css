@@ -1,5 +1,5 @@
 .banner-section-contact {
-    background-image: url('https://www.eventbookings.com/wp-content/uploads/2023/03/Buffet-1024x512.jpg');
+    background-image: url('/public/images/contact.jpg');
     background-size: cover;
     background-position: center;
     height: 400px;

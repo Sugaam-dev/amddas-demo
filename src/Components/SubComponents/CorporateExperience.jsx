@@ -32,7 +32,7 @@ const CorporateExperience = () => {
             thoughtfully designed, responsible workplace Food concepts and
             equally importantly, with the right language and values in its
             presentation and service. <br />
-            Compass India endeavours to continue to innovate and design relevant
+           Amddas Foods endeavours to continue to innovate and design relevant
             concepts to nourish workplaces and aid the transition to better
             workplace food habits and choices. <br />
             Our customers trust us with their food services and increasingly are
@@ -41,7 +41,7 @@ const CorporateExperience = () => {
             approach of its catering service to a range of support services.
             Whether it is gardening and security services on a remote location
             or reception and concierge services at a corporate head office,
-            Compass Group India delivers world-class support services.
+           Amddas Foods  delivers world-class support services.
           </p>
         </div>
       </div>

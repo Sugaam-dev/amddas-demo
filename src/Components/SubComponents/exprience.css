@@ -2,13 +2,14 @@
 
 
 .banner-section-exprience {
-    background-image: url("https://compass-group.co.in/wp-content/uploads/2021/07/corporate-experience.jpg"); /* Replace with actual image */
+    background-image: url("https://content.jdmagicbox.com/quickquotes/listicle/listicle_1731396352681_u5ts0_847x400.jpg?impolicy=queryparam&im=Resize=(847,400),aspect=fit&q=75"); /* Replace with actual image */
     background-size: cover;
     background-position: center;
     height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
   }
   
   .banner-title-exprience {

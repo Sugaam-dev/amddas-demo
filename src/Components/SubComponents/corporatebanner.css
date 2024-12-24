@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: center;
     padding: 50px 20px;
-  background-image: url('https://as2bfoodz.com/wp-content/uploads/2024/10/image-1.png');
+  background-image:linear-gradient(hsla(0, 100%, 0%, 0.65), hsla(0, 100%, 0%, 0.65)), url('https://as2bfoodz.com/wp-content/uploads/2024/10/image-1.png');
   background-position: top;
   background-size: cover;
   padding: 8% 0%;
