@@ -1,74 +1,28 @@
-import React, { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import "../Styles/nav.css";
+import React from 'react';
+import '../Styles/nav.css'; // Ensure you create this CSS file and include the styles above
+import { FaBars, FaTimes } from 'react-icons/fa';
+const Nav = () => {
+  const openMenu = () => {
+    document.getElementById('sidemenu').style.right = '0';
+  };
 
-const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
+  const closeMenu = () => {
+    document.getElementById('sidemenu').style.right = '-140px';
+  };
 
   return (
-    <nav className="navbar">
-      <div className="navbar-container" style={{display:"flex",justifyContent:"space-between"}}>
-        {/* Logo */}
-        <div className="logo">
-          <img
-            src="/images/amd.png"
-            alt="Compass Group"
-          />
-        </div>
-
-        {/* Menu Toggle Icon */}
-        <div className="menu-icon" onClick={toggleMenu}>
-          {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-        </div>
-
-        {/* Nav Links */}
-        <ul className={`nav-links ${isMenuOpen ? "nav-active" : ""}`}>
-          <li>
-            <a href="#story">Compass Story</a>
-          </li>
-          <li>
-            <a href="#people">People</a>
-          </li>
-          <li className="dropdown">
-            <a
-              href="#whatwedo"
-              onClick={(e) => {
-                e.preventDefault();
-                toggleDropdown();
-              }}
-            >
-              What We Do <span className="arrow">&#9662;</span>
-            </a>
-            {isDropdownOpen && (
-              <ul className="dropdown-menu">
-                <li>
-                  <a href="#service1">Service 1</a>
-                </li>
-                <li>
-                  <a href="#service2">Service 2</a>
-                </li>
-              </ul>
-            )}
-          </li>
-          <li>
-            <a href="#news">Compass in News</a>
-          </li>
-          <li>
-            <a href="#blog">Blog</a>
-          </li>
-          <li>
-            <a href="#contact">Contact Us</a>
-          </li>
-        </ul>
-      </div>
+    <nav>
+      <img src="images/pamir-logo.png" className="logo" alt="Logo" />
+      <ul id="sidemenu">
+        <li><a href="#header">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <FaTimes className="menu-icon close-icon" onClick={closeMenu} />
+      </ul>
+      <FaBars className="menu-icon open-icon" onClick={openMenu} />
     </nav>
   );
 };
 
-export default Navbar;
-
-
+export default Nav;

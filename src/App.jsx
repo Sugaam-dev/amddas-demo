@@ -34,6 +34,7 @@ import CorporateExperience from './Components/SubComponents/CorporateExperience'
 import SupplyChain from './Components/SubComponents/SupplyChain';
 import Sustain from './Components/SubComponents/Sustain';
 import Contact from './Components/Contacts/Contact';
+import Nav from './Components/Nav';
 
 
 
@@ -41,7 +42,8 @@ function App() {
   return (
     <BrowserRouter>
       <Navbarr />
-{/* <Navbar/> */}
+      {/* <Nav/> */}
+
       <Routes>
         <Route path='/' element={<Home/>}/>
       

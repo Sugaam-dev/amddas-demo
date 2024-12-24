@@ -54,7 +54,7 @@
 @media (max-width:1030px) {
   .nav-link-custom {
    
-    margin-right: 15px;
+    margin-right: 0px;
    
     font-size: 20px;
    
@@ -100,8 +100,8 @@ nav {
 
 }
   .dropdown-custom .dropdown-toggle {
-  display: contents !important;
-    justify-content: center !important;
+  display: flex !important;
+    justify-content: start !important;
     align-items: center !important;
     padding: 0 !important;
   }

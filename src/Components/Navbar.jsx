@@ -219,7 +219,7 @@ function Navbarr() {
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id="offcanvasNavbarLabel">
-                Amddas
+                <img style={{width:"50px"}} src="./images/amd.png" alt="" />
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
@@ -233,7 +233,7 @@ function Navbarr() {
                     color: isActive ? 'var(--nav-link-active-color)' : 'var(--nav-link-color)',
                   })}
                 >
-                  <FaHome aria-label="Home" style={{ marginRight: '5px' }} />
+                  {/* <FaHome aria-label="Home" style={{ marginRight: '5px' }} /> */}
                   Home
                 </Nav.Link>
                 <Nav.Link 
@@ -245,40 +245,70 @@ function Navbarr() {
                     color: isActive ? 'var(--nav-link-active-color)' : 'var(--nav-link-color)',
                   })}
                 >
-                  <FaInfoCircle aria-label="About" style={{ marginRight: '5px' }}/>
+                  {/* <FaInfoCircle aria-label="About" style={{ marginRight: '5px' }}/> */}
                   About
                 </Nav.Link>
 
                 <NavDropdown
-                  title="Services"
+              title={
+                <NavLink 
+                  to="/what-we-do" 
+                  className="nav-link-custom"
+                  style={{ textDecoration: "none" }}
+                  onClick={handleClose}
+                >
+                  What We Do
+                </NavLink>
+              }
                   id="offcanvas-services-dropdown"
                   className="dropdown-custom nav-dropdown-custom"
                   align="end"
                   show={expanded}
-                  onClick={() => setExpanded(true)}
+                
+                  onMouseEnter={() => setShowDropdown(true)} // Show on hover
+                  onMouseLeave={() => setShowDropdown(false)} // Hide on mouse leave
+                  onToggle={(isOpen) => setShowDropdown(isOpen)} // Sync hover and toggle
+                
                 >
-                  <NavDropdown.Item as={NavLink} to="/services/consulting" onClick={handleClose}>
-                    Consulting
-                  </NavDropdown.Item>
-                  <NavDropdown.Item as={NavLink} to="/services/development" onClick={handleClose}>
-                    Development
-                  </NavDropdown.Item>
-                  <NavDropdown.Item as={NavLink} to="/services/design" onClick={handleClose}>
-                    Design
-                  </NavDropdown.Item>
+               <NavDropdown.Item 
+    as={NavLink} 
+    to="/corporate" 
+    onClick={handleClose}
+    style={({ isActive }) => ({
+      color: isActive ? 'var(--nav-link-active-color)' : 'var(--nav-link-color)',
+    })}
+  >
+    Corporate
+  </NavDropdown.Item>
+                
                 </NavDropdown>
 
                 <Nav.Link 
                   as={NavLink} 
-                  to="/events"  
+                  to="/amddas-events"  
                   className="nav-link-custom" 
                   onClick={handleClose}
                   style={({ isActive }) => ({
                     color: isActive ? 'var(--nav-link-active-color)' : 'var(--nav-link-color)',
                   })}
                 >
-                  <FaCalendarAlt aria-label="Events" style={{ marginRight: '5px' }} />
+                  {/* <FaCalendarAlt aria-label="Events" style={{ marginRight: '5px' }} /> */}
                   Events
+                </Nav.Link>
+
+
+                
+                <Nav.Link 
+                  as={NavLink} 
+                  to="/contact"  
+                  className="nav-link-custom" 
+                  onClick={handleClose}
+                  style={({ isActive }) => ({
+                    color: isActive ? 'var(--nav-link-active-color)' : 'var(--nav-link-color)',
+                  })}
+                >
+                  {/* <FaCalendarAlt aria-label="Events" style={{ marginRight: '5px' }} /> */}
+                  Contact Us
                 </Nav.Link>
 {/* 
                 {jwtToken && (
