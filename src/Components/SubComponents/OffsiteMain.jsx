@@ -1,19 +1,19 @@
 import React from "react";
-import "./OurStory-main.css";
+import "./offsitemain.css";
 
 const OffsiteMain = () => {
   return (
     <div className="our-story-main-container">
-      {/* Banner Section */}
-      <div className="banner-section">
+      {/* Banner offsitemain */}
+      <div className="banner-offsitemain">
         <h1 className="banner-title">Corporate - Offsite</h1>
       </div>
 
-      {/* Content Section */}
-      <div className="content-section">
-        <div className="content-block">
-          <h2 className="content-heading">Amddas Foods</h2>
-          <p className="content-text">
+      {/* offsitemain offsitemain */}
+      <div className="offsitemain-offsitemain">
+        <div className="offsitemain-block">
+          <h2 className="offsitemain-heading">Amddas Foods</h2>
+          <p className="offsitemain-text">
             All our Central Kitchens are designed as a state of the art kitchens
             with a continuous and linear progression of food from receiving, pre
             preparation, production, packing and dispatch of the ﬁnished
@@ -23,7 +23,7 @@ const OffsiteMain = () => {
             safety at various stages, remote temperature monitoring of our cold
             storage and modern and effective cooking platforms.
           </p>
-          <p className="content-text">
+          <p className="offsitemain-text">
             We also have a specialized Chefs focusing specially on offsite
             operations with relevant experience and cuisine knowledge to safely
             and effectively manage the complexity of bulk production, planning

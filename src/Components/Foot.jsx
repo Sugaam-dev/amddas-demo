@@ -42,7 +42,7 @@ export default function Footer() {
                             <Link className="social-icon"><FaXTwitter style={{ color: '#000' }} /></Link>
                         </div>
                         <div className="contact-infoo">
-                            <Link>{<MdEmail style={{ fontSize: "30px", marginRight: "10px" }} />} info@amddas.net</Link>
+                            <Link to={'mailto:info@amddas.net'}>{<MdEmail style={{ fontSize: "30px", marginRight: "10px" }} />} info@amddas.net</Link>
                         </div>
                         <div className="location">
                             <Link to={'https://maps.app.goo.gl/fYZzn7KQt2BfN2us5'}>

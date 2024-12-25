@@ -9,9 +9,9 @@
   color: #333;
 }
 
-/* Banner Section */
-.banner-section {
-  background-image: url("https://compass-group.co.in/wp-content/uploads/2021/04/Compass_Our-Story_Image.jpg"); /* Replace with actual image */
+/* Banner story */
+.banner-story {
+  background-image: linear-gradient(hsla(0, 0%, 0%, 0.303), hsla(0, 0%, 0%, 0.407)), url("/public/images/story.jpg"); /* Replace with actual image */
   background-size: cover;
   background-position: center;
   height: 400px;
@@ -20,29 +20,26 @@
   justify-content: center;
 }
 
-.banner-title {
-  color: white;
-  font-size: 40px;
-  font-weight: 400;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 
-}
 
-/* Content Section */
-.content-section {
+/* Content story */
+.content-story {
   padding: 50px 18%;
   background-color: white;
 }
 @media (max-width:768px) {
-  .banner-section{
+  .banner-story{
     height: 200px;
   }
-  .content-section {
+  .content-story {
     padding: 50px 12%;
   
   }
+  .banner-title{
+    font-size: 40px;
+  }
 }
-.content-section p{
+.content-story p{
   font-family: Open Sans, Arial, sans-serif;
 }
 .content-block {

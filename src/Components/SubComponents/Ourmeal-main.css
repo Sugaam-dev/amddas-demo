@@ -11,7 +11,7 @@
   
   /* meal Section */
   .meal-section {
-    background-image: url("https://compass-group.co.in/wp-content/uploads/2021/04/Compass_Meal_Image.jpg"); /* Replace with actual image */
+    background-image: url("/public/images/meal.jpg"); 
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -22,7 +22,7 @@
   
   .meal-title {
     color: white;
-    font-size: 40px;
+    font-size: 48px;
     font-weight: 400;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
     font-family: 'IBM Plex Serif', Georgia, "Times New Roman", serif;
@@ -43,7 +43,11 @@
     .meal-section{
       height: 200px;
     }
+    .meal-title{
+      font-size: 40px;
+    }
   }
+
   .content-section p{
     font-family: Open Sans, Arial, sans-serif;
     line-height: 36px;

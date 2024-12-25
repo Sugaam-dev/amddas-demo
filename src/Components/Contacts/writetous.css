@@ -20,6 +20,11 @@
     color:#333;
   }
   
+  @media (max-width:768px) {
+    .Our-writetous-title{
+      font-size: 38px;
+    }
+  }
 
 
 
@@ -31,6 +36,7 @@
     line-height: 30px;
     font-size: 16px;
     font-family: 'Open Sans', Arial, sans-serif;
+    padding: 0px 15px;
   }
   .Our-writeto-description{
     text-align: center;
@@ -40,4 +46,7 @@
     line-height: 30px;
     font-size: 16px;
     font-family: 'Open Sans', Arial, sans-serif;
+  }
+  .Our-writeto-description a{
+    text-decoration: none;
   }

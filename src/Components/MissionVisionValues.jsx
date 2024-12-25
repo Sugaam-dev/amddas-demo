@@ -6,7 +6,7 @@ const MissionVisionValues = () => {
   return (
     <div className="mission-vision-container">
       {/* Banner Section */}
-      <div className="banner-section">
+      <div className="banner-mission">
         <h1 className="banner-title">Mission Vision & Values</h1>
       </div>
 
@@ -18,21 +18,21 @@ const MissionVisionValues = () => {
         </p>
 
         <section>
-          <h2 className="section-heading">Our Mission</h2>
+          <h2 className="missionheading">Our Mission</h2>
           <p>
             Everyone associated with Amddas Foods is committed to consistently delivering superior service in the most efficient way, for the shared benefit of our customers, shareholders, and associates.
           </p>
         </section>
 
         <section>
-          <h2 className="section-heading">Our Vision</h2>
+          <h2 className="missionheading">Our Vision</h2>
           <p>
             To be a world-class provider of contract foodservice and support services, renowned for our great people, our great service, and our great results.
           </p>
         </section>
 
         <section className="sp">
-          <h2 className="section-heading">Our Guiding Principles</h2>
+          <h2 className="missionheading">Our Guiding Principles</h2>
           <span>Safety, Health, and Environment First</span>
           <p>
             Never compromise on the health and safety of our customers and our people and manage responsibly the impact that our business has on the environment.
@@ -56,7 +56,7 @@ const MissionVisionValues = () => {
         </section>
 
         <section>
-          <h2 className="section-heading">Our Values</h2>
+          <h2 className="missionheading">Our Values</h2>
           <span>Outperform</span>
           <p>
             We encourage our employees to outperform, push and redefine the benchmarks of achievement, over and over again.
@@ -72,7 +72,7 @@ const MissionVisionValues = () => {
         </section>
 
         <section>
-          <h2 className="section-heading">Corporate Governance, Code of Business and Code of Ethics</h2>
+          <h2 className="missionheading">Corporate Governance, Code of Business and Code of Ethics</h2>
           <p>
             As a world-leading food management and support services company, we have set the very highest standards for the quality of service we provide, and the way we run our business. Our success and future depend on each of us acting professionally, responsibly, and in accordance with the standards set out in the Code of Business Conduct.
           </p>

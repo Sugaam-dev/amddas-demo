@@ -46,7 +46,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" style={{ height: "70vh", overflow: "hidden" }}>
+    <section id="hero" >
       <div
         className="hero-container"
         style={{

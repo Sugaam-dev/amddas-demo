@@ -5,7 +5,7 @@
   }
   
   .hero-section {
-    background: url('https://compass-group.co.in/wp-content/uploads/2021/04/Compass_Technology_Image.jpg') no-repeat center center;
+    background:linear-gradient(hsla(0, 0%, 0%, 0.312), hsla(0, 0%, 0%, 0.449)), url('/public/images/technology.png') no-repeat center center;
     background-size: cover;
     height: 400px;
     display: flex;
@@ -14,17 +14,24 @@
     color: white;
     text-align: center;
   }
+ 
+  .hero-section h1 {
+    font-size: 48px;
+    margin: 0;
+    font-weight: 500;
+    font-family: 'IBM Plex Serif', Georgia, "Times New Roman", serif;
+  }
   @media (max-width:768px) {
     .hero-section{
       height: 200px;
     }
+    .hero-section h1 {
+      font-size: 40px;
+    
+ 
+      
+    }
   }
-  .hero-section h1 {
-    font-size: 40px;
-    margin: 0;
-    font-weight: 500;
-  }
-  
   .tech-section {
     padding: 2rem;
   }
@@ -45,7 +52,7 @@
   
   .app-title {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight:500;
     margin-bottom: 1rem;
     color: #333;
   }

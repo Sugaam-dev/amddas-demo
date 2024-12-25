@@ -6,15 +6,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 50px 20px;
-  background-image:linear-gradient(hsla(0, 100%, 0%, 0.65), hsla(0, 100%, 0%, 0.65)), url('https://as2bfoodz.com/wp-content/uploads/2024/10/image-1.png');
+    /* padding: 50px 20px; */
+  background-image:linear-gradient(hsla(0, 100%, 0%, 0.65), hsla(0, 100%, 0%, 0.65)), url('/public/images/corporatebanner.png');
   background-position: top;
   background-size: cover;
-  padding: 8% 0%;
+  /* padding: 8% 0%; */
+  height: 400px;
   }
   
   .Our-corporatebanner-title {
-    font-size: 40px;
+    font-size: 38px;
     font-weight: 400;
     margin-bottom: 20px;
     text-align: center;
@@ -22,6 +23,14 @@
     color: #ffffff;
   }
   
+  @media (max-width:768px) {
+    .Our-corporatebanner-title{
+      font-size: 38px;
+    }
+    .Our-corporatebanner-container{
+      height: auto;
+    }
+  }
   .Our-corporatebanner-description {
     text-align: center;
     color: #ffffff;

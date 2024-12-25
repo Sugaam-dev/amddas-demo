@@ -1,5 +1,5 @@
 .banner-section-supply {
-  background-image: url("https://compass-group.co.in/wp-content/uploads/2021/04/SupplyChain.png"); /* Replace with actual image */
+  background-image:linear-gradient(hsla(0, 0%, 0%, 0.303), hsla(0, 0%, 0%, 0.407)), url("/public/images/supply.jfif"); /* Replace with actual image */
   background-size: cover;
   background-position: center;
   height: 400px;

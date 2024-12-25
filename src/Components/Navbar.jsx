@@ -296,6 +296,18 @@ function Navbarr() {
                   Events
                 </Nav.Link>
 
+                <Nav.Link 
+                  as={NavLink} 
+                  to="/amddas-gallery"  
+                  className="nav-link-custom" 
+                  onClick={handleClose}
+                  style={({ isActive }) => ({
+                    color: isActive ? 'var(--nav-link-active-color)' : 'var(--nav-link-color)',
+                  })}
+                >
+                  {/* <FaCalendarAlt aria-label="Events" style={{ marginRight: '5px' }} /> */}
+                  Gallery
+                </Nav.Link>
 
                 
                 <Nav.Link 

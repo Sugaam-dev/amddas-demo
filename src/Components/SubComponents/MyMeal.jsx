@@ -9,7 +9,7 @@ const MyMeal = () => {
     }
   return (
     <div className="Our-meal-container">
-      <h2 className="Our-meal-title">MyMeal</h2>
+      <h2 className="Our-meal-title">My Meal</h2>
       <p className="Our-meal-description">
       As India prepares to return to office, Compass Group India will address the anxiety amongst employees and the change in consumer preferences by reassuring wellbeing and hygiene of their employees, through reimagined and customisable food solution program.</p>
       <button onClick={ourpage} className="Our-meal-button">READ MORE</button>

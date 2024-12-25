@@ -4,13 +4,13 @@ import "../Styles/OurStory-main.css";
 const OurStoryMain = () => {
   return (
     <div className="our-story-main-container">
-      {/* Banner Section */}
-      <div className="banner-section">
+      {/* Banner story */}
+      <div className="banner-story">
         <h1 className="banner-title">Our Story</h1>
       </div>
 
-      {/* Content Section */}
-      <div className="content-section">
+      {/* Content story */}
+      <div className="content-story">
         <div className="content-block">
           <h3 className="content-heading">Amddas Foods History</h3>
           <p className="content-text">

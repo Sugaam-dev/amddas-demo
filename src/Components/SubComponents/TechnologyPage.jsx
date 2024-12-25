@@ -11,7 +11,7 @@ const TechnologyPage = () => {
         <div className="section">
           <h2>Innovations</h2>
           <p>
-            Realizing the potential of technology to be at the heart of all transformation and to cater to the evolved consumer needs and preferences, Compass India has introduced these apps:
+            Realizing the potential of technology to be at the heart of all transformation and to cater to the evolved consumer needs and preferences, Amddas Foods has introduced these apps:
           </p>
           <div className="app-section">
             <h3 className="app-title">The FoodBook app has completely transformed the landscape of a conventional workplace cafeteria.</h3>
@@ -38,7 +38,7 @@ const TechnologyPage = () => {
             </p>
           </div>
           <p>
-            All in all, Compass’ digital solutions elevate the employee and client experience to the next level covering all key dimensions cafeteria operations and employee safety.
+            All in all, Amddas’ digital solutions elevate the employee and client experience to the next level covering all key dimensions cafeteria operations and employee safety.
           </p>
           <p>
             The resurrection of the workplace café will indeed call for disruptive models of working, innovation around the food offering, embracing digital, contactless ordering, and creative and smart choice of ingredients which help boost immunity and promote wellness.

@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     padding: 50px 20px;
-  background-image: url('https://compass-group.co.in/wp-content/uploads/2021/03/compass-committe-back.jpg');
+  background-image: linear-gradient(hsla(0, 0%, 0%, 0.312), hsla(0, 0%, 0%, 0.449)),url('/public/images/offsite.jpg');
   background-position: center;
   background-size: cover;
   padding: 8% 0%;

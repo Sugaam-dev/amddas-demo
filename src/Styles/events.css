@@ -16,16 +16,22 @@
   text-align: center;
 
 }
+.banner-section-event h1{
+  font-family: Open Sans, Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+}
 @media (max-width:768px) {
   .banner-section-event{
     height: 200px;
   }
+  .banner-section-event h1{
+   
+    font-size: 40px;
+   
+  }
 }
-.banner-section-event h1{
-  font-family: Open Sans, Arial, sans-serif;
-  font-size: 40px;
-  font-weight: 500;
-}
+
 .banner-title-event{
   color: #ffffff;
 }
