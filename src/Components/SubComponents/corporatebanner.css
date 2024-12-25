@@ -6,7 +6,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* padding: 50px 20px; */
+    padding: 0px 15px;
   background-image:linear-gradient(hsla(0, 100%, 0%, 0.65), hsla(0, 100%, 0%, 0.65)), url('/public/images/corporatebanner.png');
   background-position: top;
   background-size: cover;
@@ -27,9 +27,7 @@
     .Our-corporatebanner-title{
       font-size: 38px;
     }
-    .Our-corporatebanner-container{
-      height: auto;
-    }
+ 
   }
   .Our-corporatebanner-description {
     text-align: center;
