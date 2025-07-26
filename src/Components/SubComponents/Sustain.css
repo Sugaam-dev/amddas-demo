@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+.sustainability-container {
+    font-family: Open Sans, Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+
+  }
+  
+  .sustainability-banner {
+    background-image: url('/public/images/sustain.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+  }
+  
+  .sustainability-banner h1 {
+    font-size: 48px;
+    font-weight: 400;
+
+  }
+  @media (max-width:768px) {
+    .sustainability-banner h1{
+      font-size: 40px;
+    }
+    .sustainability-banner{
+      height: 200px;
+    }
+  }
+  .sustainability-content {
+    padding: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Open Sans', Arial, sans-serif;
+  
+  }
+  
+  .sustainability-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #333;
+    font-family: 'Open Sans', Arial, sans-serif;
+  }
+  
+  .sustainability-content p {
+    margin-bottom: 20px;
+  }
+  
+  .sustainability-content ol {
+    margin: 0 0 20px 20px;
+    padding: 0;
+    list-style-type: decimal;
+  }
+  
+  .sustainability-content li {
+    margin-bottom: 10px;
+  }
+  

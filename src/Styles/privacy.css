@@ -1,0 +1,81 @@
+/* Full-width Privacy Policy Component */
+.privacy-policy-container {
+  width: 100%;
+  padding: 40px;
+  background: linear-gradient(135deg, #f7f7f7, #e6e6e6);
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+/* Title Styles */
+.privacy-title {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  color: #000;
+}
+
+.privacy-last-updated {
+  text-align: center;
+  color: #777;
+  margin-bottom: 40px;
+}
+
+/* Sections */
+.privacy-section {
+  margin-bottom: 30px;
+}
+
+.privacy-section-title {
+  color: #000;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #d0d0d0;
+  padding-bottom: 5px;
+}
+
+.privacy-subsection-title {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  color: #333;
+}
+
+.privacy-paragraph {
+  margin-bottom: 10px;
+}
+
+.privacy-list {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.privacy-list-item {
+  margin-bottom: 5px;
+}
+
+.privacy-link {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.privacy-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .privacy-title {
+      font-size: 1.8rem;
+  }
+
+  .privacy-section-title {
+      font-size: 1.3rem;
+  }
+
+  .privacy-subsection-title {
+      font-size: 1.1rem;
+  }
+}

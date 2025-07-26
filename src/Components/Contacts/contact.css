@@ -1,0 +1,26 @@
+.banner-section-contact {
+    background-image: url('/public/images/contact.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .banner-title-contact {
+    color: #fff;
+    font-size: 48px;
+    font-weight: 400;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    font-family: Open Sans, Arial, sans-serif;
+  }
+  @media (max-width:768px) {
+    .banner-section-contact{
+      height: 200px;
+
+    }
+    .banner-title-contact{
+      font-size: 40px;
+    }
+  }
