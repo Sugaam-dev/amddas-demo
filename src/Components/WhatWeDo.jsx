@@ -167,7 +167,7 @@ function WhatWeDo() {
             </button> */}
           </div>
           <div className="wedding-image">
-            <img src="/images/catering.jpg" alt="Educational Institute Services" />
+            <img src="/images/Catering.jpg" alt="Educational Institute Services" />
           </div>
         </div>
       </div>

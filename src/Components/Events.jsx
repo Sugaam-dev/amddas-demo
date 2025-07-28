@@ -972,7 +972,7 @@ export default function Carousel() {
             </button> */}
           </div>
           <div className="wedding-image">
-            <img src="/images/cafeteria1.jpg" alt="Bhandaara Service" />
+            <img src="/images/Cafeteria1.jpg" alt="Bhandaara Service" />
           </div>
         </div>
       </div>
