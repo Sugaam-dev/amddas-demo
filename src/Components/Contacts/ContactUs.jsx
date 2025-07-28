@@ -68,7 +68,7 @@ const ContactUs = () => {
     service: '',
     message: '',
     isRobot: false,
-    access_key: 'f3ed77cc-30e4-4cf4-95a4-cc57d87d99a9'
+    access_key: 'f2b57264-d393-4366-9705-a55d53afe2c0'
   });
 
   const [errors, setErrors] = useState({});
@@ -162,7 +162,7 @@ const ContactUs = () => {
           service: '',
           message: '',
           isRobot: false,
-          access_key: 'f3ed77cc-30e4-4cf4-95a4-cc57d87d99a9'
+          access_key: 'f2b57264-d393-4366-9705-a55d53afe2c0'
         });
         
         alert('Thank you! Your message has been sent successfully.');
@@ -182,8 +182,8 @@ const ContactUs = () => {
     <div className="contact-us">
       {/* Header Section */}
       <div className="header">
-        <h1>Contact Us</h1>
-        <p className="header-subtitle">Get in touch with AMDDAS Foods for all your catering needs</p>
+        {/* <h1>Contact Us</h1> */}
+        <p className="header-subtitle"> we are delighted to have you on board and looking forward to serve you, please fill the form below and we will reach out to you as soon as possible</p>
       </div>
 
       {/* Form Section */}
@@ -191,12 +191,12 @@ const ContactUs = () => {
         <div className="form-container">
           <h2>LET US START TALKING</h2>
           <p className="form-description">
-            Fill up this form so that we can know more about you and your needs
+          Get in touch with AMDDAS Foods for all your catering needs
           </p>
           
           <form className="contact-form" onSubmit={handleSubmit}>
             {/* Hidden access key field */}
-            <input type="hidden" name="access_key" value="f3ed77cc-30e4-4cf4-95a4-cc57d87d99a9" />
+            <input type="hidden" name="access_key" value="f2b57264-d393-4366-9705-a55d53afe2c0" />
             
             <div className="form-row">
               <div className="form-group">
