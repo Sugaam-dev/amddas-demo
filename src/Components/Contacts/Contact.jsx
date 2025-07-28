@@ -3,6 +3,7 @@ import './contact.css'
 import WritetoUs from './WritetoUs'
 import Client from './Client'
 import ContactUs from './ContactUs'
+import WhatsAppFloat from '../SubComponents/WhatsAppFloat'
 function Contact() {
   return (
     <div>
@@ -10,8 +11,9 @@ function Contact() {
         <h1 className="banner-title-contact" style={{color:"white"}}> Contact Us</h1>
       </div>
       {/* <Client/> */}
-      <WritetoUs/>
-      {/* <ContactUs/> */}
+      {/* <WritetoUs/> */}
+      <ContactUs/>
+      <WhatsAppFloat/>
     </div>
   )
 }

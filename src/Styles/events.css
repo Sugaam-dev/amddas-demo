@@ -2,45 +2,67 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 .banner-section-event {
-  background-image:linear-gradient(hsla(0, 0%, 0%, 0.303), hsla(0, 0%, 0%, 0.407)), url("/public/images/events.webp"); /* Replace with actual image */
+  background-image: linear-gradient(hsla(0, 0%, 0%, 0.303), hsla(0, 0%, 0%, 0.407)), url("/public/images/events.webp");
   background-size: cover;
   background-position: center;
   height: 400px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-
+  padding: 0 20px;
 }
-.banner-section-event h1{
+
+.banner-section-event h1 {
   font-family: Open Sans, Arial, sans-serif;
   font-size: 48px;
   font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 0;
 }
-@media (max-width:768px) {
-  .banner-section-event{
+
+.banner-subtitle-event {
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  opacity: 0.9;
+  font-family: Open Sans, Arial, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .banner-section-event {
     height: 200px;
+    padding: 0 15px;
   }
-  .banner-section-event h1{
-   
+  
+  .banner-section-event h1 {
     font-size: 40px;
-   
+  }
+  
+  .banner-subtitle-event {
+    font-size: 16px;
+    margin-top: 15px;
+    padding: 0 10px;
   }
 }
 
-.banner-title-event{
+.banner-title-event {
   color: #ffffff;
 }
+
 .content-section {
   padding: 50px 10%;
   background-color: white;
- 
- 
-  
 }
 
 .introduction {
@@ -70,6 +92,291 @@
   cursor: pointer;
 }
 
+/* Wedding Section Styles */
+.wedding-section {
+  padding: 80px 10%;
+  background-color: #f5f5f5;
+  margin: 40px 0;
+}
+
+.wedding-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wedding-image {
+  flex: 1;
+  max-width: 500px;
+}
+
+.wedding-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.wedding-content {
+  flex: 1;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.wedding-title {
+  color: #333;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-family: 'IBM Plex Serif', Georgia, "Times New Roman", serif;
+}
+
+.wedding-description {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-family: Open Sans, Arial, sans-serif;
+}
+
+.wedding-enquire {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #ff4500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.wedding-enquire:hover {
+  background-color: #e03d00;
+  transform: translateY(-2px);
+}
+
+/* Responsive Wedding Section */
+@media (max-width: 1024px) {
+  .wedding-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .wedding-image {
+    max-width: 70%;
+  }
+
+  .wedding-image img {
+    height: 300px;
+  }
+
+  .wedding-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .wedding-section {
+    padding: 60px 5%;
+  }
+
+  .wedding-image {
+    max-width: 90%;
+  }
+
+  .wedding-image img {
+    height: 250px;
+  }
+
+  .wedding-title {
+    font-size: 2rem;
+  }
+
+  .wedding-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wedding-section {
+    padding: 40px 3%;
+  }
+
+  .wedding-image img {
+    height: 200px;
+  }
+
+  .wedding-title {
+    font-size: 1.8rem;
+  }
+
+  .wedding-description {
+    font-size: 0.9rem;
+  }
+
+  .wedding-enquire {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Birthday Section Styles */
+.birthday-section {
+  padding: 80px 10%;
+  background-color: #ffffff;
+  margin: 40px 0;
+}
+
+.birthday-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.birthday-image {
+  flex: 1;
+  max-width: 500px;
+}
+
+.birthday-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.birthday-content {
+  flex: 1;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.birthday-title {
+  color: #ff5722;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-family: 'IBM Plex Serif', Georgia, "Times New Roman", serif;
+}
+
+.birthday-subtitle {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-family: 'IBM Plex Serif', Georgia, "Times New Roman", serif;
+}
+
+.birthday-description {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-family: Open Sans, Arial, sans-serif;
+}
+
+.birthday-enquire {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #ff4500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.birthday-enquire:hover {
+  background-color: #e03d00;
+  transform: translateY(-2px);
+}
+
+/* Responsive Birthday Section */
+@media (max-width: 1024px) {
+  .birthday-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .birthday-image {
+    max-width: 70%;
+  }
+
+  .birthday-image img {
+    height: 300px;
+  }
+
+  .birthday-title {
+    font-size: 2.5rem;
+  }
+
+  .birthday-subtitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .birthday-section {
+    padding: 60px 5%;
+  }
+
+  .birthday-image {
+    max-width: 90%;
+  }
+
+  .birthday-image img {
+    height: 250px;
+  }
+
+  .birthday-title {
+    font-size: 2rem;
+  }
+
+  .birthday-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .birthday-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .birthday-section {
+    padding: 40px 3%;
+  }
+
+  .birthday-image img {
+    height: 200px;
+  }
+
+  .birthday-title {
+    font-size: 1.8rem;
+  }
+
+  .birthday-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .birthday-description {
+    font-size: 0.9rem;
+  }
+
+  .birthday-enquire {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
 .containerr {
   width: 100%;
   height: 100%;
@@ -97,7 +404,7 @@
 
 .slide1 {
   height: 450px;
-  width:50%;
+  width: 50%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -131,17 +438,20 @@
   padding: 20px;
   color: #000;
 }
-.text h2{
-  font-family: 'IBM Plex Serif', Georgia, "Times New Roman", serif;
 
+.text h2 {
+  font-family: 'IBM Plex Serif', Georgia, "Times New Roman", serif;
 }
-.text h3{
+
+.text h3 {
   font-family: 'IBM Plex Serif', Georgia, "Times New Roman", serif;
   color: #000;
 }
-.text p{
+
+.text p {
   font-family: Open Sans, Arial, sans-serif;
 }
+
 .heading {
   color: #000;
   text-align: center;
@@ -151,14 +461,14 @@
 }
 
 .specialized-cuisines {
-  color:#ff5722;
+  color: #ff5722;
   font-size: 2rem;
   margin-top: 20px;
 }
-.events-description ul li{
+
+.events-description ul li {
   list-style-type: none;
   text-align: start;
-
 }
 
 .events-description h3 {
@@ -167,10 +477,12 @@
   color: #000;
   margin-bottom: 10px;
 }
+
 .heading {
   margin-top: 20px;
   color: #333333;
 }
+
 .enquire-now {
   padding: 12px 24px;
   font-size: 1rem;
@@ -184,10 +496,11 @@
 }
 
 .enquire-now:hover {
-  background-color: #e03d00; 
+  background-color: #e03d00;
   transform: translateY(-2px);
 }
-.content-section span{
+
+.content-section span {
   font-size: 18px;
 }
 

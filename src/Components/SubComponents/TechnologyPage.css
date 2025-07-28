@@ -1,4 +1,4 @@
-.technology-page {
+/* .technology-page {
     font-family: Open Sans, Arial, sans-serif;
     line-height: 1.6;
     color: #333;
@@ -61,4 +61,42 @@
     margin-bottom: 1rem;
   }
   
+   */
+
+   .technology-page {
+    font-family: Open Sans, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
   
+  /* REMOVED CONFLICTING .hero-section STYLES */
+  /* The .hero-section styles should only be in hero.css */
+  
+  .tech-section {
+    padding: 2rem;
+  }
+  
+  .section {
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .app-section {
+    margin-top: 2rem;
+  }
+  
+  .app-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }

@@ -35,6 +35,7 @@ import SupplyChain from './Components/SubComponents/SupplyChain';
 import Sustain from './Components/SubComponents/Sustain';
 import Contact from './Components/Contacts/Contact';
 import Nav from './Components/Nav';
+import Why_Us from './Components/Why_Us';
 
 
 
@@ -70,6 +71,7 @@ function App() {
 <Route path='/supply-chain' element={<SupplyChain/>}/>
 <Route path='/sustainability' element={<Sustain/>}/>
 <Route path='/contact' element={<Contact/>}/>
+<Route path="/why-us" element={<Why_Us />} />
 
 
 

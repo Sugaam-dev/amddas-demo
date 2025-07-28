@@ -29,7 +29,7 @@
   transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
-.banner-section-gallery {
+/* .banner-section-gallery {
   background-image: url('/public/images/gallery.jpg');
   background-size: cover;
   background-position: center;
@@ -37,6 +37,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+} */
+.banner-section-gallery{
+  background-color: bisque;
+  padding: 20px;
+  font-family: 'Courier New', Courier, monospace;
+}
+.gallery-section{
+  background-color: bisque;
+  height: 300px;
 }
 
 .banner-title-gallery {

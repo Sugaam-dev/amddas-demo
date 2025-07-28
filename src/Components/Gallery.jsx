@@ -20,15 +20,15 @@ const Gallery = () => {
   return (
     <>
       <div className="banner-section-gallery">
-        <h1 className="banner-title-gallery" style={{ color: "white" }}>
-          Amddas Foods Gallery
+        <h1 className="banner-title-gallery" style={{ color: "black" }}>
+          Our Gallery
         </h1>
       </div>
 
       <section id="gallery" className="gallery-section">
-        <p className="gg">
+        {/* <p className="gg">
           Welcome to the visual journey of Amddas Foods! Explore our vibrant gallery showcasing beautifully crafted dishes, stunning event setups, and memorable moments from the celebrations we’ve been a part of. From intricately plated delicacies to themed culinary displays, each image reflects our passion for perfection, creativity, and uncompromising quality.
-        </p>
+        </p> */}
         <div className="container">
           <Swiper
             modules={[Pagination, Navigation, Autoplay]}

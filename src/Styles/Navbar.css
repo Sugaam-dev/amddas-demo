@@ -10,10 +10,10 @@
   --button-text-color: #ffffff; /* White */
 }
 
-
 .dropdown-item.active{
   background-color: transparent;
 }
+
 .nav-link-custom {
   color: var(--nav-link-color);
   margin-right: 50px;
@@ -25,16 +25,16 @@
   transition: color 0.3s ease;
   font-family: Open Sans, Arial, sans-serif;
 }
+
 .dropdown-custom{
   color: var(--nav-link-color);
-  /* margin-right: 50px; */
   text-decoration: none;
   font-size: 20px;
   font-weight: bold;
-
   align-items: center;
   transition: color 0.3s ease;
   font-family: Open Sans, Arial, sans-serif;
+  margin-right: 50px;
 }
 
 .dropdown-custom .dropdown-toggle {
@@ -43,6 +43,9 @@
   align-items: center !important;
   padding: 0 !important;
   font-family: Open Sans, Arial, sans-serif !important;
+  background: none !important;
+  border: none !important;
+  color: inherit !important;
 }
 
 .dropdown-custom .dropdown-toggle::after {
@@ -53,11 +56,12 @@
 
 @media (max-width:1030px) {
   .nav-link-custom {
-   
     margin-right: 0px;
-   
     font-size: 20px;
-   
+  }
+  
+  .dropdown-custom {
+    margin-right: 0px;
   }
 }
 
@@ -71,49 +75,47 @@
 }
 
 nav {
-  /* background-image: url('/public/images/amd1.jpeg'); */
   background-color: #fff;
   background-size: auto;
   background-attachment: fixed;
 }
+
 .navv{
-  background-color: #ffffff  ;
-  /* position: fixed;
-  width: 100%;
-  z-index: 1000; */
+  background-color: #ffffff;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
+
 @media (max-width:768px) {
   .navv{
-    background-color: #ffffff  ;
-    /* position: fixed;
-    width: 100%;
-    z-index: 1000; */
-    position:static;
+    background-color: #ffffff;
+    position: static;
     top: 0;
     z-index: 1000;
   }
-.d-lg-none{
-  background-color: #ffffff !important;
 
-}
+  .d-lg-none{
+    background-color: #ffffff !important;
+  }
+  
   .dropdown-custom .dropdown-toggle {
-  display: flex !important;
+    display: flex !important;
     justify-content: start !important;
     align-items: center !important;
     padding: 0 !important;
   }
+  
   .dropdown-custom .dropdown-menu {
-  background-color: #ffffff;
-  border: none;
-  min-width: 200px;
+    background-color: #ffffff;
+    border: none;
+    min-width: 200px;
+  }
 }
- 
-}
+
 .dropdown-custom .dropdown-toggle::after {
   margin-left: 0.5rem;
+  transition: transform 0.2s ease;
 }
 
 .dropdown-custom .dropdown-menu {
@@ -211,10 +213,6 @@ nav {
   display: none;
 }
 
-.dropdown-custom {
-  min-width: 200px;
-}
-
 .nav-dropdown-custom {
   white-space: nowrap;
 }
@@ -222,7 +220,6 @@ nav {
 .login-button {
   background-color: transparent;
   color: var(--button-text-color);
-  /* border: 2px solid blue; */
   padding: 8px 16px;
   font-size: 16px;
   font-weight: bold;
@@ -233,7 +230,6 @@ nav {
 }
 
 .login-button:hover {
-  /* background-color: rgba(49, 49, 202, 0.881); */
   text-decoration: none; /* Ensure no underline on hover */
 }
 
@@ -294,7 +290,6 @@ nav {
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
-  /* color: rgb(13, 54, 167) !important; */
 }
 
 /* General dropdown styling */
@@ -320,22 +315,128 @@ nav {
     background-color: rgba(0, 0, 0, 0.1); /* Optional: Slight background color on hover */
   }
 }
-/* Ensure dropdown displays on hover */
+
+/* Enhanced dropdown hover functionality */
 .nav-dropdown-hover {
   position: relative;
+  display: inline-block;
 }
 
 .nav-dropdown-hover .dropdown-menu {
   display: none;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 0.375rem;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.175);
 }
 
-.nav-dropdown-hover:hover .dropdown-menu {
+.nav-dropdown-hover:hover .dropdown-menu,
+.nav-dropdown-hover .dropdown.show .dropdown-menu {
   display: block !important;
   opacity: 1;
   visibility: visible;
+}
+
+/* Remove gap between dropdown trigger and menu */
+.nav-dropdown-hover .dropdown-toggle::after {
+  margin-left: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.nav-dropdown-hover:hover .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+/* Ensure dropdown items are properly styled */
+.nav-dropdown-hover .dropdown-item {
+  padding: 0.5rem 1rem;
+  color: var(--dropdown-item-color) !important;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border: none;
+  text-decoration: none;
+}
+
+.nav-dropdown-hover .dropdown-item:hover {
+  background-color: var(--dropdown-item-hover-bg);
+  color: var(--nav-link-hover-color) !important;
+  text-decoration: none;
+}
+
+.nav-dropdown-hover .dropdown-item:focus {
+  background-color: var(--dropdown-item-hover-bg);
+  color: var(--nav-link-hover-color);
+  outline: none;
+  text-decoration: none;
+}
+
+/* Override Bootstrap's dropdown behavior */
+.nav-dropdown-hover .dropdown-menu.show {
+  display: block !important;
+}
+
+.nav-link-custom.about-link {
+  margin-right: 50px !important;
+}
+
+@media (max-width: 1030px) {
+  .nav-link-custom.about-link {
+    margin-right: 0px !important;
+  }
+}
+
+/* Mobile dropdown styling remains the same */
+@media (max-width: 768px) {
+  .nav-dropdown-hover .dropdown-menu {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    position: static;
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .nav-dropdown-hover .dropdown-item {
+    color: var(--nav-link-color);
+    padding: 0.75rem 0;
+  }
+  
+  .nav-dropdown-hover .dropdown-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Fix any z-index issues */
+.navbar .nav-dropdown-hover {
+  z-index: 1001;
+}
+
+.nav-dropdown-hover .dropdown-menu {
+  min-width: 200px;
+  white-space: nowrap;
+}
+
+/* Ensure dropdown toggle doesn't have conflicting styles */
+.nav-dropdown-hover .dropdown-toggle {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  color: inherit !important;
+}
+
+.nav-dropdown-hover .dropdown-toggle:focus {
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .dropdown-menu {
