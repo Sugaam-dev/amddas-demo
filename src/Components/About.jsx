@@ -224,7 +224,7 @@ const About = () => {
       id: 2,
       number: "02", 
       title: "Employee Standards",
-      description: "All employees undergo quarterly medical fitness test clearance while in service at Amddas Foods. All staff have segregated dress codes based on their job roles. Company-provided staff quarters adjacent to the manufacturing unit to ensure hassle-free operation."
+      description: "All employees undergo quarterly medical fitness test clearance while in service at AMDDAS Foods. All staff have segregated dress codes based on their job roles. Company-provided staff quarters adjacent to the manufacturing unit to ensure hassle-free operation."
     },
     {
       id: 3,
@@ -268,7 +268,7 @@ const About = () => {
   return (
     <>
       <div className="banner-section-about">
-        <h1 className="banner-title-about" style={{color:"white"}}> About Amddas Foods</h1>
+        <h1 className="banner-title-about" style={{color:"white"}}> About AMDDAS Foods</h1>
       </div>
       
       <div className="about-section">
@@ -278,7 +278,7 @@ const About = () => {
 
         <div className="about-block">
           <p className="about-text">
-            Established in 2016, Amddas Foods has grown into a trusted name in the corporate and institutional catering space, delivering quality meals with consistency, hygiene, and heart. With a robust production capacity of 4,000 plates per day, we are equipped to serve large-scale requirements across corporate offices, events, and food courts.
+            Established in 2016, AMDDAS Foods has grown into a trusted name in the corporate and institutional catering space, delivering quality meals with consistency, hygiene, and heart. With a robust production capacity of 4,000 plates per day, we are equipped to serve large-scale requirements across corporate offices, events, and food courts.
           </p>
         </div>
 
@@ -303,7 +303,7 @@ const About = () => {
 
         <div className="about-block">
           <p className="about-text">
-          At Amddas, we combine authentic flavors with efficient service and modern kitchen practices, ensuring every plate and every event exceeds expectations.
+          At AMDDAS, we combine authentic flavors with efficient service and modern kitchen practices, ensuring every plate and every event exceeds expectations.
           </p>
         </div>
       </div>

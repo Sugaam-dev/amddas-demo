@@ -1130,7 +1130,7 @@ export default function Carousel() {
   return (
     <div className="containerr">
       <div className="banner-section-event">
-        <h1 className="banner-title-event">Amddas Foods Events</h1>
+        <h1 className="banner-title-event">AMDDAS Foods Events</h1>
         <p className="banner-subtitle-event">
           From intimate gatherings to large-scale celebrations, AMDDAS FOODS brings flavor, finesse, and flawless execution to every occasion.
         </p>

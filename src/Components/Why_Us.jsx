@@ -6,7 +6,7 @@ const Why_Us = () => {
     <>
       {/* Banner Section */}
       <div className="banner-section-why-us">
-        <h1 className="banner-title-why-us">Why Choose Amddas Foods</h1>
+        <h1 className="banner-title-why-us">Why Choose AMDDAS Foods</h1>
       </div>
 
       {/* Content Section */}
