@@ -25,16 +25,16 @@ const Home = () => {
       <div className="homepage">
         <Hero/>
         <AboutAmddas/>
-        <OurStory/>
+        {/* <OurStory/> */}
         <Mission/>
         <Vision/>
-        <Sustainability/>
+        {/* <Sustainability/>
         <Amddassupply/>
-        <AmddasEvents/>
+        <AmddasEvents/> */}
         {/* <AmddasGallery/> */}
         <Gallery/>
         <Testimonial/>
-        <Milestones/>
+        {/* <Milestones/> */}
         <WhatsAppFloat/>
       </div>
     </>

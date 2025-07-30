@@ -90,7 +90,7 @@ const Mission = () => {
       {/* Left Side - Image */}
       <div className="Our-mission-image">
         <img 
-          src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+          src="./images/events.jpg" 
           alt="Supply Chain - Chef preparing food"
           className="mission-image"
         />
@@ -102,9 +102,9 @@ const Mission = () => {
         <p className="Our-mission-description">
         At AMDDAS FOODS PVT LTD, our mission is to redefine corporate dining and events through exceptional quality, customized culinary solutions, and a commitment to reliability, hygiene, and customer satisfaction. We aim to create lasting impressions by blending flavor with flawless service, ensuring every event is a success.
         </p>
-        <button onClick={ourpage} className="Our-mission-button">
+        {/* <button onClick={ourpage} className="Our-mission-button">
           READ MORE
-        </button>
+        </button> */}
       </div>
     </div>
   );

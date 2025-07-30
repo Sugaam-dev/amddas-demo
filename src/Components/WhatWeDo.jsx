@@ -133,7 +133,7 @@ function WhatWeDo() {
               }}
               style={{
                 backgroundColor: '#f59e0b',
-                color: 'white',
+                color: 'black',
                 border: 'none',
                 padding: '8px 16px',
                 borderRadius: '5px',
@@ -238,7 +238,7 @@ function WhatWeDo() {
                 }}
                 style={{
                   backgroundColor: '#f59e0b',
-                  color: 'white',
+                  color: 'black',
                   border: 'none',
                   padding: '8px 16px',
                   borderRadius: '5px',

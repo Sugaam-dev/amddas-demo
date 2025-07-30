@@ -1,13 +1,14 @@
 :root {
   --nav-link-color: #000000b0; /* White */
-  --nav-link-hover-color: #00aaff; /* Professional Blue */
-  --nav-link-active-color: #00aaff; /* Professional Blue for active links */
+  --nav-link-hover-color: #e63900; /* Professional Blue */
+  --nav-link-active-color: #e63900; /* Professional Blue for active links */
   --dropdown-bg-color: #ffffff; /* White */
   --dropdown-item-color: #000000; /* Black */
   --dropdown-item-hover-bg: #f1f1f1; /* Light Gray */
   --button-bg-color: #ff5722; /* Vibrant Orange */
   --button-hover-bg-color: #e64a19; /* Darker Orange on Hover */
   --button-text-color: #ffffff; /* White */
+  --contact-link-color: #ff4f00; /* New Contact Us color */
 }
 
 .dropdown-item.active{
@@ -24,6 +25,28 @@
   align-items: center;
   transition: color 0.3s ease;
   font-family: Open Sans, Arial, sans-serif;
+}
+
+/* Contact Us link styling */
+.nav-link-custom.contact-link {
+  color: var(--contact-link-color) !important;
+  font-weight: 700 !important; /* Bold */
+  margin-right: 0px !important;
+  font-size: 20px;
+}
+
+.nav-link-custom.contact-link:hover {
+  color: #e63900 !important; /* Darker shade on hover */
+}
+
+/* Mobile Contact Us link styling */
+.nav-link-custom.contact-link-mobile {
+  color: var(--contact-link-color) !important;
+  font-weight: 700 !important; /* Bold */
+}
+
+.nav-link-custom.contact-link-mobile:hover {
+  color: #e63900 !important; /* Darker shade on hover */
 }
 
 .dropdown-custom{
@@ -62,6 +85,10 @@
   
   .dropdown-custom {
     margin-right: 0px;
+  }
+  
+  .nav-link-custom.contact-link {
+    margin-right: 0px !important;
   }
 }
 
@@ -188,6 +215,10 @@ nav {
   .nav-link-custom:hover {
     color: var(--nav-link-hover-color);
     text-decoration: none; /* Ensure no underline on hover */
+  }
+  
+  .nav-link-custom.contact-link-mobile {
+    font-size: 18px;
   }
 }
 

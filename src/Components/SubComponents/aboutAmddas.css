@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     padding: 50px 20px;
-    background-color: #CCC096;
+    background-color: white;
   }
   
   .Our-about-title {
@@ -22,24 +22,38 @@
     max-width: 900px;
     margin-bottom: 30px;
     line-height: 36px;
-    font-size: 16px;
+    font-size: 20px;
     
   }
   
   .Our-about-button {
-    padding: 12px 24px;
+    /* padding: 12px 24px;
     font-size: 1rem;
    
-    color: white;
-    background-color: #ff4500; 
+    color: black;
+    background-color: #ffbf00; 
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; */
+
+    background-color: #ffbf00;
+    color: black;
+    border: none;
+    padding: 12px 30px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    text-decoration: none;
   }
   
   .Our-about-button:hover {
-    background-color: #e03d00;
+    background-color: #f59572;
     transform: translateY(-2px); 
   }
   

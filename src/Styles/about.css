@@ -99,25 +99,48 @@
   font-family: Open Sans, Arial, sans-serif;
 }
 
-.why-us-boxes {
+/* Carousel Styles */
+.standards-carousel {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
   display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+}
+
+.carousel-slide-standards {
+  min-width: 100%;
+  display: flex;
   gap: 20px;
+  justify-content: center;
+  flex-wrap: nowrap;
 }
 
 .box {
   flex: 1;
   min-width: 300px;
+  max-width: 350px;
   padding: 30px;
   background: #f9f9f9;
   text-align: center;
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
+  margin: 0 10px;
 }
 
 .box:hover {
   background: #ff7f50;
   color: #fff;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 127, 80, 0.3);
 }
 
 .box span {
@@ -152,29 +175,57 @@
   font-family: Open Sans, Arial, sans-serif;
 }
 
+/* Carousel Pagination */
+.carousel-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.pagination-dot-standards {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #ff7f50;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  padding: 0;
+}
+
+.pagination-dot-standards:hover {
+  background: rgba(255, 127, 80, 0.3);
+  transform: scale(1.1);
+}
+
+.pagination-dot-standards.active {
+  background: #ff7f50;
+  transform: scale(1.2);
+}
+
 /* Responsive Styles */
-@media (max-width: 992px) {
-  .about-container {
-    flex-direction: column;
+@media (max-width: 1024px) {
+  .carousel-slide-standards {
+    justify-content: center;
   }
-
-  .about-image {
-    min-height: 250px;
-  }
-
-  .why-us-boxes {
-    flex-direction: column;
-    align-items: center;
+  
+  .box {
+    min-width: 280px;
   }
 }
 
 @media (max-width: 768px) {
-  .about-content h3 {
-    font-size: 1.8rem;
+  .carousel-slide-standards {
+    flex-direction: column;
+    align-items: center;
   }
-
-  .about-content p {
-    font-size: 1rem;
+  
+  .box {
+    min-width: 100%;
+    max-width: 400px;
+    margin: 0;
   }
 
   .section-title h2 {
@@ -199,9 +250,27 @@
   .box p {
     font-size: 13px;
   }
+  
+  .pagination-dot-standards {
+    width: 10px;
+    height: 10px;
+  }
 }
 
-/* Add these styles to your existing about.css file */
+@media (max-width: 480px) {
+  .why-us {
+    padding: 20px 10px;
+  }
+  
+  .box {
+    padding: 20px;
+  }
+  
+  .pagination-dot-standards {
+    width: 8px;
+    height: 8px;
+  }
+}
 
 /* Services Container */
 .services-container {
@@ -268,4 +337,3 @@
     top: 3px;
   }
 }
-

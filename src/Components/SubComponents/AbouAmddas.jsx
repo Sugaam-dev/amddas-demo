@@ -5,12 +5,12 @@ import { useNavigate } from "react-router-dom";
 const AboutAmddas = () => {
     const navigate=useNavigate();
     const ourpage=()=>{
-        navigate('/about')
+        navigate('/why-us')
     }
   return (
     <div className="Our-about-container">
-      <h2 className="Our-about-title">About Amddas Foods</h2>
-      <p className="Our-about-description">Amddas Foods brings together a rich culinary heritage and a commitment to innovation, offering diverse global flavors and impeccable service. Our passion lies in creating unforgettable dining experiences for every occasion. </p>
+      <h2 className="Our-about-title">Why Choose Amddas Foods</h2>
+      <h3 className="Our-about-description">Risk Management Standards, Quality standard, Manufacturing Unit Standards, Employee Standard, Certified Kitchen </h3>
       <button onClick={ourpage} className="Our-about-button">READ MORE</button>
     </div>
   );

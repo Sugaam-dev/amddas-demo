@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   min-height: 500px;
-  background-color: #f5f5f5;
+  background-color: white;
   padding: 0;
   margin: 0;
   width: 100%;
@@ -14,7 +14,7 @@
 .vision-content {
   flex: 1;
   padding: 60px 50px;
-  background-color: #f5f5f5;
+  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,27 +42,6 @@
   line-height: 1.8;
   font-size: 18px;
   font-weight: 400;
-}
-
-.vision-button {
-  padding: 15px 30px;
-  font-size: 16px;
-  font-weight: 600;
-  color: white;
-  background-color: #ff4500;
-  border: none;
-  border-radius: 0;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  align-self: center;
-}
-
-.vision-button:hover {
-  background-color: #e03d00;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 69, 0, 0.3);
 }
 
 /* Right Side - Image Section */
@@ -145,12 +124,6 @@
     margin-bottom: 30px;
     line-height: 1.7;
   }
-  
-  .vision-button {
-    align-self: center;
-    padding: 12px 25px;
-    font-size: 14px;
-  }
 }
 
 /* Small Mobile */
@@ -173,11 +146,6 @@
     font-size: 15px;
     margin-bottom: 25px;
     line-height: 1.6;
-  }
-  
-  .vision-button {
-    padding: 10px 20px;
-    font-size: 13px;
   }
 }
 
