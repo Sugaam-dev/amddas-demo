@@ -41,13 +41,13 @@
 
 .banner-section-gallery{
   background-color: #57F6E7;
-  padding: 20px;
+  padding: 80px 10px 10px 10px;
   font-family: 'Courier New', Courier, monospace;
 }
 
 .gallery-section{
   background-color: #57F6E7;
-  min-height: 400px; /* Changed from fixed height to min-height */
+  min-height: 350px; /* Changed from fixed height to min-height */
 }
 
 .banner-title-gallery {
@@ -179,7 +179,7 @@
   }
 
   .gallery-section{
-  min-height: 300px; /* Changed from fixed height to min-height */
+  min-height: 200px; /* Changed from fixed height to min-height */
 }
 
   .banner-title-gallery {
