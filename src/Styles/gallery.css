@@ -1,8 +1,7 @@
 /* Gallery Section */
 .gallery-section {
   padding: 20px 10px;
-  background-color: #ffffff;
-  padding-bottom: 80px; /* Extra space for pagination dots */
+  background-color: #57F6E7;
 }
 
 .container {
@@ -12,7 +11,12 @@
 }
 
 .gallery-swiper {
-  padding-bottom: 50px; /* Space for pagination dots below */
+  padding-bottom: 20px;
+}
+
+/* Hide pagination bullets */
+.swiper-pagination {
+  display: none !important;
 }
 
 .image-wrapper {
@@ -36,24 +40,23 @@
 }
 
 .banner-section-gallery{
-  background-color:white;
+  background-color: #57F6E7;
   padding: 20px;
   font-family: 'Courier New', Courier, monospace;
 }
 
 .gallery-section{
-  background-color: white;
+  background-color: #57F6E7;
   min-height: 400px; /* Changed from fixed height to min-height */
 }
 
 .banner-title-gallery {
-  color: white;
   font-weight: 600;
   font-family: 'Open Sans', Arial, sans-serif;
   text-align: center;
   font-size: 45px;
   line-height: 1.5;
-  color: #555;
+  color: #333;
   margin-bottom: 15px;
 }
 
@@ -69,7 +72,7 @@
 .custom-prev,
 .custom-next {
   position: absolute;
-  top: 40%;
+  top: 50%;
   transform: translateY(-50%);
   width: 44px;
   height: 44px;
@@ -89,11 +92,11 @@
 }
 
 .custom-prev {
-  left: 10px;
+  left: -20px;
 }
 
 .custom-next {
-  right: 10px;
+  right: -20px;
 }
 
 .custom-prev::after,
@@ -171,8 +174,13 @@
 /* Responsive Styles */
 @media (max-width: 768px) {
   .banner-section-gallery {
-    height: 200px;
+    /* height: 200px; */
+    padding-top: 50px;
   }
+
+  .gallery-section{
+  min-height: 300px; /* Changed from fixed height to min-height */
+}
 
   .banner-title-gallery {
     font-size: 40px;
@@ -184,13 +192,13 @@
   }
   
   .custom-prev {
-    left: 5px;
+    left: 0;
     width: 36px;
     height: 36px;
   }
   
   .custom-next {
-    right: 5px;
+    right: 0;
     width: 36px;
     height: 36px;
   }
@@ -219,6 +227,14 @@
     left: 5px;
     width: 32px;
     height: 32px;
+  }
+
+  .gallery-section{
+  min-height: 100px; /* Changed from fixed height to min-height */
+}
+
+  .banner-title-gallery {
+    font-size: 30px;
   }
   
   .custom-next {

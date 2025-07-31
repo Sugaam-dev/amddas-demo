@@ -90,7 +90,7 @@ const Mission = () => {
       {/* Left Side - Image */}
       <div className="Our-mission-image">
         <img 
-          src="./images/events.jpg" 
+          src="./images/mission-img.jpg" 
           alt="Supply Chain - Chef preparing food"
           className="mission-image"
         />
