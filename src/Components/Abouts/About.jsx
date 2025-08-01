@@ -199,71 +199,74 @@
 // export default About;
 
 import React, { useState, useEffect } from 'react';
-import '../Styles/about.css';
-import Milestones from './SubComponents/Milestones';
+import './about.css';
+import Milestones from './Milestones';
+import About_all from './About_all'
+import About_service from './About_service'
+import Standards from './Standards';
 
 const About = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  // const [currentSlide, setCurrentSlide] = useState(0);
   
-  const services = [
-    "Corporate Catering",
-    "Corporate Event Management", 
-    "Cafeteria Management",
-    "Birthday Celebrations",
-    "Weddings & Private Parties"
-  ];
+  // const services = [
+  //   "Corporate Catering",
+  //   "Corporate Event Management", 
+  //   "Cafeteria Management",
+  //   "Birthday Celebrations",
+  //   "Weddings & Private Parties"
+  // ];
 
-  const standardsCards = [
-    {
-      id: 1,
-      number: "01",
-      title: "Risk Management Standards",
-      description: "Public Liability Policy is issued per site where our food is being supplied/consumed. Strictly GST compliant with updated ledger and bank records. Regular on-time tax return filing done."
-    },
-    {
-      id: 2,
-      number: "02", 
-      title: "Employee Standards",
-      description: "All employees undergo quarterly medical fitness test clearance while in service at AMDDAS Foods. All staff have segregated dress codes based on their job roles. Company-provided staff quarters adjacent to the manufacturing unit to ensure hassle-free operation."
-    },
-    {
-      id: 3,
-      number: "03",
-      title: "Manufacturing Unit Standards", 
-      description: "HACCP (Hazard Analysis and Critical Control Points) standards met. Segregated veg and non-veg cooking & storage sections. Gas bank located outside the kitchen. Fire extinguishers installed at all strategic locations."
-    },
-    {
-      id: 4,
-      number: "04",
-      title: "Certified Kitchen",
-      description: "Our kitchen is certified by food safety authorities and follows international hygiene protocols. Regular third-party audits ensure compliance with health department regulations. Temperature-controlled storage facilities maintain food quality and freshness at all times."
-    },
-    {
-      id: 5,
-      number: "05",
-      title: "Quality Standards",
-      description: "ISO 22000 food safety management system implementation. Stringent quality control measures at every stage of food preparation. Fresh ingredients sourced daily from verified suppliers. Regular taste testing and nutritional analysis of all menu items."
-    }
-  ];
+  // const standardsCards = [
+  //   {
+  //     id: 1,
+  //     number: "01",
+  //     title: "Risk Management Standards",
+  //     description: "Public Liability Policy is issued per site where our food is being supplied/consumed. Strictly GST compliant with updated ledger and bank records. Regular on-time tax return filing done."
+  //   },
+  //   {
+  //     id: 2,
+  //     number: "02", 
+  //     title: "Employee Standards",
+  //     description: "All employees undergo quarterly medical fitness test clearance while in service at AMDDAS Foods. All staff have segregated dress codes based on their job roles. Company-provided staff quarters adjacent to the manufacturing unit to ensure hassle-free operation."
+  //   },
+  //   {
+  //     id: 3,
+  //     number: "03",
+  //     title: "Manufacturing Unit Standards", 
+  //     description: "HACCP (Hazard Analysis and Critical Control Points) standards met. Segregated veg and non-veg cooking & storage sections. Gas bank located outside the kitchen. Fire extinguishers installed at all strategic locations."
+  //   },
+  //   {
+  //     id: 4,
+  //     number: "04",
+  //     title: "Certified Kitchen",
+  //     description: "Our kitchen is certified by food safety authorities and follows international hygiene protocols. Regular third-party audits ensure compliance with health department regulations. Temperature-controlled storage facilities maintain food quality and freshness at all times."
+  //   },
+  //   {
+  //     id: 5,
+  //     number: "05",
+  //     title: "Quality Standards",
+  //     description: "s"
+  //   }
+  // ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % Math.ceil(standardsCards.length / getCardsPerSlide()));
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [standardsCards.length]);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentSlide((prev) => (prev + 1) % Math.ceil(standardsCards.length / getCardsPerSlide()));
+  //   }, 4000);
+  //   return () => clearInterval(interval);
+  // }, [standardsCards.length]);
 
-  const getCardsPerSlide = () => {
-    if (window.innerWidth <= 768) return 1;
-    if (window.innerWidth <= 1024) return 2;
-    return 3;
-  };
+  // const getCardsPerSlide = () => {
+  //   if (window.innerWidth <= 768) return 1;
+  //   if (window.innerWidth <= 1024) return 2;
+  //   return 3;
+  // };
 
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
+  // const goToSlide = (index) => {
+  //   setCurrentSlide(index);
+  // };
 
-  const totalSlides = Math.ceil(standardsCards.length / getCardsPerSlide());
+  // const totalSlides = Math.ceil(standardsCards.length / getCardsPerSlide());
 
   return (
     <>
@@ -272,7 +275,7 @@ const About = () => {
       </div>
       
       <div className="about-section">
-        <div className="about-block">
+        {/* <div className="about-block">
           <h2 className="about-heading">All About Us.....</h2>
         </div>
 
@@ -280,15 +283,20 @@ const About = () => {
           <p className="about-text">
             Established in 2016, AMDDAS Foods has grown into a trusted name in the corporate and institutional catering space, delivering quality meals with consistency, hygiene, and heart. With a robust production capacity of 4,000 plates per day, we are equipped to serve large-scale requirements across corporate offices, events, and food courts.
           </p>
-        </div>
+        </div> */}
+        <About_all/>
+        <About_service/>
+        <Standards/>
+         <Milestones/>
+       </div>
 
-        <div className="about-block">
+        {/* <div className="about-block">
           <p className="about-text">
             Our culinary repertoire includes a wide variety of cuisines — from Indian vegetarian and non-vegetarian, South Indian, Maharashtrian, Bengali, and Odiya specialties to popular Chinese, Continental, and Italian dishes. Each menu is thoughtfully curated to suit regional tastes and modern preferences.
           </p>
-        </div>
+        </div> */}
 
-        <div className="about-block">
+        {/* <div className="about-block">
           <h2 className="about-heading">We offer a comprehensive range of services:</h2>
           <div className="services-container">
             <ul className="services-list">
@@ -299,16 +307,16 @@ const About = () => {
               ))}
             </ul>
           </div>
-        </div>
+        </div> */}
 
-        <div className="about-block">
+        {/* <div className="about-block">
           <p className="about-text">
           At AMDDAS, we combine authentic flavors with efficient service and modern kitchen practices, ensuring every plate and every event exceeds expectations.
           </p>
-        </div>
-      </div>
+        </div> */}
+     
       
-      <section id="why-us" className="why-us">
+      {/* <section id="why-us" className="why-us">
         <div className="why-us-container">
           <div className="section-title">
             <h2>Our <span>Standards</span></h2>
@@ -340,7 +348,7 @@ const About = () => {
               </div>
             </div>
             
-            {/* Pagination Dots */}
+          
             <div className="carousel-pagination">
               {Array.from({ length: totalSlides }).map((_, index) => (
                 <button
@@ -353,9 +361,9 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       
-      <Milestones/>
+     
     </>
   );
 };

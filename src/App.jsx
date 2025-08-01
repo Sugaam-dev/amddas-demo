@@ -19,7 +19,7 @@ import Foot from './Components/Foot';
 import PrivacyPolicy from './Components/PrivacyPolicy';
 import DeleteAccount from './Components/DeleteAccount';
 
-import About from './Components/About';
+import About from './Components/Abouts/About';
 import Gallery from './Components/Gallery';
 import Events from "./Components/Events";
 import OurStoryMain from './Components/OurStory-main';

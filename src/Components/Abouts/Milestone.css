@@ -1,9 +1,9 @@
 /* Milestones Section Styles */
 .milestones-section {
-    padding: 80px 10%;
-    background-color: white;
+    padding: 20px 10%;
+    background-color: #57F6E7;
     /* margin: 40px 0; */
-    min-height: 100vh;
+    min-height: 95vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,7 +19,7 @@
   .milestones-heading {
     font-size: 2.5rem;
     color: #333;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     font-family: 'IBM Plex Serif', Georgia, "Times New Roman", serif;
     font-weight: 600;
     letter-spacing: 1px;
@@ -50,7 +50,7 @@
   /* Responsive Design */
   @media (max-width: 1024px) {
     .milestones-section {
-      padding: 60px 8%;
+      padding: 5px 8%;
     }
     
     .milestones-heading {
@@ -65,8 +65,9 @@
   
   @media (max-width: 768px) {
     .milestones-section {
-      padding: 60px 5%;
-      margin: 20px 0;
+      padding: 2px 5%;
+      margin: 2px 0;
+      min-height: 90vh;
     }
     
     .milestones-heading {
@@ -81,7 +82,8 @@
   
   @media (max-width: 480px) {
     .milestones-section {
-      padding: 40px 3%;
+      padding: 15px 3%;
+      min-height: 40vh;
     }
     
     .milestones-heading {

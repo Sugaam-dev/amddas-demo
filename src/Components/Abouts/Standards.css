@@ -1,0 +1,121 @@
+
+.standards-section {
+  background-color:  #57F6E7;
+  padding: 60px 20px;
+}
+
+
+.standards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  
+}
+
+.section-title h2 {
+  font-size: 36px;
+  color: #333;
+  font-family: 'IBM Plex Serif', Georgia, "Times New Roman", serif;
+}
+
+.section-title h2 span {
+  color: orangered;
+}
+
+.standard-card {
+  background-color:  #57F6E7;
+  border-radius: 20px;
+  max-width: 550px;
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.standard-img {
+  width: 100%;
+  height: 50vh;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.standard-info h3 {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #222;
+  text-align: center;
+}
+
+.standard-info .icon {
+  margin-right: 10px;
+  font-size: 1.5rem;
+  color: #555;
+}
+
+.standard-info ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.standart-info-text {
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+@media (max-width: 768px){
+  .standards-section{
+    padding: 2px 5px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .standards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .standard-card {
+    max-width: 90%;
+  }
+
+  .standard-info h3 {
+    font-size: 1.6rem;
+  }
+
+  .standard-info ul {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .standard-info h3 {
+    font-size: 1.4rem;
+  }
+
+  .standard-info ul {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 430px) {
+.standards-section {
+  background-color:  #57F6E7;
+  padding: 10px 2px;
+}
+}
