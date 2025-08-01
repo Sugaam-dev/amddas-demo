@@ -1,3 +1,7 @@
+*{
+  font-family: 'Helvetica', Arial, sans-serif;
+}
+
 .about-service-section {
   padding: 50px 20px;
 }
@@ -29,6 +33,7 @@
   color: #333;
   margin-bottom: 15px;
   line-height: 1.6;
+  font-family: 'Helvetica', Arial, sans-serif;
 }
 
 .service-list {

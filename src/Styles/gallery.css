@@ -42,7 +42,7 @@
 .banner-section-gallery{
   background-color: #57F6E7;
   padding: 80px 10px 10px 10px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Helvetica', Arial, sans-serif;
 }
 
 .gallery-section{
@@ -52,9 +52,9 @@
 
 .banner-title-gallery {
   font-weight: 600;
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: 'Helvetica', Arial, sans-serif;
   text-align: center;
-  font-size: 45px;
+  font-size: 54px;
   line-height: 1.5;
   color: #333;
   margin-bottom: 15px;
@@ -65,7 +65,7 @@
   line-height: 1.8;
   padding: 0 10%;
   font-size: 16px;
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: 'Helvetica', Arial, sans-serif;
 }
 
 /* Custom Swiper Navigation Arrows */

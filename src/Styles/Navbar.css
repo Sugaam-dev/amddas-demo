@@ -1,4 +1,8 @@
 /* Mobile contact link styling */
+:root {
+    --navbar-font: 'Neuehaasdisplay Roman', sans-serif;
+}
+
 .compass-mobile-contact {
   color: #ff4500 !important;
   font-weight: 600 !important;
@@ -84,7 +88,7 @@
   border-radius: 25px;
   background-color: transparent;
   transition: all 0.3s ease;
-  font-family: 'Arial', sans-serif;
+  font-family: var(--navbar-font);
   white-space: nowrap;
 }
 
@@ -122,7 +126,7 @@
   border-radius: 25px;
   background-color: transparent;
   transition: all 0.3s ease;
-  font-family: 'Arial', sans-serif;
+  font-family: var(--navbar-font);
   display: inline-block;
   white-space: nowrap;
 }
@@ -240,7 +244,7 @@
 .compass-location-text-inline {
   font-size: 14px;
   font-weight: 500;
-  font-family: 'Arial', sans-serif;
+  font-family: var(--navbar-font);
 }
 
 /* Mobile Toggle */

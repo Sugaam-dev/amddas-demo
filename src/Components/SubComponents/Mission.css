@@ -1,4 +1,7 @@
 /* Main Container - Horizontal Layout */
+
+@import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@400&display=swap');
+
 .Our-mission-container {
   display: flex;
   align-items: center;
@@ -44,7 +47,7 @@
   margin-bottom: 30px;
   color: #333;
   line-height: 1.2;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Helvetica', Arial, sans-serif;
   text-align: center;
 }
 
@@ -55,7 +58,7 @@
   margin-bottom: 10px;
   text-align: center;
   font-weight: 400;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Helvetica', Arial, sans-serif;
 }
 
 /* Tablet Responsiveness */

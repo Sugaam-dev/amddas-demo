@@ -18,6 +18,7 @@
     color: #333;
     margin: 0;
     letter-spacing: 2px;
+    font-family: 'Helvetica', Arial, sans-serif;
   }
   
   .highlight {
@@ -161,6 +162,7 @@
     text-transform: uppercase;
     box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
     text-decoration: none;
+    font-family: 'Helvetica', Arial, sans-serif;
   }
   
   .see-more-btn:hover {

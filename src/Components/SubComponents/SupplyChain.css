@@ -70,7 +70,7 @@
   
 }
 
-.section-title h2 {
+/* .section-title h2 {
   font-size: 36px;
   color: #333;
   font-family: 'IBM Plex Serif', Georgia, "Times New Roman", serif;
@@ -86,7 +86,7 @@
   margin: 0 auto;
   max-width: 600px;
   font-family: Open Sans, Arial, sans-serif;
-}
+} */
 
 .why-us-boxes {
   display: flex;
