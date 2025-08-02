@@ -10,7 +10,6 @@ const AboutService = () => {
         </div>
         <div className="about-service-text">
           <h2>We offer a comprehensive range of services:</h2>
-          <p></p>
           <ul className="service-list">
             <li>Corporate Catering</li>
             <li>Corporate Event Management</li>

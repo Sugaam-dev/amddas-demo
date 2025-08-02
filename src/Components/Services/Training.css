@@ -1,0 +1,350 @@
+
+/* Training Styles */
+.training-container {
+  font-family: 'Helvetica', Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Section Header Styles */
+.section-header {
+  text-align: center;
+  padding: 30px 20px;
+  margin-bottom: 30px;
+}
+
+.training-main-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  line-height: 1.2;
+  font-family: 'Helvetica', Arial, sans-serif;
+}
+
+.training-main-description {
+  font-size: 1rem;
+  color: #34495e;
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'Helvetica', Arial, sans-serif;
+}
+
+/* Common Section Styles */
+.life-at-compass-section,
+.learning-development-section {
+  padding: 20px 0;
+  min-height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.life-at-compass-section {
+  background-color: #57F6E7;
+}
+
+.learning-development-section {
+  background-color: #57F6E7;
+}
+
+/* Image Styles */
+.image-wrapper {
+  padding: 0 30px;
+  position: relative;
+  width: 100%;
+  margin-left: 0;
+}
+
+.training-image {
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.training-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Content Styles */
+.content-wrapper {
+  padding: 20px 30px;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  line-height: 1.2;
+  position: relative;
+  font-family: 'Helvetica', Arial, sans-serif;
+  text-align: center;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(45deg, #3498db, #2ecc71);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #34495e;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  font-family: 'Helvetica', Arial, sans-serif;
+  text-align: center;
+}
+
+.section-description {
+  font-size: 0.95rem;
+  color: #5a6c7d;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: justify;
+  font-family: 'Helvetica', Arial, sans-serif;
+}
+
+/* Features List Styles */
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features-list li {
+  position: relative;
+  padding: 8px 0 8px 25px;
+  font-size: 0.9rem;
+  color: #34495e;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+  font-family: 'Helvetica', Arial, sans-serif;
+}
+
+.features-list li::before {
+  content: '●';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  color: #3498db;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.features-list li:hover {
+  color: #2c3e50;
+}
+
+/* Responsive Design */
+
+/* Large screens */
+@media (min-width: 1200px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .content-wrapper {
+    padding: 30px 40px;
+  }
+  
+  .training-image {
+    height: 350px;
+  }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 991.98px) {
+  .section-header {
+    padding: 25px 15px;
+    margin-bottom: 25px;
+  }
+  
+  .training-main-title {
+    font-size: 1.8rem;
+  }
+  
+  .training-main-description {
+    font-size: 0.95rem;
+  }
+  
+  .life-at-compass-section,
+  .learning-development-section {
+    padding: 10px 0;
+    min-height: auto;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .content-wrapper {
+    padding: 20px 15px;
+    text-align: center;
+  }
+  
+  .section-subtitle {
+    text-align: center;
+  }
+  
+  .features-list {
+    text-align: left;
+    display: inline-block;
+    margin: 0 auto;
+  }
+  
+  .training-image {
+    height: 250px;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 767.98px) {
+  .section-header {
+    padding: 20px 10px;
+    margin-bottom: 20px;
+  }
+  
+  .training-main-title {
+    font-size: 1.6rem;
+  }
+  
+  .training-main-description {
+    font-size: 0.9rem;
+  }
+  
+  .life-at-compass-section,
+  .learning-development-section {
+    padding: 10px 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  .section-description {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+  
+  .content-wrapper {
+    padding: 20px 15px;
+  }
+  
+  .image-wrapper {
+    padding: 0;
+    width: 105%;
+    margin-left: -2.5%;
+  }
+  
+  .training-image {
+    border-radius: 15px;
+  }
+  
+  .features-list li {
+    font-size: 0.95rem;
+    padding: 10px 0 10px 25px;
+  }
+  
+  .features-list li::before {
+    font-size: 1rem;
+    top: 10px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 430px) {
+  .section-header {
+    padding: 15px 5px;
+    margin-bottom: 15px;
+  }
+  
+  .training-main-title {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  
+  .training-main-description {
+    font-size: 0.85rem;
+  }
+
+  .life-at-compass-section,
+  .learning-development-section {
+    padding: 10px 0;
+    min-height: auto;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .section-description {
+    font-size: 0.9rem;
+  }
+  
+  .content-wrapper {
+    padding: 15px 10px;
+  }
+  
+  .features-list li {
+    font-size: 0.9rem;
+    padding: 8px 0 8px 20px;
+  }
+}
+
+/* Animation for sections */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-wrapper {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.image-wrapper {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.training-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover effects */
+.content-wrapper:hover .section-title::after {
+  width: 80px;
+  transition: width 0.3s ease;
+}

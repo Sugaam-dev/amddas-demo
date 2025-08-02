@@ -25,7 +25,7 @@ import Events from "./Components/Events";
 import OurStoryMain from './Components/OurStory-main';
 import MissionVisionValues from './Components/MissionVisionValues';
 import Navbar from './Components/Nav';
-import WhatWeDo from './Components/WhatWeDo';
+import WhatWeDo from './Components/Services/WhatWeDo';
 import CorporateMain from './Components/Corporate-main';
 import OffsiteMain from './Components/SubComponents/OffsiteMain';
 import MyMealMain from './Components/SubComponents/MyMealMain';
@@ -56,22 +56,22 @@ function App() {
         <Route path='/verify-otp' element={<Otpforget />} />
         <Route path='/confirmpassword' element={<Cnfpassword />} />
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
-<Route path='/about' element={<About/>}/>
-<Route path='/amddas-gallery' element={<Gallery/>}/>
-<Route path='/amddas-events' element={<Events/>}/>
-<Route path='what-we-do' element={<WhatWeDo/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/amddas-gallery' element={<Gallery/>}/>
+        <Route path='/amddas-events' element={<Events/>}/>
+        <Route path='/what-we-do' element={<WhatWeDo/>}/>
 
-<Route path='/ourstory' element={<OurStoryMain/>}/>
-<Route path='/our-mission' element={<MissionVisionValues/>}/>
-<Route path='/corporate' element={<CorporateMain/>}/>
-<Route path='/corporate-offsite' element={<OffsiteMain/>}/>
-<Route path='/meal' element={<MyMealMain/>}/>
-<Route path='/technology' element={<TechnologyPage/>}/>
-<Route path='/corporate-experience' element={<CorporateExperience/>}/>
-<Route path='/supply-chain' element={<SupplyChain/>}/>
-<Route path='/sustainability' element={<Sustain/>}/>
-<Route path='/contact' element={<Contact/>}/>
-<Route path="/why-us" element={<Why_Us />} />
+        <Route path='/ourstory' element={<OurStoryMain/>}/>
+        <Route path='/our-mission' element={<MissionVisionValues/>}/>
+        <Route path='/corporate' element={<CorporateMain/>}/>
+        <Route path='/corporate-offsite' element={<OffsiteMain/>}/>
+        <Route path='/meal' element={<MyMealMain/>}/>
+        <Route path='/technology' element={<TechnologyPage/>}/>
+        <Route path='/corporate-experience' element={<CorporateExperience/>}/>
+        <Route path='/supply-chain' element={<SupplyChain/>}/>
+        <Route path='/sustainability' element={<Sustain/>}/>
+        <Route path='/contact' element={<Contact/>}/>
+        <Route path="/why-us" element={<Why_Us />} />
 
 
 
