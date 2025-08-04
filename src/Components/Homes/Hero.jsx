@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import "../Styles/hero.css";
+import "./hero.css";
 
 const bannerImages = [
   {

@@ -8,20 +8,20 @@ import Forget from './Components/Forget';
 import Done from './Components/Done';
 import Otpforget from './Components/Otp-Forget';
 import Cnfpassword from './Components/Cnfpassword';
-import Home from './Components/Home';
+import Home from './Components/Homes/Home';
 import PrivateRoute from './Components/PrivateRoute';
 import Menu from './Components/Menu';
 import Navbarr from './Components/Navbar';
 import Error from './Components/Error';
 import Demo from './Components/Demo';
 import Log from './Components/Log';
-import Foot from './Components/Foot';
+import Foot from './Components/Footers/Foot';
 import PrivacyPolicy from './Components/PrivacyPolicy';
 import DeleteAccount from './Components/DeleteAccount';
 
 import About from './Components/Abouts/About';
-import Gallery from './Components/Gallery';
-import Events from "./Components/Events";
+import Gallery from './Components/Homes/Gallery';
+import Events from "./Components/Events/Events";
 import OurStoryMain from './Components/OurStory-main';
 import MissionVisionValues from './Components/MissionVisionValues';
 import Navbar from './Components/Nav';
@@ -35,7 +35,7 @@ import SupplyChain from './Components/SubComponents/SupplyChain';
 import Sustain from './Components/SubComponents/Sustain';
 import Contact from './Components/Contacts/Contact';
 import Nav from './Components/Nav';
-import Why_Us from './Components/Why_Us';
+import Why_Us from './Components/WhyUs/Why_Us';
 
 
 

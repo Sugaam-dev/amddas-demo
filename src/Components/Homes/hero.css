@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@400&display=swap');
+/* Hero Section Styles */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 80px); /* Subtract navbar height */
+  overflow: hidden;
+  background-color: #000;
+}
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Carousel Slide */
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dark Overlay */
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Content Overlay - PERFECT CENTERING */
+.content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  z-index: 2;
+  pointer-events: none;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.hero-title {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  letter-spacing: 1px;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-description {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.6;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin: 0;
+  font-weight: 600;
+  font-family: 'Helvetica', Arial, sans-serif;
+  max-width: 90%;
+  text-align: center;
+}
+
+/* Pagination Dots */
+.pagination-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  z-index: 4;
+  pointer-events: auto;
+}
+
+.pagination-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.pagination-dot:hover {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.pagination-dot.active {
+  background: white;
+  border-color: white;
+  transform: scale(1.2);
+}
+
+.pagination-dot:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 3px;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .hero-section {
+    height: calc(100vh - 70px); /* Smaller navbar on medium screens */
+  }
+  
+  .hero-description {
+    font-size: clamp(1.3rem, 2.8vw, 2.2rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: calc(100vh - 80px); /* Mobile navbar height */
+  }
+  
+  .content-overlay {
+    padding: 0 15px;
+  }
+  
+  .hero-description {
+    font-size: clamp(1.1rem, 4.5vw, 1.8rem);
+    line-height: 1.3;
+    max-width: 95%;
+  }
+  
+  .pagination-dots {
+    bottom: 30px;
+    gap: 12px;
+  }
+  
+  .pagination-dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    height: calc(100vh - 95px); /* Consistent mobile navbar */
+  }
+  
+  .content-overlay {
+    padding: 0 10px;
+  }
+  
+  .hero-description {
+    font-size: clamp(0.9rem, 5.5vw, 1.4rem);
+    line-height: 1.2;
+    max-width: 100%;
+  }
+  
+  .pagination-dots {
+    bottom: 25px;
+    gap: 10px;
+  }
+  
+  .pagination-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero-section {
+    height: calc(100vh - 90px); /* Extra small screens */
+  }
+  
+  .hero-description {
+    font-size: clamp(0.8rem, 6vw, 1.2rem);
+    line-height: 1.1;
+  }
+  
+  .pagination-dots {
+    bottom: 20px;
+    gap: 8px;
+  }
+  
+  .pagination-dot {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* Animation Classes for Additional Effects */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .dark-overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .pagination-dot {
+    border-color: white;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .pagination-dot.active {
+    background: white;
+  }
+  
+  .hero-title,
+  .hero-description {
+    text-shadow: 2px 2px 0px #000, -2px -2px 0px #000, 2px -2px 0px #000, -2px 2px 0px #000;
+  }
+}

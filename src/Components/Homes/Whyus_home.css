@@ -1,0 +1,231 @@
+/* Whyus_home.css */
+
+/* Set body and html background to match component */
+@import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@400&display=swap');
+
+body, html {
+  background-color: #57F6E7 !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove any decorative elements */
+.whyus-container::before,
+.whyus-container::after,
+.service-item::before,
+.service-item::after,
+.icon-image::before,
+.icon-image::after {
+  display: none !important;
+  content: none !important;
+}
+
+.whyus-container {
+  background-color: #57F6E7;
+  border: 3px solid #2c2c2c;
+  border-radius: 35px; /* Reduced from 45px */
+  padding: 25px 30px; /* Reduced from 40px 40px */
+  width: 100%;
+  max-width: 1200px;
+  margin: 25px auto; /* Ensures perfect centering */
+  font-family: 'Helvetica', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: block; /* Ensures proper block behavior */
+}
+
+/* Full page wrapper */
+.whyus-page-wrapper {
+  background-color: #57F6E7;
+  min-height: 50vh; /* Reduced from 70vh */
+  width: 100%;
+  padding: 0 20px; /* Added horizontal padding for better spacing */
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Centers the container horizontally */
+  align-items: flex-start; /* Aligns to top */
+  box-sizing: border-box;
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.descriptionn {
+  text-align: center;
+  font-size: 18px; /* Increased for better readability */
+  line-height: 1.5; /* Slightly reduced line height */
+  color: #2c2c2c;
+  margin: 0 auto 25px auto; /* Reduced bottom margin from 40px to 25px */
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  width: 900px; /* Fixed width as requested */
+  font-family: 'Helvetica', Arial, sans-serif;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px; /* Reduced from 40px */
+  align-items: center;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.icon-image {
+  width: 75px; /* Reduced from 90px */
+  height: 75px; /* Reduced from 90px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px; /* Reduced from 25px */
+}
+
+.icon-image img {
+  width: 75px; /* Reduced from 90px */
+  height: 75px; /* Reduced from 90px */
+  object-fit: contain;
+}
+
+.service-title {
+  font-size: 16px; /* Reduced from 20px */
+  font-weight: 600;
+  color: #2c2c2c;
+  margin: 0;
+  line-height: 1.2; /* Tighter line height */
+  letter-spacing: 0.3px;
+  max-width: 170px; /* Reduced from 180px */
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .whyus-page-wrapper {
+    padding: 0 15px; /* Responsive padding */
+  }
+
+  .whyus-container {
+    padding: 25px 20px; /* Reduced padding */
+    margin: 20px auto; /* Ensure centering */
+    border-radius: 30px; /* Reduced border radius */
+    width: 100%;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Reduced gap */
+  }
+  
+  .descriptionn {
+    font-size: 20px;
+    margin-bottom: 25px;
+    width: 90%; /* Responsive width for tablet */
+    max-width: 800px;
+  }
+
+  .icon-image {
+    width: 70px; /* Further reduced for tablet */
+    height: 70px;
+    margin-bottom: 12px;
+  }
+
+  .icon-image img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .service-title {
+    font-size: 17px;
+    max-width: 150px;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 640px) {
+  .whyus-page-wrapper {
+    padding: 0 10px; /* Responsive padding for mobile */
+    min-height: 40vh; /* Further reduced for mobile */
+  }
+
+  .whyus-container {
+    padding: 20px 15px; /* Further reduced padding */
+    border-radius: 25px;
+    margin: 15px auto; /* Ensure centering */
+    width: 100%;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 18px; /* Reduced gap for mobile */
+  }
+  
+  .descriptionn {
+    font-size: 18px;
+    margin-bottom: 20px; /* Reduced margin */
+    width: 100%;
+    line-height: 1.4;
+  }
+  
+  .icon-image {
+    width: 65px; /* Smaller icons for mobile */
+    height: 65px;
+    margin-bottom: 10px;
+  }
+  
+  .icon-image img {
+    width: 65px;
+    height: 65px;
+  }
+  
+  .service-title {
+    font-size: 16px;
+    max-width: 140px;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 480px) {
+  .whyus-page-wrapper {
+    padding: 0 8px; /* Minimal padding for very small screens */
+  }
+
+  .whyus-container {
+    padding: 18px 12px; /* Minimal padding for very small screens */
+    margin: 10px auto; /* Ensure centering */
+    width: 100%;
+  }
+
+  .descriptionn {
+    font-size: 16px;
+    margin-bottom: 18px;
+  }
+
+  .icon-image {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 8px;
+  }
+
+  .icon-image img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .service-title {
+    font-size: 15px;
+    max-width: 130px;
+  }
+
+  .services-grid {
+    gap: 15px;
+  }
+}

@@ -1,0 +1,126 @@
+.whyus-wrapper {
+  background-color: #00FFFF;
+  padding-bottom: 60px;
+}
+
+/* Banner */
+.banner-section-why-us {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-bottom: 60px;
+}
+
+.banner-title-why-us {
+  font-size: 48px;
+  font-weight: bold;
+  animation: fadeInDown 1s ease-out;
+  text-align: center;
+   font-family: 'Helvetica', Arial, sans-serif;
+}
+
+/* Section */
+.whyus-container {
+  max-width: 1200px;
+  /* margin: 0 auto; */
+  padding: 0 20px;
+}
+
+/* Add this to give space above the first block
+.whyus-container .whyus-section:first-child {
+  margin-top: 60px;
+  border-top: 4px solid #000;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+} */
+
+
+.whyus-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+  background-color: #e6fff9;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  margin-top: 40px;
+}
+
+.whyus-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.whyus-text h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #222;
+   font-family: 'Helvetica', Arial, sans-serif;
+}
+
+.whyus-text ul {
+  padding-left: 20px;
+  list-style: disc;
+  color: #444;
+}
+
+.whyus-text li {
+  margin-bottom: 12px;
+  font-size: 16px;
+   font-family: 'Helvetica', Arial, sans-serif;
+}
+
+.whyus-image {
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+}
+
+.whyus-image img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .whyus-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .whyus-text h2 {
+    font-size: 24px;
+  }
+
+  .whyus-text li {
+    font-size: 15px;
+  }
+
+  .whyus-image img {
+    max-width: 100%;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

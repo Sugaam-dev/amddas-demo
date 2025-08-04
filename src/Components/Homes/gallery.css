@@ -1,0 +1,279 @@
+/* Gallery Section */
+.gallery-section {
+  padding: 20px 10px;
+  background-color: #57F6E7;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  position: relative;
+}
+
+.gallery-swiper {
+  padding-bottom: 20px;
+}
+
+/* Hide pagination bullets */
+.swiper-pagination {
+  display: none !important;
+}
+
+.image-wrapper {
+  width: 300px; /* Set a fixed width */
+  height: 200px; /* Set a fixed height */
+  margin: 0 auto;
+  overflow: hidden; /* Ensure no overflow from larger images */
+  border-radius: 20px; /* Enhanced rounded corners - increased from 10px to 20px */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow for better depth */
+  transition: all 0.3s ease; /* Added transition for smooth hover effects */
+}
+
+.image-wrapper:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fits perfectly without distortion */
+  transition: transform 0.3s ease;
+  border-radius: 20px; /* Apply border-radius to image as well for consistency */
+}
+
+.image-wrapper img:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.banner-section-gallery{
+  background-color: #57F6E7;
+  padding: 40px 10px 10px 10px;
+  font-family: 'Helvetica', Arial, sans-serif;
+}
+
+.gallery-section{
+  background-color: #57F6E7;
+  min-height: 300px; /* Changed from fixed height to min-height */
+}
+
+.banner-title-gallery {
+  font-weight: 600;
+  font-family: 'Helvetica', Arial, sans-serif;
+  text-align: center;
+  font-size: 54px;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.gg {
+  text-align: start;
+  line-height: 1.8;
+  padding: 0 10%;
+  font-size: 16px;
+  font-family: 'Helvetica', Arial, sans-serif;
+}
+
+/* Custom Swiper Navigation Arrows */
+.custom-prev,
+.custom-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.custom-prev:hover,
+.custom-next:hover {
+  transform: translateY(-50%) scale(1.2);
+}
+
+.custom-prev {
+  left: -20px;
+}
+
+.custom-next {
+  right: -20px;
+}
+
+.custom-prev::after,
+.custom-next::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  transition: all 0.3s ease;
+}
+
+.custom-prev::after {
+  border-width: 12px 18px 12px 0;
+  border-color: transparent #ff4f00 transparent transparent;
+}
+
+.custom-next::after {
+  border-width: 12px 0 12px 18px;
+  border-color: transparent transparent transparent #ff4f00;
+}
+
+.custom-prev:hover::after {
+  border-color: transparent #e63900 transparent transparent;
+}
+
+.custom-next:hover::after {
+  border-color: transparent transparent transparent #e63900;
+}
+
+/* Custom Swiper Pagination Dots */
+.gallery-swiper .swiper-pagination {
+  bottom: 10px !important; /* Position dots below images */
+  position: relative !important;
+  margin-top: 30px;
+}
+
+.custom-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  background-color: rgba(255, 79, 0, 0.3) !important;
+  border: 2px solid #ff4f00 !important;
+  border-radius: 50% !important;
+  opacity: 1 !important;
+  margin: 0 6px !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.custom-bullet-active {
+  background-color: #ff4f00 !important;
+  transform: scale(1.2) !important;
+  box-shadow: 0 2px 8px rgba(255, 79, 0, 0.4) !important;
+}
+
+.custom-bullet:hover {
+  background-color: #ff4f00 !important;
+  transform: scale(1.1) !important;
+}
+
+/* Override default Swiper styles */
+.gallery-swiper .swiper-button-next,
+.gallery-swiper .swiper-button-prev {
+  display: none; /* Hide default arrows since we're using custom ones */
+}
+
+.gallery-swiper .swiper-pagination-bullet {
+  background-color: rgba(255, 79, 0, 0.3) !important;
+  border: 2px solid #ff4f00 !important;
+}
+
+.gallery-swiper .swiper-pagination-bullet-active {
+  background-color: #ff4f00 !important;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .banner-section-gallery {
+    /* height: 200px; */
+    padding-top: 50px;
+  }
+
+  .gallery-section{
+    min-height: 200px; /* Changed from fixed height to min-height */
+  }
+
+  .banner-title-gallery {
+    font-size: 40px;
+  }
+
+  .image-wrapper {
+    width: 277px; /* Adjust width for smaller screens */
+    height: 180px; /* Adjust height for smaller screens */
+    border-radius: 18px; /* Slightly reduced for mobile but still rounded */
+  }
+
+  .image-wrapper img {
+    border-radius: 18px; /* Match the wrapper border-radius */
+  }
+  
+  .custom-prev {
+    left: 0;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .custom-next {
+    right: 0;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .custom-prev::after {
+    border-width: 10px 15px 10px 0;
+  }
+  
+  .custom-next::after {
+    border-width: 10px 0 10px 15px;
+  }
+  
+  .gallery-swiper {
+    padding-bottom: 40px;
+  }
+  
+  .custom-bullet {
+    width: 10px !important;
+    height: 10px !important;
+    margin: 0 4px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-prev {
+    left: 5px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .gallery-section{
+    min-height: 100px; /* Changed from fixed height to min-height */
+  }
+
+  .banner-title-gallery {
+    font-size: 30px;
+  }
+  
+  .custom-next {
+    right: 5px;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .image-wrapper {
+    border-radius: 15px; /* Further reduced for smaller screens but still noticeable */
+  }
+
+  .image-wrapper img {
+    border-radius: 15px; /* Match the wrapper border-radius */
+  }
+  
+  .custom-prev::after {
+    border-width: 8px 12px 8px 0;
+  }
+  
+  .custom-next::after {
+    border-width: 8px 0 8px 12px;
+  }
+  
+  .custom-bullet {
+    width: 8px !important;
+    height: 8px !important;
+    margin: 0 3px !important;
+  }
+}
