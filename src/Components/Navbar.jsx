@@ -33,66 +33,80 @@ function Navbarr() {
     navigate('/login');
   };
 
-  // UPDATED: Function to handle service navigation with direct smooth scrolling
+  // UPDATED: Function to handle service navigation with smoother scrolling
   const handleServiceNavigation = (serviceType) => {
     // Close mobile menu if open
     handleClose();
     
-    // Navigate to what-we-do page
-    navigate('/what-we-do');
+    // Check if we're already on the services page
+    const currentPath = window.location.pathname;
+    const isOnServicesPage = currentPath === '/what-we-do';
     
-    // Set session storage for the specific service
-    sessionStorage.setItem(`scrollTo${serviceType}`, 'true');
-    
-    // Add a delay to ensure navigation completes, then scroll directly
-    setTimeout(() => {
+    if (isOnServicesPage) {
+      // If already on services page, scroll directly
       const element = document.getElementById(`${serviceType.toLowerCase()}-section`);
       if (element) {
-        // Prevent any upward scrolling by checking current position
-        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const targetPosition = element.offsetTop - 80; // Account for sticky navbar
+        const navbarHeight = 80;
+        const elementPosition = element.offsetTop - navbarHeight;
         
-        // Only scroll if we need to move to a different position
-        if (Math.abs(currentScrollTop - targetPosition) > 50) {
-          // Use smooth scroll with custom behavior to prevent upward jump
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-        }
+        window.scrollTo({
+          top: Math.max(0, elementPosition),
+          behavior: 'smooth'
+        });
       }
-    }, 100);
+    } else {
+      // Navigate to services page first, then scroll
+      navigate('/what-we-do');
+      
+      // Set session storage for the specific service (WhatWeDo component will handle the scrolling)
+      sessionStorage.setItem(`scrollTo${serviceType}`, 'true');
+      
+      // Remove any existing service scroll flags to prevent conflicts
+      const serviceTypes = ['Corporate', 'Educational', 'Hospital', 'Training'];
+      serviceTypes.forEach(type => {
+        if (type !== serviceType) {
+          sessionStorage.removeItem(`scrollTo${type}`);
+        }
+      });
+    }
   };
 
-  // UPDATED: Function to handle event navigation with direct smooth scrolling
+  // UPDATED: Function to handle event navigation with smoother scrolling
   const handleEventNavigation = (eventType) => {
     // Close mobile menu if open
     handleClose();
     
-    // Navigate to events page
-    navigate('/amddas-events');
+    // Check if we're already on the events page
+    const currentPath = window.location.pathname;
+    const isOnEventsPage = currentPath === '/amddas-events';
     
-    // Set session storage for the specific event
-    sessionStorage.setItem(`scrollTo${eventType}`, 'true');
-    
-    // Add a delay to ensure navigation completes, then scroll directly
-    setTimeout(() => {
+    if (isOnEventsPage) {
+      // If already on events page, scroll directly
       const element = document.getElementById(`${eventType.toLowerCase()}-section`);
       if (element) {
-        // Prevent any upward scrolling by checking current position
-        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const targetPosition = element.offsetTop - 80; // Account for sticky navbar
+        const navbarHeight = 80;
+        const elementPosition = element.offsetTop - navbarHeight;
         
-        // Only scroll if we need to move to a different position
-        if (Math.abs(currentScrollTop - targetPosition) > 50) {
-          // Use smooth scroll with custom behavior to prevent upward jump
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-        }
+        window.scrollTo({
+          top: Math.max(0, elementPosition),
+          behavior: 'smooth'
+        });
       }
-    }, 100);
+    } else {
+      // Navigate to events page first, then scroll
+      navigate('/amddas-events');
+      
+      // Set session storage for the specific event (Events component will handle the scrolling)
+      sessionStorage.setItem(`scrollTo${eventType}`, 'true');
+      
+      // Remove any existing scroll flags to prevent conflicts
+      const eventTypes = ['Wedding', 'Birthday', 'Housewarming', 'Engagement', 'Festival', 'Bhandaara'];
+      eventTypes.forEach(type => {
+        if (type !== eventType) {
+          sessionStorage.removeItem(`scrollTo${type}`);
+        }
+      });
+    }
   };
 
   return (

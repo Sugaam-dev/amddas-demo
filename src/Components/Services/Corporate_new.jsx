@@ -1,8 +1,40 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Corporate_new.css';
+// Import centralized caching system
+import { preloadImages } from '../../utils/imageCache';
 
 function CorporateNewPage() {
+  useEffect(() => {
+    // ===== CENTRALIZED IMAGE CACHING =====
+    // To disable caching: Comment out the preloadImages call below
+    // To enable caching: Uncomment the preloadImages call below
+    
+    const corporateImages = [
+      '/images/corporate.jpg',
+      '/images/corporatebanner.jpg',
+      '/images/contact.jpg',
+      '/images/meal.jpg',
+      '/images/service.jpg'
+    ];
+
+    // UNCOMMENT BELOW TO ENABLE CACHING
+    preloadImages(corporateImages, {
+      delay: 50,
+      highPriorityCount: 2,
+      onProgress: ({ loaded, total, src, error }) => {
+        if (error) {
+          console.error(`Failed to cache image: ${src}`);
+        }
+      }
+    }).catch((error) => {
+      console.error('Corporate services image caching failed:', error);
+    });
+    
+    // COMMENT OUT ABOVE BLOCK TO DISABLE CACHING
+    // ====================================
+  }, []);
+
   return (
     <div className="corporate-container" id="corporate-section">
       {/* Life At Compass Section */}
@@ -56,7 +88,7 @@ function CorporateNewPage() {
             <div className="col-lg-6 col-md-12 order-lg-2 order-1">
               <div className="image-wrapper">
                 <img 
-                  src="/images/corporatebanner.png" 
+                  src="/images/corporatebanner.jpg" 
                   alt="Learning & Development" 
                   className="img-fluid corporate-image"
                 />

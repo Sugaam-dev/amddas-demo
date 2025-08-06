@@ -13,11 +13,12 @@
 }
   
   .Our-services-title {
-    font-size: 60px;
-    font-weight: 400;
+    font-size: 48px;
+    font-weight: bold;
     padding-bottom: 20px;
     text-align: center;
-    
+    font-family: 'Helvetica', Arial, sans-serif;
+    animation: fadeInDown 1s ease-out;
     color: #fff;
   }
   
@@ -25,9 +26,11 @@
     text-align: center;
     color: #ffffff;
     max-width: 900px;
-   padding: 0px 10px;
+    padding: 0px 10px;
     font-size: 20px;
     line-height: 30px;
+    font-family: 'Helvetica', Arial, sans-serif;
+    animation: fadeInDown 1s ease-out;
   }
   
  

@@ -1,7 +1,8 @@
 // App.jsx
 import './App.css';
 import Login from './Components/Login';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import SignUp from './Components/SignUp';
 import Otp from './Components/Otp';
 import Forget from './Components/Forget';
@@ -37,11 +38,26 @@ import Contact from './Components/Contacts/Contact';
 import Nav from './Components/Nav';
 import Why_Us from './Components/WhyUs/Why_Us';
 
+// ScrollToTop Component - This will handle automatic scrolling to top on route change
+function ScrollToTop() {
+  const { pathname } = useLocation();
 
+  useEffect(() => {
+    // Scroll to top instantly when route changes
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant' // Use 'smooth' if you want animated scrolling
+    });
+  }, [pathname]);
+
+  return null; // This component doesn't render anything
+}
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop /> {/* Add ScrollToTop component here - it must be inside BrowserRouter */}
       <Navbarr />
       {/* <Nav/> */}
 
@@ -72,11 +88,6 @@ function App() {
         <Route path='/sustainability' element={<Sustain/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path="/why-us" element={<Why_Us />} />
-
-
-
-
-
 
         {/* Protected Routes */}
         <Route

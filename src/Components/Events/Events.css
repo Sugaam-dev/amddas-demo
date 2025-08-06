@@ -25,6 +25,8 @@
   font-weight: 500;
   color: #ffffff;
   margin-bottom: 0;
+  font-family: 'Helvetica', Arial, sans-serif;
+  animation: fadeInDown 1s ease-out;
 }
 
 .banner-subtitle-event {
@@ -39,6 +41,8 @@
   line-height: 1.6;
   opacity: 0.9;
   font-family: 'Helvetica', Arial, sans-serif;
+   font-family: 'Helvetica', Arial, sans-serif;
+    animation: fadeInDown 1s ease-out;
 }
 
 @media (max-width: 768px) {
@@ -149,8 +153,8 @@
 
 .wedding-description {
   color: #333;
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.4;
   margin-bottom: 25px;
   font-family: 'Helvetica', Arial, sans-serif;
 }
@@ -285,7 +289,7 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  background-color: #ffffff;
+  background-color: #57F6E7;
   font-family: 'Helvetica', Arial, sans-serif;
 }
 
@@ -357,16 +361,20 @@
 }
 
 .heading {
-  color: #000;
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   font-family: 'Helvetica', Arial, sans-serif;
+  color: #333;
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+  padding-top: 50px;
 }
 
 .specialized-cuisines {
-  color: #ff5722;
+  color: orangered;
   font-size: 2rem;
+  font-weight: bold;
   margin-top: 20px;
   font-family: 'Helvetica', Arial, sans-serif;
 }
@@ -388,17 +396,18 @@
   font-family: 'Helvetica', Arial, sans-serif;
 }
 
-.heading {
+/* .heading {
   margin-top: 20px;
+  padding-top: 30px;
   color: #333333;
-}
+} */
 
 .enquire-now {
   padding: 12px 24px;
   font-size: 1rem;
   font-weight: bold;
-  color: white;
-  background-color: #ff4500;
+  color: black;
+  background-color: #ffbf00;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -435,6 +444,7 @@
 
   .heading {
     font-size: 2rem;
+    padding-top: 30px;
   }
 
   .specialized-cuisines {
@@ -468,6 +478,7 @@
 
   .heading {
     font-size: 1.8rem;
+    padding-top: 30px;
   }
 
   .specialized-cuisines {
@@ -507,6 +518,7 @@
 
   .heading {
     font-size: 1.5rem;
+    padding-top: 20px;
   }
 
   .specialized-cuisines {

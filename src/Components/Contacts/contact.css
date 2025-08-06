@@ -11,9 +11,10 @@
   .banner-title-contact {
     color: #fff;
     font-size: 48px;
-    font-weight: 400;
+    font-weight: bold;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-    font-family: Open Sans, Arial, sans-serif;
+    font-family: 'Helvetica', Arial, sans-serif;
+    animation: fadeInDown 1s ease-out;
   }
   @media (max-width:768px) {
     .banner-section-contact{

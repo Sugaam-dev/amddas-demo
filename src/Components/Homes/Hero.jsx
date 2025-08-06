@@ -15,7 +15,7 @@ const bannerImages = [
   },
   {
     id: 3,
-    url: "./images/mission.jpg",
+    url: "./images/amdback.jpg",
     description: "Fast.Fresh.Flexible"
   },
   {
