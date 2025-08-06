@@ -120,7 +120,7 @@ body {
   padding: 5px  5%;
   background-color: #57F6E7;
   margin: 0;
-  padding-top: 70px;
+  padding-top: 40px;
   font-family: 'Helvetica', Arial, sans-serif;
 }
 
@@ -150,7 +150,7 @@ body {
 .wedding-content {
   flex: 1;
   max-width: 500px;
-  padding: 20px;
+  padding: 10px;
   font-family: 'Helvetica', Arial, sans-serif;
 }
 
@@ -166,7 +166,7 @@ body {
   color: #333;
   font-size: 0.9rem;
   line-height: 1.4;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
   font-family: 'Helvetica', Arial, sans-serif;
 }
 
@@ -375,7 +375,7 @@ body {
   text-align: center;
     color: #333;
   font-size: 2.6rem;
-  margin-top: 60px;
+  margin-top: 80px;
   font-family: 'Helvetica', Arial, sans-serif;
   font-weight: 600;
 }
@@ -404,11 +404,6 @@ body {
 
 .events-description p {
   font-family: 'Helvetica', Arial, sans-serif;
-}
-
-.heading {
-  margin-top: 20px;
-  color: #333333;
 }
 
 .enquire-now {
