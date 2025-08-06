@@ -54,6 +54,7 @@ body {
   line-height: 1.6;
   opacity: 0.9;
   font-family: 'Helvetica', Arial, sans-serif;
+  animation: fadeInDown 1s ease-out;
 }
 
 @media (max-width: 768px) {
@@ -76,6 +77,8 @@ body {
 .banner-title-event {
   color: #ffffff;
   font-family: 'Helvetica', Arial, sans-serif;
+  animation: fadeInDown 1s ease-out;
+  font-size: 48px;
 }
 
 .content-section {

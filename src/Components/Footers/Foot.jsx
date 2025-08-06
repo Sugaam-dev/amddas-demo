@@ -115,10 +115,10 @@ export default function Footer() {
                     <div className="footer-links">
                         <h2>Important Links</h2>
                         <ul>
-                            <li><Link to="/services">Services</Link></li>
-                            <li><Link to="/events">Events</Link></li>
+                            <li><Link to="/what-we-do">Services</Link></li>
+                            <li><Link to="/amddas-events">Events</Link></li>
                             <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-                            <li><Link to="/privacy-policy">Terms & Conditions</Link></li>
+                            <li><Link to="/terms-and-conditions">Terms & Conditions</Link></li>
                         </ul>
                     </div>
                                   
