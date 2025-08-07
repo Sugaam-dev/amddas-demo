@@ -520,5 +520,5 @@
 /* ADDED: Fixed scroll margin for better section positioning */
 .wedding-section,
 .Our-services-container {
-  scroll-margin-top: 70px;
+  scroll-margin-top: 50px;
 }
