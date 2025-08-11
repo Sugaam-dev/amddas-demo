@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@400&display=swap');
 
 body, html {
-  background-color: #57F6E7 !important;
+  background-color: #E1F8FC !important;
   margin: 0;
   padding: 0;
 }
@@ -21,7 +21,7 @@ body, html {
 }
 
 .whyus-container {
-  background-color: #57F6E7;
+  background-color: #E1F8FC;
   border: 3px solid #2c2c2c;
   border-radius: 35px; /* Reduced from 45px */
   padding: 25px 30px; /* Reduced from 40px 40px */
@@ -36,7 +36,7 @@ body, html {
 
 /* Full page wrapper */
 .whyus-page-wrapper {
-  background-color: #57F6E7;
+  background-color: #E1F8FC;
   min-height: 50vh; /* Reduced from 70vh */
   width: 100%;
   padding: 0 20px; /* Added horizontal padding for better spacing */

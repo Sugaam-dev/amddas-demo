@@ -37,6 +37,7 @@ import Sustain from './Components/SubComponents/Sustain';
 import Contact from './Components/Contacts/Contact';
 import Nav from './Components/Nav';
 import Why_Us from './Components/WhyUs/Why_Us';
+import Festivals from './Components/Festivals/Festivals';
 
 // ScrollToTop Component - This will handle automatic scrolling to top on route change
 function ScrollToTop() {
@@ -88,6 +89,7 @@ function App() {
         <Route path='/sustainability' element={<Sustain/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path="/why-us" element={<Why_Us />} />
+        <Route path="/festivals" element={<Festivals />} />
 
         {/* Protected Routes */}
         <Route

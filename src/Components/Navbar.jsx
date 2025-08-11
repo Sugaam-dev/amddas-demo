@@ -665,6 +665,12 @@ function Navbarr() {
                     Wedding
                   </NavDropdown.Item>
                   <NavDropdown.Item 
+                    onClick={() => handleEventNavigation('Housewarming')}
+                    className="compass-dropdown-item"
+                  >
+                    House Warming
+                  </NavDropdown.Item>
+                  <NavDropdown.Item 
                     onClick={() => handleEventNavigation('Birthday')}
                     className="compass-dropdown-item"
                   >
@@ -699,6 +705,15 @@ function Navbarr() {
                 onClick={handleClose}
               >
                 Why Us
+              </Nav.Link>
+
+              <Nav.Link 
+                as={NavLink} 
+                to="/festivals" 
+                className="compass-nav-pill"
+                onClick={handleClose}
+              >
+                Festivals
               </Nav.Link>
 
               {/* Contact Us */}

@@ -1,0 +1,551 @@
+/* Offers.css */
+
+
+
+.offer-container {
+  width: 1100px; /* Fixed width */
+  max-width: 1100px; /* Ensure it doesn't exceed 1100px */
+  background: linear-gradient(135deg, #ffffff, #f0fdfc);
+  border-radius: 25px;
+  box-shadow: 0 40px 60px rgba(87, 246, 231, 0.3);
+  overflow: hidden;
+  border: 15px solid #00FFFF;
+  position: relative;
+  margin: 30PX auto; /* Center horizontally */
+}
+
+.offer-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(87, 246, 231, 0.1) 10deg, transparent 20deg);
+  animation: rotate 20s linear infinite;
+  z-index: 1;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.content-wrapperr {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  min-height: 500px;
+}
+
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  position: relative;
+}
+
+.ganesh-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  filter: drop-shadow(10px 10px 20px rgba(87, 246, 231, 0.4));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+.text-section {
+  flex: 1;
+  padding: 40px;
+  text-align: center;
+  position: relative;
+}
+
+.festival-badge {
+  background: linear-gradient(45deg, #57F6E7, #2DD4BF);
+  color: #065f46;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(87, 246, 231, 0.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    transform: scale(1); 
+  }
+  50% { 
+    transform: scale(1.05); 
+  }
+}
+
+.main-heading {
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(45deg, #065f46, #059669, #57F6E7);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+  from { 
+    filter: brightness(1); 
+  }
+  to { 
+    filter: brightness(1.2); 
+  }
+}
+
+.sub-heading {
+  font-size: 1.5rem;
+  color: #065f46;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.restaurant-name {
+  font-size: 1.2rem;
+  color: #059669;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.offer-details {
+  background: linear-gradient(135deg, #57F6E7, #2DD4BF);
+  color: #065f46;
+  padding: 25px;
+  border-radius: 15px;
+  margin: 25px 0;
+  box-shadow: 0 10px 30px rgba(87, 246, 231, 0.3);
+}
+
+.discount-text {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  color: #064e3b;
+}
+
+.menu-items {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.menu-item {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin: 3px;
+  font-weight: 600;
+}
+
+.timer {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.timer-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #064e3b;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.countdown-item {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 8px 12px;
+  border-radius: 8px;
+  min-width: 50px;
+}
+
+.countdown-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: block;
+  color: #064e3b;
+}
+
+.countdown-label {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  color: #065f46;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  background: linear-gradient(45deg, #065f46, #059669);
+  color: white;
+  border: none;
+  padding: 18px 35px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(87, 246, 231, 0.4);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(87, 246, 231, 0.6);
+}
+
+.cta-button.secondary {
+  background: linear-gradient(45deg, #57F6E7, #2DD4BF);
+  color: #065f46;
+}
+
+.decorative-elements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #57F6E7;
+  border-radius: 50%;
+  animation: sparkle 3s infinite;
+}
+
+.sparkle:nth-child(1) { 
+  top: 10%; 
+  left: 15%; 
+  animation-delay: 0s; 
+}
+
+.sparkle:nth-child(2) { 
+  top: 20%; 
+  right: 20%; 
+  animation-delay: 0.5s; 
+}
+
+.sparkle:nth-child(3) { 
+  bottom: 30%; 
+  left: 10%; 
+  animation-delay: 1s; 
+}
+
+.sparkle:nth-child(4) { 
+  bottom: 15%; 
+  right: 15%; 
+  animation-delay: 1.5s; 
+}
+
+@keyframes sparkle {
+  0%, 100% { 
+    opacity: 0; 
+    transform: scale(0); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+}
+
+/* Floating sparkles created by JavaScript */
+@keyframes sparkle {
+  0% { 
+    opacity: 0; 
+    transform: scale(0) rotate(0deg); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1) rotate(180deg); 
+  }
+  100% { 
+    opacity: 0; 
+    transform: scale(0) rotate(360deg); 
+  }
+}
+
+.blessing-text {
+  font-size: 1rem;
+  color: #065f46;
+  margin-top: 20px;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.special-offers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.offer-item {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.restaurant-info {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #065f46;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  .offer-container {
+    width: 95%; /* Responsive width for tablets */
+    max-width: 900px; /* Maximum width for tablets */
+  }
+  
+  .content-wrapperr {
+    flex-direction: column;
+  }
+  
+  .image-section {
+    order: 1; /* Image on top */
+    padding: 30px;
+  }
+  
+  .text-section {
+    order: 2; /* Content below image */
+    padding: 30px;
+  }
+  
+  .ganesh-image {
+    max-height: 300px;
+  }
+  
+  .main-heading {
+    font-size: 2.5rem;
+  }
+  
+  .discount-text {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .offer-container {
+    width: 95%; /* Responsive width for mobile */
+    max-width: 700px; /* Maximum width for mobile */
+  }
+  
+  .content-wrapper r{
+    flex-direction: column;
+  }
+  
+  .image-section {
+    order: 1; /* Image on top */
+    padding: 25px;
+  }
+  
+  .text-section {
+    order: 2; /* Content below image */
+    padding: 25px;
+  }
+  
+  .ganesh-image {
+    max-height: 250px;
+  }
+  
+  .main-heading {
+    font-size: 2rem;
+  }
+  
+  .discount-text {
+    font-size: 2rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .special-offers {
+    grid-template-columns: 1fr;
+  }
+
+  .countdown {
+    gap: 10px;
+  }
+
+  .countdown-item {
+    min-width: 40px;
+    padding: 6px 8px;
+  }
+
+  .countdown-number {
+    font-size: 1.2rem;
+  }
+
+  .festival-badge {
+    font-size: 13px;
+  }
+
+  .restaurant-name {
+    font-size: 1.1rem;
+  }
+
+  .sub-heading {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .offer-container {
+    width: 95%; /* Responsive width for small mobile */
+    max-width: 450px; /* Maximum width for small mobile */
+    margin: 10px auto; /* Center with small margin */
+    border-width: 3px;
+  }
+
+  .image-section {
+    order: 1; /* Image on top */
+    padding: 20px;
+  }
+  
+  .text-section {
+    order: 2; /* Content below image */
+    padding: 20px;
+  }
+
+  .ganesh-image {
+    max-height: 200px;
+  }
+
+  .main-heading {
+    font-size: 1.8rem;
+  }
+
+  .discount-text {
+    font-size: 1.8rem;
+  }
+
+  .festival-badge {
+    font-size: 12px;
+    padding: 6px 15px;
+  }
+
+  .restaurant-name {
+    font-size: 1rem;
+  }
+
+  .sub-heading {
+    font-size: 1.2rem;
+  }
+
+  .cta-button {
+    padding: 15px 25px;
+    font-size: 1rem;
+  }
+
+  .menu-item {
+    font-size: 0.9rem;
+    padding: 4px 8px;
+    margin: 2px;
+  }
+
+  .countdown-item {
+    min-width: 35px;
+    padding: 5px 8px;
+  }
+
+  .countdown-number {
+    font-size: 1.1rem;
+  }
+
+  .countdown-label {
+    font-size: 0.7rem;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  .offer-container {
+    width: 95%; /* Responsive width for extra small mobile */
+    max-width: 340px; /* Maximum width for extra small mobile */
+  }
+  
+  .image-section {
+    order: 1; /* Image on top */
+    padding: 15px;
+  }
+  
+  .text-section {
+    order: 2; /* Content below image */
+    padding: 15px;
+  }
+
+  .ganesh-image {
+    max-height: 180px;
+  }
+
+  .main-heading {
+    font-size: 1.6rem;
+  }
+
+  .discount-text {
+    font-size: 1.6rem;
+  }
+
+  .cta-button {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  .countdown-item {
+    min-width: 30px;
+    padding: 4px 6px;
+  }
+
+  .countdown-number {
+    font-size: 1rem;
+  }
+}

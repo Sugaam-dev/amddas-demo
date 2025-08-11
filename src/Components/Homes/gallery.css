@@ -1,7 +1,7 @@
 /* Gallery Section */
 .gallery-section {
   padding: 20px 10px;
-  background-color: #57F6E7;
+  background-color: #E1F8FC;
 }
 
 .container {
@@ -47,13 +47,13 @@
 }
 
 .banner-section-gallery{
-  background-color: #57F6E7;
+  background-color: #E1F8FC;
   padding: 40px 10px 10px 10px;
   font-family: 'Helvetica', Arial, sans-serif;
 }
 
 .gallery-section{
-  background-color: #57F6E7;
+  background-color: #E1F8FC;
   min-height: 300px; /* Changed from fixed height to min-height */
 }
 
