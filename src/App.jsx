@@ -1,5 +1,6 @@
 // App.jsx
 import './App.css';
+import './ScrollAnimations.css'; // Add scroll animations CSS
 import Login from './Components/Login';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -39,6 +40,16 @@ import Nav from './Components/Nav';
 import Why_Us from './Components/WhyUs/Why_Us';
 import Festivals from './Components/Festivals/Festivals';
 
+// Import new components for additional pages
+// import Educational from './Components/Services/Educational';
+// import Hospitals from './Components/Services/Hospitals';
+// import Training from './Components/Services/Training';
+// import Wedding from './Components/Events/Wedding';
+// import HouseWarming from './Components/Events/HouseWarming';
+// import Birthday from './Components/Events/Birthday';
+// import Engagement from './Components/Events/Engagement';
+// import TermsConditions from './Components/TermsConditions';
+
 // ScrollToTop Component - This will handle automatic scrolling to top on route change
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -55,10 +66,72 @@ function ScrollToTop() {
   return null; // This component doesn't render anything
 }
 
+// Scroll Animation Observer Component
+function ScrollAnimationObserver() {
+  useEffect(() => {
+    // Initialize scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // Optional: Log which element is animating (remove in production)
+          console.log('Element animated:', entry.target.className);
+        }
+      });
+    }, observerOptions);
+
+    // Function to observe elements
+    const observeElements = () => {
+      const animatedElements = document.querySelectorAll(`
+        .fade-in-up,
+        .fade-in-down,
+        .fade-in-left,
+        .fade-in-right,
+        .scale-in,
+        .slide-in-up,
+        .slide-in-left,
+        .slide-in-right,
+        .animate-on-scroll
+      `);
+
+      animatedElements.forEach((el) => {
+        observer.observe(el);
+      });
+    };
+
+    // Initial observation
+    observeElements();
+
+    // Re-observe elements when new content is loaded (for dynamic content)
+    const mutationObserver = new MutationObserver(() => {
+      observeElements();
+    });
+
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+
+    // Cleanup
+    return () => {
+      observer.disconnect();
+      mutationObserver.disconnect();
+    };
+  }, []);
+
+  return null; // This component doesn't render anything
+}
+
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop /> {/* Add ScrollToTop component here - it must be inside BrowserRouter */}
+      <ScrollAnimationObserver /> {/* Add scroll animation observer */}
       <Navbarr />
       {/* <Nav/> */}
 
@@ -90,6 +163,16 @@ function App() {
         <Route path='/contact' element={<Contact/>}/>
         <Route path="/why-us" element={<Why_Us />} />
         <Route path="/festivals" element={<Festivals />} />
+
+        {/* New Routes for Footer Links - Add these when you create the components */}
+        {/* <Route path='/services/educational' element={<Educational />} />
+        <Route path='/services/hospitals' element={<Hospitals />} />
+        <Route path='/services/training' element={<Training />} />
+        <Route path='/events/wedding' element={<Wedding />} />
+        <Route path='/events/house-warming' element={<HouseWarming />} />
+        <Route path='/events/birthday' element={<Birthday />} />
+        <Route path='/events/engagement' element={<Engagement />} />
+        <Route path='/terms-conditions' element={<TermsConditions />} /> */}
 
         {/* Protected Routes */}
         <Route

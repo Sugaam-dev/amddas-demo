@@ -1,37 +1,95 @@
+/* Mission.css - Enhanced with attractive scroll animations */
+
+@import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@400;500;600;700&display=swap');
+
 /* Main Container - Horizontal Layout */
-
-@import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@400&display=swap');
-
 .Our-mission-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 60px;
-  gap: 40px;
+  padding: 60px 80px;
+  gap: 60px;
   background-color: #E1F8FC;
   max-width: 1400px;
   margin: 0 auto;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Left Side - Image Section */
+/* Animated background elements */
+.Our-mission-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(184, 134, 11, 0.03) 0%, transparent 70%);
+  animation: backgroundFloat 20s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes backgroundFloat {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(30px, -30px) rotate(120deg); }
+  66% { transform: translate(-20px, 20px) rotate(240deg); }
+}
+
+/* Left Side - Image Section with Enhanced Animation Support */
 .Our-mission-image {
   flex: 1.2;
   max-width: 52%;
   border-radius: 30px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  z-index: 2;
+  /* Animation will be handled by ScrollAnimations.css */
+}
+
+/* Enhanced hover effect with 3D transform */
+.Our-mission-image:hover {
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px) rotateX(5deg);
+}
+
+.Our-mission-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(184, 134, 11, 0.1) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  border-radius: 30px;
+}
+
+.Our-mission-image:hover::before {
+  opacity: 1;
 }
 
 .mission-image {
   width: 100%;
-  height: 400px;
+  height: 450px;
   object-fit: cover;
   border-radius: 30px;
   display: block;
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  z-index: 0;
 }
 
-/* Right Side - Content Section */
+/* Subtle zoom and brightness effect on image hover */
+.Our-mission-image:hover .mission-image {
+  transform: scale(1.05);
+  filter: brightness(1.1) contrast(1.1);
+}
+
+/* Right Side - Content Section with Enhanced Animation Support */
 .Our-mission-content {
   flex: 0.8;
   max-width: 45%;
@@ -39,59 +97,168 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 .Our-mission-title {
-  font-size: 56px;
-  font-weight: 600;
+  font-size: 64px;
+  font-weight: 700;
   margin-bottom: 30px;
-  color: #333;
-  line-height: 1.2;
+  color: #2c3e50;
+  line-height: 1.1;
   font-family: 'Helvetica', Arial, sans-serif;
   text-align: center;
+  position: relative;
+  /* Animation will be handled by ScrollAnimations.css */
+}
+
+/* Animated gradient text effect */
+.Our-mission-title::before {
+  content: 'Our Mission';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* background: linear-gradient(135deg, #b8860b 0%, #d4af37 50%, #b8860b 100%); */
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 3s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity 0.5s ease 0.8s;
+}
+
+.Our-mission-title.visible::before {
+  opacity: 1;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Animated underline */
+.Our-mission-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #b8860b 0%, #d4af37 100%);
+  border-radius: 2px;
+  transition: width 0.8s ease 1s;
+}
+
+.Our-mission-title.visible::after {
+  width: 80px;
 }
 
 .Our-mission-description {
-  color: black;
+  color: #555;
   font-size: 18px;
   line-height: 1.8;
-  margin-bottom: 10px;
+  margin-bottom: 35px;
   text-align: center;
   font-weight: 400;
   font-family: 'Helvetica', Arial, sans-serif;
+  max-width: 500px;
+  position: relative;
+  /* Animation will be handled by ScrollAnimations.css */
+}
+
+/* Button styling with enhanced animations */
+.Our-mission-button {
+  background: linear-gradient(135deg, #b8860b 0%, #d4af37 100%);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  font-family: 'Helvetica', Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(184, 134, 11, 0.3);
+  /* Animation will be handled by ScrollAnimations.css */
+}
+
+.Our-mission-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.Our-mission-button:hover::before {
+  left: 100%;
+}
+
+.Our-mission-button:hover {
+  background: linear-gradient(135deg, #9a7209 0%, #b8860b 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(184, 134, 11, 0.4);
+}
+
+.Our-mission-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(184, 134, 11, 0.3);
+}
+
+/* Floating animation keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Apply floating animation to visible elements */
+.Our-mission-image.visible {
+  animation: float 6s ease-in-out infinite 2s;
 }
 
 /* Tablet Responsiveness */
 @media (max-width: 1024px) {
+  .Our-mission-container {
+    padding: 50px 60px;
+    gap: 50px;
+  }
+  
   .Our-mission-content {
     padding: 20px 10px;
   }
   
   .Our-mission-title {
-    font-size: 42px;
+    font-size: 48px;
     margin-bottom: 25px;
   }
   
   .Our-mission-description {
     font-size: 17px;
-    margin-bottom: 35px;
-  }
-  
-  .Our-mission-container {
-    min-height: 450px;
-    padding-bottom: 30px; /* Reduced bottom padding */
-  }
-  
-  .Our-mission-image {
-    height: 350px;
+    margin-bottom: 30px;
   }
   
   .mission-image {
-    height: 350px;
+    height: 380px;
   }
   
-  .Our-mission-content {
-    height: 350px;
+  /* Reduce 3D effects on tablets */
+  .Our-mission-image:hover {
+    transform: translateY(-5px) rotateX(2deg);
+  }
+  
+  .Our-mission-image:hover .mission-image {
+    transform: scale(1.03);
   }
 }
 
@@ -99,51 +266,68 @@
 @media (max-width: 768px) {
   .Our-mission-container {
     flex-direction: column;
-    padding: 30px 20px 15px 20px; /* Reduced bottom padding */
-    gap: 25px;
-    height: 550px;
+    padding: 40px 20px;
+    gap: 40px;
+  }
+  
+  .Our-mission-container::before {
+    display: none; /* Remove floating background on mobile */
   }
   
   .Our-mission-image {
     max-width: 100%;
-    height: auto;
-    flex: none;
-  }
-  
-  .mission-image {
-    height: 250px;
-   width: 450px;
-    object-fit: cover;
-    object-position: center;
+    order: 2;
   }
   
   .Our-mission-content {
     max-width: 100%;
     padding-right: 0;
     text-align: center;
-    flex: none;
+    order: 1;
+  }
+  
+  .mission-image {
+    height: 280px;
+    width: 100%;
   }
   
   .Our-mission-title {
-    font-size: 36px;
-    text-align: center;
+    font-size: 42px;
     margin-bottom: 20px;
   }
   
   .Our-mission-description {
-    text-align: center;
     font-size: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     line-height: 1.7;
+  }
+  
+  .Our-mission-button {
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+  
+  /* Disable complex hover effects on mobile */
+  .Our-mission-image:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    transform: none;
+  }
+  
+  .Our-mission-image:hover .mission-image {
+    transform: none;
+    filter: none;
+  }
+  
+  .Our-mission-image.visible {
+    animation: none;
   }
 }
 
 /* Small Mobile */
 @media (max-width: 480px) {
   .Our-mission-container {
-    padding: 20px 15px 10px 15px; /* Reduced bottom padding */
-    gap: 20px;
-    height: 500px;
+    padding: 30px 15px;
+    gap: 30px;
   }
   
   .Our-mission-image {
@@ -151,16 +335,12 @@
   }
   
   .mission-image {
-    height: 200px;
+    height: 220px;
     border-radius: 20px;
   }
   
-  .Our-mission-content {
-    padding: 20px 10px;
-  }
-  
   .Our-mission-title {
-    font-size: 28px;
+    font-size: 32px;
     margin-bottom: 15px;
   }
   
@@ -169,32 +349,74 @@
     margin-bottom: 20px;
     line-height: 1.6;
   }
+  
+  .Our-mission-button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
 }
 
 /* Extra Small Mobile */
 @media (max-width: 360px) {
   .Our-mission-container {
-    padding: 15px 10px;
+    padding: 20px 10px;
   }
   
   .mission-image {
-    height: 180px;
-    width: 250px;
+    height: 200px;
   }
   
   .Our-mission-title {
-    font-size: 24px;
+    font-size: 28px;
   }
   
   .Our-mission-description {
     font-size: 14px;
   }
+  
+  .Our-mission-button {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
 }
 
-/* Ensure image quality on high-resolution displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .mission-image {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
+/* Accessibility: Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .Our-mission-image,
+  .mission-image,
+  .Our-mission-button,
+  .Our-mission-title::before,
+  .Our-mission-title::after {
+    animation: none;
+    transition: none;
   }
+  
+  .Our-mission-container::before {
+    animation: none;
+  }
+  
+  .Our-mission-image:hover,
+  .Our-mission-image:hover .mission-image,
+  .Our-mission-button:hover {
+    transform: none;
+  }
+}
+
+/* Loading states */
+.mission-image.loading {
+  opacity: 0.7;
+  filter: blur(2px);
+}
+
+/* Focus states for accessibility */
+.Our-mission-button:focus {
+  outline: 3px solid rgba(184, 134, 11, 0.5);
+  outline-offset: 3px;
+}
+
+/* Text selection styling */
+.Our-mission-title::selection,
+.Our-mission-description::selection {
+  background-color: rgba(184, 134, 11, 0.3);
+  color: #2c3e50;
 }

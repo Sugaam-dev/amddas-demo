@@ -1,0 +1,234 @@
+/* ScrollAnimations.css - Add this file to your src folder */
+
+/* Base styles for scroll animations */
+.fade-in-up,
+.fade-in-down,
+.fade-in-left,
+.fade-in-right,
+.scale-in,
+.slide-in-up,
+.slide-in-left,
+.slide-in-right,
+.animate-on-scroll {
+  opacity: 0;
+  transition: all 0.8s ease-out;
+}
+
+/* Fade animations */
+.fade-in-up {
+  transform: translateY(50px);
+}
+
+.fade-in-down {
+  transform: translateY(-50px);
+}
+
+.fade-in-left {
+  transform: translateX(-50px);
+}
+
+.fade-in-right {
+  transform: translateX(50px);
+}
+
+/* Scale animations */
+.scale-in {
+  transform: scale(0.8);
+}
+
+/* Slide animations */
+.slide-in-up {
+  transform: translateY(100px);
+  transition-duration: 1s;
+}
+
+.slide-in-left {
+  transform: translateX(-100px);
+  transition-duration: 1s;
+}
+
+.slide-in-right {
+  transform: translateX(100px);
+  transition-duration: 1s;
+}
+
+/* General animate class */
+.animate-on-scroll {
+  transform: translateY(30px);
+  transition-duration: 0.6s;
+}
+
+/* Visible state - Applied when element comes into view */
+.visible {
+  opacity: 1 !important;
+  transform: translate(0, 0) scale(1) !important;
+}
+
+/* Stagger animations - For sequential element appearance */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
+.stagger-7 { transition-delay: 0.7s; }
+.stagger-8 { transition-delay: 0.8s; }
+
+/* Custom timing functions */
+.ease-in-out {
+  transition-timing-function: ease-in-out;
+}
+
+.ease-out-back {
+  transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ease-out-quart {
+  transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Different durations */
+.duration-fast {
+  transition-duration: 0.4s;
+}
+
+.duration-normal {
+  transition-duration: 0.8s;
+}
+
+.duration-slow {
+  transition-duration: 1.2s;
+}
+
+/* Text reveal animations */
+.text-reveal {
+  overflow: hidden;
+}
+
+.text-reveal .text-line {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.8s ease-out;
+}
+
+.text-reveal.visible .text-line {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Image reveal animations */
+.image-reveal {
+  overflow: hidden;
+}
+
+.image-reveal img {
+  opacity: 0;
+  transform: scale(1.1);
+  transition: all 1.2s ease-out;
+}
+
+.image-reveal.visible img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Card animations */
+.card-animate {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: all 0.6s ease-out;
+}
+
+.card-animate.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Bounce effect */
+.bounce-in {
+  opacity: 0;
+  transform: scale(0.3);
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.bounce-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Rotate animations */
+.rotate-in {
+  opacity: 0;
+  transform: rotate(-45deg) scale(0.8);
+  transition: all 0.8s ease-out;
+}
+
+.rotate-in.visible {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .fade-in-up,
+  .fade-in-down,
+  .fade-in-left,
+  .fade-in-right,
+  .slide-in-up,
+  .slide-in-left,
+  .slide-in-right {
+    transition-duration: 0.6s;
+  }
+  
+  .fade-in-up { transform: translateY(30px); }
+  .fade-in-down { transform: translateY(-30px); }
+  .fade-in-left { transform: translateX(-30px); }
+  .fade-in-right { transform: translateX(30px); }
+  .slide-in-up { transform: translateY(60px); }
+  .slide-in-left { transform: translateX(-60px); }
+  .slide-in-right { transform: translateX(60px); }
+}
+
+/* Reduced motion support for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up,
+  .fade-in-down,
+  .fade-in-left,
+  .fade-in-right,
+  .scale-in,
+  .slide-in-up,
+  .slide-in-left,
+  .slide-in-right,
+  .animate-on-scroll,
+  .card-animate,
+  .bounce-in,
+  .rotate-in {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Utility classes */
+.no-animation {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Loading state */
+.loading-animate {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Hover animations */
+.hover-lift:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}

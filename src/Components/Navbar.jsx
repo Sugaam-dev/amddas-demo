@@ -33,7 +33,7 @@
 //     navigate('/login');
 //   };
 
-//   // UPDATED: Function to handle service navigation with smoother scrolling
+//   // FIXED: Function to handle service navigation with better scrolling
 //   const handleServiceNavigation = (serviceType) => {
 //     // Close mobile menu if open
 //     handleClose();
@@ -43,17 +43,22 @@
 //     const isOnServicesPage = currentPath === '/what-we-do';
     
 //     if (isOnServicesPage) {
-//       // If already on services page, scroll directly
-//       const element = document.getElementById(`${serviceType.toLowerCase()}-section`);
-//       if (element) {
-//         const navbarHeight = 80;
-//         const elementPosition = element.offsetTop - navbarHeight;
-        
-//         window.scrollTo({
-//           top: Math.max(0, elementPosition),
-//           behavior: 'smooth'
-//         });
-//       }
+//       // If already on services page, scroll directly with better positioning
+//       setTimeout(() => {
+//         const element = document.getElementById(`${serviceType.toLowerCase()}-section`);
+//         if (element) {
+//           // Calculate scroll position more accurately
+//           const elementRect = element.getBoundingClientRect();
+//           const absoluteElementTop = elementRect.top + window.pageYOffset;
+//           const navbarHeight = 90; // Increased for better spacing
+//           const scrollToPosition = Math.max(0, absoluteElementTop - navbarHeight);
+          
+//           window.scrollTo({
+//             top: scrollToPosition,
+//             behavior: 'smooth'
+//           });
+//         }
+//       }, 100); // Small delay for better reliability
 //     } else {
 //       // Navigate to services page first, then scroll
 //       navigate('/what-we-do');
@@ -71,7 +76,7 @@
 //     }
 //   };
 
-//   // UPDATED: Function to handle event navigation with smoother scrolling
+//   // FIXED: Function to handle event navigation with better scrolling
 //   const handleEventNavigation = (eventType) => {
 //     // Close mobile menu if open
 //     handleClose();
@@ -81,17 +86,22 @@
 //     const isOnEventsPage = currentPath === '/amddas-events';
     
 //     if (isOnEventsPage) {
-//       // If already on events page, scroll directly
-//       const element = document.getElementById(`${eventType.toLowerCase()}-section`);
-//       if (element) {
-//         const navbarHeight = 80;
-//         const elementPosition = element.offsetTop - navbarHeight;
-        
-//         window.scrollTo({
-//           top: Math.max(0, elementPosition),
-//           behavior: 'smooth'
-//         });
-//       }
+//       // If already on events page, scroll directly with better positioning
+//       setTimeout(() => {
+//         const element = document.getElementById(`${eventType.toLowerCase()}-section`);
+//         if (element) {
+//           // Calculate scroll position more accurately
+//           const elementRect = element.getBoundingClientRect();
+//           const absoluteElementTop = elementRect.top + window.pageYOffset;
+//           const navbarHeight = 90; // Increased for better spacing
+//           const scrollToPosition = Math.max(0, absoluteElementTop - navbarHeight);
+          
+//           window.scrollTo({
+//             top: scrollToPosition,
+//             behavior: 'smooth'
+//           });
+//         }
+//       }, 100); // Small delay for better reliability
 //     } else {
 //       // Navigate to events page first, then scroll
 //       navigate('/amddas-events');
@@ -99,7 +109,7 @@
 //       // Set session storage for the specific event (Events component will handle the scrolling)
 //       sessionStorage.setItem(`scrollTo${eventType}`, 'true');
       
-//       // Remove any existing scroll flags to prevent conflicts
+//       // Remove any existing event scroll flags to prevent conflicts
 //       const eventTypes = ['Wedding', 'Birthday', 'Housewarming', 'Engagement', 'Festival', 'Bhandaara'];
 //       eventTypes.forEach(type => {
 //         if (type !== eventType) {
@@ -217,6 +227,12 @@
 //                     Wedding
 //                   </NavDropdown.Item>
 //                   <NavDropdown.Item 
+//                     onClick={() => handleEventNavigation('Housewarming')}
+//                     className="compass-dropdown-item"
+//                   >
+//                     House Warming
+//                   </NavDropdown.Item>
+//                   <NavDropdown.Item 
 //                     onClick={() => handleEventNavigation('Birthday')}
 //                     className="compass-dropdown-item"
 //                   >
@@ -251,6 +267,15 @@
 //                 onClick={handleClose}
 //               >
 //                 Why Us
+//               </Nav.Link>
+
+//               <Nav.Link 
+//                 as={NavLink} 
+//                 to="/festivals" 
+//                 className="compass-nav-pill"
+//                 onClick={handleClose}
+//               >
+//                 Festivals
 //               </Nav.Link>
 
 //               {/* Contact Us */}
@@ -438,7 +463,7 @@
 
 // export default Navbarr;
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, NavDropdown, Container, Offcanvas } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Styles/Navbar.css';
@@ -459,6 +484,24 @@ function Navbarr() {
   const [expanded, setExpanded] = useState(false);
   const [showSectorsDropdown, setShowSectorsDropdown] = useState(false);
   const [showSolutionsDropdown, setShowSolutionsDropdown] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // ADDED: Handle scroll effect for navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const scrollThreshold = 50;
+      
+      if (scrollTop > scrollThreshold) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleToggle = () => {
     setExpanded(!expanded);
@@ -485,10 +528,10 @@ function Navbarr() {
       setTimeout(() => {
         const element = document.getElementById(`${serviceType.toLowerCase()}-section`);
         if (element) {
-          // Calculate scroll position more accurately
+          // Calculate scroll position more accurately for transparent navbar
           const elementRect = element.getBoundingClientRect();
           const absoluteElementTop = elementRect.top + window.pageYOffset;
-          const navbarHeight = 90; // Increased for better spacing
+          const navbarHeight = 90; // Account for transparent navbar
           const scrollToPosition = Math.max(0, absoluteElementTop - navbarHeight);
           
           window.scrollTo({
@@ -528,10 +571,10 @@ function Navbarr() {
       setTimeout(() => {
         const element = document.getElementById(`${eventType.toLowerCase()}-section`);
         if (element) {
-          // Calculate scroll position more accurately
+          // Calculate scroll position more accurately for transparent navbar
           const elementRect = element.getBoundingClientRect();
           const absoluteElementTop = elementRect.top + window.pageYOffset;
-          const navbarHeight = 90; // Increased for better spacing
+          const navbarHeight = 90; // Account for transparent navbar
           const scrollToPosition = Math.max(0, absoluteElementTop - navbarHeight);
           
           window.scrollTo({
@@ -558,15 +601,15 @@ function Navbarr() {
   };
 
   return (
-    <div className="compass-navbar">
+    <div className={`compass-navbar ${scrolled ? 'scrolled' : ''}`}>
       <Navbar
         expand="lg"
         className="compass-nav"
         expanded={expanded}
         style={{
-          backgroundColor: 'white',
+          backgroundColor: 'transparent',
           padding: "0px",
-          boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+          boxShadow: scrolled ? '0 2px 20px rgba(0,0,0,0.1)' : 'none'
         }}
       >
         <Container fluid className="compass-container">
@@ -579,7 +622,7 @@ function Navbarr() {
           <CiMenuBurger 
             onClick={handleToggle} 
             className="d-lg-none compass-mobile-toggle" 
-            style={{ cursor: 'pointer', fontSize: "28px", color: "#666" }} 
+            style={{ cursor: 'pointer', fontSize: "28px" }} 
           />
 
           {/* Desktop Navigation */}
