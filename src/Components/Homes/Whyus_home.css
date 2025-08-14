@@ -3,11 +3,6 @@
 /* Set body and html background to match component */
 @import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@400&display=swap');
 
-body, html {
-  background-color: #E1F8FC !important;
-  margin: 0;
-  padding: 0;
-}
 
 /* Remove any decorative elements */
 .whyus-container::before,
@@ -21,12 +16,12 @@ body, html {
 }
 
 .whyus-container {
-   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 25%, #ffffff 50%, #f1f3f4 75%, #ffffff 100%);
+  background-color: transparent;
   border: 3px solid #2c2c2c;
   border-radius: 35px; /* Reduced from 45px */
   padding: 25px 30px; /* Reduced from 40px 40px */
   width: 100%;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 25px auto; /* Ensures perfect centering */
   font-family: 'Helvetica', Arial, sans-serif;
   position: relative;    
@@ -37,7 +32,7 @@ body, html {
 
 /* Full page wrapper */
 .whyus-page-wrapper {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 25%, #ffffff 50%, #f1f3f4 75%, #ffffff 100%);
+  background-color: transparent;
   /* min-height: 50vh; Reduced from 70vh */
   width: 100%;
   padding: 0 20px; /* Added horizontal padding for better spacing */

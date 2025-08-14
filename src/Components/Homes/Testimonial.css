@@ -1,7 +1,7 @@
 /* Testimonial Container */
 .testimonial-container {
     padding: 20px;
-    background-color: #E1F8FC;
+    background-color: transparent;
     /* min-height: 100vh; */
     padding-bottom: 80px;
   }
@@ -149,8 +149,8 @@
   }
   
   .see-more-btn {
-    background-color: #ffbf00;
-    color: black;
+    background-color: #b8860b ;
+    color: white;
     border: none;
     padding: 18px 30px;
     font-size: 14px;
@@ -167,6 +167,7 @@
   
   .see-more-btn:hover {
     background-color: white;
+    color: black;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
   }
@@ -297,3 +298,12 @@
   .testimonial-card:nth-child(4) { animation-delay: 0.25s; }
   .testimonial-card:nth-child(5) { animation-delay: 0.3s; }
   .testimonial-card:nth-child(6) { animation-delay: 0.35s; }
+
+  .header-line {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6b35 0%, #ffbf00 100%);
+  margin: 20px auto;
+  border-radius: 2px;
+  animation: lineGrow 1s ease-out 0.5s both;
+}

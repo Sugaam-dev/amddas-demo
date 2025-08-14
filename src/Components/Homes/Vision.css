@@ -1,19 +1,123 @@
+/* Vision.css - Enhanced with attractive scroll animations */
+
+@import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@400;500;600;700&display=swap');
+
 /* Main Container - Horizontal Layout */
 .vision-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-   padding: 30px 60px;
-  gap: 40px;
-  background-color: #E1F8FC;
-  max-width: 1400px;
+  padding: 60px 80px;
+  gap: 60px;
+  background-color: transparent;
+  /* max-width: 1400px; */
   margin: 0 auto;
   border: none;
   outline: none;
-  margin-top: 0; /* Remove gap between sections */
+  margin-top: 0;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Left Side - Content Section */
+/* Loading states */
+.vision-image-img.loading {
+  opacity: 0.7;
+  filter: blur(2px);
+}
+
+/* Focus states for accessibility */
+.vision-image:focus-within {
+  outline: 3px solid rgba(184, 134, 11, 0.5);
+  outline-offset: 3px;
+  border-radius: 30px;
+}
+
+.highlight-text:focus {
+  outline: 2px solid rgba(184, 134, 11, 0.5);
+  outline-offset: 2px;
+}
+
+/* Text selection styling */
+.vision-title::selection,
+.vision-description::selection,
+.highlight-text::selection {
+  background-color: rgba(184, 134, 11, 0.3);
+  color: #2c3e50;
+}
+
+/* Enhanced visual depth with pseudo-elements */
+.vision-container {
+  position: relative;
+}
+
+.vision-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(184, 134, 11, 0.3) 50%, transparent 100%);
+  z-index: 1;
+}
+
+/* Subtle parallax effect for content */
+@media (min-width: 769px) {
+  .vision-content {
+    transition: transform 0.1s ease-out;
+  }
+  
+  .vision-image {
+    transition: transform 0.1s ease-out;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(225, 248, 252, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #b8860b 0%, #d4af37 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #9a7209 0%, #b8860b 100%);
+}
+
+/* Ensure image quality on high-resolution displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .vision-image-img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Animated background elements */
+.vision-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(184, 134, 11, 0.03) 0%, transparent 70%);
+  animation: backgroundFloatReverse 25s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes backgroundFloatReverse {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(-30px, 30px) rotate(-120deg); }
+  66% { transform: translate(20px, -20px) rotate(-240deg); }
+}
+
+/* Left Side - Content Section with Enhanced Animation Support */
 .vision-content {
   flex: 0.8;
   max-width: 45%;
@@ -21,83 +125,239 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+  z-index: 2;
 }
 
 .vision-title {
-  font-size: 56px;
-  font-weight: 600;
+  font-size: 64px;
+  font-weight: 700;
   margin-bottom: 30px;
   text-align: center;
   font-family: 'Helvetica', Arial, sans-serif;
-  color: #333;
-  line-height: 1.2;
+  color: #2c3e50;
+  line-height: 1.1;
+  position: relative;
+  /* Animation will be handled by ScrollAnimations.css */
+}
+
+/* Animated gradient text effect */
+.vision-title::before {
+  content: 'Our Vision';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* background: linear-gradient(135deg, #d4af37 0%, #b8860b 50%, #d4af37 100%); */
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShiftVision 4s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity 0.5s ease 0.8s;
+}
+
+.vision-title.visible::before {
+  opacity: 1;
+}
+
+@keyframes gradientShiftVision {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Animated underline with different style */
+.vision-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #d4af37 0%, #b8860b 50%, #d4af37 100%);
+  border-radius: 2px;
+  transition: width 0.8s ease 1s;
+}
+
+.vision-title.visible::after {
+  width: 100px;
 }
 
 .vision-description {
   text-align: center;
-  color: black;
+  color: #555;
   max-width: 500px;
-  margin-bottom: 10px;
+  margin: 0 auto 25px;
   line-height: 1.8;
   font-size: 18px;
   font-weight: 400;
   font-family: 'Helvetica', Arial, sans-serif;
+  position: relative;
+  /* Animation will be handled by ScrollAnimations.css */
 }
 
-/* Right Side - Image Section */
+/* New highlight section */
+.vision-highlight {
+  text-align: center;
+  margin-top: 20px;
+  /* Animation will be handled by ScrollAnimations.css */
+}
+
+.highlight-text {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, rgba(184, 134, 11, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #b8860b;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.highlight-text::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.2), transparent);
+  transition: left 0.8s ease;
+}
+
+.vision-highlight.visible .highlight-text::before {
+  left: 100%;
+}
+
+.highlight-text:hover {
+  background: linear-gradient(135deg, rgba(184, 134, 11, 0.2) 0%, rgba(212, 175, 55, 0.2) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(184, 134, 11, 0.2);
+}
+
+/* Right Side - Image Section with Enhanced Animation Support */
 .vision-image {
   flex: 1.2;
   max-width: 55%;
   border-radius: 30px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   border: none;
   outline: none;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  z-index: 2;
+  /* Animation will be handled by ScrollAnimations.css */
+}
+
+/* Enhanced hover effect with 3D transform */
+.vision-image:hover {
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px) rotateX(-5deg);
+}
+
+.vision-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent 50%, rgba(184, 134, 11, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  border-radius: 30px;
+}
+
+.vision-image:hover::before {
+  opacity: 1;
 }
 
 .vision-image-img {
   width: 100%;
-  height: 400px;
+  height: 450px;
   object-fit: cover;
   border-radius: 30px;
   display: block;
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   border: none;
   outline: none;
+  position: relative;
+  z-index: 0;
+}
+
+/* Subtle zoom and brightness effect on image hover */
+.vision-image:hover .vision-image-img {
+  transform: scale(1.05);
+  filter: brightness(1.1) contrast(1.1);
+}
+
+/* Floating animation for image */
+@keyframes floatReverse {
+  0%, 100% { transform: translateY(0px) rotateY(0deg); }
+  50% { transform: translateY(-15px) rotateY(3deg); }
+}
+
+.vision-image.visible {
+  animation: floatReverse 8s ease-in-out infinite 2.5s;
+}
+
+/* Pulse effect for highlight text */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.vision-highlight.visible .highlight-text {
+  animation: pulse 3s ease-in-out infinite 3s;
 }
 
 /* Tablet Responsiveness */
 @media (max-width: 1024px) {
+  .vision-container {
+    padding: 50px 60px;
+    gap: 50px;
+  }
+  
   .vision-content {
     padding: 20px 10px;
   }
   
   .vision-title {
-    font-size: 42px;
+    font-size: 48px;
     margin-bottom: 25px;
   }
   
   .vision-description {
     font-size: 17px;
-    margin-bottom: 35px;
-  }
-  
-  .vision-container {
-    min-height: 450px;
-    margin-top: 0;
-    padding-top: 30px; /* Reduced top padding */
-  }
-  
-  .vision-image {
-    height: 350px;
+    margin-bottom: 20px;
   }
   
   .vision-image-img {
-    height: 350px;
+    height: 380px;
   }
   
-  .vision-content {
-    height: 350px;
+  .highlight-text {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+  
+  /* Reduce 3D effects on tablets */
+  .vision-image:hover {
+    transform: translateY(-5px) rotateX(-2deg);
+  }
+  
+  .vision-image:hover .vision-image-img {
+    transform: scale(1.03);
   }
 }
 
@@ -105,56 +365,77 @@
 @media (max-width: 768px) {
   .vision-container {
     flex-direction: column;
-    padding: 15px 20px 30px 20px; /* Reduced top padding */
-    gap: 25px;
+    padding: 40px 20px;
+    gap: 40px;
     margin-top: 0;
+  }
+  
+  .vision-container::before {
+    display: none; /* Remove floating background on mobile */
   }
   
   .vision-content {
     order: 1;
     max-width: 100%;
-    padding-right: 0;
+    padding-left: 0;
     text-align: center;
     align-items: center;
-    height: auto;
-    flex: none;
   }
   
   .vision-image {
     order: 2;
     max-width: 100%;
-    height: auto;
-    flex: none;
   }
   
   .vision-image-img {
-    height: 250px;
+    height: 280px;
     width: 100%;
-    object-fit: cover;
-    object-position: center;
   }
   
   .vision-title {
-    font-size: 36px;
-    text-align: center;
+    font-size: 42px;
     margin-bottom: 20px;
   }
   
   .vision-description {
-    text-align: center;
     font-size: 16px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     line-height: 1.7;
+  }
+  
+  .highlight-text {
+    font-size: 12px;
+    padding: 8px 16px;
+    letter-spacing: 1px;
+  }
+  
+  /* Disable complex hover effects and animations on mobile */
+  .vision-image:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    transform: none;
+  }
+  
+  .vision-image:hover .vision-image-img {
+    transform: none;
+    filter: none;
+  }
+  
+  .vision-image.visible {
+    animation: none;
+  }
+  
+  .vision-highlight.visible .highlight-text {
+    animation: none;
   }
 }
 
 /* Small Mobile */
 @media (max-width: 480px) {
   .vision-container {
-    padding: 10px 15px 20px 15px; /* Reduced top padding */
-    gap: 5px;
+    padding: 30px 15px;
+    gap: 30px;
     margin-top: 0;
-    justify-content:space-around;
+    justify-content: space-around;
   }
   
   .vision-image {
@@ -163,7 +444,7 @@
   }
   
   .vision-image-img {
-    height: 200px;
+    height: 220px;
     width: 100%;
     border-radius: 20px;
   }
@@ -173,14 +454,19 @@
   }
   
   .vision-title {
-    font-size: 28px;
+    font-size: 32px;
     margin-bottom: 15px;
   }
   
   .vision-description {
     font-size: 15px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     line-height: 1.6;
+  }
+  
+  .highlight-text {
+    font-size: 11px;
+    padding: 6px 12px;
   }
 }
 
@@ -188,32 +474,51 @@
 @media (max-width: 360px) {
   .vision-container {
     margin-top: 0;
-     gap: 5px;
+    gap: 20px;
   }
 
-   .vision-image {
+  .vision-image {
     border-radius: 20px;
     width: 260px;
   }
   
   .vision-image-img {
-    height: 180px;
+    height: 200px;
   }
   
   .vision-title {
-    font-size: 24px;
+    font-size: 28px;
   }
   
   .vision-description {
     font-size: 14px;
-    margin-bottom: 1px;
+    margin-bottom: 8px;
+  }
+  
+  .highlight-text {
+    font-size: 10px;
+    padding: 5px 10px;
   }
 }
 
-/* Ensure image quality on high-resolution displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .vision-image-img {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
+/* Accessibility: Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .vision-image,
+  .vision-image-img,
+  .highlight-text,
+  .vision-title::before,
+  .vision-title::after {
+    animation: none;
+    transition: none;
+  }
+  
+  .vision-container::before {
+    animation: none;
+  }
+  
+  .vision-image:hover,
+  .vision-image:hover .vision-image-img,
+  .highlight-text:hover {
+    transform: none;
   }
 }
