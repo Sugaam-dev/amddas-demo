@@ -169,7 +169,7 @@
   justify-content: center;
   background: linear-gradient(-45deg, #f0f0f0, #e0e0e0, #f0f0f0, #e0e0e0);
   background-size: 400% 400%;
-  animation: shimmer-bg 2s ease-in-out infinite;
+  animation: shimmer-bg 1s ease-in-out infinite;
 }
 
 .standard-loading-content {

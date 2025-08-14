@@ -310,22 +310,22 @@ const Milestones = memo(({ onLoad }) => {
           />
           
           {/* Decorative elements */}
-          <div className="milestone-decorative-elements">
-            <div className="milestone-badge">
+          {/* <div className="milestone-decorative-elements"> */}
+            {/* <div className="milestone-badge">
               <span className="badge-year">2016</span>
               <span className="badge-text">Est.</span>
-            </div>
-            <div className="milestone-stats">
-              <div className="stat-item">
+            </div> */}
+            {/* <div className="milestone-stats"> */}
+              {/* <div className="stat-item">
                 <span className="stat-number">4000+</span>
                 <span className="stat-label">Daily Capacity</span>
-              </div>
-              <div className="stat-item">
+              </div> */}
+              {/* <div className="stat-item">
                 <span className="stat-number">200+</span>
                 <span className="stat-label">Happy Clients</span>
-              </div>
-            </div>
-          </div>
+              </div> */}
+            {/* </div> */}
+          {/* </div> */}
         </div>
       </div>
     </div>
