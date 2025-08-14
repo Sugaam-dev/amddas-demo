@@ -354,14 +354,14 @@ const Standards = memo(({ onLoad }) => {
     {
       id: 'employee-standards',
       title: 'Employee Standards',
-      description: 'All employees undergo quarterly medical fitness test clearance while in service at AMDDAS Foods. All staff have segregated dress codes based on their job roles. Company-provided staff quarters adjacent to the manufacturing unit to ensure hassle-free operation.',
+      description: 'All employees undergo quarterly medical fitness test clearance while in service at AMDDAS Foods. All staff have segregated dress codes based on their job roles. Company-provided staff quarters .',
       image: '/images/standard2.jpg',
       // webpImage: '/images/standard2.webp'
     },
     {
       id: 'manufacturing-standards',
       title: 'Manufacturing Unit Standards',
-      description: 'HACCP (Hazard Analysis and Critical Control Points) standards met. Segregated veg and non-veg cooking & storage sections. Gas bank located outside the kitchen. Fire extinguishers installed at all strategic locations.',
+      description: 'HACCP (Hazard Analysis and Critical Control Points) standards met. Segregated veg and non-veg cooking & storage sections. Gas bank located outside the kitchen. Fire extinguishers installed .',
       image: '/images/standard3.jpeg',
       // webpImage: '/images/standard3.webp'
     },
