@@ -1,8 +1,7 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo, useRef } from 'react';
 import './Offers.css';
 
-const Offers = () => {
+const Offers = memo(() => {
   const [countdown, setCountdown] = useState({
     days: 8,
     hours: 18,
@@ -10,8 +9,29 @@ const Offers = () => {
     seconds: 15
   });
 
+  const containerRef = useRef();
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Intersection Observer for performance
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   // Countdown timer effect
   useEffect(() => {
+    if (!isVisible) return;
+
     const timer = setInterval(() => {
       setCountdown(prev => {
         let { days, hours, minutes, seconds } = prev;
@@ -41,36 +61,50 @@ const Offers = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [isVisible]);
 
-  // Sparkle animation effect
+  // Optimized sparkle effect
   useEffect(() => {
+    if (!isVisible) return;
+
+    let sparkleCount = 0;
+    const maxSparkles = 2;
+    
     const createSparkle = () => {
+      if (sparkleCount >= maxSparkles) return;
+      
+      sparkleCount++;
       const sparkle = document.createElement('div');
       sparkle.className = 'floating-sparkle';
-      sparkle.style.position = 'fixed';
-      sparkle.style.left = Math.random() * window.innerWidth + 'px';
-      sparkle.style.top = Math.random() * window.innerHeight + 'px';
-      sparkle.style.width = '8px';
-      sparkle.style.height = '8px';
-      sparkle.style.background = '#57F6E7';
-      sparkle.style.borderRadius = '50%';
-      sparkle.style.animation = 'sparkle 2s ease-out forwards';
-      sparkle.style.pointerEvents = 'none';
-      sparkle.style.zIndex = '1000';
+      sparkle.style.cssText = `
+        position: fixed;
+        left: ${Math.random() * window.innerWidth}px;
+        top: ${Math.random() * window.innerHeight}px;
+        width: 6px;
+        height: 6px;
+        background: #57F6E7;
+        border-radius: 50%;
+        animation: sparkle 1.5s ease-out forwards;
+        pointer-events: none;
+        z-index: 1000;
+      `;
       
       document.body.appendChild(sparkle);
       
       setTimeout(() => {
         if (sparkle.parentNode) {
           sparkle.remove();
+          sparkleCount--;
         }
-      }, 2000);
+      }, 1500);
     };
     
     const sparkleInterval = setInterval(createSparkle, 3000);
-    return () => clearInterval(sparkleInterval);
-  }, []);
+    return () => {
+      clearInterval(sparkleInterval);
+      document.querySelectorAll('.floating-sparkle').forEach(el => el.remove());
+    };
+  }, [isVisible]);
 
   const orderNow = () => {
     alert('🍽️ Thank you! Redirecting to our online ordering system...\n\nEnjoy 30% OFF on all Ganesh Festival specials!');
@@ -83,7 +117,7 @@ const Offers = () => {
   const formatNumber = (num) => num.toString().padStart(2, '0');
 
   return (
-    <div className="offer-container">
+    <div ref={containerRef} className="offer-container">
       <div className="decorative-elements">
         <div className="sparkle"></div>
         <div className="sparkle"></div>
@@ -93,7 +127,12 @@ const Offers = () => {
       
       <div className="content-wrapperr">
         <div className="image-section">
-          <img src="/images/ganesh-removebg.png" alt="Lord Ganesh" className="ganesh-image" />
+          <img 
+            src="/images/ganesh-removebg.png" 
+            alt="Lord Ganesh" 
+            className="ganesh-image"
+            loading="lazy"
+          />
         </div>
         
         <div className="text-section">
@@ -151,12 +190,6 @@ const Offers = () => {
               VIEW MENU
             </button>
           </div>
-
-          {/* <div className="restaurant-info">
-            📍 Address: 123 Festival Street, Food Plaza<br />
-            📞 Phone: +91-9876543210<br />
-            🕒 Open: 11:00 AM - 11:00 PM
-          </div> */}
           
           <div className="blessing-text">
             🙏 "Happy Ganesh Chaturthi" 🙏<br />
@@ -166,6 +199,6 @@ const Offers = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Offers;
