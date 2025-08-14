@@ -95,6 +95,7 @@
         |-- qualitystanderds.jpg
         |-- risk.png
         |-- Riskmanagment.jpg
+        |-- risky.png
         |-- service.jpg
         |-- standard1.jpg
         |-- standard2.jpg
