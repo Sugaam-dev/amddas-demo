@@ -122,7 +122,7 @@
   display: flex;
   align-items: center;
   flex: 1;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 15px;
   /* margin-right: 130px; */
   font-family: 'Helvetica', Arial, sans-serif;
@@ -497,14 +497,14 @@
 @media (max-width: 1440px) {
     .compass-nav-right-menu {
     gap: 15px;
-    margin-right: 140px;
+    /* margin-right: 140px; */
     }
   }
 
 @media (max-width: 1024px) {
     .compass-nav-right-menu {
     gap: 8px;
-    margin-right: 90px;
+    /* margin-right: 90px; */
     }
   }
     
@@ -512,7 +512,7 @@
 @media (max-width: 992px) {
   .compass-nav-right-menu {
     gap: 8px;
-    margin-right: 30px;
+    /* margin-right: 30px; */
   }
   
   .compass-social-location-combined {

@@ -2,14 +2,14 @@
 
 .journey-values-section {
   padding: 50px 80px;
-  background-color: #E1F8FC;
+  background-color: transparent;
 }
 
 .journey-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
   gap: 40px;
 }

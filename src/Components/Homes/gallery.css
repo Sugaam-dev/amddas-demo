@@ -1,7 +1,7 @@
 /* Enhanced Gallery Section with Animations */
 .gallery-section {
   padding: 40px 10px 60px;
-  background: linear-gradient(135deg, #E1F8FC 0%, #f0fbfd 100%);
+  background-color: transparent;
   position: relative;
   overflow: hidden;
 }
@@ -57,7 +57,7 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  background-color: transparent;
 }
 
 .image-wrapper:hover {
@@ -131,7 +131,7 @@
 
 /* Enhanced Banner Section */
 .banner-section-gallery {
-  background: linear-gradient(135deg, #E1F8FC 0%, #f0fbfd 100%);
+  background-color: transparent;
   padding: 60px 10px 30px;
   font-family: 'Helvetica', Arial, sans-serif;
   text-align: center;
