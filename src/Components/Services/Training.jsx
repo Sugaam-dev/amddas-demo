@@ -1,17 +1,62 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Training.css';
-
+import culinaritraining from './images/Culrinary Training.webp'
+import food from './images/Food Handler Training.webp'
+import kitchen from './images/Kitchen Management Training.webp'
+import audit from './images/Audit Training.webp'
 function Training() {
+  const sectionRefs = useRef([]);
+
+  useEffect(() => {
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('training-animate-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    sectionRefs.current.forEach((section) => {
+      if (section) {
+        observer.observe(section);
+      }
+    });
+
+    return () => {
+      sectionRefs.current.forEach((section) => {
+        if (section) {
+          observer.unobserve(section);
+        }
+      });
+    };
+  }, []);
+
+  const addToRefs = (el) => {
+    if (el && !sectionRefs.current.includes(el)) {
+      sectionRefs.current.push(el);
+    }
+  };
+
   return (
     <div className="training-container" id="training-section">
       {/* Training Services Header Section */}
-      <section className="life-at-compass-section">
-        <div className="container-fluid">
+      <section 
+        className="training-life-section" 
+        ref={addToRefs}
+      >
+        <div className="training-container-fluid">
           {/* Header within section */}
           <div className="row section-main">
             <div className="col-12">
-              <div className="section-header">
+              <div className="training-section-header">
                 <h1 className="training-main-title">Training & Workshop Services</h1>
                 <p className="training-main-description">
                   <strong>We don't just serve food – we also nurture talent and build food industry professionals through our robust training programs.</strong>
@@ -21,18 +66,19 @@ function Training() {
           </div>
           <div className="row align-items-center">
             <div className="col-lg-6 col-md-12">
-              <div className="image-wrapper">
+              <div className="training-image-wrapper">
                 <img 
-                  src="/images/service.jpg" 
+                  src={culinaritraining}
                   alt="Culinary Training" 
-                  className="img-fluid training-image"
+                  className="training-main-image"
+                  loading="lazy"
                 />
               </div>
             </div>
             <div className="col-lg-6 col-md-12">
-              <div className="content-wrapper">
-                <h2 className="section-title">Culinary Training</h2>
-                <p className="section-subtitle">
+              <div className="training-content-wrapper">
+                <h2 className="training-section-title">Culinary Training</h2>
+                <p className="training-section-subtitle">
                   Hands-on culinary courses designed to build cooking skills, food knowledge, and kitchen efficiency for aspiring chefs and staff.
                 </p>
               </div>
@@ -42,23 +88,27 @@ function Training() {
       </section>
 
       {/* Food Handler Training Section */}
-      <section className="learning-development-section">
-        <div className="container-fluid">
+      <section 
+        className="training-learning-section" 
+        ref={addToRefs}
+      >
+        <div className="training-container-fluid">
           <div className="row align-items-center">
             <div className="col-lg-6 col-md-12 order-lg-1 order-2">
-              <div className="content-wrapper">
-                <h2 className="section-title">Food Handler Training</h2>
-                <p className="section-subtitle">
+              <div className="training-content-wrapper">
+                <h2 className="training-section-title">Food Handler Training</h2>
+                <p className="training-section-subtitle">
                   Hygiene, safety, and food handling best practices training to ensure your team meets FSSAI and quality standards.
                 </p>
               </div>
             </div>
             <div className="col-lg-6 col-md-12 order-lg-2 order-1">
-              <div className="image-wrapper">
+              <div className="training-image-wrapper">
                 <img 
-                  src="/images/corporate.jpg" 
+                  src={food} 
                   alt="Food Handler Training" 
-                  className="img-fluid training-image"
+                  className="training-main-image"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -66,22 +116,27 @@ function Training() {
         </div>
       </section>
 
-       <section className="life-at-compass-section">
-        <div className="container-fluid">
+      {/* Kitchen Management Section */}
+      <section 
+        className="training-life-section" 
+        ref={addToRefs}
+      >
+        <div className="training-container-fluid">
           <div className="row align-items-center">
             <div className="col-lg-6 col-md-12">
-              <div className="image-wrapper">
+              <div className="training-image-wrapper">
                 <img 
-                  src="/images/experience.avif" 
+                  src={kitchen} 
                   alt="Kitchen Management Training" 
-                  className="img-fluid training-image"
+                  className="training-main-image"
+                  loading="lazy"
                 />
               </div>
             </div>
             <div className="col-lg-6 col-md-12">
-              <div className="content-wrapper">
-                <h2 className="section-title">Kitchen Management</h2>
-                <p className="section-subtitle">
+              <div className="training-content-wrapper">
+                <h2 className="training-section-title">Kitchen Management</h2>
+                <p className="training-section-subtitle">
                   Training in managing kitchen operations, inventory control, staff coordination, and cost-effective food production.
                 </p>
               </div>
@@ -91,30 +146,33 @@ function Training() {
       </section>
 
       {/* Audit Training Section */}
-      <section className="learning-development-section">
-        <div className="container-fluid">
+      <section 
+        className="training-learning-section" 
+        ref={addToRefs}
+      >
+        <div className="training-container-fluid">
           <div className="row align-items-center">
             <div className="col-lg-6 col-md-12 order-lg-1 order-2">
-              <div className="content-wrapper">
-                <h2 className="section-title">Audit Training</h2>
-                <p className="section-subtitle">
+              <div className="training-content-wrapper">
+                <h2 className="training-section-title">Audit Training</h2>
+                <p className="training-section-subtitle">
                   Preparing hospitality teams to meet compliance through internal audits, documentation, and hygiene standard reviews.
                 </p>
               </div>
             </div>
             <div className="col-lg-6 col-md-12 order-lg-2 order-1">
-              <div className="image-wrapper">
+              <div className="training-image-wrapper">
                 <img 
-                  src="/images/mission.jpg" 
+                  src={audit}
                   alt="Audit Training" 
-                  className="img-fluid training-image"
+                  className="training-main-image"
+                  loading="lazy"
                 />
               </div>
             </div>
           </div>
         </div>
       </section>
-
     </div>
   );
 }

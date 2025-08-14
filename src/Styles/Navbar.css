@@ -1,646 +1,679 @@
-/* Mobile contact link styling */
-:root {
-    --navbar-font: 'Helvetica', Arial, sans-serif;
-}
-
-.compass-mobile-contact {
-  color: #ff4500 !important;
-  font-weight: 600 !important;
-  font-family: 'Helvetica', Arial, sans-serif;
-}
-
-.compass-mobile-contact:hover {
-  color: #b8860b !important;
-}
-
-/* Contact Us special styling */
-.compass-contact-pill {
-  color: #b8860b !important;
-  border-color: #b8860b !important;
-  font-weight: 600 !important;
-  font-family: 'Helvetica', Arial, sans-serif;
-}
-
-.compass-contact-pill:hover {
-  background-color: #b8860b !important;
-  color: white !important;
-  border-color: #b8860b !important;
-}
-
-.compass-contact-pill.active {
-  background-color: #b8860b !important;
-  color: white !important;
-  border-color: #b8860b !important;
-}
-
-/* UPDATED: Transparent Compass Group Style Navbar */
-.compass-navbar {
-  background-color: transparent !important;
-  position: fixed !important;
+/* Modern Navbar Styles */
+.modern-navbar {
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+  background-color: transparent;
   transition: all 0.3s ease;
   font-family: 'Helvetica', Arial, sans-serif;
 }
 
-/* UPDATED: Scrolled state for better readability when needed */
-/* UPDATED: Scrolled state for better readability when needed */
-.compass-navbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.95) !important;
-  border-bottom: 1px solid rgba(224, 224, 224, 0.5);
+.modern-navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* UPDATED: Navigation pills color change on scroll */
-.compass-navbar.scrolled .compass-nav-pill {
-  color: #333 !important;
-  border-color: rgba(51, 51, 51, 0.3);
-  text-shadow: none;
-}
-
-.compass-navbar.scrolled .compass-nav-pill:hover {
-  background-color: #b8860b !important;
-  color: white !important;
-  border-color: #b8860b;
-}
-
-.compass-navbar.scrolled .compass-nav-pill-span {
-  color: #333 !important;
-  border-color: rgba(51, 51, 51, 0.3);
-  text-shadow: none;
-}
-
-.compass-navbar.scrolled .compass-dropdown:hover .compass-nav-pill-span,
-.compass-navbar.scrolled .compass-dropdown-wrapper:hover .compass-nav-pill-span {
-  background-color: #b8860b;
-  color: white;
-  border-color: #b8860b;
-}
-
-.compass-navbar.scrolled .compass-mobile-toggle {
-  color: #333;
-  border-color: rgba(51, 51, 51, 0.3);
-}
-
-.compass-nav {
-  background-color: transparent !important;
-  padding: 0 !important;
+.modern-nav {
+  background: none !important;
+  padding: 0;
   min-height: 70px;
-  font-family: 'Helvetica', Arial, sans-serif;
 }
 
-.compass-container {
+.modern-container {
   padding: 0 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: 'Helvetica', Arial, sans-serif;
 }
 
-/* Logo Styling */
-.compass-logo {
+/* Logo */
+.modern-logo {
   display: flex;
   align-items: center;
   text-decoration: none;
 }
 
 .logo-img {
-  height: 70px;
+  height: 60px;
   width: auto;
-  transition: transform 0.2s ease;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  transition: transform 0.2s ease;
 }
 
-.compass-logo:hover .logo-img {
+.modern-logo:hover .logo-img {
   transform: scale(1.05);
 }
 
-/* Right-aligned Navigation */
-.compass-nav-right-menu {
+/* Desktop Navigation */
+.modern-nav-menu {
   display: flex;
   align-items: center;
+  gap: 20px;
   flex: 1;
   justify-content: center;
-  gap: 15px;
-  /* margin-right: 130px; */
-  font-family: 'Helvetica', Arial, sans-serif;
+
+  margin-left: 100px;
+  position: relative; /* Important for dropdown positioning */
+
 }
 
-/* UPDATED: Navigation Links - Clear background with white borders and text */
-.compass-nav-pill {
-  color: white !important;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 8px 16px;
-  margin: 0;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 25px;
-  background-color: transparent;
-  transition: all 0.3s ease;
-  font-family: 'Helvetica', Arial, sans-serif;
-  white-space: nowrap;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.compass-nav-pill:hover {
-  background-color: #b8860b !important;
-  color: white !important;
-  border-color: #b8860b;
-  text-decoration: none;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
-}
-
-.compass-nav-pill.active {
-  background-color: #b8860b !important;
-  color: white !important;
-  border-color: #b8860b;
-  font-weight: 600;
-}
-
-/* UPDATED: Dropdown Wrapper - Enhanced for transparency */
-.compass-dropdown-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-.compass-dropdown {
-  position: relative;
-}
-
-.compass-nav-pill-span {
+.modern-nav-item {
   color: white;
+  text-decoration: none;
   font-size: 14px;
   font-weight: 600;
-  text-decoration: none;
-  padding: 8px 16px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 25px;
-  background-color: transparent;
+  background: transparent;
   transition: all 0.3s ease;
-  font-family: 'Helvetica', Arial, sans-serif;
-  display: inline-block;
   white-space: nowrap;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  font-family: 'Helvetica', Arial, sans-serif;
 }
 
-.compass-dropdown:hover .compass-nav-pill-span,
-.compass-dropdown-wrapper:hover .compass-nav-pill-span {
+.modern-nav-item:hover,
+.modern-nav-item:focus {
   background-color: #b8860b;
   color: white;
-  border-color: #b8860b;
+  text-decoration: none;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
 }
 
-/* UPDATED: Dropdown Menu - Clear background */
-.compass-dropdown .dropdown-menu {
-  background-color: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-  padding: 10px 0;
-  min-width: 220px;
-  margin-top: 0px !important;
-  position: absolute !important;
-  top: 100% !important;
-  left: 0 !important;
-  z-index: 1001;
-  font-family: 'Helvetica', Arial, sans-serif;
+
+
+.modern-contact-btn:hover {
+  background-color: #997108 !important;
+  border-color: #997108 !important;
+}
+
+/* Scrolled state styles */
+.modern-navbar.scrolled .modern-nav-item {
+  color: #333;
+  border-color: rgba(51, 51, 51, 0.3);
+  text-shadow: none;
+}
+
+.modern-navbar.scrolled .modern-nav-item:hover {
+  background-color: #b8860b;
+  color: white;
+}
+
+
+
+/* Enhanced Dropdown Control */
+.modern-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.modern-dropdown-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Ensure only one dropdown is visible at a time */
+.modern-dropdown.active {
+  z-index: 1002;
+}
+
+.modern-dropdown:not(.active) .modern-dropdown-menu {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   transform: translateY(-10px);
+  pointer-events: none;
 }
 
-.compass-dropdown-wrapper:hover .dropdown-menu {
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: translateY(0) !important;
+.modern-dropdown.active .modern-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
-.compass-dropdown-item {
-  color: #333 !important;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 12px 20px;
+/* Hover bridge between dropdown trigger and menu */
+.modern-dropdown::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: -5px;
+  right: -5px;
+  height: 15px;
+  background: transparent;
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+.modern-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 15px);
+  left: 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  min-width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  padding: 10px 0;
+  z-index: 1001;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease;
-  border: none;
+}
+
+.modern-dropdown-menu button {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
   background: none;
+  border: none;
+  color: #333;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
   font-family: 'Helvetica', Arial, sans-serif;
 }
 
-.compass-dropdown-item:hover {
-  background-color: rgba(184, 134, 11, 0.1) !important;
-  color: #b8860b !important;
+.modern-dropdown-menu button:hover {
+  background-color: rgba(184, 134, 11, 0.1);
+  color: #b8860b;
   padding-left: 25px;
 }
 
-/* Dropdown toggle styling without arrow */
-.compass-dropdown .dropdown-toggle::after {
-  display: none;
+/* Prevent multiple dropdowns from interfering */
+.modern-dropdown + .modern-dropdown {
+  margin-left: 5px;
 }
 
-.compass-dropdown:hover .dropdown-toggle::after {
-  display: none;
-}
-
-/* Fix dropdown toggle styling */
-.compass-dropdown .dropdown-toggle {
-  background: none !important;
-  border: none !important;
-  padding: 0 !important;
-  display: inline-block !important;
-  font-family: 'Helvetica', Arial, sans-serif;
-}
-
-/* UPDATED: Right Side Combined Social + Location - Enhanced for transparency */
-.compass-social-location-combined {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-family: 'Helvetica', Arial, sans-serif;
-}
-
-/* UPDATED: Combined pill with clear background */
-.compass-combined-pill {
+/* Social Section */
+.modern-social-section {
   display: flex;
   align-items: center;
   background-color: rgba(184, 134, 11, 0.9);
   border-radius: 25px;
   padding: 8px 16px;
   gap: 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
   transition: all 0.3s ease;
 }
 
-.compass-combined-pill:hover {
+.modern-social-section:hover {
   transform: translateY(-1px);
   box-shadow: 0 6px 20px rgba(184, 134, 11, 0.4);
-  background-color: rgba(184, 134, 11, 1);
-}
 
-/* Social icons inline within the pill */
-.compass-social-icons-inline {
+
+.modern-social-icons {
   display: flex;
-  align-items: center;
   gap: 8px;
 }
 
-.compass-social-link-inline {
+.modern-social-icons a {
+  color: white;
+  font-size: 14px;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  transition: all 0.2s ease;
-  font-family: 'Helvetica', Arial, sans-serif;
   border-radius: 50%;
+  transition: all 0.2s ease;
+  text-decoration: none;
 }
 
-.compass-social-link-inline:hover {
-  color: #f0f0f0;
-  text-decoration: none;
+.modern-social-icons a:hover {
   transform: scale(1.2);
   background-color: rgba(255, 255, 255, 0.1);
+  color: white;
 }
 
-/* Divider line between social icons and location */
-.compass-divider {
+.modern-divider {
   width: 1px;
   height: 20px;
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Location within the pill */
-.compass-location-inline {
+.modern-location {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   color: white;
-}
-
-.compass-location-icon-inline {
-  font-size: 16px;
-}
-
-.compass-location-text-inline {
   font-size: 14px;
   font-weight: 500;
   font-family: 'Helvetica', Arial, sans-serif;
 }
 
-/* UPDATED: Mobile Toggle with clear background */
-.compass-mobile-toggle {
+/* Mobile Toggle */
+.modern-mobile-toggle {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.6);
   color: white;
-  font-size: 24px;
-  background-color: transparent;
   padding: 8px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* Mobile Offcanvas */
-.compass-offcanvas {
+.modern-mobile-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.modern-navbar.scrolled .modern-mobile-toggle {
+  color: #333;
+  border-color: rgba(51, 51, 51, 0.3);
+}
+
+/* Mobile Menu */
+.modern-offcanvas {
   background-color: rgba(255, 255, 255, 0.98);
-  font-family: 'Helvetica', Arial, sans-serif;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-.compass-offcanvas-header {
+.modern-offcanvas-header {
   border-bottom: 1px solid rgba(224, 224, 224, 0.5);
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.05);
 }
 
-.compass-offcanvas-body {
-  padding: 20px;
-}
-
-.compass-mobile-nav {
+.modern-mobile-menu {
+  display: flex;
   flex-direction: column;
   gap: 0;
-  font-family: 'Helvetica', Arial, sans-serif;
 }
 
-.compass-mobile-link {
-  color: #333 !important;
+.modern-mobile-item {
+  color: #333;
+  text-decoration: none;
   font-size: 16px;
   font-weight: 500;
   padding: 15px 0;
-  border-bottom: 1px solid rgba(240, 240, 240, 0.5);
-  text-decoration: none;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
   font-family: 'Helvetica', Arial, sans-serif;
+}
+
+.modern-mobile-item:hover {
+  color: #b8860b;
+  padding-left: 10px;
+  text-decoration: none;
+}
+
+.modern-mobile-contact {
+  color: #b8860b !important;
+  font-weight: 600 !important;
+}
+
+/* Mobile Dropdown Styles with Separate Click Areas */
+.modern-mobile-dropdown {
+  width: 100%;
+}
+
+.modern-mobile-dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.modern-mobile-main-link {
+  flex: 1;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Helvetica', Arial, sans-serif;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.compass-mobile-link:hover {
-  color: #b8860b !important;
-  padding-left: 10px;
+.modern-mobile-main-link:hover {
+  color: #b8860b;
 }
 
-.compass-mobile-link.active {
-  color: #b8860b !important;
-  font-weight: 600;
-}
-
-/* Mobile Dropdown */
-.compass-mobile-dropdown {
-  border-bottom: 1px solid rgba(240, 240, 240, 0.5);
-  font-family: 'Helvetica', Arial, sans-serif;
-}
-
-.compass-mobile-dropdown .dropdown-toggle {
-  color: #333 !important;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 15px 0;
+.modern-mobile-toggle-btn {
   background: none;
   border: none;
-  text-align: left;
-  width: 100%;
-  font-family: 'Helvetica', Arial, sans-serif;
-}
-
-.compass-mobile-dropdown-item {
-  color: #666 !important;
-  font-size: 14px;
-  padding: 10px 20px;
-  margin-left: 20px;
-  font-family: 'Helvetica', Arial, sans-serif;
+  color: #666;
+  padding: 5px 10px;
+  cursor: pointer;
   transition: all 0.3s ease;
+  border-radius: 4px;
+  min-width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.compass-mobile-dropdown-item:hover {
-  background-color: rgba(245, 245, 245, 0.8);
-  color: #b8860b !important;
+.modern-mobile-toggle-btn:hover {
+  background-color: #f0f0f0;
+  color: #b8860b;
+}
+
+.modern-mobile-submenu {
+  background-color: #f8f9fa;
+  border-left: 3px solid #b8860b;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 0 8px 8px 0;
+  overflow: hidden;
+  animation: slideDown 0.3s ease;
+}
+
+.modern-mobile-submenu button {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  color: #666;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #e9ecef;
+  font-family: 'Helvetica', Arial, sans-serif;
+}
+
+.modern-mobile-submenu button:last-child {
+  border-bottom: none;
+}
+
+.modern-mobile-submenu button:hover {
+  background-color: #e9ecef;
+  color: #b8860b;
   padding-left: 25px;
 }
 
-/* Mobile Social Icons */
-.compass-mobile-social {
+/* Animation for mobile submenu */
+@keyframes slideDown {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 300px;
+    opacity: 1;
+  }
+}
+
+.modern-mobile-social {
   display: flex;
   gap: 15px;
   padding: 20px 0;
-  border-top: 1px solid rgba(240, 240, 240, 0.5);
+  border-top: 1px solid #f0f0f0;
   margin-top: 20px;
 }
 
-.compass-mobile-social-link {
+.modern-mobile-social a {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
-  background-color: rgba(184, 134, 11, 0.9);
+  background-color: #b8860b;
   color: white;
   border-radius: 8px;
-  text-decoration: none;
   font-size: 16px;
+  text-decoration: none;
   transition: all 0.3s ease;
-  font-family: 'Helvetica', Arial, sans-serif;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.compass-mobile-social-link:hover {
-  background-color: #b8860b;
-  color: white;
-  text-decoration: none;
+.modern-mobile-social a:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(184, 134, 11, 0.4);
+  color: white;
 }
 
-/* Mobile Location */
-.compass-mobile-location {
+.modern-mobile-location {
   display: flex;
   align-items: center;
   gap: 8px;
-  background-color: rgba(184, 134, 11, 0.9);
+  background-color: #b8860b;
   color: white;
   padding: 12px 16px;
   border-radius: 25px;
   margin-top: 15px;
   width: fit-content;
+  font-weight: 500;
   font-family: 'Helvetica', Arial, sans-serif;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 2px 10px rgba(184, 134, 11, 0.3);
 }
 
-.compass-mobile-location-icon {
-  font-size: 18px;
+/* Fix for content hiding under navbar */
+[id$="-section"] {
+  scroll-margin-top: 100px;
 }
 
-.compass-mobile-location-text {
-  font-size: 14px;
-  font-weight: 500;
-  font-family: 'Helvetica', Arial, sans-serif;
+#corporate-section,
+#educational-section,
+#hospital-section,
+#training-section,
+#wedding-section,
+#housewarming-section,
+#birthday-section,
+#engagement-section,
+#festival-section,
+#bhandaara-section {
+  scroll-margin-top: 100px;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .compass-nav-center {
-    gap: 30px;
+/* Focus states for accessibility */
+.modern-nav-item:focus,
+.modern-dropdown-btn:focus,
+.modern-mobile-item:focus,
+.modern-mobile-main-link:focus,
+.modern-mobile-toggle-btn:focus {
+  outline: 2px solid #b8860b;
+  outline-offset: 2px;
+}
+
+/* Enhanced backdrop effects with fallbacks */
+@supports not (backdrop-filter: blur(10px)) {
+  .modern-social-section {
+    background-color: rgba(184, 134, 11, 0.95);
   }
   
-  .compass-container {
+  .modern-navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.98) !important;
+  }
+  
+  .modern-dropdown-menu {
+    background: rgba(255, 255, 255, 0.98);
+  }
+  
+  .modern-offcanvas {
+    background-color: rgba(255, 255, 255, 0.98);
+  }
+}
+
+
+/* Responsive Design */
+@media (min-width: 1400px) {
+  .modern-nav-menu {
+    margin-left: 150px;
+    gap: 25px;
+
+  }
+  
+  .modern-nav-item {
+    font-size: 15px;
+    padding: 12px 18px;
+  }
+}
+
+
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .modern-nav-menu {
+    margin-left: 100px;
+    gap: 20px;
+
+  }
+}
+
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .modern-nav-menu {
+    margin-left: 60px;
+    gap: 15px;
+
+  }
+  
+  .modern-nav-item {
+    font-size: 13px;
+    padding: 9px 14px;
+  }
+  
+  .modern-social-section {
+    padding: 6px 12px;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .modern-container {
     padding: 0 20px;
   }
 }
 
-@media (max-width: 1440px) {
-    .compass-nav-right-menu {
-    gap: 15px;
-    /* margin-right: 140px; */
-    }
-  }
-
-@media (max-width: 1024px) {
-    .compass-nav-right-menu {
-    gap: 8px;
-    /* margin-right: 90px; */
-    }
-  }
-    
-
-@media (max-width: 992px) {
-  .compass-nav-right-menu {
-    gap: 8px;
-    /* margin-right: 30px; */
+@media (max-width: 991px) and (min-width: 768px) {
+  .modern-container {
+    padding: 0 20px;
   }
   
-  .compass-social-location-combined {
-    gap: 10px;
+  .logo-img {
+    height: 50px;
   }
   
-  .compass-nav-pill,
-  .compass-nav-pill-span {
-    font-size: 12px;
-    padding: 6px 10px;
-  }
-  
-  .compass-combined-pill {
-    padding: 6px 10px;
-    gap: 6px;
-  }
-  
-  .compass-social-link-inline {
-    width: 18px;
-    height: 18px;
-    font-size: 11px;
-  }
-  
-  .compass-location-text-inline {
-    font-size: 12px;
+  .modern-mobile-toggle {
+    padding: 6px;
   }
 }
 
-@media (max-width: 768px) {
-  .compass-container {
+@media (max-width: 767px) and (min-width: 576px) {
+  .modern-container {
     padding: 0 15px;
   }
   
-  .compass-navbar {
-    position: fixed !important;
+  .logo-img {
+    height: 45px;
   }
 }
 
-/* Remove Bootstrap default styles */
-.compass-dropdown .dropdown-toggle,
-.compass-mobile-dropdown .dropdown-toggle {
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
+@media (max-width: 575px) {
+  .modern-container {
+    padding: 0 10px;
+  }
+  
+  .logo-img {
+    height: 40px;
+  }
+  
+  .modern-mobile-toggle {
+    padding: 4px;
+  }
+  
+  .modern-mobile-item,
+  .modern-mobile-main-link {
+    font-size: 15px;
+    padding: 12px 0;
+  }
+  
+  .modern-mobile-dropdown-header {
+    padding: 12px 0;
+  }
+  
+  .modern-mobile-social a {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+  
+  .modern-mobile-submenu {
+    margin-left: 5px;
+  }
+  
+  .modern-mobile-submenu button {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+  
+  .modern-offcanvas {
+    width: 100vw !important;
+  }
+  
+  .modern-mobile-social {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
 }
 
-.compass-dropdown .dropdown-toggle:focus,
-.compass-mobile-dropdown .dropdown-toggle:focus {
-  box-shadow: none !important;
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .modern-nav-item {
+    padding: 12px 16px;
+  }
+  
+  .modern-dropdown-menu button {
+    padding: 15px 20px;
+  }
+  
+  .modern-mobile-item,
+  .modern-mobile-main-link {
+    padding: 18px 0;
+  }
+  
+  .modern-mobile-toggle-btn {
+    padding: 8px 12px;
+    min-width: 40px;
+  }
 }
 
-/* Enhanced hover effects for dropdown wrapper */
-.compass-dropdown-wrapper:hover .dropdown-menu {
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
+/* Landscape orientation on mobile */
+@media (max-width: 991px) and (orientation: landscape) {
+  .modern-nav {
+    min-height: 60px;
+  }
+  
+  .logo-img {
+    height: 45px;
+  }
 }
 
-/* Better dropdown positioning to eliminate gap */
-.compass-dropdown .dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .modern-nav-item,
+  .modern-dropdown-menu,
+  .logo-img,
+  .modern-mobile-toggle,
+  .modern-mobile-submenu {
+    transition: none;
+    animation: none;
+  }
 }
 
-/* Extended hover area using pseudo-element */
-.compass-dropdown-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: -10px;
-  z-index: 1000;
-  pointer-events: auto;
+/* Print styles */
+@media print {
+  .modern-navbar {
+    display: none;
+  }
 }
 
-/* Enhanced hover states */
-.compass-nav-link,
-.compass-nav-link-span {
-  position: relative;
-}
-
-.compass-nav-link::after,
-.compass-nav-link-span::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -5px;
-  left: 50%;
-  background-color: #b8860b;
-  transition: all 0.3s ease;
-}
-
-.compass-nav-link:hover::after,
-.compass-dropdown:hover .compass-nav-link-span::after {
-  width: 100%;
-  left: 0;
-}
-
-/* UPDATED: Fixed scroll margin for better section positioning with transparent navbar */
-.wedding-section,
-.Our-services-container {
-  scroll-margin-top: 90px;
-}
-
-/* ADDED: Ensure content doesn't hide behind transparent navbar */
+/* Ensure content doesn't hide behind transparent navbar */
 body {
   padding-top: 0 !important;
-}
-
-/* ADDED: Style for when navbar is over different colored backgrounds */
-.compass-navbar.over-dark {
-  --text-color: white;
-}
-
-.compass-navbar.over-dark .compass-nav-pill,
-.compass-navbar.over-dark .compass-nav-pill-span {
-  color: var(--text-color, #333) !important;
-  background-color: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.compass-navbar.over-dark .compass-mobile-toggle {
-  color: white;
-  background-color: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
 }

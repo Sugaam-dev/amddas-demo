@@ -1,559 +1,798 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Helvetica', Arial, sans-serif;
+/* AMDDAS Events CSS - Professional Design with Smart Container Sizing */
+
+/* CSS Custom Properties */
+:root {
+  --amddas-primary-color: #ffbf00;
+  --amddas-primary-hover: #e03d00;
+  --amddas-secondary-color: #57F6E7;
+  --amddas-text-primary: #333;
+  --amddas-text-secondary: #666;
+  --amddas-text-light: #ffffff;
+  --amddas-font-family: 'Helvetica', Arial, sans-serif;
+  --amddas-border-radius: 15px;
+  --amddas-border-radius-lg: 20px;
+  --amddas-box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+  --amddas-box-shadow-hover: 0px 15px 40px rgba(0, 0, 0, 0.25);
+  --amddas-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --amddas-transition-fast: all 0.15s ease;
+  --amddas-container-max-width: 1400px;
+  
+  /* Professional Spacing System */
+  --amddas-section-spacing: 60px;
+  --amddas-container-spacing: 40px;
+  --amddas-content-spacing: 30px;
+  --amddas-element-spacing: 20px;
+  
+  /* Mobile Spacing */
+  --amddas-section-spacing-mobile: 40px;
+  --amddas-container-spacing-mobile: 25px;
+  --amddas-content-spacing-mobile: 20px;
+  --amddas-element-spacing-mobile: 15px;
 }
 
-/* Ensure smooth scrolling for the entire page */
-html {
-  scroll-behavior: smooth;
+/* Loading Spinner */
+.amddas-loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: transparent;
 }
 
-/* Prevent scroll snap that might interfere with smooth navigation */
-body {
-  scroll-snap-type: none;
+.amddas-loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--amddas-primary-color);
+  border-radius: 50%;
+  animation: amddas-spin 1s linear infinite;
 }
 
-/* Container for smooth transitions */
-.containerr {
+@keyframes amddas-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Main Container */
+.amddas-events-container {
+  width: 100%;
+  min-height: 100vh;
+  font-family: var(--amddas-font-family);
   overflow-x: hidden;
 }
 
-.banner-section-event {
-  background-image: linear-gradient(hsla(0, 0%, 0%, 0.303), hsla(0, 0%, 0%, 0.407)), url("/public/images/events.webp");
+/* Banner Section */
+.amddas-banner-section {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/public/images/events.webp");
   background-size: cover;
   background-position: center;
-  height: 400px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.amddas-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 1;
+  animation: amddas-overlay-fade-in 1s ease-out;
+}
+
+.amddas-banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--amddas-element-spacing);
+  max-width: 900px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 0 20px;
-  font-family: 'Helvetica', Arial, sans-serif;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: amddas-banner-content-slide-up 0.8s ease-out 0.3s forwards;
 }
 
-.banner-section-event h1 {
-  font-family: 'Helvetica', Arial, sans-serif;
-  font-size: 48px;
-  font-weight: 500;
-  color: #ffffff;
-  margin-bottom: 0;
+.amddas-banner-title {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--amddas-text-light);
+  margin-bottom: var(--amddas-element-spacing);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: amddas-title-slide-in 0.6s ease-out 0.5s forwards;
+  line-height: 1.1;
+  text-align: center;
 }
 
-.banner-subtitle-event {
-  color: white;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 400;
-  margin-top: 20px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+.amddas-banner-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: var(--amddas-text-light);
   line-height: 1.6;
-  opacity: 0.9;
-  font-family: 'Helvetica', Arial, sans-serif;
-  animation: fadeInDown 1s ease-out;
+  opacity: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  transform: translateY(20px);
+  animation: amddas-subtitle-slide-in 0.6s ease-out 0.8s forwards;
+  max-width: 100%;
+  text-align: center;
 }
 
-@media (max-width: 768px) {
-  .banner-section-event {
-    height: 200px;
-    padding: 0 15px;
+/* Banner Animation Keyframes */
+@keyframes amddas-overlay-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes amddas-banner-content-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
   }
-  
-  .banner-section-event h1 {
-    font-size: 40px;
-  }
-  
-  .banner-subtitle-event {
-    font-size: 16px;
-    margin-top: 15px;
-    padding: 0 10px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.banner-title-event {
-  color: #ffffff;
-  font-family: 'Helvetica', Arial, sans-serif;
-  animation: fadeInDown 1s ease-out;
-  font-size: 48px;
+@keyframes amddas-title-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
-.content-section {
-  padding: 50px 10%;
-  background-color: white;
-  font-family: 'Helvetica', Arial, sans-serif;
+@keyframes amddas-subtitle-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.introduction {
-  margin-bottom: 30px;
-  font-size: 1.1rem;
-  font-family: 'Helvetica', Arial, sans-serif;
+/* Enhanced Scroll-triggered Animation Classes */
+.amddas-animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-.section-heading {
-  font-size: 33px;
-  font-weight: 400;
-  margin-top: 30px;
-  margin-bottom: 10px;
-  font-family: 'Helvetica', Arial, sans-serif;
+.amddas-animate-on-scroll.amddas-animate-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.content-section p {
-  margin-bottom: 20px;
-  font-family: 'Helvetica', Arial, sans-serif;
+/* Specific scroll animations for different elements */
+.amddas-event-image-wrapper.amddas-animate-on-scroll {
+  transform: translateX(-30px) translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.content-section b {
-  font-weight: bold;
-  font-family: 'Helvetica', Arial, sans-serif;
+.amddas-event-section.amddas-reverse .amddas-event-image-wrapper.amddas-animate-on-scroll {
+  transform: translateX(30px) translateY(20px);
 }
 
-.content-section a {
-  color: #007bff;
-  text-decoration: underline;
-  cursor: pointer;
-  font-family: 'Helvetica', Arial, sans-serif;
+.amddas-event-image-wrapper.amddas-animate-on-scroll.amddas-animate-in {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
 }
 
-/* Unified Wedding Section Styles - Applied to ALL event sections */
-.wedding-section {
-  padding: 5px  5%;
-  background-color: #57F6E7;
-  margin: 0;
-  padding-top: 40px;
-  font-family: 'Helvetica', Arial, sans-serif;
+.amddas-event-content.amddas-animate-on-scroll {
+  transform: translateX(30px) translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: 0.1s;
 }
 
-.wedding-container {
+.amddas-event-section.amddas-reverse .amddas-event-content.amddas-animate-on-scroll {
+  transform: translateX(-30px) translateY(20px);
+}
+
+.amddas-event-content.amddas-animate-on-scroll.amddas-animate-in {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* Professional Event Sections */
+.amddas-event-section {
+  padding: var(--amddas-section-spacing) 0;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.amddas-event-container {
+  max-width: var(--amddas-container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--amddas-container-spacing);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--amddas-content-spacing);
+  align-items: center;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.amddas-event-section.amddas-reverse .amddas-event-container {
+  direction: rtl;
+}
+
+.amddas-event-section.amddas-reverse .amddas-event-content,
+.amddas-event-section.amddas-reverse .amddas-event-image-wrapper {
+  direction: ltr;
+}
+
+.amddas-event-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--amddas-border-radius-lg);
+  height: 400px;
+  box-shadow: var(--amddas-box-shadow);
+  transition: var(--amddas-transition);
+  width: 100%;
+}
+
+.amddas-event-image-wrapper:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: var(--amddas-box-shadow-hover);
+}
+
+.amddas-event-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.amddas-responsive-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: var(--amddas-transition);
+}
+
+.amddas-event-image-wrapper:hover .amddas-responsive-image {
+  transform: scale(1.05);
+}
+
+/* Event Content */
+.amddas-event-content {
+  padding: var(--amddas-element-spacing);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.amddas-event-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--amddas-text-primary);
+  margin-bottom: var(--amddas-element-spacing);
+  position: relative;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.amddas-event-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: clamp(40px, 10vw, 60px);
+  height: 3px;
+  background: linear-gradient(45deg, var(--amddas-primary-color), var(--amddas-primary-hover));
+  border-radius: 2px;
+  transition: transform 0.6s ease-out 0.3s;
+}
+
+.amddas-event-title.amddas-animate-in::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.amddas-event-description {
+  color: var(--amddas-text-secondary);
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+  line-height: 1.7;
+  text-align: center;
+}
+
+.amddas-event-paragraph {
+  margin-bottom: var(--amddas-element-spacing-mobile);
+}
+
+/* SMART: Responsive Swiper Section */
+.amddas-swiper-section {
+  padding: var(--amddas-section-spacing) 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  width: 100%;
+}
+
+.amddas-swiper-heading {
+  text-align: center;
+  color: var(--amddas-text-primary);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: var(--amddas-content-spacing);
+  position: relative;
+}
+
+.amddas-swiper-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: clamp(60px, 12vw, 90px);
+  height: 3px;
+  background: linear-gradient(45deg, var(--amddas-primary-color), var(--amddas-primary-hover));
+  border-radius: 2px;
+  transition: transform 0.6s ease-out 0.3s;
+}
+
+.amddas-swiper-heading.amddas-animate-in::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.amddas-swiper-container {
+  max-width: var(--amddas-container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--amddas-container-spacing);
+}
+
+.amddas-events-swiper {
+  width: 100%;
+  padding: var(--amddas-element-spacing);
+  border-radius: var(--amddas-border-radius-lg);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--amddas-box-shadow);
+}
+
+/* SMART: Enhanced slide content layout */
+.amddas-slide-content {
+  display: grid;
+  grid-template-columns: auto 1fr; /* First column auto-sizes to image, second takes remaining space */
+  gap: var(--amddas-content-spacing);
+  align-items: center;
+  padding: var(--amddas-content-spacing);
+  min-height: auto;
+  width: 100%;
+}
+
+/* FIXED: Smart Image Container that adjusts to image dimensions */
+.amddas-slide-image {
+  position: relative;
+  border-radius: var(--amddas-border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--amddas-box-shadow);
+  transition: var(--amddas-transition), height 0.3s ease-out, width 0.3s ease-out;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  font-family: 'Helvetica', Arial, sans-serif;
+  min-height: 200px;
+  height: auto;
+  width: auto; /* Let JavaScript control the width */
+  max-width: 100%;
 }
 
-.wedding-image {
-  flex: 1;
-  max-width: 500px;
+.amddas-slide-image:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: var(--amddas-box-shadow-hover);
 }
 
-.wedding-image img {
+/* FIXED: Image that fills container properly without gaps */
+.amddas-slide-img {
   width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  object-fit: cover; /* Changed back to cover to fill container completely */
+  object-position: center;
+  transition: opacity 0.4s ease-in-out, transform 0.3s ease;
+  display: block;
+  opacity: 0;
 }
 
-.wedding-content {
-  flex: 1;
-  max-width: 500px;
-  padding: 10px;
-  font-family: 'Helvetica', Arial, sans-serif;
+.amddas-slide-img.loaded {
+  opacity: 1;
 }
 
-.wedding-title {
-  color: #333;
-  font-size: 2.6rem;
-  margin-bottom: 20px;
-  font-family: 'Helvetica', Arial, sans-serif;
+.amddas-slide-image:hover .amddas-slide-img {
+  transform: scale(1.03);
+}
+
+/* Loading placeholder */
+.amddas-slide-image::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid var(--amddas-primary-color);
+  border-radius: 50%;
+  animation: amddas-spin 1s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.amddas-slide-image:not(:has(.loaded))::before {
+  opacity: 1;
+}
+
+/* Enhanced animation for image loading */
+@keyframes amddas-image-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.amddas-slide-img.loaded {
+  animation: amddas-image-fade-in 0.4s ease-out;
+}
+
+/* Error state styling */
+.amddas-slide-image[data-error="true"] {
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+  width: 300px; /* Fallback width for error state */
+  height: 200px; /* Fallback height for error state */
+}
+
+.amddas-slide-image[data-error="true"]::after {
+  content: '📷';
+  font-size: 2rem;
+  color: #721c24;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Text content styling */
+.amddas-slide-text {
+  padding: var(--amddas-element-spacing);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.amddas-slide-title {
+  color: var(--amddas-primary-hover);
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: var(--amddas-element-spacing);
+  line-height: 1.2;
+}
+
+.amddas-slide-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: var(--amddas-text-primary);
+  margin-bottom: var(--amddas-element-spacing-mobile);
   font-weight: 600;
+  line-height: 1.3;
 }
 
-.wedding-description {
-  color: #333;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  margin-bottom: 5px;
-  font-family: 'Helvetica', Arial, sans-serif;
+.amddas-slide-description {
+  color: var(--amddas-text-secondary);
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  line-height: 1.6;
+  margin-bottom: var(--amddas-element-spacing);
 }
 
-.wedding-enquire {
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: black;
-  background-color: #ffbf00;
+.amddas-enquire-btn {
+  background: linear-gradient(45deg, var(--amddas-primary-color), var(--amddas-primary-hover));
+  color: var(--amddas-text-primary);
+  padding: clamp(12px, 2.5vw, 18px) clamp(25px, 5vw, 35px);
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  font-weight: 600;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  font-family: 'Helvetica', Arial, sans-serif;
+  transition: var(--amddas-transition);
+  box-shadow: 0 4px 15px rgba(255, 191, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  align-self: flex-start;
 }
 
-.wedding-enquire:hover {
-  background-color: #e03d00;
+.amddas-enquire-btn:hover {
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 191, 0, 0.4);
 }
 
-/* Remove all birthday-specific styles since we're using unified classes */
+/* Swiper Pagination Customization */
+.amddas-events-swiper .swiper-pagination {
+  bottom: 10px;
+}
 
-/* Tablet Responsive (1024px and below) */
-@media (max-width: 1024px) {
-  .wedding-section {
-    padding: 60px 8%;
+.amddas-events-swiper .swiper-pagination-bullet {
+  background: var(--amddas-primary-color);
+  opacity: 0.5;
+  transition: var(--amddas-transition-fast);
+  width: clamp(8px, 1.5vw, 12px);
+  height: clamp(8px, 1.5vw, 12px);
+  margin: 0 4px;
+}
+
+.amddas-events-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: var(--amddas-primary-hover);
+  transform: scale(1.2);
+}
+
+/* Desktop layout */
+@media (min-width: 1024px) {
+  .amddas-event-content {
+    text-align: left;
   }
-
-  .wedding-container {
-    flex-direction: column;
+  
+  .amddas-event-title {
     text-align: center;
-    gap: 30px;
   }
-
-  .wedding-image {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .wedding-image img {
-    height: 350px;
-    width: 100%;
-  }
-
-  .wedding-content {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .wedding-title {
-    font-size: 2.5rem;
-  }
-
-  .wedding-description {
-    font-size: 1rem;
+  
+  .amddas-event-description {
+    text-align: left;
   }
 }
 
-/* Mobile Responsive (768px and below) */
-@media (max-width: 768px) {
-  .wedding-section {
-    padding: 20px 5%;
-    margin: 15px 0;
+/* Responsive adjustments */
+@media (max-width: 1199px) {
+  .amddas-banner-section {
+    height: 450px;
   }
-
-  .wedding-container {
-    gap: 25px;
+  
+  .amddas-event-image-wrapper {
+    height: 350px;
   }
+}
 
-  .wedding-image img {
+@media (max-width: 1023px) {
+  :root {
+    --amddas-section-spacing: var(--amddas-section-spacing-mobile);
+    --amddas-container-spacing: var(--amddas-container-spacing-mobile);
+    --amddas-content-spacing: var(--amddas-content-spacing-mobile);
+    --amddas-element-spacing: var(--amddas-element-spacing-mobile);
+  }
+  
+  .amddas-banner-section {
+    height: 400px;
+    background-attachment: scroll;
+  }
+  
+  .amddas-event-container {
+    grid-template-columns: 1fr;
+    gap: var(--amddas-content-spacing);
+    text-align: center;
+  }
+  
+  .amddas-event-section.amddas-reverse .amddas-event-container {
+    direction: ltr;
+  }
+  
+  .amddas-event-image-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
     height: 300px;
   }
+  
+  .amddas-event-content {
+    text-align: center;
+  }
+  
+  .amddas-event-title {
+    text-align: center;
+  }
+  
+  .amddas-event-description {
+    text-align: center;
+  }
+  
+  .amddas-event-title::after {
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+  }
+  
+  .amddas-event-title.amddas-animate-in::after {
+    transform: translateX(-50%) scaleX(1);
+  }
+  
+  /* Reset scroll animations for single column layout */
+  .amddas-event-image-wrapper.amddas-animate-on-scroll,
+  .amddas-event-section.amddas-reverse .amddas-event-image-wrapper.amddas-animate-on-scroll,
+  .amddas-event-content.amddas-animate-on-scroll,
+  .amddas-event-section.amddas-reverse .amddas-event-content.amddas-animate-on-scroll {
+    transform: translateY(20px);
+  }
+  
+  .amddas-event-image-wrapper.amddas-animate-on-scroll.amddas-animate-in,
+  .amddas-event-content.amddas-animate-on-scroll.amddas-animate-in {
+    transform: translateY(0);
+  }
+  
+  /* Mobile responsive slider adjustments */
+  .amddas-slide-content {
+    grid-template-columns: 1fr; /* Stack vertically on mobile */
+    gap: var(--amddas-content-spacing);
+    text-align: center;
+  }
+  
+  .amddas-slide-image {
+    width: auto !important; /* Reset JavaScript-controlled width */
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 180px;
+  }
+  
+  .amddas-slide-text {
+    text-align: center;
+  }
+  
+  .amddas-enquire-btn {
+    align-self: center;
+  }
+}
 
-  .wedding-title {
-    font-size: 2rem;
+@media (max-width: 767px) {
+  :root {
+    --amddas-section-spacing: 30px;
+    --amddas-container-spacing: 20px;
+    --amddas-content-spacing: 20px;
+    --amddas-element-spacing: 15px;
+    --amddas-element-spacing-mobile: 12px;
+  }
+  
+  .amddas-banner-section {
+    height: 350px;
+  }
+  
+  .amddas-banner-content {
+    padding: 15px;
+  }
+  
+  .amddas-event-image-wrapper {
+    height: 250px;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  
+  .amddas-slide-content {
+    padding: var(--amddas-element-spacing);
+  }
+  
+  .amddas-slide-image {
+    max-width: 100%;
+    min-height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --amddas-section-spacing: 25px;
+    --amddas-container-spacing: 15px;
+    --amddas-content-spacing: 15px;
+    --amddas-element-spacing: 12px;
+    --amddas-element-spacing-mobile: 10px;
+  }
+  
+  .amddas-banner-section {
+    height: 300px;
+  }
+  
+  .amddas-banner-title {
     margin-bottom: 15px;
-  }
-
-  .wedding-description {
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-  }
-
-  .wedding-enquire {
-    font-size: 0.9rem;
-    padding: 10px 20px;
-  }
-}
-
-/* Small Mobile Responsive (480px and below) */
-@media (max-width: 480px) {
-  .wedding-section {
-    padding: 20px 3%;
-    margin: 15px 0;
-  }
-
-  .wedding-container {
-    gap: 20px;
-  }
-
-  .banner-section-event h1 {
-        font-size: 30px;
-    }
-
-  .wedding-image img {
-    height: 250px;
-    border-radius: 10px;
-  }
-
-  .wedding-content {
-    padding: 15px;
-  }
-
-  .wedding-title {
     font-size: 1.8rem;
-    margin-bottom: 12px;
   }
-
-  .wedding-description {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 18px;
-  }
-
-  .wedding-enquire {
-    font-size: 0.85rem;
-    padding: 8px 16px;
-  }
-}
-
-@media (max-width: 480px){
-  .banner-section-event h1 {
-        font-size: 25px;
-    }
-
-  .banner-subtitle-event{
-    font-size: 14px;
-  }
-}
-
-.containerr {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-color: #57F6E7;
-  font-family: 'Helvetica', Arial, sans-serif;
-}
-
-.swiper {
-  width: 100%;
-  height: 100%;
-  font-family: 'Helvetica', Arial, sans-serif;
-}
-
-.slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 20px;
-  gap: 20px;
-  font-family: 'Helvetica', Arial, sans-serif;
-}
-
-.slide1 {
-  height: 450px;
-  width: 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  border-radius: 15px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.slide_img1 {
-  background-image: url("/public/images/menu1.png");
-}
-
-.slide_img2 {
-  background-image: url("/public/images/menu2.png");
-}
-
-.slide_img3 {
-  background-image: url("/public/images/menu3.png");
-}
-
-.slide_img4 {
-  background-image: url("/public/images/menu4.png");
-}
-
-.slide_img5 {
-  background-image: url("/public/images/menu5.jpg");
-}
-
-.text {
-  flex: 1;
-  max-width: 500px;
-  padding: 20px;
-  color: #000;
-  font-family: 'Helvetica', Arial, sans-serif;
-}
-
-.text h2 {
-  font-family: 'Helvetica', Arial, sans-serif;
-}
-
-.text h3 {
-  font-family: 'Helvetica', Arial, sans-serif;
-  color: #000;
-}
-
-.text p {
-  font-family: 'Helvetica', Arial, sans-serif;
-}
-
-.heading {
-  text-align: center;
-    color: #333;
-  font-size: 2.6rem;
-  margin-top: 80px;
-  font-family: 'Helvetica', Arial, sans-serif;
-  font-weight: 600;
-}
-
-
-.specialized-cuisines {
-  color: orangered;
-  font-size: 2rem;
-  margin-top: 20px;
-  font-weight: bold;
-  font-family: 'Helvetica', Arial, sans-serif;
-}
-
-.events-description ul li {
-  list-style-type: none;
-  text-align: start;
-  font-family: 'Helvetica', Arial, sans-serif;
-}
-
-.events-description h3 {
-  font-size: 1.5rem;
-  color: #000;
-  margin-bottom: 10px;
-  font-family: 'Helvetica', Arial, sans-serif;
-}
-
-.events-description p {
-  font-family: 'Helvetica', Arial, sans-serif;
-}
-
-.enquire-now {
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: black;
-  background-color: #ffbf00;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  font-family: 'Helvetica', Arial, sans-serif;
-}
-
-.enquire-now:hover {
-  background-color: #e03d00;
-  transform: translateY(-2px);
-}
-
-.content-section span {
-  font-size: 18px;
-  font-family: 'Helvetica', Arial, sans-serif;
-}
-
-/* Responsive Design for Swiper */
-@media (max-width: 1024px) {
-  .slide {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .slide1 {
-    height: 250px;
-    width: 70%;
-  }
-
-  .text {
-    text-align: center;
-    padding: 15px;
-  }
-
-  .heading {
-    font-size: 2rem;
-  }
-
-  .specialized-cuisines {
-    font-size: 1.5rem;
-  }
-
-  .events-description h3 {
-    font-size: 1rem;
-  }
-
-  .events-description p,
-  .events-description ul li {
-    font-size: 0.9rem;
-  }
-
-  .enquire-now {
-    font-size: 0.9rem;
-    padding: 8px 16px;
-  }
-}
-
-@media (max-width: 768px) {
-  .slide1 {
+  
+  .amddas-event-image-wrapper {
     height: 200px;
-    width: 90%;
   }
-
-  .text {
-    padding: 10px;
+  
+  .amddas-slide-image {
+    min-height: 140px;
+    border-radius: var(--amddas-border-radius);
   }
-
-  .heading {
-    font-size: 1.8rem;
-  }
-
-  .specialized-cuisines {
-    font-size: 1.2rem;
-  }
-
-  .events-description h3 {
-    font-size: 0.9rem;
-  }
-
-  .events-description p,
-  .events-description ul li {
-    font-size: 0.8rem;
-  }
-
-  .enquire-now {
-    font-size: 0.75rem;
-    padding: 6px 12px;
+  
+  .amddas-slide-content {
+    min-height: auto;
+    padding: var(--amddas-element-spacing-mobile);
   }
 }
 
-@media (max-width: 480px) {
-  .slide {
-    flex-direction: column;
-    align-items: center;
+/* Ultra Large Screens */
+@media (min-width: 1600px) {
+  .amddas-banner-section {
+    height: 600px;
   }
-
-  .slide1 {
-    height: 150px;
-    width: 95%;
+  
+  .amddas-event-image-wrapper {
+    height: 450px;
   }
+}
 
-  .text {
-    text-align: center;
-    padding: 5px;
+/* Landscape Orientation on Mobile */
+@media (max-width: 767px) and (orientation: landscape) {
+  .amddas-banner-section {
+    height: 250px;
   }
+}
 
-  .heading {
-    font-size: 1.5rem;
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .amddas-animate-on-scroll {
+    transition: none;
+    opacity: 1;
+    transform: none;
   }
-
-  .specialized-cuisines {
-    font-size: 1rem;
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
+}
 
-  .events-description h3 {
-    font-size: 0.8rem;
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --amddas-text-primary: #000;
+    --amddas-text-secondary: #333;
+    --amddas-box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
   }
+}
 
-  .events-description p,
-  .events-description ul li {
-    font-size: 0.7rem;
+/* Print styles */
+@media print {
+  .amddas-swiper-section,
+  .amddas-enquire-btn,
+  .amddas-banner-section {
+    display: none;
   }
-
-  .enquire-now {
-    font-size: 0.7rem;
-    padding: 5px 10px;
+  
+  .amddas-event-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    padding: 20px 0;
+  }
+  
+  .amddas-event-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 }
