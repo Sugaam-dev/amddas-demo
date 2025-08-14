@@ -67,7 +67,7 @@
 }
 
 .text-section {
-  flex: 1;
+  /* flex: 1; */
   padding: 40px;
   text-align: center;
   position: relative;
