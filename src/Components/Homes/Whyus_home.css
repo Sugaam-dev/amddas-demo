@@ -4,14 +4,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@400&display=swap');
 
 body, html {
-  background-color: #E1F8FC !important;
+  background-color: transparent !important;
   margin: 0;
   padding: 0;
 }
 
 /* Remove any decorative elements */
-.whyus-container::before,
-.whyus-container::after,
+.whyus-containerr::before,
+.whyus-containerr::after,
 .service-item::before,
 .service-item::after,
 .icon-image::before,
@@ -20,13 +20,13 @@ body, html {
   content: none !important;
 }
 
-.whyus-container {
-  background-color: #E1F8FC;
+.whyus-containerr {
+  background-color: transparent;
   border: 3px solid #2c2c2c;
   border-radius: 35px; /* Reduced from 45px */
   padding: 25px 30px; /* Reduced from 40px 40px */
   width: 100%;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 25px auto; /* Ensures perfect centering */
   font-family: 'Helvetica', Arial, sans-serif;
   position: relative;    
@@ -37,7 +37,7 @@ body, html {
 
 /* Full page wrapper */
 .whyus-page-wrapper {
-  background-color: #E1F8FC;
+  background-color: transparent;
   /* min-height: 50vh; Reduced from 70vh */
   width: 100%;
   padding: 0 20px; /* Added horizontal padding for better spacing */
@@ -138,7 +138,7 @@ body, html {
     padding: 0 15px; /* Responsive padding */
   }
 
-  .whyus-container {
+  .whyus-containerr {
     padding: 25px 20px; /* Reduced padding */
     margin: 20px auto; /* Ensure centering */
     border-radius: 30px; /* Reduced border radius */
@@ -185,7 +185,7 @@ body, html {
     min-height: 40vh; /* Further reduced for mobile */
   }
 
-  .whyus-container {
+  .whyus-containerr {
     padding: 20px 15px; /* Further reduced padding */
     border-radius: 25px;
     margin: 15px auto; /* Ensure centering */
@@ -245,7 +245,7 @@ body, html {
     padding: 0 8px; /* Minimal padding for very small screens */
   }
 
-  .whyus-container {
+  .whyus-containerr {
     padding: 18px 12px; /* Minimal padding for very small screens */
     margin: 10px auto; /* Ensure centering */
     width: 100%;
@@ -313,12 +313,12 @@ body, html {
 }
 
 /* Enhanced visual depth */
-.whyus-container {
+.whyus-containerr {
   box-shadow: 0 8px 32px rgba(44, 44, 44, 0.1);
 }
 
 /* Smooth container animation on page load */
-.whyus-container.scale-in {
+.whyus-containerr.scale-in {
   animation-duration: 0.8s;
   animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
