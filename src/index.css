@@ -30,3 +30,13 @@ code {
 src: local("karlie"),
   url("./fonts/karlie-regular.otf") format("opentype");
 font-weight: normal; */
+
+
+html {
+overflow-x: clip;
+overflow-y: auto;
+}
+
+body {
+overflow-x: clip;
+}

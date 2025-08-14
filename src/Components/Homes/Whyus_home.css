@@ -3,11 +3,7 @@
 /* Set body and html background to match component */
 @import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@400&display=swap');
 
-body, html {
-  background-color: #E1F8FC !important;
-  margin: 0;
-  padding: 0;
-}
+
 
 /* Remove any decorative elements */
 .whyus-container::before,
