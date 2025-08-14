@@ -81,7 +81,7 @@ const Festivals = memo(() => {
       {/* Banner Section */}
       <div className="banner">
         <LazyImage 
-          src="/images/festivalbanner.jpeg" 
+          src="/images/festivalbanner.webp" 
           alt="Ganesh Chaturthi Banner" 
           className="banner-img-container"
         />
@@ -114,7 +114,7 @@ const Festivals = memo(() => {
         </div>
         <div className="image-box">
           <LazyImage 
-            src="/images/ganesha-logo-removebg.png" 
+            src="/images/ganesha-logo-removebg.webp" 
             alt="Community Festival" 
             className="festival-img-container"
           />
