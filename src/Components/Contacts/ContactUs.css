@@ -1,9 +1,9 @@
 /* Contact Us Styles */
 .contact-us {
   font-family: 'Helvetica', Arial, sans-serif;
-  background-color: #f8f9fa;
+  /* background-color: #f8f9fa; */
   min-height: 100vh;
-   background-color: #57F6E7;
+   background-color: transparent;
 }
 
 /* Header Section */

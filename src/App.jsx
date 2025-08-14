@@ -17,7 +17,7 @@ import Navbarr from './Components/Navbar';
 import Error from './Components/Error';
 import Demo from './Components/Demo';
 import Log from './Components/Log';
-import Foot from './Components/Footers/Foot';
+// import Foot from './Components/Footers/Foot';
 import PrivacyPolicy from './Components/PrivacyPolicy';
 import DeleteAccount from './Components/DeleteAccount';
 
@@ -39,6 +39,7 @@ import Contact from './Components/Contacts/Contact';
 import Nav from './Components/Nav';
 import Why_Us from './Components/WhyUs/Why_Us';
 import Festivals from './Components/Festivals/Festivals';
+import Footerr from './Components/Footer/Footerr'; // Import the new footer component
 
 // Import new components for additional pages
 // import Educational from './Components/Services/Educational';
@@ -206,7 +207,7 @@ function App() {
         {/* Catch-all Route for Undefined Paths */}
         <Route path='/*' element={<Error />} />
       </Routes>
-      <Foot />
+      <Footerr />
     </BrowserRouter>
   );
 }
