@@ -14,7 +14,7 @@
   overflow: hidden;
   transform: translateY(50px);
   opacity: 0;
-  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.1s cubic-bezier(0.1, 0.1, 0.1, 0.1);
   will-change: transform, opacity;
 }
 
@@ -28,7 +28,7 @@
   background: linear-gradient(135deg, rgba(255, 107, 53, 0.03), rgba(255, 69, 0, 0.05));
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: opacity 0.1s cubic-bezier(0.1, 0.1, 0.1, 0.1);
 }
 
 /* Enhanced Section Title */
@@ -37,7 +37,7 @@
   margin-bottom: clamp(2rem, 5vw, 3rem);
   transform: translateY(30px);
   opacity: 0;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.1s cubic-bezier(0.1, 0, 0.1, 1);
   will-change: transform, opacity;
 }
 
@@ -50,7 +50,7 @@
   position: relative;
   transform: translateY(20px);
   opacity: 0;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform, opacity;
 }
 
@@ -67,7 +67,7 @@
   width: 0;
   height: 3px;
   background: linear-gradient(90deg, orangered, #ff6b35);
-  transition: width 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: width 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .section-subtitle {
@@ -79,11 +79,11 @@
   line-height: 1.6;
   transform: translateY(20px);
   opacity: 0;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform, opacity;
 }
 
-/* Enhanced Main Container */
+/* Enhanced Main Container - UPDATED FOR EQUAL HEIGHTS */
 .standards-main-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -91,21 +91,22 @@
   max-width: 1400px;
   margin: 0 auto;
   justify-items: center;
-  align-items: start;
+  align-items: stretch; /* Changed from 'start' to 'stretch' */
 }
 
-/* Enhanced Standard Card */
+/* Enhanced Standard Card - UPDATED FOR EQUAL HEIGHTS */
 .standard-card {
   background-color: #ffffff;
   border-radius: 20px;
   max-width: 500px;
   width: 100%;
+  height: 100%; /* Added to ensure all cards take full grid cell height */
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: clamp(1rem, 3vw, 1.5rem);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
   transform: translateY(40px) scale(0.95);
@@ -121,7 +122,7 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: left 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 1;
 }
 
@@ -134,15 +135,16 @@
   left: 100%;
 }
 
-/* Enhanced Image Wrapper */
+/* Enhanced Image Wrapper - FIXED HEIGHT FOR CONSISTENCY */
 .standard-image-wrapper {
   position: relative;
   width: 100%;
-  height: 250px;
+  height: 250px; /* Fixed height for all images */
   border-radius: 16px;
   overflow: hidden;
   margin-bottom: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0; /* Prevents image wrapper from shrinking */
 }
 
 /* Lazy Image Container */
@@ -200,7 +202,7 @@
   object-position: center;
   opacity: 0;
   transform: scale(1.1);
-  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform, opacity;
 }
 
@@ -242,7 +244,7 @@
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(2px);
 }
 
@@ -256,17 +258,21 @@
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   transform: scale(0.8);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .standard-card:hover .standard-number {
   transform: scale(1);
 }
 
-/* Enhanced Standard Info */
+/* Enhanced Standard Info - UPDATED FOR EQUAL HEIGHTS */
 .standard-info {
   text-align: center;
   width: 100%;
+  flex: 1; /* Takes up remaining space in flex container */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to top */
 }
 
 .standard-title {
@@ -283,8 +289,9 @@
   position: relative;
   transform: translateY(15px);
   opacity: 0;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform, opacity;
+  flex-shrink: 0; /* Prevents title from shrinking */
 }
 
 .standard-title::after {
@@ -296,7 +303,7 @@
   width: 0;
   height: 2px;
   background: orangered;
-  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: width 0.1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .standard-info-text {
@@ -305,6 +312,9 @@
   opacity: 0;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform, opacity;
+  flex: 1; /* Takes up remaining space */
+  display: flex;
+  align-items: flex-start; /* Align text to top of container */
 }
 
 .standard-info-text p {
@@ -314,6 +324,10 @@
   color: #666;
   margin: 0;
   text-align: justify;
+  display: -webkit-box;
+  -webkit-line-clamp: none; /* Remove line clamping to show full text */
+  -webkit-box-orient: vertical;
+  overflow: visible; /* Show all text */
 }
 
 /* Animation Keyframes */
@@ -370,77 +384,77 @@
 
 .animate-section-in::before {
   opacity: 1;
-  transition-delay: 0.3s;
+  transition-delay: 0.1s;
 }
 
 .animate-title-section {
   transform: translateY(0);
   opacity: 1;
-  transition-delay: 0.2s;
+  transition-delay: 0.1s;
 }
 
 .animate-main-title {
   transform: translateY(0);
   opacity: 1;
-  transition-delay: 0.3s;
+  transition-delay: 0.1s;
 }
 
 .animate-main-title .title-accent::after {
   width: 100%;
-  transition-delay: 0.6s;
+  transition-delay: 0.1s;
 }
 
 .animate-subtitle {
   transform: translateY(0);
   opacity: 1;
-  transition-delay: 0.4s;
+  transition-delay: 0.1s;
 }
 
 .animate-card-1 {
   transform: translateY(0) scale(1);
   opacity: 1;
-  transition-delay: 0.5s;
+  transition-delay: 0.1s;
 }
 
 .animate-card-2 {
   transform: translateY(0) scale(1);
   opacity: 1;
-  transition-delay: 0.6s;
+  transition-delay: 0.1s;
 }
 
 .animate-card-3 {
   transform: translateY(0) scale(1);
   opacity: 1;
-  transition-delay: 0.7s;
+  transition-delay: 0.1s;
 }
 
 .animate-card-4 {
   transform: translateY(0) scale(1);
   opacity: 1;
-  transition-delay: 0.8s;
+  transition-delay: 0.1s;
 }
 
 .animate-card-5 {
   transform: translateY(0) scale(1);
   opacity: 1;
-  transition-delay: 0.9s;
+  transition-delay: 0.1s;
 }
 
 .animate-title {
   transform: translateY(0);
   opacity: 1;
-  transition-delay: 0.2s;
+  transition-delay: 0.1s;
 }
 
 .animate-title::after {
   width: 50px;
-  transition-delay: 0.5s;
+  transition-delay: 0.1s;
 }
 
 .animate-text {
   transform: translateY(0);
   opacity: 1;
-  transition-delay: 0.3s;
+  transition-delay: 0.1s;
 }
 
 /* Enhanced Responsive Design */
