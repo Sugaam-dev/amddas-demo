@@ -1,17 +1,14 @@
-/* Offers.css */
-
-
-
 .offer-container {
-  width: 1100px; /* Fixed width */
-  max-width: 1100px; /* Ensure it doesn't exceed 1100px */
+  width: 100%;
+  max-width: 1100px;
   background: linear-gradient(135deg, #ffffff, #f0fdfc);
   border-radius: 25px;
   box-shadow: 0 40px 60px rgba(87, 246, 231, 0.3);
   overflow: hidden;
   border: 15px solid #00FFFF;
   position: relative;
-  margin: 30PX auto; /* Center horizontally */
+  margin: 30px auto;
+  will-change: transform;
 }
 
 .offer-container::before {
@@ -180,6 +177,7 @@
   display: flex;
   justify-content: center;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 .countdown-item {
@@ -288,22 +286,6 @@
   }
 }
 
-/* Floating sparkles created by JavaScript */
-@keyframes sparkle {
-  0% { 
-    opacity: 0; 
-    transform: scale(0) rotate(0deg); 
-  }
-  50% { 
-    opacity: 1; 
-    transform: scale(1) rotate(180deg); 
-  }
-  100% { 
-    opacity: 0; 
-    transform: scale(0) rotate(360deg); 
-  }
-}
-
 .blessing-text {
   font-size: 1rem;
   color: #065f46;
@@ -327,33 +309,75 @@
   font-weight: 600;
 }
 
-.restaurant-info {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 20px;
-  font-size: 0.9rem;
-  color: #065f46;
+/* Large Desktop (1440px and up) */
+@media (min-width: 1440px) {
+  .offer-container {
+    max-width: 1200px;
+    border-width: 18px;
+  }
+  
+  .image-section {
+    padding: 50px;
+  }
+  
+  .text-section {
+    padding: 50px;
+  }
+  
+  .ganesh-image {
+    max-height: 450px;
+  }
+  
+  .main-heading {
+    font-size: 3.5rem;
+  }
+  
+  .discount-text {
+    font-size: 3rem;
+  }
+  
+  .cta-button {
+    padding: 20px 40px;
+    font-size: 1.2rem;
+  }
 }
 
-/* Tablet Responsive */
-@media (max-width: 1024px) {
+/* Desktop (1080px to 1439px) */
+@media (min-width: 1080px) and (max-width: 1439px) {
   .offer-container {
-    width: 95%; /* Responsive width for tablets */
-    max-width: 900px; /* Maximum width for tablets */
+    max-width: 1100px;
+    border-width: 15px;
+  }
+  
+  .main-heading {
+    font-size: 3rem;
+  }
+  
+  .discount-text {
+    font-size: 2.5rem;
+  }
+}
+
+/* Tablet (768px to 1079px) */
+@media (max-width: 1079px) and (min-width: 769px) {
+  .offer-container {
+    max-width: 900px;
+    border-width: 12px;
+    margin: 25px auto;
   }
   
   .content-wrapperr {
     flex-direction: column;
+    min-height: auto;
   }
   
   .image-section {
-    order: 1; /* Image on top */
+    order: 1;
     padding: 30px;
   }
   
   .text-section {
-    order: 2; /* Content below image */
+    order: 2;
     padding: 30px;
   }
   
@@ -368,26 +392,33 @@
   .discount-text {
     font-size: 2.2rem;
   }
+  
+  .countdown {
+    gap: 12px;
+  }
 }
 
-/* Mobile Responsive */
+/* Mobile (481px to 768px) */
 @media (max-width: 768px) {
   .offer-container {
-    width: 95%; /* Responsive width for mobile */
-    max-width: 700px; /* Maximum width for mobile */
+    width: 95%;
+    max-width: 700px;
+    border-width: 10px;
+    margin: 20px auto;
   }
   
-  .content-wrapper r{
+  .content-wrapperr {
     flex-direction: column;
+    min-height: auto;
   }
   
   .image-section {
-    order: 1; /* Image on top */
+    order: 1;
     padding: 25px;
   }
   
   .text-section {
-    order: 2; /* Content below image */
+    order: 2;
     padding: 25px;
   }
   
@@ -402,150 +433,182 @@
   .discount-text {
     font-size: 2rem;
   }
-
+  
   .cta-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
-
+  
+  .cta-button {
+    width: 100%;
+    max-width: 250px;
+  }
+  
   .special-offers {
     grid-template-columns: 1fr;
   }
-
+  
   .countdown {
     gap: 10px;
   }
-
+  
   .countdown-item {
-    min-width: 40px;
-    padding: 6px 8px;
+    min-width: 45px;
+    padding: 6px 10px;
   }
-
+  
   .countdown-number {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
-
+  
   .festival-badge {
     font-size: 13px;
+    padding: 6px 16px;
   }
-
+  
   .restaurant-name {
     font-size: 1.1rem;
   }
-
+  
   .sub-heading {
     font-size: 1.3rem;
   }
 }
 
+/* Small Mobile (375px to 480px) */
 @media (max-width: 480px) {
   .offer-container {
-    width: 95%; /* Responsive width for small mobile */
-    max-width: 450px; /* Maximum width for small mobile */
-    margin: 10px auto; /* Center with small margin */
-    border-width: 3px;
+    width: 95%;
+    max-width: 450px;
+    margin: 15px auto;
+    border-width: 8px;
   }
-
+  
   .image-section {
-    order: 1; /* Image on top */
     padding: 20px;
   }
   
   .text-section {
-    order: 2; /* Content below image */
     padding: 20px;
   }
-
+  
   .ganesh-image {
     max-height: 200px;
   }
-
+  
   .main-heading {
     font-size: 1.8rem;
   }
-
+  
   .discount-text {
     font-size: 1.8rem;
   }
-
+  
   .festival-badge {
     font-size: 12px;
     padding: 6px 15px;
   }
-
+  
   .restaurant-name {
     font-size: 1rem;
   }
-
+  
   .sub-heading {
     font-size: 1.2rem;
   }
-
+  
   .cta-button {
     padding: 15px 25px;
     font-size: 1rem;
   }
-
+  
   .menu-item {
     font-size: 0.9rem;
-    padding: 4px 8px;
+    padding: 4px 10px;
     margin: 2px;
   }
-
+  
   .countdown-item {
-    min-width: 35px;
+    min-width: 40px;
     padding: 5px 8px;
   }
-
+  
   .countdown-number {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
-
+  
   .countdown-label {
     font-size: 0.7rem;
   }
+  
+  .offer-details {
+    padding: 20px;
+  }
+  
+  .timer {
+    padding: 12px;
+  }
 }
 
-/* Extra Small Mobile */
-@media (max-width: 360px) {
+/* Extra Small Mobile (up to 375px) */
+@media (max-width: 375px) {
   .offer-container {
-    width: 95%; /* Responsive width for extra small mobile */
-    max-width: 340px; /* Maximum width for extra small mobile */
+    width: 95%;
+    max-width: 340px;
+    border-width: 6px;
+    margin: 10px auto;
   }
   
   .image-section {
-    order: 1; /* Image on top */
     padding: 15px;
   }
   
   .text-section {
-    order: 2; /* Content below image */
     padding: 15px;
   }
-
+  
   .ganesh-image {
     max-height: 180px;
   }
-
+  
   .main-heading {
     font-size: 1.6rem;
   }
-
+  
   .discount-text {
     font-size: 1.6rem;
   }
-
+  
   .cta-button {
     padding: 12px 20px;
     font-size: 0.9rem;
   }
-
+  
   .countdown-item {
-    min-width: 30px;
+    min-width: 35px;
     padding: 4px 6px;
   }
-
+  
   .countdown-number {
-    font-size: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .countdown-label {
+    font-size: 0.65rem;
+  }
+  
+  .menu-item {
+    font-size: 0.8rem;
+    padding: 3px 8px;
+  }
+  
+  .offer-details {
+    padding: 15px;
+  }
+  
+  .festival-badge {
+    font-size: 11px;
+    padding: 5px 12px;
   }
 }
