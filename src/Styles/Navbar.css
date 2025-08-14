@@ -55,8 +55,10 @@
   gap: 20px;
   flex: 1;
   justify-content: center;
+
   margin-left: 100px;
   position: relative; /* Important for dropdown positioning */
+
 }
 
 .modern-nav-item {
@@ -210,7 +212,7 @@
 .modern-social-section:hover {
   transform: translateY(-1px);
   box-shadow: 0 6px 20px rgba(184, 134, 11, 0.4);
-}
+
 
 .modern-social-icons {
   display: flex;
@@ -498,11 +500,13 @@
   }
 }
 
+
 /* Responsive Design */
 @media (min-width: 1400px) {
   .modern-nav-menu {
     margin-left: 150px;
     gap: 25px;
+
   }
   
   .modern-nav-item {
@@ -511,17 +515,21 @@
   }
 }
 
+
 @media (max-width: 1399px) and (min-width: 1200px) {
   .modern-nav-menu {
     margin-left: 100px;
     gap: 20px;
+
   }
 }
+
 
 @media (max-width: 1199px) and (min-width: 992px) {
   .modern-nav-menu {
     margin-left: 60px;
     gap: 15px;
+
   }
   
   .modern-nav-item {

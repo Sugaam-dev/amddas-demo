@@ -8,6 +8,7 @@ import Vision from "./Vision";
 import Testimonial from "./Testimonial";
 import WhatsAppFloat from "../SubComponents/WhatsAppFloat";
 import Whyus_home from "./Whyus_home";
+import JourneyValues from "./Journeyvalues";
 
 // HomePage Component
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
       <div className="homepage">
         <Hero/>
         <Whyus_home/>
+        <JourneyValues/>
         {/* <AboutAmddas/> */}
         {/* <OurStory/> */}
         <Mission/>

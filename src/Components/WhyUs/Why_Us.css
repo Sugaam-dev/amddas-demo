@@ -1,4 +1,29 @@
 
+.whyus-wrapper {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 25%, #ffffff 50%, #f1f3f4 75%, #ffffff 100%);
+  position: relative;
+  padding-bottom: 60px;
+  scroll-behavior: smooth;
+}
+
+/* Add this after .whyus-wrapper */
+.whyus-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    rgba(255,255,255,0.1) 25%, 
+    transparent 25%, 
+    transparent 75%, 
+    rgba(255,255,255,0.1) 75%);
+  background-size: 60px 60px;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
 
 /* Banner */
 .banner-section-why-us {
@@ -6,6 +31,7 @@
     url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   height: 400px;
   display: flex;
   align-items: center;
@@ -19,25 +45,18 @@
   font-weight: bold;
   animation: fadeInDown 1s ease-out;
   text-align: center;
-   font-family: 'Helvetica', Arial, sans-serif;
+  font-family: 'Helvetica', Arial, sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Section */
+/* Container */
 .whyus-container {
   max-width: 1200px;
-  /* margin: 0 auto; */
+  margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Add this to give space above the first block
-.whyus-container .whyus-section:first-child {
-  margin-top: 60px;
-  border-top: 4px solid #000;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-} */
-
-
+/* Sections */
 .whyus-section {
   display: flex;
   align-items: center;
@@ -45,16 +64,32 @@
   gap: 40px;
   margin-bottom: 60px;
   flex-wrap: wrap;
-  background-color: #e6fff9;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 25%, #ffffff 50%, #f1f3f4 75%, #ffffff 100%);
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
   margin-top: 40px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.whyus-section.section-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .whyus-text {
   flex: 1;
   min-width: 280px;
+  transform: translateX(-30px);
+  opacity: 0;
+  transition: all 0.4s ease-out 0.05s;
+}
+
+.section-visible .whyus-text {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .whyus-text h2 {
@@ -62,40 +97,233 @@
   font-weight: 600;
   margin-bottom: 20px;
   color: #222;
-   font-family: 'Helvetica', Arial, sans-serif;
+  font-family: 'Helvetica', Arial, sans-serif;
+  position: relative;
+}
+
+.whyus-text h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #e6fff9;
+  border-radius: 2px;
 }
 
 .whyus-text ul {
   padding-left: 20px;
-  list-style: disc;
+  list-style: none;
   color: #444;
 }
 
 .whyus-text li {
   margin-bottom: 12px;
   font-size: 16px;
-   font-family: 'Helvetica', Arial, sans-serif;
+  font-family: 'Helvetica', Arial, sans-serif;
+  position: relative;
+  padding-left: 20px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.3s ease-out forwards;
 }
 
+.whyus-text li::before {
+  content: '•';
+  color: #00CCCC;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  font-size: 18px;
+}
+
+/* Image section */
 .whyus-image {
   flex: 1;
   min-width: 280px;
   text-align: center;
+  transform: translateX(30px);
+  opacity: 0;
+  transition: all 0.4s ease-out 0.1s;
+}
+
+.section-visible .whyus-image {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.image-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .whyus-image img {
   width: 100%;
   max-width: 480px;
+  height: 300px;
   border-radius: 20px;
   object-fit: cover;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-/* Responsive */
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+
+/* Large Desktop (1440px and up) */
+@media (min-width: 1440px) {
+  .whyus-container {
+    max-width: 1320px;
+    padding: 0 40px;
+  }
+
+  .whyus-section {
+    padding: 40px;
+    gap: 60px;
+  }
+
+  .whyus-text h2 {
+    font-size: 32px;
+  }
+
+  .whyus-text li {
+    font-size: 17px;
+  }
+
+  .whyus-image img {
+    max-width: 520px;
+    height: 320px;
+  }
+
+  .banner-title-why-us {
+    font-size: 56px;
+  }
+}
+
+/* Desktop (1080px to 1439px) */
+@media (min-width: 1080px) and (max-width: 1439px) {
+  .whyus-container {
+    max-width: 1200px;
+    padding: 0 30px;
+  }
+
+  .whyus-section {
+    padding: 35px;
+    gap: 50px;
+  }
+
+  .whyus-text h2 {
+    font-size: 30px;
+  }
+
+  .whyus-text li {
+    font-size: 16px;
+  }
+
+  .whyus-image img {
+    max-width: 480px;
+    height: 300px;
+  }
+
+  .banner-title-why-us {
+    font-size: 52px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1079px) and (min-width: 769px) {
+  .whyus-container {
+    max-width: 900px;
+    padding: 0 25px;
+  }
+
+  .whyus-section {
+    padding: 30px;
+    gap: 35px;
+  }
+
+  .whyus-text h2 {
+    font-size: 26px;
+  }
+
+  .whyus-text li {
+    font-size: 15px;
+  }
+
+  .whyus-image img {
+    max-width: 400px;
+    height: 280px;
+  }
+
+  .banner-title-why-us {
+    font-size: 42px;
+  }
+}
+
+/* Mobile and Small Tablet */
 @media (max-width: 768px) {
+  .whyus-container {
+    padding: 0 15px;
+  }
+
   .whyus-section {
     flex-direction: column;
     text-align: center;
+    padding: 25px;
+    gap: 30px;
+  }
+
+  .whyus-text {
+    min-width: unset;
+    transform: translateY(-20px);
+  }
+
+  .section-visible .whyus-text {
+    transform: translateY(0);
+  }
+
+  .whyus-image {
+    min-width: unset;
+    transform: translateY(20px);
+  }
+
+  .section-visible .whyus-image {
+    transform: translateY(0);
   }
 
   .whyus-text h2 {
@@ -108,16 +336,66 @@
 
   .whyus-image img {
     max-width: 100%;
+    height: 250px;
+  }
+
+  .banner-title-why-us {
+    font-size: 36px;
+  }
+
+  .banner-section-why-us {
+    height: 300px;
+    background-attachment: scroll;
   }
 }
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
+/* Small Mobile (375px and below) */
+@media (max-width: 375px) {
+  .whyus-container {
+    padding: 0 10px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .whyus-section {
+    padding: 20px;
+    margin-bottom: 40px;
+  }
+
+  .whyus-text h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .whyus-text li {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .whyus-image img {
+    height: 220px;
+  }
+
+  .banner-title-why-us {
+    font-size: 28px;
+    padding: 0 10px;
+  }
+
+  .banner-section-why-us {
+    height: 250px;
+  }
+}
+
+/* Loading states and performance improvements */
+.image-container img[style*="opacity: 0"] {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
   }
 }

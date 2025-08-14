@@ -3,7 +3,7 @@
 .hero-section {
   position: relative;
   width: 100%;
-  height: calc(100vh - 80px); /* Subtract navbar height */
+  height: 100vh;
   overflow: hidden;
   background-color: #000;
 }
@@ -33,7 +33,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  /* background-color: rgba(0, 0, 0, 0.4); */
   z-index: 1;
 }
 
@@ -124,7 +124,7 @@
 /* Responsive Design */
 @media (max-width: 1200px) {
   .hero-section {
-    height: calc(100vh - 70px); /* Smaller navbar on medium screens */
+    height: 100vh;
   }
   
   .hero-description {
@@ -134,7 +134,7 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    height: calc(100vh - 80px); /* Mobile navbar height */
+    height: 100vh;
   }
   
   .content-overlay {
@@ -160,7 +160,7 @@
 
 @media (max-width: 480px) {
   .hero-section {
-    height: calc(100vh - 95px); /* Consistent mobile navbar */
+    height: 100vh;
   }
   
   .content-overlay {
@@ -186,7 +186,7 @@
 
 @media (max-width: 320px) {
   .hero-section {
-    height: calc(100vh - 90px); /* Extra small screens */
+    height: 100vh;
   }
   
   .hero-description {

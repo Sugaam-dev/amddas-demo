@@ -1,0 +1,247 @@
+/* Journeyvalues.css - Updated with animation support */
+
+.journey-values-section {
+  padding: 50px 80px;
+  background-color: transparent;
+}
+
+.journey-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  gap: 40px;
+}
+
+/* Left Image with Animation Support */
+.image-sectionn {
+  flex: 1;
+  height: 500px;
+  /* Animation will be handled by ScrollAnimations.css */
+}
+
+.chef-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  overflow: hidden; /* For better image reveal effect */
+}
+
+.chef-image {
+  width: 100%;
+  height: 500px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Subtle hover effect */
+}
+
+.chef-image:hover {
+  transform: scale(1.02); /* Slight zoom on hover */
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1); /* Subtle overlay for better text contrast if needed */
+  border-radius: 10px;
+}
+
+/* Right Content with Animation Support */
+.content-sectionn {
+  flex: 1;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #2c3e50; /* Better contrast */
+  line-height: 1.3;
+  /* Animation will be handled by ScrollAnimations.css */
+}
+
+.section-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #555; /* Better readability */
+  /* Animation will be handled by ScrollAnimations.css */
+}
+
+/* Stats Grid with Animation Support */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.stat-item {
+  text-align: left;
+  padding: 10px 0; /* Add some padding for better spacing */
+  /* Animation will be handled by ScrollAnimations.css */
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 5px;
+  font-family: 'Helvetica', Arial, sans-serif;
+}
+
+.stat-label {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 5px 0;
+  color: #b8860b; /* Brand color for labels */
+  letter-spacing: 0.5px;
+}
+
+.stat-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Enhanced responsive design */
+@media (max-width: 1024px) {
+  .journey-values-section {
+    padding: 40px 60px;
+  }
+  
+  .journey-container {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  .journey-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr); /* Keep 2 columns on tablet */
+    gap: 25px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+  
+  .image-sectionn {
+    height: 400px; /* Reduce height on mobile */
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .chef-image-container {
+    min-height: 400px;
+  }
+  
+  .chef-image {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .journey-values-section {
+    padding: 30px 40px;
+  }
+  
+  .section-title {
+    font-size: 1.7rem;
+  }
+  
+  .section-description {
+    font-size: 1rem;
+  }
+  
+  .stats-grid {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: 1fr; /* Single column on small mobile */
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .journey-values-section {
+    padding: 20px 10px;
+  }
+  
+  .journey-container {
+    gap: 25px;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .section-description {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+  }
+  
+  .image-sectionn {
+    height: 300px;
+  }
+  
+  .chef-image-container {
+    min-height: 300px;
+  }
+  
+  .chef-image {
+    height: 300px;
+  }
+  
+  .stat-number {
+    font-size: 1.7rem;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+  }
+  
+  .stat-description {
+    font-size: 0.85rem;
+  }
+}
+
+/* Loading state for counters */
+.stat-number.loading {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .chef-image {
+    transition: none;
+  }
+  
+  .chef-image:hover {
+    transform: none;
+  }
+}
+
+/* Focus states for accessibility */
+.journey-values-section:focus-within .stat-item {
+  outline: 2px solid #b8860b;
+  outline-offset: 2px;
+  border-radius: 4px;
+}

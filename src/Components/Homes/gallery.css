@@ -1,17 +1,45 @@
-/* Gallery Section */
+/* Enhanced Gallery Section with Animations */
 .gallery-section {
-  padding: 20px 10px;
-  background-color: #E1F8FC;
+  padding: 40px 10px 60px;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated background elements */
+.gallery-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(184, 134, 11, 0.02) 0%, transparent 70%);
+  animation: backgroundRotate 30s linear infinite;
+  z-index: 0;
+}
+
+@keyframes backgroundRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .container {
   margin: 0 auto;
   max-width: 1200px;
   position: relative;
+  z-index: 2;
+}
+
+.swiper-container-wrapper {
+  position: relative;
+  /* Animation will be handled by ScrollAnimations.css */
 }
 
 .gallery-swiper {
   padding-bottom: 20px;
+  border-radius: 20px;
+  overflow: visible;
 }
 
 /* Hide pagination bullets */
@@ -19,71 +47,162 @@
   display: none !important;
 }
 
+/* Enhanced Image Wrapper with Animation Support */
 .image-wrapper {
-  width: 300px; /* Set a fixed width */
-  height: 200px; /* Set a fixed height */
+  width: 300px;
+  height: 200px;
   margin: 0 auto;
-  overflow: hidden; /* Ensure no overflow from larger images */
-  border-radius: 20px; /* Enhanced rounded corners - increased from 10px to 20px */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow for better depth */
-  transition: all 0.3s ease; /* Added transition for smooth hover effects */
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  background-color: transparent;
 }
 
 .image-wrapper:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
+  transform: translateY(-8px) rotateY(5deg);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Image Overlay for Enhanced Interactivity */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(184, 134, 11, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.image-wrapper:hover .image-overlay {
+  opacity: 1;
+}
+
+.overlay-content {
+  text-align: center;
+  color: white;
+  transform: translateY(20px);
+  transition: transform 0.3s ease 0.1s;
+}
+
+.image-wrapper:hover .overlay-content {
+  transform: translateY(0);
+}
+
+.image-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-family: 'Helvetica', Arial, sans-serif;
+}
+
+.image-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Helvetica', Arial, sans-serif;
 }
 
 .image-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the image fits perfectly without distortion */
-  transition: transform 0.3s ease;
-  border-radius: 20px; /* Apply border-radius to image as well for consistency */
+  object-fit: cover;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .image-wrapper img:hover {
-  transform: scale(1.05); /* Slight zoom effect on hover */
+  transform: scale(1.1);
+  filter: brightness(1.1) contrast(1.1);
 }
 
-.banner-section-gallery{
-  background-color: #E1F8FC;
-  padding: 40px 10px 10px 10px;
+/* Enhanced Banner Section */
+.banner-section-gallery {
+  background-color: transparent;
+  padding: 60px 10px 30px;
   font-family: 'Helvetica', Arial, sans-serif;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.gallery-section{
-  background-color: #E1F8FC;
-  min-height: 300px; /* Changed from fixed height to min-height */
+.banner-section-gallery::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23b8860b" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23b8860b" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  z-index: 0;
 }
 
 .banner-title-gallery {
-  font-weight: 600;
+  font-weight: 700;
   font-family: 'Helvetica', Arial, sans-serif;
   text-align: center;
   font-size: 54px;
-  line-height: 1.5;
-  color: #333;
-  margin-bottom: 15px;
+  line-height: 1.2;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+  /* Animation will be handled by ScrollAnimations.css */
 }
 
-.gg {
-  text-align: start;
-  line-height: 1.8;
-  padding: 0 10%;
-  font-size: 16px;
+/* Animated title underline */
+.banner-title-gallery::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #b8860b 0%, #d4af37 100%);
+  border-radius: 2px;
+  transition: width 0.8s ease 0.5s;
+}
+
+.banner-title-gallery.visible::after {
+  width: 120px;
+}
+
+/* New Subtitle */
+.gallery-subtitle {
+  font-size: 18px;
+  color: #666;
+  font-weight: 400;
   font-family: 'Helvetica', Arial, sans-serif;
+  margin: 0 auto;
+  max-width: 600px;
+  position: relative;
+  z-index: 2;
+  /* Animation will be handled by ScrollAnimations.css */
 }
 
-/* Custom Swiper Navigation Arrows */
+/* Enhanced Custom Navigation Arrows */
 .custom-prev,
 .custom-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
-  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #b8860b 0%, #d4af37 100%);
   border: none;
   cursor: pointer;
   z-index: 10;
@@ -91,19 +210,24 @@
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
+  /* Animation will be handled by ScrollAnimations.css */
 }
 
 .custom-prev:hover,
 .custom-next:hover {
-  transform: translateY(-50%) scale(1.2);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 25px rgba(184, 134, 11, 0.4);
+  background: linear-gradient(135deg, #9a7209 0%, #b8860b 100%);
 }
 
 .custom-prev {
-  left: -20px;
+  left: -25px;
 }
 
 .custom-next {
-  right: -20px;
+  right: -25px;
 }
 
 .custom-prev::after,
@@ -116,116 +240,227 @@
 }
 
 .custom-prev::after {
-  border-width: 12px 18px 12px 0;
-  border-color: transparent #ff4f00 transparent transparent;
+  border-width: 8px 12px 8px 0;
+  border-color: transparent white transparent transparent;
 }
 
 .custom-next::after {
-  border-width: 12px 0 12px 18px;
-  border-color: transparent transparent transparent #ff4f00;
+  border-width: 8px 0 8px 12px;
+  border-color: transparent transparent transparent white;
 }
 
-.custom-prev:hover::after {
-  border-color: transparent #e63900 transparent transparent;
+/* New Gallery Stats Section */
+.gallery-stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 50px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  /* Animation will be handled by ScrollAnimations.css */
 }
 
-.custom-next:hover::after {
-  border-color: transparent transparent transparent #e63900;
+.stat-item {
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
-/* Custom Swiper Pagination Dots */
+.stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #b8860b;
+  font-family: 'Helvetica', Arial, sans-serif;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Helvetica', Arial, sans-serif;
+}
+
+/* Enhanced Custom Pagination Dots */
 .gallery-swiper .swiper-pagination {
-  bottom: 10px !important; /* Position dots below images */
+  bottom: 10px !important;
   position: relative !important;
   margin-top: 30px;
 }
 
 .custom-bullet {
-  width: 12px !important;
-  height: 12px !important;
-  background-color: rgba(255, 79, 0, 0.3) !important;
-  border: 2px solid #ff4f00 !important;
+  width: 14px !important;
+  height: 14px !important;
+  background: linear-gradient(135deg, rgba(184, 134, 11, 0.3) 0%, rgba(212, 175, 55, 0.3) 100%) !important;
+  border: 2px solid #b8860b !important;
   border-radius: 50% !important;
   opacity: 1 !important;
-  margin: 0 6px !important;
+  margin: 0 8px !important;
   transition: all 0.3s ease !important;
   cursor: pointer !important;
 }
 
 .custom-bullet-active {
-  background-color: #ff4f00 !important;
-  transform: scale(1.2) !important;
-  box-shadow: 0 2px 8px rgba(255, 79, 0, 0.4) !important;
+  background: linear-gradient(135deg, #b8860b 0%, #d4af37 100%) !important;
+  transform: scale(1.3) !important;
+  box-shadow: 0 4px 15px rgba(184, 134, 11, 0.4) !important;
 }
 
 .custom-bullet:hover {
-  background-color: #ff4f00 !important;
-  transform: scale(1.1) !important;
+  background: linear-gradient(135deg, #b8860b 0%, #d4af37 100%) !important;
+  transform: scale(1.2) !important;
+  box-shadow: 0 2px 10px rgba(184, 134, 11, 0.3) !important;
+}
+
+/* Floating animation for images */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.image-wrapper.visible {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Staggered floating for multiple images */
+.swiper-slide:nth-child(2n) .image-wrapper.visible {
+  animation-delay: 1s;
+}
+
+.swiper-slide:nth-child(3n) .image-wrapper.visible {
+  animation-delay: 2s;
 }
 
 /* Override default Swiper styles */
 .gallery-swiper .swiper-button-next,
 .gallery-swiper .swiper-button-prev {
-  display: none; /* Hide default arrows since we're using custom ones */
-}
-
-.gallery-swiper .swiper-pagination-bullet {
-  background-color: rgba(255, 79, 0, 0.3) !important;
-  border: 2px solid #ff4f00 !important;
-}
-
-.gallery-swiper .swiper-pagination-bullet-active {
-  background-color: #ff4f00 !important;
+  display: none;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
   .banner-section-gallery {
-    /* height: 200px; */
-    padding-top: 20px;
-  }
-
-  .gallery-section{
-    min-height: 200px; /* Changed from fixed height to min-height */
+    padding: 40px 10px 20px;
   }
 
   .banner-title-gallery {
     font-size: 40px;
-    margin-bottom: 0;
+    margin-bottom: 15px;
+  }
+  
+  .gallery-subtitle {
+    font-size: 16px;
   }
 
   .image-wrapper {
-    width: 277px; /* Adjust width for smaller screens */
-    height: 180px; /* Adjust height for smaller screens */
-    border-radius: 18px; /* Slightly reduced for mobile but still rounded */
+    width: 277px;
+    height: 180px;
+    border-radius: 18px;
   }
 
   .image-wrapper img {
-    border-radius: 18px; /* Match the wrapper border-radius */
+    border-radius: 18px;
   }
   
   .custom-prev {
-    left: 0;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .custom-next {
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .custom-prev::after {
+    border-width: 6px 10px 6px 0;
+  }
+  
+  .custom-next::after {
+    border-width: 6px 0 6px 10px;
+  }
+  
+  .gallery-stats {
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 30px;
+    padding: 20px;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .custom-bullet {
+    width: 12px !important;
+    height: 12px !important;
+    margin: 0 5px !important;
+  }
+  
+  /* Disable floating animation on mobile */
+  .image-wrapper.visible {
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-title-gallery {
+    font-size: 32px;
+  }
+  
+  .gallery-subtitle {
+    font-size: 14px;
+  }
+  
+  .custom-prev {
+    left: 5px;
     width: 36px;
     height: 36px;
   }
   
   .custom-next {
-    right: 0;
+    right: 5px;
     width: 36px;
     height: 36px;
   }
   
+  .image-wrapper {
+    border-radius: 15px;
+  }
+
+  .image-wrapper img {
+    border-radius: 15px;
+  }
+  
   .custom-prev::after {
-    border-width: 10px 15px 10px 0;
+    border-width: 5px 8px 5px 0;
   }
   
   .custom-next::after {
-    border-width: 10px 0 10px 15px;
+    border-width: 5px 0 5px 8px;
   }
   
-  .gallery-swiper {
-    padding-bottom: 40px;
+  .gallery-stats {
+    padding: 15px;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
   }
   
   .custom-bullet {
@@ -235,46 +470,49 @@
   }
 }
 
-@media (max-width: 480px) {
-  .custom-prev {
-    left: 5px;
-    width: 32px;
-    height: 32px;
+/* Accessibility: Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .image-wrapper,
+  .image-wrapper img,
+  .custom-prev,
+  .custom-next,
+  .stat-item,
+  .banner-title-gallery::after {
+    animation: none;
+    transition: none;
   }
+  
+  .gallery-section::before {
+    animation: none;
+  }
+  
+  .image-wrapper:hover,
+  .image-wrapper:hover img,
+  .custom-prev:hover,
+  .custom-next:hover,
+  .stat-item:hover {
+    transform: none;
+  }
+}
 
-  .gallery-section{
-    min-height: 100px; /* Changed from fixed height to min-height */
-  }
+/* Loading states */
+.image-wrapper img.loading {
+  opacity: 0.7;
+  filter: blur(2px);
+}
 
-  .banner-title-gallery {
-    font-size: 30px;
-  }
-  
-  .custom-next {
-    right: 5px;
-    width: 32px;
-    height: 32px;
-  }
-  
-  .image-wrapper {
-    border-radius: 15px; /* Further reduced for smaller screens but still noticeable */
-  }
+/* Focus states for accessibility */
+.custom-prev:focus,
+.custom-next:focus {
+  outline: 3px solid rgba(184, 134, 11, 0.5);
+  outline-offset: 3px;
+}
 
-  .image-wrapper img {
-    border-radius: 15px; /* Match the wrapper border-radius */
-  }
-  
-  .custom-prev::after {
-    border-width: 8px 12px 8px 0;
-  }
-  
-  .custom-next::after {
-    border-width: 8px 0 8px 12px;
-  }
-  
-  .custom-bullet {
-    width: 8px !important;
-    height: 8px !important;
-    margin: 0 3px !important;
-  }
+/* Text selection styling */
+.banner-title-gallery::selection,
+.gallery-subtitle::selection,
+.stat-number::selection,
+.stat-label::selection {
+  background-color: rgba(184, 134, 11, 0.3);
+  color: #2c3e50;
 }
