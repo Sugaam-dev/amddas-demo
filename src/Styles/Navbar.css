@@ -212,7 +212,7 @@
 .modern-social-section:hover {
   transform: translateY(-1px);
   box-shadow: 0 6px 20px rgba(184, 134, 11, 0.4);
-
+}
 
 .modern-social-icons {
   display: flex;
