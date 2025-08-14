@@ -1,4 +1,4 @@
-/* Enhanced About.css with NO Banner Animations - Only Text Animations */
+/* Enhanced About.css - No Animations */
 
 /* CSS Custom Properties for consistent theming */
 :root {
@@ -18,9 +18,6 @@
   --border-radius-small: 8px;
   --border-radius-medium: 20px;
   --border-radius-large: 50px;
-  --transition-fast: 0.1s ease;
-  --transition-medium: 0.1s ease;
-  --transition-slow: 0.1s ease;
   
   /* Fluid Typography */
   --font-size-xs: clamp(0.75rem, 2vw, 0.875rem);
@@ -64,7 +61,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Banner Section - NO ANIMATIONS - Static Display */
+/* Banner Section - Static Display */
 .banner-section-about {
   background-image: url('/public/images/about.jpeg');
   background-size: cover;
@@ -77,28 +74,9 @@ body {
   text-align: center;
   position: relative;
   overflow: hidden;
-  /* Removed transition animations */
 }
 
-/* Loading state for banner - Static */
-.banner-section-about.image-loading {
-  background-color: #f0f0f0;
-  background-image: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: shimmer 0.1s infinite;
-}
-
-.banner-loading-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent 25%, rgba(255,255,255,0.4) 50%, transparent 75%);
-  animation: shimmer 0.1s infinite;
-}
-
-/* Banner Title - NO ANIMATIONS - Static Display */
+/* Banner Title - Static Display */
 .banner-title-about {
   color: var(--white);
   font-size: var(--font-size-4xl);
@@ -106,18 +84,12 @@ body {
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
   font-family: 'Helvetica', Arial, sans-serif;
   padding-right: clamp(20px, 5vw, 90px);
-  /* Removed transform, opacity, and transition animations */
-  transform: translateY(0); /* Static position */
-  opacity: 1; /* Always visible */
 }
 
-/* About Section Enhanced - TEXT ANIMATIONS ONLY */
+/* About Section - No Animations */
 .about-section {
   padding: clamp(15px, 4vw, 30px) clamp(15px, 5vw, 40px);
   background-color: var(--primary-color);
-  transform: translateY(30px);
-  opacity: 0;
-  transition: all var(--transition-slow);
 }
 
 .about-section p {
@@ -126,129 +98,19 @@ body {
   font-size: var(--font-size-base);
 }
 
-/* Section Wrapper for Staggered TEXT Animations */
+/* Section Wrapper - No Animations */
 .section-wrapper {
-  transform: translateY(40px);
-  opacity: 0;
-  transition: all var(--transition-slow);
   margin-bottom: clamp(10px, 2.5vw, 20px);
-}
-
-/* Animation Classes - TEXT ONLY */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
-
-/* Scroll Animation Classes - TEXT CONTENT ONLY */
-.animate-fade-in {
-  /* Removed banner animation */
-  animation: none;
-}
-
-.animate-slide-up {
-  /* Removed banner animation */
-  animation: none;
-}
-
-.animate-fade-in-up {
-  transform: translateY(0);
-  opacity: 1;
-  transition: all 0.1s ease-out;
-}
-
-.animate-stagger-1 {
-  transform: translateY(0);
-  opacity: 1;
-  transition: all 0.1s ease-out 0.1s;
-}
-
-.animate-stagger-2 {
-  transform: translateY(0);
-  opacity: 1;
-  transition: all 0.1s ease-out 0.1s;
-}
-
-.animate-stagger-3 {
-  transform: translateY(0);
-  opacity: 1;
-  transition: all 0.1s ease-out 0.1s;
-}
-
-.animate-stagger-4 {
-  transform: translateY(0);
-  opacity: 1;
-  transition: all 0.1s ease-out 0.1s;
 }
 
 /* Loading Skeleton Styles */
 .loading-skeleton {
   padding: clamp(20px, 5vw, 40px);
-  animation: pulse 0.1s infinite;
 }
 
 .skeleton-banner {
   height: clamp(200px, 30vh, 300px);
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: shimmer 0.1s infinite;
+  background: #f0f0f0;
   border-radius: var(--border-radius-medium);
   margin-bottom: 20px;
 }
@@ -261,9 +123,7 @@ body {
 
 .skeleton-line {
   height: 20px;
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: shimmer 0.1s infinite;
+  background: #f0f0f0;
   border-radius: 4px;
 }
 
@@ -288,25 +148,9 @@ body {
   background: var(--background-light);
   text-align: center;
   border-radius: var(--border-radius-small);
-  transition: all var(--transition-medium);
   margin: 0 10px;
   position: relative;
   overflow: hidden;
-}
-
-.box::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  transition: left 0.1s;
-}
-
-.box:hover::before {
-  left: 100%;
 }
 
 .box:hover {
@@ -327,13 +171,11 @@ body {
   font-weight: 700;
   line-height: clamp(50px, 8vw, 60px);
   margin-bottom: 20px;
-  transition: all var(--transition-medium);
 }
 
 .box:hover span {
   background: var(--white);
   color: var(--secondary-color);
-  transform: rotate(360deg);
 }
 
 .box h4 {
@@ -357,7 +199,6 @@ body {
   color: var(--text-medium);
   line-height: 1.6;
   margin-bottom: 8px;
-  transition: all var(--transition-medium);
   cursor: pointer;
 }
 
@@ -369,7 +210,6 @@ body {
   position: absolute;
   left: 0;
   top: 6px;
-  transition: all var(--transition-medium);
 }
 
 .service-item:hover {
@@ -392,12 +232,22 @@ body {
   border-radius: var(--border-radius-large);
   overflow: hidden;
   box-shadow: var(--shadow-medium);
-  transition: all var(--transition-medium);
 }
 
 .leadership-container:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Remove all animation classes */
+.animate-fade-in,
+.animate-slide-up,
+.animate-fade-in-up,
+.animate-stagger-1,
+.animate-stagger-2,
+.animate-stagger-3,
+.animate-stagger-4 {
+  /* No animations */
 }
 
 /* Responsive Design with Enhanced Breakpoints */
@@ -542,21 +392,6 @@ body {
   
   .section-wrapper {
     margin-bottom: 8px;
-  }
-}
-
-/* Reduce Motion for Accessibility */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  
-  html {
-    scroll-behavior: auto;
   }
 }
 

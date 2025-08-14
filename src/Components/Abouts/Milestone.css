@@ -1,4 +1,4 @@
-/* Enhanced Milestone.css with Ultra-Fast 1-Second Loading */
+/* Enhanced Milestone.css - No Animations */
 
 /* Global Styles */
 * {
@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-/* Main Milestones Section */
+/* Main Milestones Section - No Animations */
 .milestones-section {
   padding: clamp(1rem, 4vw, 3rem) clamp(2rem, 8vw, 10%);
   background-color: transparent;
@@ -15,10 +15,6 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
-  transform: translateY(60px);
-  opacity: 0;
-  transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Faster section load */
-  will-change: transform, opacity;
 }
 
 .milestones-section::before {
@@ -30,8 +26,6 @@
   bottom: 0;
   background: radial-gradient(circle at center, rgba(255, 107, 53, 0.03), transparent 70%);
   pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.1s ease-out; /* Faster background fade */
 }
 
 /* Enhanced Container */
@@ -43,7 +37,7 @@
   position: relative;
 }
 
-/* Enhanced Heading - ULTRA FAST LOAD */
+/* Enhanced Heading - No Animations */
 .milestones-heading {
   font-size: clamp(2rem, 5vw + 1rem, 3rem);
   color: #333;
@@ -52,10 +46,6 @@
   font-weight: 600;
   letter-spacing: 1px;
   position: relative;
-  transform: translateY(40px);
-  opacity: 0;
-  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1); /* Super fast heading */
-  will-change: transform, opacity;
 }
 
 .heading-text {
@@ -69,27 +59,22 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 0;
+  width: 120px;
   height: 4px;
   background: linear-gradient(90deg, orangered, #ff6b35);
-  transition: width 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Fast underline */
   border-radius: 2px;
 }
 
-/* Enhanced Image Container - ULTRA FAST LOAD */
+/* Enhanced Image Container - No Animations */
 .milestones-image {
   max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  transform: translateY(50px) scale(0.95);
-  opacity: 0;
-  transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Fast image container */
-  will-change: transform, opacity;
 }
 
-/* Lazy Image Container - OPTIMIZED FOR SPEED */
+/* Lazy Image Container */
 .milestone-lazy-image-container {
   position: relative;
   width: 100%;
@@ -97,7 +82,6 @@
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
-  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1); /* Fast hover effects */
   background: linear-gradient(135deg, #f8f9fa, #e9ecef);
 }
 
@@ -106,7 +90,7 @@
   box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.25);
 }
 
-/* Image Placeholder - ULTRA FAST LOADING ANIMATION */
+/* Image Placeholder */
 .milestone-image-placeholder {
   position: relative;
   width: 100%;
@@ -114,31 +98,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(-45deg, #f0f0f0, #e8e8e8, #f0f0f0, #e8e8e8);
-  background-size: 400% 400%;
-  animation: shimmer-gradient 1s ease-in-out infinite; /* Super fast shimmer */
+  background: #f0f0f0;
 }
 
 .milestone-loading-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px; /* Reduced gap for faster visual load */
+  gap: 15px;
   color: #666;
   text-align: center;
 }
 
 .milestone-loading-spinner {
-  width: 40px; /* Smaller spinner for faster perception */
+  width: 40px;
   height: 40px;
   border: 3px solid #f0f0f0;
   border-top: 3px solid orangered;
   border-radius: 50%;
-  animation: spin 0.1s linear infinite; /* Super fast spin */
 }
 
 .milestone-loading-bar {
-  width: 150px; /* Smaller bar for faster fill */
+  width: 150px;
   height: 4px;
   background: #e0e0e0;
   border-radius: 2px;
@@ -150,50 +131,29 @@
   height: 100%;
   background: linear-gradient(90deg, orangered, #ff6b35);
   border-radius: 2px;
-  width: 0;
-  animation: loading-progress 0.1s ease-out infinite; /* Ultra fast progress */
+  width: 100%;
 }
 
 .milestone-loading-text {
   font-size: 0.9rem;
   font-weight: 500;
   color: #666;
-  animation: text-pulse 0.1s ease-in-out infinite; /* Fast text pulse */
 }
 
-/* Low Quality Image (Blurred) - INSTANT LOAD */
-.milestone-low-quality-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  filter: blur(10px);
-  opacity: 0.7;
-  transition: opacity 0.1s ease-out; /* Instant blur transition */
-}
-
-/* High Quality Image - ULTRA FAST FADE IN */
+/* High Quality Image - No Animations */
 .milestone-lazy-image {
   width: 100%;
   height: auto;
   object-fit: cover;
   object-position: center;
   display: block;
-  opacity: 0;
-  transform: scale(1.05);
-  transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Super fast image fade */
-  will-change: transform, opacity;
 }
 
 .milestone-lazy-image.fade-in {
-  opacity: 1;
-  transform: scale(1);
+  /* No fade animation */
 }
 
-/* Error State - FAST ERROR DISPLAY */
+/* Error State */
 .milestone-image-error {
   position: absolute;
   top: 50%;
@@ -201,12 +161,11 @@
   transform: translate(-50%, -50%);
   text-align: center;
   color: #999;
-  padding: 1.5rem; /* Reduced padding */
-  animation: error-fade-in 0.1s ease-out; /* Fast error animation */
+  padding: 1.5rem;
 }
 
 .milestone-error-icon {
-  font-size: 3rem; /* Smaller icon for faster load */
+  font-size: 3rem;
   margin-bottom: 0.5rem;
   opacity: 0.6;
 }
@@ -227,7 +186,6 @@
   font-size: 0.85rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.1s ease; /* Fast button response */
 }
 
 .milestone-retry-button:hover {
@@ -236,217 +194,11 @@
   box-shadow: 0 3px 10px rgba(255, 69, 0, 0.3);
 }
 
-/* Decorative Elements - FAST ANIMATIONS */
-.milestone-decorative-elements {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.1s ease-out; /* Fast decorative fade */
-}
-
-.milestones-image:hover .milestone-decorative-elements {
-  opacity: 1;
-}
-
-.milestone-badge {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: rgba(255, 69, 0, 0.9);
-  color: white;
-  padding: 10px 14px; /* Smaller padding for faster load */
-  border-radius: 25px;
-  backdrop-filter: blur(5px); /* Reduced blur for performance */
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transform: translateY(-5px);
-  transition: transform 0.2s ease; /* Fast badge animation */
-  animation: badge-slide-in 0.1s ease-out; /* Fast badge entrance */
-}
-
-.badge-year {
-  font-size: 1.1rem;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.badge-text {
-  font-size: 0.75rem;
-  font-weight: 500;
-  opacity: 0.9;
-}
-
-.milestone-stats {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  gap: 12px; /* Reduced gap */
-  animation: stats-slide-in 0.1s ease-out; /* Fast stats entrance */
-}
-
-.stat-item {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 10px 14px; /* Smaller padding */
-  border-radius: 10px;
-  backdrop-filter: blur(5px); /* Reduced blur */
-  border: 1px solid rgba(255, 69, 0, 0.2);
-  text-align: center;
-  transform: translateY(5px);
-  transition: transform 0.1s ease; /* Fast stat animation */
-}
-
-.stat-number {
-  display: block;
-  font-size: 1rem;
-  font-weight: 700;
-  color: orangered;
-  line-height: 1;
-}
-
-.stat-label {
-  display: block;
-  font-size: 0.7rem;
-  color: #666;
-  font-weight: 500;
-}
-
-/* ULTRA FAST Animation Keyframes */
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes shimmer-gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes loading-progress {
-  0% { width: 0%; }
-  30% { width: 40%; }
-  60% { width: 70%; }
-  100% { width: 100%; }
-}
-
-@keyframes text-pulse {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; }
-}
-
-@keyframes error-fade-in {
-  from {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-
-@keyframes badge-slide-in {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-5px);
-  }
-}
-
-@keyframes stats-slide-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInUp {
-  from {
-    transform: translateY(60px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    transform: translateY(50px) scale(0.95);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    transform: translateY(40px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* ULTRA FAST Animation Classes - ALL UNDER 1 SECOND */
-.animate-section-in {
-  transform: translateY(0);
-  opacity: 1;
-  transition-delay: 0.01s; /* Almost instant */
-}
-
-.animate-section-in::before {
-  opacity: 1;
-  transition-delay: 0.1s; /* Very fast background */
-}
-
-.animate-heading-in {
-  transform: translateY(0);
-  opacity: 1;
-  transition-delay: 0.1s; /* Fast heading */
-}
-
-.animate-heading-in .heading-underline {
-  width: 120px;
-  transition-delay: 0.1s; /* Fast underline */
-}
-
+/* Remove all animation classes */
+.animate-section-in,
+.animate-heading-in,
 .animate-image-in {
-  transform: translateY(0) scale(1);
-  opacity: 1;
-  transition-delay: 0.1s; /* Fast image */
-}
-
-/* PERFORMANCE OPTIMIZED - Preload hints */
-.milestone-lazy-image-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  z-index: -1;
+  /* No animations */
 }
 
 /* Enhanced Responsive Design */
@@ -467,22 +219,6 @@
   
   .milestone-image-placeholder {
     min-height: 500px;
-  }
-  
-  .milestone-badge {
-    top: 30px;
-    left: 30px;
-    padding: 14px 18px;
-  }
-  
-  .milestone-stats {
-    bottom: 30px;
-    right: 30px;
-    gap: 16px;
-  }
-  
-  .stat-item {
-    padding: 14px 18px;
   }
 }
 
@@ -541,22 +277,6 @@
   .milestone-image-placeholder {
     min-height: 350px;
   }
-  
-  .milestone-badge {
-    top: 15px;
-    left: 15px;
-    padding: 8px 12px;
-  }
-  
-  .milestone-stats {
-    bottom: 15px;
-    right: 15px;
-    gap: 10px;
-  }
-  
-  .stat-item {
-    padding: 8px 12px;
-  }
 }
 
 /* Mobile Landscape & Large Mobile (640px - 767px) */
@@ -584,38 +304,6 @@
   
   .milestone-loading-bar {
     width: 120px;
-  }
-  
-  .milestone-badge {
-    top: 12px;
-    left: 12px;
-    padding: 6px 10px;
-  }
-  
-  .badge-year {
-    font-size: 1rem;
-  }
-  
-  .badge-text {
-    font-size: 0.7rem;
-  }
-  
-  .milestone-stats {
-    bottom: 12px;
-    right: 12px;
-    gap: 8px;
-  }
-  
-  .stat-item {
-    padding: 6px 10px;
-  }
-  
-  .stat-number {
-    font-size: 0.9rem;
-  }
-  
-  .stat-label {
-    font-size: 0.65rem;
   }
 }
 
@@ -646,7 +334,6 @@
     width: 30px;
     height: 30px;
     border-width: 3px;
-    animation: spin 0.1s linear infinite; /* Even faster on mobile */
   }
   
   .milestone-loading-bar {
@@ -656,11 +343,6 @@
   
   .milestone-loading-text {
     font-size: 0.8rem;
-  }
-  
-  .milestone-stats {
-    flex-direction: column;
-    gap: 6px;
   }
 }
 
@@ -692,7 +374,6 @@
     width: 25px;
     height: 25px;
     border-width: 2px;
-    animation: spin 0.1s linear infinite; /* Ultra fast on small mobile */
   }
   
   .milestone-loading-bar {
@@ -704,192 +385,10 @@
     font-size: 0.75rem;
   }
   
-  .milestone-badge {
-    top: 6px;
-    left: 6px;
-    padding: 4px 8px;
-  }
-  
-  .badge-year {
-    font-size: 0.85rem;
-  }
-  
-  .badge-text {
-    font-size: 0.6rem;
-  }
-  
-  .milestone-stats {
-    bottom: 6px;
-    right: 6px;
-    flex-direction: column;
-    gap: 4px;
-  }
-  
-  .stat-item {
-    padding: 4px 8px;
-  }
-  
-  .stat-number {
-    font-size: 0.8rem;
-  }
-  
-  .stat-label {
-    font-size: 0.6rem;
-  }
-  
   .milestone-retry-button {
     padding: 0.5rem 1rem;
     font-size: 0.75rem;
   }
-}
-
-/* Landscape Mobile Optimization */
-@media (max-width: 767px) and (orientation: landscape) and (max-height: 500px) {
-  .milestones-section {
-    padding: 0.5rem 1%;
-    min-height: auto;
-  }
-  
-  .milestones-heading {
-    margin-bottom: 0.8rem;
-  }
-  
-  .milestone-lazy-image-container {
-    max-width: 80%;
-  }
-  
-  .milestone-image-placeholder {
-    min-height: 120px;
-  }
-  
-  .milestone-decorative-elements {
-    display: none; /* Hide for performance */
-  }
-  
-  .milestone-loading-spinner {
-    animation: spin 0.1s linear infinite; /* Extremely fast in landscape */
-  }
-}
-
-/* Ultra-wide Screens (1600px+) */
-@media (min-width: 1600px) {
-  .milestones-section {
-    padding: 5rem 10%;
-  }
-  
-  .milestones-heading {
-    margin-bottom: 6rem;
-  }
-  
-  .milestone-lazy-image-container {
-    max-width: 1200px;
-  }
-  
-  .milestone-image-placeholder {
-    min-height: 600px;
-  }
-}
-
-/* Performance Optimizations */
-.milestones-section,
-.milestone-lazy-image-container,
-.milestone-lazy-image,
-.milestone-decorative-elements {
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-/* GPU Acceleration for Ultra Fast Animations */
-.milestones-heading,
-.milestones-image,
-.milestone-badge,
-.milestone-stats,
-.milestone-lazy-image,
-.milestone-loading-spinner,
-.milestone-loading-progress {
-  transform: translateZ(0);
-  will-change: transform, opacity;
-}
-
-/* Accessibility Improvements */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-
-  .milestones-section,
-  .milestones-heading,
-  .milestones-image,
-  .milestone-lazy-image-container {
-    transform: none !important;
-    opacity: 1 !important;
-  }
-  
-  .milestone-lazy-image-container:hover {
-    transform: none !important;
-  }
-  
-  .milestone-loading-spinner {
-    animation: none !important;
-  }
-  
-  .milestone-loading-progress {
-    animation: none !important;
-    width: 100% !important;
-  }
-}
-
-/* High Contrast Mode Support */
-@media (prefers-contrast: high) {
-  .milestones-heading {
-    color: black;
-    text-shadow: none;
-  }
-  
-  .milestone-lazy-image-container {
-    border: 2px solid black;
-    background: white;
-  }
-  
-  .milestone-badge {
-    background: black;
-    color: white;
-    border: 2px solid white;
-  }
-  
-  .stat-item {
-    background: white;
-    border: 2px solid black;
-  }
-  
-  .stat-number {
-    color: black;
-  }
-  
-  .stat-label {
-    color: black;
-  }
-  
-  .milestone-retry-button {
-    background: black;
-    color: white;
-    border: 2px solid white;
-  }
-}
-
-/* Focus States for Accessibility */
-.milestone-retry-button:focus-visible {
-  outline: 3px solid orangered;
-  outline-offset: 3px;
-}
-
-.milestone-lazy-image-container:focus-visible {
-  outline: 3px solid orangered;
-  outline-offset: 3px;
 }
 
 /* Print Styles */
@@ -913,15 +412,6 @@
     page-break-inside: avoid;
   }
 
-  .milestone-lazy-image {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  .milestone-decorative-elements {
-    display: none !important;
-  }
-  
   .milestone-image-placeholder {
     display: none !important;
   }
