@@ -1,7 +1,7 @@
 /* Testimonial Container */
 .testimonial-container {
     padding: 20px;
-    background-color: transparent;
+    background-color: #E1F8FC;
     /* min-height: 100vh; */
     padding-bottom: 80px;
   }
@@ -149,8 +149,8 @@
   }
   
   .see-more-btn {
-    background-color: #b8860b ;
-    color: white;
+    background-color: #ffbf00;
+    color: black;
     border: none;
     padding: 18px 30px;
     font-size: 14px;
@@ -167,7 +167,6 @@
   
   .see-more-btn:hover {
     background-color: white;
-    color: black;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
   }

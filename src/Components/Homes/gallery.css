@@ -1,7 +1,7 @@
 /* Enhanced Gallery Section with Animations */
 .gallery-section {
   padding: 40px 10px 60px;
-  background-color: transparent;
+  background: linear-gradient(135deg, #E1F8FC 0%, #f0fbfd 100%);
   position: relative;
   overflow: hidden;
 }
@@ -131,7 +131,7 @@
 
 /* Enhanced Banner Section */
 .banner-section-gallery {
-  background-color: transparent;
+  background: linear-gradient(135deg, #E1F8FC 0%, #f0fbfd 100%);
   padding: 60px 10px 30px;
   font-family: 'Helvetica', Arial, sans-serif;
   text-align: center;
