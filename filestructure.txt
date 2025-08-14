@@ -56,6 +56,7 @@
         |-- healthcare_icon4-1.webp
         |-- hospital1.jpg
         |-- img1.jpg
+        |-- journeyandcore.jpg
         |-- kitchenstandard.png
         |-- Manufacturing.jpg
         |-- Manufacturingunit.png
@@ -156,6 +157,9 @@
             |-- Festivals.jsx
             |-- Offers.css
             |-- Offers.jsx
+        |-- Footer
+            |-- Footerr.css
+            |-- Footerr.jsx
         |-- Footer.jsx
         |-- Footers
             |-- foot.css
@@ -169,6 +173,9 @@
             |-- Hero.jsx
             |-- Home.css
             |-- Home.jsx
+            |-- Journeyvalues.css
+            |-- Journeyvalues.jsx
+            |-- JournyValues.css
             |-- Mission.css
             |-- Mission.jsx
             |-- Testimonial.css
