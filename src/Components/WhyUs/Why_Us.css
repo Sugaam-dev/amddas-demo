@@ -62,7 +62,7 @@
   gap: 40px;
   margin-bottom: 60px;
   flex-wrap: wrap;
-  background-color: #e6fff9;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 25%, #ffffff 50%, #f1f3f4 75%, #ffffff 100%);
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
@@ -106,7 +106,7 @@
   left: 0;
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #00FFFF, #00CCCC);
+  background-color: #e6fff9;
   border-radius: 2px;
 }
 

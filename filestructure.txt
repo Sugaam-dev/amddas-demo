@@ -1,4 +1,5 @@
 |-- .gitignore
+|-- .hintrc
 |-- package-lock.json
 |-- package.json
 |-- public
@@ -7,6 +8,7 @@
         |-- about-ser.jpg
         |-- about-service.jpg
         |-- about.jpeg
+        |-- aboutus.png
         |-- about_service.jpg
         |-- amd.png
         |-- amd0.jpeg
@@ -27,6 +29,7 @@
         |-- doctors.jpg
         |-- education1.jpg
         |-- employee.jpg
+        |-- employeestandard.png
         |-- Engagement1.jpg
         |-- events-bg.jpg
         |-- events.1.jpg
@@ -35,6 +38,7 @@
         |-- experience.avif
         |-- experience.jpg
         |-- fest-offer.jpg
+        |-- festivalbanner.jpeg
         |-- food-img.jpg
         |-- food-img2.jpg
         |-- food-img3.jpg
@@ -52,7 +56,9 @@
         |-- healthcare_icon4-1.webp
         |-- hospital1.jpg
         |-- img1.jpg
+        |-- kitchenstandard.png
         |-- Manufacturing.jpg
+        |-- Manufacturingunit.png
         |-- Marriage.jpg
         |-- meal.jpg
         |-- menu1.jpg
@@ -85,7 +91,9 @@
         |-- pexels-zvolskiy-2253643.jpg
         |-- poonam-rajput-bhM6NzUOxLQ-unsplash.jpg
         |-- quality.jpg
+        |-- qualitystandard.png
         |-- qualitystanderds.jpg
+        |-- risk.png
         |-- Riskmanagment.jpg
         |-- service.jpg
         |-- standard1.jpg
