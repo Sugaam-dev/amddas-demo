@@ -227,7 +227,7 @@ function Navbarr() {
             <CiMenuBurger size={24} />
           </button>
 
-          {/* Desktop Navigation with proper dropdown management */}
+          {/* Desktop Navigation with perfect alignment */}
           <div 
             className="modern-nav-menu d-none d-lg-flex"
             onMouseLeave={handleNavMouseLeave}
@@ -244,7 +244,7 @@ function Navbarr() {
               onMouseLeave={() => handleDropdownLeave('services')}
             >
               <button 
-                className="modern-nav-item modern-dropdown-btn"
+                className="modern-dropdown-btn"
                 onClick={() => navigateToPage('/what-we-do')}
               >
                 Services <FaChevronDown size={10} />
@@ -270,7 +270,7 @@ function Navbarr() {
               onMouseLeave={() => handleDropdownLeave('events')}
             >
               <button 
-                className="modern-nav-item modern-dropdown-btn"
+                className="modern-dropdown-btn"
                 onClick={() => navigateToPage('/amddas-events')}
               >
                 Events <FaChevronDown size={10} />

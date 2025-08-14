@@ -23,18 +23,39 @@
   min-height: 70px;
 }
 
+/* Perfect Center Layout with Grid */
 .modern-container {
   padding: 0 40px;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Alternative flexbox approach for better browser support */
+@supports not (display: grid) {
+  .modern-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .modern-nav-menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+  }
 }
 
 /* Logo */
 .modern-logo {
+  grid-column: 1;
   display: flex;
   align-items: center;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .logo-img {
@@ -48,19 +69,18 @@
   transform: scale(1.05);
 }
 
-/* Desktop Navigation */
+/* Desktop Navigation - Perfectly Centered */
 .modern-nav-menu {
+  grid-column: 2;
+  justify-self: center;
   display: flex;
   align-items: center;
   gap: 20px;
-  flex: 1;
-  justify-content: center;
-
-  margin-left: 100px;
-  position: relative; /* Important for dropdown positioning */
-
+  margin: 0;
+  position: relative;
 }
 
+/* All navigation items - consistent styling */
 .modern-nav-item {
   color: white;
   text-decoration: none;
@@ -75,10 +95,50 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   font-family: 'Helvetica', Arial, sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  min-height: 40px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  margin: 0;
+  position: relative;
+  top: 0;
+}
+
+/* Dropdown buttons - exact same styling as nav items */
+.modern-dropdown-btn {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 25px;
+  background: transparent;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  font-family: 'Helvetica', Arial, sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  line-height: 1;
+  min-height: 40px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  margin: 0;
+  position: relative;
+  top: 0;
 }
 
 .modern-nav-item:hover,
-.modern-nav-item:focus {
+.modern-nav-item:focus,
+.modern-dropdown-btn:hover,
+.modern-dropdown-btn:focus {
   background-color: #b8860b;
   color: white;
   text-decoration: none;
@@ -86,39 +146,55 @@
   box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
 }
 
-
+/* Contact button - same alignment */
+.modern-contact-btn {
+  
+ 
+  color: white !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  min-height: 40px !important;
+  box-sizing: border-box !important;
+  vertical-align: middle !important;
+  margin: 0 !important;
+  position: relative !important;
+  top: 0 !important;
+}
 
 .modern-contact-btn:hover {
   background-color: #997108 !important;
   border-color: #997108 !important;
 }
 
-/* Scrolled state styles */
-.modern-navbar.scrolled .modern-nav-item {
+/* Scrolled state - maintain same alignment */
+.modern-navbar.scrolled .modern-nav-item,
+.modern-navbar.scrolled .modern-dropdown-btn {
   color: #333;
   border-color: rgba(51, 51, 51, 0.3);
   text-shadow: none;
 }
 
-.modern-navbar.scrolled .modern-nav-item:hover {
+.modern-navbar.scrolled .modern-nav-item:hover,
+.modern-navbar.scrolled .modern-dropdown-btn:hover {
   background-color: #b8860b;
   color: white;
 }
 
-
+.modern-navbar.scrolled .modern-contact-btn {
+ 
+  color: #333 !important;
+}
 
 /* Enhanced Dropdown Control */
 .modern-dropdown {
   position: relative;
   display: inline-block;
-}
-
-.modern-dropdown-btn {
-  display: flex;
   align-items: center;
-  gap: 5px;
-  background: none;
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
 }
 
 /* Ensure only one dropdown is visible at a time */
@@ -196,6 +272,7 @@
 
 /* Social Section */
 .modern-social-section {
+  grid-column: 3;
   display: flex;
   align-items: center;
   background-color: rgba(184, 134, 11, 0.9);
@@ -207,6 +284,8 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
   transition: all 0.3s ease;
+  flex-shrink: 0;
+  height: 40px;
 }
 
 .modern-social-section:hover {
@@ -500,52 +579,86 @@
   }
 }
 
-
-/* Responsive Design */
+/* Responsive Design with Perfect Alignment */
 @media (min-width: 1400px) {
   .modern-nav-menu {
-    margin-left: 150px;
     gap: 25px;
-
   }
   
-  .modern-nav-item {
+  .modern-nav-item,
+  .modern-dropdown-btn {
     font-size: 15px;
     padding: 12px 18px;
+    min-height: 44px;
+  }
+  
+  .modern-contact-btn {
+    min-height: 44px !important;
+  }
+  
+  .modern-social-section {
+    height: 44px;
   }
 }
-
 
 @media (max-width: 1399px) and (min-width: 1200px) {
   .modern-nav-menu {
-    margin-left: 100px;
     gap: 20px;
-
   }
 }
 
-
 @media (max-width: 1199px) and (min-width: 992px) {
   .modern-nav-menu {
-    margin-left: 60px;
     gap: 15px;
-
   }
   
-  .modern-nav-item {
+  .modern-nav-item,
+  .modern-dropdown-btn {
     font-size: 13px;
     padding: 9px 14px;
+    min-height: 36px;
+  }
+  
+  .modern-contact-btn {
+    min-height: 36px !important;
   }
   
   .modern-social-section {
     padding: 6px 12px;
     gap: 8px;
+    height: 36px;
   }
 }
 
 @media (max-width: 1200px) {
   .modern-container {
     padding: 0 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .modern-container {
+    display: flex; /* Switch to flexbox on mobile */
+    justify-content: space-between;
+  }
+  
+  .modern-nav-menu {
+    gap: 10px;
+  }
+  
+  .modern-nav-item,
+  .modern-dropdown-btn {
+    font-size: 12px;
+    padding: 8px 12px;
+    min-height: 32px;
+  }
+  
+  .modern-contact-btn {
+    min-height: 32px !important;
+  }
+  
+  .modern-social-section {
+    height: 32px;
   }
 }
 
@@ -624,7 +737,8 @@
 
 /* Touch device optimizations */
 @media (hover: none) and (pointer: coarse) {
-  .modern-nav-item {
+  .modern-nav-item,
+  .modern-dropdown-btn {
     padding: 12px 16px;
   }
   
@@ -657,6 +771,7 @@
 /* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   .modern-nav-item,
+  .modern-dropdown-btn,
   .modern-dropdown-menu,
   .logo-img,
   .modern-mobile-toggle,
