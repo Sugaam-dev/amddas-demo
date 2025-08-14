@@ -3,7 +3,7 @@
   font-family: 'Helvetica', Arial, sans-serif;
   background-color: #f8f9fa;
   min-height: 100vh;
-   background-color: #57F6E7;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 25%, #ffffff 50%, #f1f3f4 75%, #ffffff 100%);
 }
 
 /* Header Section */
