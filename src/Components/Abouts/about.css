@@ -1,9 +1,8 @@
-/* Enhanced About.css with Scroll Animations & Better Responsiveness */
+/* Enhanced About.css with NO Banner Animations - Only Text Animations */
 
 /* CSS Custom Properties for consistent theming */
 :root {
   --primary-color: linear-gradient(135deg, #ffffff 0%, #f8f9fa 25%, #ffffff 50%, #f1f3f4 75%, #ffffff 100%);
-
   --secondary-color: #ff7f50;
   --accent-color: orangered;
   --text-dark: #2c2c2c;
@@ -19,9 +18,9 @@
   --border-radius-small: 8px;
   --border-radius-medium: 20px;
   --border-radius-large: 50px;
-  --transition-fast: 0.2s ease;
-  --transition-medium: 0.3s ease;
-  --transition-slow: 0.5s ease;
+  --transition-fast: 0.1s ease;
+  --transition-medium: 0.1s ease;
+  --transition-slow: 0.1s ease;
   
   /* Fluid Typography */
   --font-size-xs: clamp(0.75rem, 2vw, 0.875rem);
@@ -65,13 +64,12 @@ body {
   overflow-x: hidden;
 }
 
-/* Enhanced Banner Section with Lazy Loading */
+/* Banner Section - NO ANIMATIONS - Static Display */
 .banner-section-about {
   background-image: url('/public/images/about.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* min-height: clamp(300px, 50vh, 500px); */
   height: 400px;
   display: flex;
   align-items: center;
@@ -79,15 +77,15 @@ body {
   text-align: center;
   position: relative;
   overflow: hidden;
-  transition: var(--transition-slow);
+  /* Removed transition animations */
 }
 
-/* Loading state for banner */
+/* Loading state for banner - Static */
 .banner-section-about.image-loading {
   background-color: #f0f0f0;
   background-image: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200% 100%;
-  animation: shimmer 2s infinite;
+  animation: shimmer 0.1s infinite;
 }
 
 .banner-loading-overlay {
@@ -97,10 +95,10 @@ body {
   right: 0;
   bottom: 0;
   background: linear-gradient(90deg, transparent 25%, rgba(255,255,255,0.4) 50%, transparent 75%);
-  animation: shimmer 2s infinite;
+  animation: shimmer 0.1s infinite;
 }
 
-/* Banner Title with Enhanced Animation */
+/* Banner Title - NO ANIMATIONS - Static Display */
 .banner-title-about {
   color: var(--white);
   font-size: var(--font-size-4xl);
@@ -108,14 +106,14 @@ body {
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
   font-family: 'Helvetica', Arial, sans-serif;
   padding-right: clamp(20px, 5vw, 90px);
-  transform: translateY(50px);
-  opacity: 0;
-  transition: all var(--transition-slow);
+  /* Removed transform, opacity, and transition animations */
+  transform: translateY(0); /* Static position */
+  opacity: 1; /* Always visible */
 }
 
-/* About Section Enhanced */
+/* About Section Enhanced - TEXT ANIMATIONS ONLY */
 .about-section {
-  padding: clamp(30px, 8vw, 80px) clamp(15px, 5vw, 40px);
+  padding: clamp(15px, 4vw, 30px) clamp(15px, 5vw, 40px);
   background-color: var(--primary-color);
   transform: translateY(30px);
   opacity: 0;
@@ -128,15 +126,15 @@ body {
   font-size: var(--font-size-base);
 }
 
-/* Section Wrapper for Staggered Animations */
+/* Section Wrapper for Staggered TEXT Animations */
 .section-wrapper {
   transform: translateY(40px);
   opacity: 0;
   transition: all var(--transition-slow);
-  margin-bottom: clamp(20px, 5vw, 40px);
+  margin-bottom: clamp(10px, 2.5vw, 20px);
 }
 
-/* Animation Classes */
+/* Animation Classes - TEXT ONLY */
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -199,56 +197,58 @@ body {
   }
 }
 
-/* Scroll Animation Classes */
+/* Scroll Animation Classes - TEXT CONTENT ONLY */
 .animate-fade-in {
-  animation: fadeInDown 0.8s ease-out forwards;
+  /* Removed banner animation */
+  animation: none;
 }
 
 .animate-slide-up {
-  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+  /* Removed banner animation */
+  animation: none;
 }
 
 .animate-fade-in-up {
   transform: translateY(0);
   opacity: 1;
-  transition: all 0.6s ease-out;
+  transition: all 0.1s ease-out;
 }
 
 .animate-stagger-1 {
   transform: translateY(0);
   opacity: 1;
-  transition: all 0.6s ease-out 0.1s;
+  transition: all 0.1s ease-out 0.1s;
 }
 
 .animate-stagger-2 {
   transform: translateY(0);
   opacity: 1;
-  transition: all 0.6s ease-out 0.2s;
+  transition: all 0.1s ease-out 0.1s;
 }
 
 .animate-stagger-3 {
   transform: translateY(0);
   opacity: 1;
-  transition: all 0.6s ease-out 0.3s;
+  transition: all 0.1s ease-out 0.1s;
 }
 
 .animate-stagger-4 {
   transform: translateY(0);
   opacity: 1;
-  transition: all 0.6s ease-out 0.4s;
+  transition: all 0.1s ease-out 0.1s;
 }
 
 /* Loading Skeleton Styles */
 .loading-skeleton {
   padding: clamp(20px, 5vw, 40px);
-  animation: pulse 2s infinite;
+  animation: pulse 0.1s infinite;
 }
 
 .skeleton-banner {
   height: clamp(200px, 30vh, 300px);
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200% 100%;
-  animation: shimmer 2s infinite;
+  animation: shimmer 0.1s infinite;
   border-radius: var(--border-radius-medium);
   margin-bottom: 20px;
 }
@@ -263,7 +263,7 @@ body {
   height: 20px;
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200% 100%;
-  animation: shimmer 2s infinite;
+  animation: shimmer 0.1s infinite;
   border-radius: 4px;
 }
 
@@ -302,7 +302,7 @@ body {
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  transition: left 0.5s;
+  transition: left 0.1s;
 }
 
 .box:hover::before {
@@ -386,7 +386,7 @@ body {
 /* Enhanced Leadership Container */
 .leadership-container {
   max-width: 1400px;
-  margin: clamp(20px, 5vw, 40px) auto;
+  margin: clamp(10px, 2.5vw, 20px) auto;
   background-color: var(--background-cream);
   border: 3px solid var(--text-dark);
   border-radius: var(--border-radius-large);
@@ -405,7 +405,7 @@ body {
 /* Extra Large Screens (1440px+) */
 @media (min-width: 1440px) {
   .about-section {
-    padding: 100px 60px;
+    padding: 40px 60px;
   }
   
   .banner-title-about {
@@ -421,7 +421,7 @@ body {
 /* Large Desktop (1200px - 1439px) */
 @media (min-width: 1200px) and (max-width: 1439px) {
   .about-section {
-    padding: 80px 50px;
+    padding: 35px 50px;
   }
   
   .banner-title-about {
@@ -432,7 +432,7 @@ body {
 /* Desktop (1024px - 1199px) */
 @media (min-width: 1024px) and (max-width: 1199px) {
   .about-section {
-    padding: 60px 40px;
+    padding: 30px 40px;
   }
   
   .banner-title-about {
@@ -453,7 +453,7 @@ body {
   }
   
   .about-section {
-    padding: 50px 30px;
+    padding: 25px 30px;
   }
   
   .box {
@@ -475,7 +475,7 @@ body {
   }
   
   .about-section {
-    padding: 40px 20px;
+    padding: 20px 20px;
   }
 }
 
@@ -486,7 +486,7 @@ body {
   }
   
   .about-section {
-    padding: 30px 15px;
+    padding: 15px 15px;
   }
   
   .service-item {
@@ -511,7 +511,7 @@ body {
   }
   
   .about-section {
-    padding: 20px 10px;
+    padding: 10px 10px;
   }
   
   .box {
@@ -537,11 +537,11 @@ body {
   }
   
   .about-section {
-    padding: 15px 10px;
+    padding: 8px 10px;
   }
   
   .section-wrapper {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
   }
 }
 
