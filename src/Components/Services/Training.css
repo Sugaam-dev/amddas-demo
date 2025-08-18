@@ -139,7 +139,7 @@ filter: brightness(0.95);
 
 .training-main-image:hover {
 transform: translateY(-12px) scale(1.03);
-box-shadow: var(--shadow-heavy);
+
 filter: brightness(1);
 }
 

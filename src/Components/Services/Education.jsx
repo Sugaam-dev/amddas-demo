@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Education.css';
-import education from './images/Education.webp'
+import education from './images/Education.webp';
+
 function Education() {
   const sectionRef = useRef(null);
 
@@ -19,24 +20,25 @@ function Education() {
       });
     }, observerOptions);
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentSection = sectionRef.current;
+    if (currentSection) {
+      observer.observe(currentSection);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentSection) {
+        observer.unobserve(currentSection);
       }
+      observer.disconnect();
     };
   }, []);
 
   return (
-    <div 
+    <div
       className="education-page"
       ref={sectionRef}
     >
       <div className="education-container">
-        {/* Content now comes first (left side) */}
         <div className="education-content">
           <h1 className="education-title">Educational Institution Services</h1>
           <p className="education-description">
@@ -57,10 +59,8 @@ function Education() {
             </div>
           </div>
         </div>
-        
-        {/* Image now comes second (right side) */}
         <div className="education-image">
-          <img src={education} alt="Educational Institution Services" />
+          <img src={education} alt="Educational Institution Services" loading="lazy" />
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './Hospital.css';
-import doctor from './images/Hospital Catering.webp'
+import doctor from './images/Hospital Catering.webp';
+
 function Hospital() {
   const sectionRef = useRef(null);
 
@@ -18,14 +19,16 @@ function Hospital() {
       });
     }, observerOptions);
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentSection = sectionRef.current;
+    if (currentSection) {
+      observer.observe(currentSection);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentSection) {
+        observer.unobserve(currentSection);
       }
+      observer.disconnect();
     };
   }, []);
 
@@ -37,7 +40,7 @@ function Hospital() {
     >
       <div className="hospital-container">
         <div className="hospital-image">
-          <img src={doctor} alt="Hospital Services" />
+          <img src={doctor} alt="Hospital Services" loading="lazy" />
         </div>
         <div className="hospital-content">
           <h1 className="hospital-title">Hospital & Healthcare Catering</h1>
