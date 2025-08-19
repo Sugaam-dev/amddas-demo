@@ -75,7 +75,7 @@
 
 .feature-title,
 .feature-text,
-.hero-title,
+.Head-title,
 .hero-description,
 h1, h2, h3, h4, h5, h6, p, span, div {
   filter: none !important;
@@ -110,13 +110,13 @@ h1, h2, h3, h4, h5, h6, p, span, div {
 }
 
 /* Title Underline Animation */
-.hero-title .hero-underline {
+.Head-title .hero-underline {
   width: 0;
   opacity: 0;
   transition: all 0.8s ease-out 0.6s;
 }
 
-.banner-section.animate-in .hero-title .hero-underline {
+.banner-section.animate-in .Head-title .hero-underline {
   width: 80px;
   opacity: 1;
 }
@@ -135,7 +135,7 @@ h1, h2, h3, h4, h5, h6, p, span, div {
   padding: 0 20px;
 }
 
-.hero-title {
+.Head-title {
 font-size: clamp(1rem, 4vw, 2.5rem);
   font-weight: 800;
   color: #333;
@@ -147,7 +147,7 @@ font-size: clamp(1rem, 4vw, 2.5rem);
   margin-right: auto;
 }
 
-.hero-title .hero-underline {
+.Head-title .hero-underline {
   height: 5px;
   background: linear-gradient(90deg, #ff6b35, #f7931e);
   margin: 20px auto 0;
@@ -308,7 +308,7 @@ font-size: clamp(1rem, 1vw, 1.1rem);
     padding: 60px 0 40px;
   }
   
-  .hero-title {
+  .Head-title {
     font-size: 38px;
   }
   
@@ -385,7 +385,7 @@ font-size: clamp(1rem, 1vw, 1.1rem);
     padding: 40px 0 30px;
   }
   
-  .hero-title {
+  .Head-title{
     font-size: 28px;
   }
   

@@ -89,13 +89,13 @@
 }
 
 /* Title Underline Animation */
-.main-title .title-underline {
+.mainn-title .title-underline {
   width: 0;
   opacity: 0;
   transition: all 0.8s ease-out 0.6s;
 }
 
-.header-section.animate-in .main-title .title-underline {
+.header-section.animate-in .mainn-title .title-underline {
   width: 80px;
   opacity: 1;
 }
@@ -114,7 +114,7 @@
   padding: 0 20px;
 }
 
-.main-title {
+.mainn-title {
 font-size: clamp(1rem, 4vw, 2.5rem);
   font-weight: 800;
   color: #333;
@@ -126,7 +126,7 @@ font-size: clamp(1rem, 4vw, 2.5rem);
   margin-right: auto;
 }
 
-.main-title .title-underline {
+.mainn-title .title-underline {
   height: 5px;
   background: linear-gradient(90deg, #ff6b35, #f7931e);
   margin: 20px auto 0;
@@ -287,7 +287,7 @@ font-size: clamp(1rem, 1vw, 1.1rem);
     padding: 60px 0 40px;
   }
   
-  .main-title {
+  .mainn-title {
     font-size: 38px;
   }
   
@@ -364,7 +364,7 @@ font-size: clamp(1rem, 1vw, 1.1rem);
     padding: 40px 0 30px;
   }
   
-  .main-title {
+  .mainn-title {
     font-size: 28px;
   }
   

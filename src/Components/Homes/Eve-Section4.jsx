@@ -47,7 +47,7 @@ const EveSection4 = () => {
       {/* Full Width Header Section */}
       <div className="banner-section" ref={bannerRef}>
         <div className="wrapper">
-          <h1 className="hero-title">
+          <h1 className="Head-title">
             Elevate Your Skills with Our Expert Training Programs
             <div className="hero-underline"></div>
           </h1>
