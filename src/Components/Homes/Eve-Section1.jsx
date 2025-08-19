@@ -66,7 +66,7 @@ const EveSection1 = () => {
       {/* Content Section with Image */}
       <div className="contentt-section" ref={contentRef}>
         <div className="content-container">
-          <div className="image-wrapper" ref={imageRef}>
+          <div className="image-wrapperr" ref={imageRef}>
             <img 
               src="./images/weeding-and-engagement.jpg" 
               alt="Cafeteria management with professional food service"

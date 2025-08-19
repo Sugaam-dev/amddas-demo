@@ -26,13 +26,13 @@
   transform: translateY(0);
 }
 
-.image-wrapper {
+.image-wrapperr {
   opacity: 0;
   transform: translateX(-50px) scale(0.95);
   transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
 }
 
-.image-wrapper.animate-in {
+.image-wrapperr.animate-in {
   opacity: 1;
   transform: translateX(0) scale(1);
 }
@@ -160,7 +160,7 @@ font-size: clamp(1rem, 4vw, 2.5rem);
 }
 
 /* Image Section - Exact Reference Proportions */
-.image-wrapper {
+.image-wrapperr {
   flex: 0 0 55%;
   height: 350px;
   border-radius: 20px;
@@ -169,20 +169,20 @@ font-size: clamp(1rem, 4vw, 2.5rem);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.image-wrapper:hover {
+.image-wrapperr:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
 }
 
 .section-image {
   width: 100%;
-  height: 90%;
+  height: 100%;
   object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
 }
 
-.image-wrapper:hover .section-image {
+.image-wrapperr:hover .section-image {
   transform: scale(1.05);
 }
 
@@ -307,7 +307,7 @@ font-size: clamp(1rem, 1vw, 1.1rem);
     min-height: auto;
   }
   
-  .image-wrapper {
+  .image-wrapperr {
     flex: none;
     width: 100%;
     height: 300px;
@@ -342,11 +342,11 @@ font-size: clamp(1rem, 1vw, 1.1rem);
   }
 
   /* Mobile Animation Adjustments */
-  .image-wrapper {
+  .image-wrapperr {
     transform: translateY(30px);
   }
   
-  .image-wrapper.animate-in {
+  .image-wrapperr.animate-in {
     transform: translateY(0);
   }
   
@@ -394,7 +394,7 @@ font-size: clamp(1rem, 1vw, 1.1rem);
     font-size: 14px;
   }
   
-  .image-wrapper {
+  .image-wrapperr {
     height: 250px;
   }
 }
