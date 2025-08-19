@@ -4,7 +4,7 @@ import './Why_Us.css';
 const sections = [
   {
     title: "Risk Management Standards",
-    image: "/images/risky.webp",
+    image: "/images/risky.png",
     points: [
       "Public Liability Policy is issued per site where our food is being supplied/consumed.",
       "All medical expense covered in case of hospitalization caused due the Food poisoning, body injury or property",
