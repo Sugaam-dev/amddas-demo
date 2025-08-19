@@ -1,56 +1,101 @@
 /* Fix scrollbar issue */
 html {
-overflow-x: clip;
-overflow-y: auto;
+  overflow-x: clip;
+  overflow-y: auto;
 }
 
 body {
-overflow-x: clip;
+  overflow-x: clip;
+  margin: 0;
+  padding: 0;
 }
 
+/* Container */
 .Our-services-container {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-padding: 30px 20px;
-background-image: linear-gradient(hsla(0, 100%, 0%, 0.65), hsla(0, 100%, 0%, 0.65)), url('/public/images/service.jpg');
-background-position: bottom;
-background-size: cover;
-padding: 10% 0%;
-font-family: Open Sans, Arial, sans-serif;
-overflow: clip; /* Added overflow control */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8% 5%;
+  background-image: linear-gradient(
+      hsla(0, 100%, 0%, 0.65),
+      hsla(0, 100%, 0%, 0.65)
+    ),
+    url('/public/images/service.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Open Sans', Arial, sans-serif;
+  overflow: clip;
+  text-align: center;
 }
 
+/* Title */
 .Our-services-title {
-font-size: 48px;
-font-weight: bold;
-padding-bottom: 20px;
-text-align: center;
-font-family: 'Helvetica', Arial, sans-serif;
-animation: fadeInDown 1s ease-out;
-color: #fff;
+  font-size: clamp(26px, 5vw, 48px); /* Responsive font */
+  font-weight: bold;
+  padding-bottom: 20px;
+  font-family: 'Helvetica', Arial, sans-serif;
+  animation: fadeInDown 1s ease-out;
+  color: #fff;
 }
 
+/* Description */
 .Our-services-description {
-text-align: center;
-color: #ffffff;
-max-width: 900px;
-padding: 0px 10px;
-font-size: 20px;
-line-height: 30px;
-font-family: 'Helvetica', Arial, sans-serif;
-animation: fadeInDown 1s ease-out;
+  color: #ffffff;
+  max-width: 900px;
+  padding: 0px 15px;
+  font-size: clamp(14px, 2.5vw, 20px); /* Responsive font */
+  line-height: 1.6;
+  font-family: 'Helvetica', Arial, sans-serif;
+  animation: fadeInDown 1s ease-out;
 }
 
 /* Animation keyframes */
 @keyframes fadeInDown {
-from {
-opacity: 0;
-transform: translateY(-30px);
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-to {
-opacity: 1;
-transform: translateY(0);
+
+/* Responsive Breakpoints */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .Our-services-container {
+    padding: 12% 5%;
+  }
+  .Our-services-description {
+    max-width: 700px;
+  }
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .Our-services-container {
+    padding: 15% 5%;
+  }
+  .Our-services-title {
+    font-size: clamp(26px, 6vw, 36px);
+  }
+  .Our-services-description {
+    font-size: clamp(14px, 4vw, 18px);
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .Our-services-container {
+    padding: 20% 5%;
+  }
+ 
+  .Our-services-description {
+    font-size: 14px;
+    line-height: 1.5;
+  }
 }

@@ -1,27 +1,43 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import "./hero.css";
 
 const bannerImages = [
   {
     id: 1,
-    url: "./images/gallery.jpg",
-    description: "Smart.Meal.Solution"
+    url: "./images/Banner1.jpeg",
+    title: "AMDDAS: Catering & Culinary Training",
+    description: "Since 2016, Amddas has been a trusted kitchen, capable of serving 4000+ meals at once. We specialize in corporate catering and offer comprehensive culinary training programs. Discover excellence with us!"
   },
   {
     id: 2,
-    url: "./images/meal.jpg",
-    description: "Quick.Clean.Convinient"
+    url: "./images/Banner-Corporate.jpeg",
+    title: "Corporate Catering Excellence",
+    description: "Fueling Workdays with Fresh, Hygienic, and Delicious Meals"
   },
   {
     id: 3,
-    url: "./images/amdback.jpg",
-    description: "Fast.Fresh.Flexible"
+    url: "./images/Banner-Marriage.jpeg",
+    title: "Weddings",
+    description: "Flavors of Love, Crafted for Your Perfect Day"
   },
   {
     id: 4,
-    url: "./images/story.jpg",
-    description: "Events.Elevated.Seemlessly"
+    url: "./images/Banner-Festivals.jpeg",
+    title: "Festivals",
+    description: "Celebrating Traditions with Food That Feels Like Home"
+  },
+  {
+    id: 5,
+    url: "./images/Baner-Corporate-events.jpeg",
+    title: "Corporate Events",
+    description: "From Boardrooms to Ballrooms — Exceptional Food for Every Corporate Occasion"
+  },
+  {
+    id: 6,
+    url: "./images/Culinary-training.png",
+    title: "Training",
+    description: "Nurturing Culinary Talent with Fresh Ingredients and Safe Practices"
   },
 ];
 
@@ -31,7 +47,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % bannerImages.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -42,7 +58,7 @@ const Hero = () => {
   return (
     <section id="hero" className="hero-section">
       <div className="hero-container">
-        {/* All Images Rendered - Only Opacity Changes */}
+        {/* Background Images - Only Opacity Changes */}
         {bannerImages.map((image, index) => (
           <div
             key={image.id}
@@ -58,18 +74,31 @@ const Hero = () => {
         {/* Dark Overlay */}
         <div className="dark-overlay" />
 
-        {/* Content Overlay */}
-        <motion.div
-          key={`content-${currentSlide}`}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="content-overlay"
-        >
-          <p className="hero-description">
-            {bannerImages[currentSlide].description}
-          </p>
-        </motion.div>
+        {/* Content Overlay - Fixed Container */}
+        <div className="content-overlay">
+          <div className="content-wrapper">
+            {/* Animated Content */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentSlide}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -30 }}
+                transition={{ 
+                  duration: 0.6, 
+                  ease: "easeInOut" 
+                }}
+              >
+                <h1 className="hero-title">
+                  {bannerImages[currentSlide].title}
+                </h1>
+                <p className="hero-description">
+                  {bannerImages[currentSlide].description}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
 
         {/* Pagination Dots */}
         <div className="pagination-dots">
@@ -82,8 +111,6 @@ const Hero = () => {
             />
           ))}
         </div>
-
-
       </div>
     </section>
   );

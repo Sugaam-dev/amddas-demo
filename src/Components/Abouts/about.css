@@ -1,35 +1,4 @@
-/* Enhanced About.css - No Animations */
-
-/* CSS Custom Properties for consistent theming */
-:root {
-  --primary-color: linear-gradient(135deg, #ffffff 0%, #f8f9fa 25%, #ffffff 50%, #f1f3f4 75%, #ffffff 100%);
-  --secondary-color: #ff7f50;
-  --accent-color: orangered;
-  --text-dark: #2c2c2c;
-  --text-medium: #333;
-  --text-light: #666;
-  --text-lighter: #777;
-  --background-light: #f9f9f9;
-  --background-cream: #f5f3f0;
-  --white: #ffffff;
-  --shadow-light: 0 10px 25px rgba(0, 0, 0, 0.1);
-  --shadow-medium: 0 15px 40px rgba(0, 0, 0, 0.15);
-  --shadow-heavy: 0 10px 30px rgba(0, 0, 0, 0.3);
-  --border-radius-small: 8px;
-  --border-radius-medium: 20px;
-  --border-radius-large: 50px;
-  
-  /* Fluid Typography */
-  --font-size-xs: clamp(0.75rem, 2vw, 0.875rem);
-  --font-size-sm: clamp(0.875rem, 2.5vw, 1rem);
-  --font-size-base: clamp(1rem, 3vw, 1.125rem);
-  --font-size-lg: clamp(1.125rem, 3.5vw, 1.25rem);
-  --font-size-xl: clamp(1.25rem, 4vw, 1.5rem);
-  --font-size-2xl: clamp(1.5rem, 5vw, 2rem);
-  --font-size-3xl: clamp(2rem, 6vw, 2.5rem);
-  --font-size-4xl: clamp(2.5rem, 8vw, 3.5rem);
-  --font-size-5xl: clamp(3rem, 10vw, 4rem);
-}
+/* Enhanced About.css - Only Banner Title Animation */
 
 /* Global Reset & Base Styles */
 *,
@@ -48,7 +17,7 @@ html {
 body {
   font-family: 'Helvetica', Arial, sans-serif;
   line-height: 1.6;
-  color: var(--text-medium);
+  color: #333;
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 25%, #ffffff 50%, #f1f3f4 75%, #ffffff 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -76,29 +45,40 @@ body {
   overflow: hidden;
 }
 
-/* Banner Title - Static Display */
+/* Banner Title - ONLY Element with Animation */
 .banner-title-about {
-  color: var(--white);
-  font-size: var(--font-size-4xl);
+  color: #ffffff;
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
   font-weight: 700;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
   font-family: 'Helvetica', Arial, sans-serif;
   padding-right: clamp(20px, 5vw, 90px);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 1s ease-out 0.5s forwards;
 }
 
-/* About Section - No Animations */
+/* Animation for Banner Title Only */
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* About Section - Static Display */
 .about-section {
   padding: clamp(15px, 4vw, 30px) clamp(15px, 5vw, 40px);
-  background-color: var(--primary-color);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 25%, #ffffff 50%, #f1f3f4 75%, #ffffff 100%);
 }
 
 .about-section p {
   font-family: 'Open Sans', Arial, sans-serif;
   line-height: 1.8;
-  font-size: var(--font-size-base);
+  font-size: clamp(1rem, 3vw, 1.125rem);
 }
 
-/* Section Wrapper - No Animations */
+/* Section Wrapper - Static Display */
 .section-wrapper {
   margin-bottom: clamp(10px, 2.5vw, 20px);
 }
@@ -111,7 +91,7 @@ body {
 .skeleton-banner {
   height: clamp(200px, 30vh, 300px);
   background: #f0f0f0;
-  border-radius: var(--border-radius-medium);
+  border-radius: 20px;
   margin-bottom: 20px;
 }
 
@@ -139,99 +119,104 @@ body {
   width: 50%;
 }
 
-/* Enhanced Box Styles */
+/* Enhanced Box Styles - Static Display */
 .box {
   flex: 1;
   min-width: 280px;
   max-width: 380px;
   padding: clamp(20px, 4vw, 30px);
-  background: var(--background-light);
+  background: #f9f9f9;
   text-align: center;
-  border-radius: var(--border-radius-small);
+  border-radius: 8px;
   margin: 0 10px;
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .box:hover {
-  background: var(--secondary-color);
-  color: var(--white);
+  background: #ff7f50;
+  color: #ffffff;
   transform: translateY(-8px) scale(1.02);
-  box-shadow: var(--shadow-heavy);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .box span {
   display: inline-block;
   width: clamp(50px, 8vw, 60px);
   height: clamp(50px, 8vw, 60px);
-  background: var(--white);
-  color: var(--secondary-color);
+  background: #ffffff;
+  color: #ff7f50;
   border-radius: 50%;
-  font-size: var(--font-size-xl);
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
   font-weight: 700;
   line-height: clamp(50px, 8vw, 60px);
   margin-bottom: 20px;
+  transition: all 0.3s ease;
 }
 
 .box:hover span {
-  background: var(--white);
-  color: var(--secondary-color);
+  background: #ffffff;
+  color: #ff7f50;
 }
 
 .box h4 {
-  font-size: var(--font-size-lg);
+  font-size: clamp(1.125rem, 3.5vw, 1.25rem);
   font-weight: 700;
   margin-bottom: 15px;
   font-family: 'IBM Plex Serif', Georgia, serif;
 }
 
 .box p {
-  font-size: var(--font-size-sm);
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
   line-height: 1.6;
   font-family: 'Open Sans', Arial, sans-serif;
 }
 
-/* Enhanced Service Item Styles */
+/* Enhanced Service Item Styles - Static Display */
 .service-item {
   position: relative;
   padding: 8px 0 8px 25px;
-  font-size: var(--font-size-base);
-  color: var(--text-medium);
+  font-size: clamp(1rem, 3vw, 1.125rem);
+  color: #333;
   line-height: 1.6;
   margin-bottom: 8px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .service-item::before {
   content: "•";
-  color: var(--accent-color);
-  font-size: var(--font-size-lg);
+  color: orangered;
+  font-size: clamp(1.125rem, 3.5vw, 1.25rem);
   font-weight: bold;
   position: absolute;
   left: 0;
   top: 6px;
+  transition: all 0.3s ease;
 }
 
 .service-item:hover {
-  color: var(--accent-color);
+  color: orangered;
   transform: translateX(8px);
   padding-left: 30px;
 }
 
 .service-item:hover::before {
   transform: scale(1.2);
-  color: var(--secondary-color);
+  color: #ff7f50;
 }
 
-/* Enhanced Leadership Container */
+/* Enhanced Leadership Container - Static Display */
 .leadership-container {
   max-width: 1400px;
   margin: clamp(10px, 2.5vw, 20px) auto;
-  background-color: var(--background-cream);
-  border: 3px solid var(--text-dark);
-  border-radius: var(--border-radius-large);
+  background-color: #f5f3f0;
+  border: 3px solid #2c2c2c;
+  border-radius: 50px;
   overflow: hidden;
-  box-shadow: var(--shadow-medium);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
 }
 
 .leadership-container:hover {
@@ -239,15 +224,16 @@ body {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
 }
 
-/* Remove all animation classes */
+/* Remove all other animation classes - they do nothing now */
 .animate-fade-in,
 .animate-slide-up,
 .animate-fade-in-up,
 .animate-stagger-1,
 .animate-stagger-2,
 .animate-stagger-3,
-.animate-stagger-4 {
-  /* No animations */
+.animate-stagger-4,
+.animate-stagger-5 {
+  /* No animations applied */
 }
 
 /* Responsive Design with Enhanced Breakpoints */
@@ -370,12 +356,12 @@ body {
   }
   
   .service-item {
-    font-size: var(--font-size-sm);
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
     padding: 5px 0 5px 18px;
   }
   
   .service-item::before {
-    font-size: var(--font-size-base);
+    font-size: clamp(1rem, 3vw, 1.125rem);
     top: 3px;
   }
 }
@@ -398,7 +384,7 @@ body {
 /* High Contrast Mode Support */
 @media (prefers-contrast: high) {
   .box {
-    border: 2px solid var(--text-dark);
+    border: 2px solid #2c2c2c;
   }
   
   .banner-title-about {
@@ -409,7 +395,7 @@ body {
 /* Focus Styles for Accessibility */
 .box:focus-visible,
 .service-item:focus-visible {
-  outline: 3px solid var(--accent-color);
+  outline: 3px solid orangered;
   outline-offset: 2px;
 }
 

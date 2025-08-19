@@ -215,13 +215,16 @@ import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
 const Gallery = () => {
   const images = [
-    '/images/amd10.jpg',
-    '/images/img1.jpg',
-    '/images/amd2.jpg',
-    '/images/amd4.jpg',
-    '/images/amd3.webp',
-    '/images/amd11.jpg',
-    '/images/amd6.webp',
+    '/images/Amddaspic1.webp',
+    '/images/amddaspic2.webp',
+    '/images/amddaspic3.webp',
+    '/images/Amddaspic4.webp',
+    '/images/Amddaspic5.webp',
+    '/images/Amddaspic6.webp',
+    '/images/Amddaspic7.webp',
+    '/images/Amddaspic8.webp',
+    '/images/Amddaspic9.webp',
+    '/images/Amddaspic10.webp',
   ];
 
   return (
@@ -259,7 +262,7 @@ const Gallery = () => {
               breakpoints={{
                 640: { slidesPerView: 1 },
                 768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
+                // 1024: { slidesPerView: 3 },
               }}
               className="gallery-swiper"
             >
@@ -268,7 +271,7 @@ const Gallery = () => {
                   <div className="image-wrapper">
                     <div className="image-overlay">
                       <div className="overlay-content">
-                        <span className="image-number">0{index + 1}</span>
+                        {/* <span className="image-number">0{index + 1}</span> */}
                         {/* <span className="image-label">Culinary Excellence</span> */}
                       </div>
                     </div>
