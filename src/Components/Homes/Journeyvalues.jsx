@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect, useRef } from 'react';
 import './Journeyvalues.css';
 
@@ -21,6 +19,10 @@ const JourneyValues = () => {
         const [entry] = entries;
         if (entry.isIntersecting && !isVisible) {
           setIsVisible(true);
+          // Add animate class to trigger animations
+          if (sectionRef.current) {
+            sectionRef.current.classList.add('animate-in');
+          }
           // Delay counter animation to start after other animations
           setTimeout(() => startCountAnimation(), 800);
         }
@@ -82,6 +84,7 @@ const JourneyValues = () => {
         <div className="content-sectionn">
           <h2 className="section-title fade-in-up">
             Our Journey and Core Values
+            <div className="title-underline"></div>
           </h2>
           <p className="section-description fade-in-up stagger-1">
             Since 2016, AMDDAS has been committed to delivering high-quality 
