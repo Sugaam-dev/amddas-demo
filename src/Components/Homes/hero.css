@@ -54,7 +54,6 @@ background: linear-gradient(
   rgba(0, 0, 0, 0.2) 100%
 );
 
-
   z-index: 1;
 }
 
@@ -75,6 +74,7 @@ background: linear-gradient(
   pointer-events: none;
   padding: 0 20px;
   box-sizing: border-box;
+  padding-top: 10vh; /* Move content down slightly */
 }
 
 .content-wrapper {
@@ -166,6 +166,10 @@ background: linear-gradient(
     min-height: 800px;
   }
   
+  .content-overlay {
+    padding-top: 12vh;
+  }
+  
   .content-wrapper {
     max-width: 1600px;
   }
@@ -193,6 +197,10 @@ background: linear-gradient(
 
 /* Large Desktop */
 @media (min-width: 1920px) and (max-width: 2559px) {
+  .content-overlay {
+    padding-top: 10vh;
+  }
+  
   .hero-title {
     font-size: clamp(2.5rem, 4vw, 5rem);
   }
@@ -206,6 +214,7 @@ background: linear-gradient(
 @media (min-width: 1200px) and (max-width: 1919px) {
   .content-overlay {
     padding: 0 1.5rem;
+    padding-top: 8vh;
   }
   
   .hero-title {
@@ -221,6 +230,7 @@ background: linear-gradient(
 @media (min-width: 992px) and (max-width: 1199px) {
   .content-overlay {
     padding: 0 1rem;
+    padding-top: 6vh;
   }
   
   .hero-title {
@@ -245,6 +255,7 @@ background: linear-gradient(
     align-items: center;
     justify-content: center;
     padding-bottom: 4rem;
+    padding-top: 5vh;
   }
   
   .content-wrapper {
@@ -288,6 +299,7 @@ background: linear-gradient(
     justify-content: center;
     height: 100%;
     padding-bottom: 4rem;
+    padding-top: 4vh;
   }
   
   .content-wrapper {
@@ -308,8 +320,8 @@ background: linear-gradient(
   }
   
   .hero-description {
-    font-size: clamp(0.8rem, 3vw, 1rem);
-    line-height: 1.3;
+    font-size: clamp(1rem, 3.5vw, 1.3rem);
+    line-height: 1.4;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -342,6 +354,7 @@ background: linear-gradient(
     justify-content: center;
     height: 100%;
     padding-bottom: 4rem;
+    padding-top: 3vh;
   }
   
   .content-wrapper {
@@ -362,8 +375,8 @@ background: linear-gradient(
   }
   
   .hero-description {
-    font-size: clamp(0.75rem, 3.5vw, 0.9rem);
-    line-height: 1.2;
+    font-size: clamp(0.95rem, 4vw, 1.1rem);
+    line-height: 1.3;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -397,6 +410,7 @@ background: linear-gradient(
     justify-content: center;
     height: 100%;
     padding-bottom: 3rem;
+    padding-top: 2vh;
   }
   
   .content-wrapper {
@@ -417,8 +431,8 @@ background: linear-gradient(
   }
   
   .hero-description {
-    font-size: clamp(0.7rem, 4vw, 0.85rem);
-    line-height: 1.1;
+    font-size: clamp(0.85rem, 4.5vw, 1rem);
+    line-height: 1.25;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -449,6 +463,7 @@ background: linear-gradient(
     justify-content: center;
     padding-bottom: 2rem;
     height: 100%;
+    padding-top: 2vh;
   }
   
   .content-wrapper {
@@ -467,8 +482,8 @@ background: linear-gradient(
   }
   
   .hero-description {
-    font-size: clamp(0.8rem, 2.5vw, 1rem);
-    line-height: 1.3;
+    font-size: clamp(1.2rem, 3vw, 1.1rem);
+    line-height: 1.4;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
