@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import "./hero.css";
 
 const bannerImages = [
@@ -45,10 +45,10 @@ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    // const interval = setInterval(() => {
-    //   setCurrentSlide((prev) => (prev + 1) % bannerImages.length);
-    // }, 5000);
-    // return () => clearInterval(interval);
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % bannerImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
   }, []);
 
   const goToSlide = (index) => {
@@ -58,7 +58,7 @@ const Hero = () => {
   return (
     <section id="hero" className="hero-section">
       <div className="hero-container">
-        {/* All Images Rendered - Only Opacity Changes */}
+        {/* Background Images - Only Opacity Changes */}
         {bannerImages.map((image, index) => (
           <div
             key={image.id}
@@ -74,23 +74,31 @@ const Hero = () => {
         {/* Dark Overlay */}
         <div className="dark-overlay" />
 
-        {/* Content Overlay */}
-        <motion.div
-          key={`content-${currentSlide}`}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="content-overlay"
-        >
+        {/* Content Overlay - Fixed Container */}
+        <div className="content-overlay">
           <div className="content-wrapper">
-            <h1 className="hero-title">
-              {bannerImages[currentSlide].title}
-            </h1>
-            <p className="hero-description">
-              {bannerImages[currentSlide].description}
-            </p>
+            {/* Animated Content */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentSlide}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -30 }}
+                transition={{ 
+                  duration: 0.6, 
+                  ease: "easeInOut" 
+                }}
+              >
+                <h1 className="hero-title">
+                  {bannerImages[currentSlide].title}
+                </h1>
+                <p className="hero-description">
+                  {bannerImages[currentSlide].description}
+                </p>
+              </motion.div>
+            </AnimatePresence>
           </div>
-        </motion.div>
+        </div>
 
         {/* Pagination Dots */}
         <div className="pagination-dots">
