@@ -752,7 +752,7 @@
   
   .logo-img {
     height: 88px;
-    top: -8px; /* FIXED: adjusted for better centering */
+    top: -2px; /* FIXED: adjusted for better centering */
   }
   
   .modern-nav-menu {
@@ -782,7 +782,7 @@
   
   .logo-img {
     height: 78px;
-    top: -7px;
+    top: -2px;
   }
   
   .modern-mobile-toggle {
@@ -822,7 +822,7 @@
   }
   
   .modern-navbar-bg {
-    top: 8px;
+    top: 15px;
     height: 54px;
   }
   
@@ -909,7 +909,7 @@
   }
   
   .modern-navbar-bg {
-    top: 6px;
+    top: 13px;
     height: 52px;
   }
   

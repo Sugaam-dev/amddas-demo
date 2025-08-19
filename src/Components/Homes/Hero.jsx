@@ -6,7 +6,7 @@ const bannerImages = [
   {
     id: 1,
     url: "./images/Banner1.jpeg",
-    title: "Amddas: Catering & Culinary Training",
+    title: "AMDDAS: Catering & Culinary Training",
     description: "Since 2016, Amddas has been a trusted kitchen, capable of serving 4000+ meals at once. We specialize in corporate catering and offer comprehensive culinary training programs. Discover excellence with us!"
   },
   {

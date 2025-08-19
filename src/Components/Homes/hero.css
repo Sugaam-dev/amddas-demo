@@ -34,12 +34,27 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
+  /* background: linear-gradient(
     135deg,
     rgba(0, 0, 0, 0.4) 0%,
     rgba(0, 0, 0, 0.6) 50%,
     rgba(0, 0, 0, 0.4) 100%
-  );
+  ); */
+
+  /* background: linear-gradient(
+  135deg,
+  rgba(0, 0, 0, 0.1) 0%,
+  rgba(0, 0, 0, 0.2) 50%,
+  rgba(0, 0, 0, 0.1) 100%
+); */
+background: linear-gradient(
+  135deg,
+  rgba(0, 0, 0, 0.2) 0%,
+  rgba(0, 0, 0, 0.3) 50%,
+  rgba(0, 0, 0, 0.2) 100%
+);
+
+
   z-index: 1;
 }
 
@@ -71,7 +86,8 @@
 
 /* Typography - Professional Styling */
 .hero-title {
-  font-family: 'Playfair Display', serif;
+  /* font-family: 'Playfair Display', serif; */
+  font-family: 'Helvetica', Arial, sans-serif;
   font-size: clamp(2rem, 4vw, 4.5rem);
   font-weight: 600;
   line-height: 1.2;
