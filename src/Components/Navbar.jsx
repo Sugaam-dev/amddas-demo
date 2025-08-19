@@ -25,6 +25,10 @@ function Navbarr() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileEventsOpen, setMobileEventsOpen] = useState(false);
   
+  // Hover states for chevron animation
+  const [servicesHover, setServicesHover] = useState(false);
+  const [eventsHover, setEventsHover] = useState(false);
+  
   // Dropdown timeout for better hover management
   const [dropdownTimeout, setDropdownTimeout] = useState(null);
 
@@ -107,6 +111,8 @@ function Navbarr() {
   const closeAllDropdowns = () => {
     setServicesOpen(false);
     setEventsOpen(false);
+    setServicesHover(false);
+    setEventsHover(false);
     if (dropdownTimeout) {
       clearTimeout(dropdownTimeout);
       setDropdownTimeout(null);
@@ -126,6 +132,8 @@ function Navbarr() {
     navigate(path);
     setServicesOpen(false);
     setEventsOpen(false);
+    setServicesHover(false);
+    setEventsHover(false);
     handleClose();
   };
 
@@ -167,6 +175,7 @@ function Navbarr() {
       }, 800);
     }
     setServicesOpen(false);
+    setServicesHover(false);
     handleClose();
   };
 
@@ -207,6 +216,7 @@ function Navbarr() {
       }, 800);
     }
     setEventsOpen(false);
+    setEventsHover(false);
     handleClose();
   };
 
@@ -237,20 +247,32 @@ function Navbarr() {
               {/* Services with Dropdown */}
               <div 
                 className={`modern-dropdown ${servicesOpen ? 'active' : ''}`}
-                onMouseEnter={() => handleDropdownEnter('services')}
-                onMouseLeave={() => handleDropdownLeave('services')}
+                onMouseEnter={() => { 
+                  setServicesHover(true); 
+                  handleDropdownEnter('services'); 
+                }}
+                onMouseLeave={() => { 
+                  setServicesHover(false); 
+                  handleDropdownLeave('services'); 
+                }}
               >
                 <button 
                   className="modern-dropdown-btn"
                   onClick={() => navigateToPage('/what-we-do')}
                 >
-                  Services <FaChevronDown size={10} />
+                  Services {(servicesHover || servicesOpen) ? <FaChevronUp size={10} /> : <FaChevronDown size={10} />}
                 </button>
                 {servicesOpen && (
                   <div 
                     className="modern-dropdown-menu"
-                    onMouseEnter={() => handleDropdownEnter('services')}
-                    onMouseLeave={() => handleDropdownLeave('services')}
+                    onMouseEnter={() => { 
+                      setServicesHover(true); 
+                      handleDropdownEnter('services'); 
+                    }}
+                    onMouseLeave={() => { 
+                      setServicesHover(false); 
+                      handleDropdownLeave('services'); 
+                    }}
                   >
                     <button onClick={() => handleServiceClick('Corporate')}>Corporate</button>
                     <button onClick={() => handleServiceClick('Educational')}>Educational Institute</button>
@@ -263,20 +285,32 @@ function Navbarr() {
               {/* Events with Dropdown */}
               <div 
                 className={`modern-dropdown ${eventsOpen ? 'active' : ''}`}
-                onMouseEnter={() => handleDropdownEnter('events')}
-                onMouseLeave={() => handleDropdownLeave('events')}
+                onMouseEnter={() => { 
+                  setEventsHover(true); 
+                  handleDropdownEnter('events'); 
+                }}
+                onMouseLeave={() => { 
+                  setEventsHover(false); 
+                  handleDropdownLeave('events'); 
+                }}
               >
                 <button 
                   className="modern-dropdown-btn"
                   onClick={() => navigateToPage('/amddas-events')}
                 >
-                  Events <FaChevronDown size={10} />
+                  Events {(eventsHover || eventsOpen) ? <FaChevronUp size={10} /> : <FaChevronDown size={10} />}
                 </button>
                 {eventsOpen && (
                   <div 
                     className="modern-dropdown-menu"
-                    onMouseEnter={() => handleDropdownEnter('events')}
-                    onMouseLeave={() => handleDropdownLeave('events')}
+                    onMouseEnter={() => { 
+                      setEventsHover(true); 
+                      handleDropdownEnter('events'); 
+                    }}
+                    onMouseLeave={() => { 
+                      setEventsHover(false); 
+                      handleDropdownLeave('events'); 
+                    }}
                   >
                     <button onClick={() => handleEventClick('Wedding')}>Wedding</button>
                     <button onClick={() => handleEventClick('Housewarming')}>House Warming</button>

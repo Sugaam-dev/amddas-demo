@@ -114,6 +114,14 @@
   z-index: 1002;
 }
 
+/* Ensure equal spacing between all nav items including dropdowns */
+.modern-nav-menu > .modern-dropdown,
+.modern-nav-menu > .modern-nav-item {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+}
+
 /* All navigation items - reduced height */
 .modern-nav-item {
   color: white;
@@ -159,7 +167,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
+  gap: 5px; /* Added gap for icon spacing */
   line-height: 1;
   min-height: 32px;
   box-sizing: border-box;
@@ -221,7 +229,7 @@
 /* Enhanced Dropdown Control */
 .modern-dropdown {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
   align-items: center;
   margin: 0;
   padding: 0;
@@ -298,7 +306,7 @@
 
 /* Prevent multiple dropdowns from interfering */
 .modern-dropdown + .modern-dropdown {
-  margin-left: 5px;
+  margin-left: 0; /* Removed extra margin - gap handles spacing */
 }
 
 /* Social Section - Now part of right section */
@@ -744,7 +752,7 @@
   
   .logo-img {
     height: 88px;
-    top: -10px; /* FIXED: adjusted for better centering */
+    top: -8px; /* FIXED: adjusted for better centering */
   }
   
   .modern-nav-menu {
@@ -774,7 +782,7 @@
   
   .logo-img {
     height: 78px;
-    top: -9px;
+    top: -7px;
   }
   
   .modern-mobile-toggle {
@@ -820,7 +828,7 @@
   
   .modern-nav {
     min-height: 62px;
-    padding-top: 8px;
+    padding-top: 0px;
   }
   
   .modern-container {
@@ -830,7 +838,7 @@
   
   .logo-img {
     height: 68px;
-    }
+  }
   
   .modern-mobile-toggle {
     padding: 6px;
@@ -907,7 +915,7 @@
   
   .modern-nav {
     min-height: 58px;
-    padding-top: 6px;
+    padding-top: 0px;
   }
   
   .modern-container {
@@ -916,7 +924,6 @@
   
   .logo-img {
     height: 62px;
-   
   }
 }
 
