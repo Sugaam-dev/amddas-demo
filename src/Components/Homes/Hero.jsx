@@ -56,13 +56,13 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="hero-section">
-      <div className="hero-container">
+    <section id="hero" className="amddas-hero-section">
+      <div className="amddas-hero-container">
         {/* Background Images - Only Opacity Changes */}
         {bannerImages.map((image, index) => (
           <div
             key={image.id}
-            className="carousel-slide"
+            className="amddas-carousel-slide"
             style={{
               backgroundImage: `url(${image.url})`,
               opacity: index === currentSlide ? 1 : 0,
@@ -72,11 +72,11 @@ const Hero = () => {
         ))}
 
         {/* Dark Overlay */}
-        <div className="dark-overlay" />
+        <div className="amddas-dark-overlay" />
 
         {/* Content Overlay - Fixed Container */}
-        <div className="content-overlay">
-          <div className="content-wrapper">
+        <div className="amddas-content-overlay">
+          <div className="amddas-content-wrapper">
             {/* Animated Content */}
             <AnimatePresence mode="wait">
               <motion.div
@@ -89,10 +89,10 @@ const Hero = () => {
                   ease: "easeInOut" 
                 }}
               >
-                <h1 className="hero-title">
+                <h1 className="amddas-hero-title">
                   {bannerImages[currentSlide].title}
                 </h1>
-                <p className="hero-description">
+                <p className="amddas-hero-description">
                   {bannerImages[currentSlide].description}
                 </p>
               </motion.div>
@@ -101,12 +101,12 @@ const Hero = () => {
         </div>
 
         {/* Pagination Dots */}
-        <div className="pagination-dots">
+        <div className="amddas-pagination-dots">
           {bannerImages.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`pagination-dot ${index === currentSlide ? 'active' : ''}`}
+              className={`amddas-pagination-dot ${index === currentSlide ? 'amddas-active' : ''}`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
