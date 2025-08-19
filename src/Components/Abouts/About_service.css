@@ -1,4 +1,4 @@
-/* Enhanced About_service.css - No Animations */
+/* Enhanced About_service.css - Fixed Heights */
 
 /* Global Styles */
 * {
@@ -6,46 +6,44 @@
   box-sizing: border-box;
 }
 
-/* Main Section - No Animations */
+/* Main Section */
 .about-service-section {
-  padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 4vw, 3rem);
-  background: transparent;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 2rem);
+  background: #ffffff;
   position: relative;
   overflow: hidden;
-  margin-top: -10px;
 }
 
-/* Container with Proper Layout */
+/* Container with Equal Height Layout */
 .about-service-container {
   display: flex;
   align-items: stretch;
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  gap: clamp(1.5rem, 4vw, 3rem);
+  gap: clamp(2rem, 5vw, 4rem);
   position: relative;
-  min-height: 450px;
+  min-height: 500px;
 }
 
-/* Image Section - Left Side - No Animations */
+/* Image Section - Left Side */
 .about-service-image {
   flex: 0 0 45%;
   max-width: 500px;
-  height: 100%;
   display: flex;
   align-items: center;
   position: relative;
 }
 
-/* Text Section - Right Side - No Animations */
+/* Text Section - Right Side */
 .about-service-text {
   flex: 1;
-  max-width: 600px;
-  height: 100%;
+  max-width: 550px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
+  padding-left: 1rem;
 }
 
 /* Lazy Image Container */
@@ -53,16 +51,17 @@
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 400px;
+  min-height: 450px;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-  background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  background: #f8f8f8;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .lazy-image-container:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }
 
 /* Image Placeholder */
@@ -92,6 +91,12 @@
   border: 3px solid #f0f0f0;
   border-top: 3px solid #ff6b35;
   border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .loading-text {
@@ -103,13 +108,9 @@
 .service-lazy-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* object-fit: cover; */
   object-position: center;
   display: block;
-}
-
-.service-lazy-image.fade-in {
-  /* No fade animation */
 }
 
 /* Error State */
@@ -132,12 +133,12 @@
   font-size: 0.9rem;
 }
 
-/* Service Heading - No Animations */
+/* Service Heading */
 .service-heading {
-  font-size: clamp(1.8rem, 4vw + 1rem, 2.5rem);
+  font-size: clamp(1.75rem, 4vw + 0.5rem, 2.5rem);
   font-weight: 700;
   color: #2b2b2b;
-  margin-bottom: 20px;
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
   margin-top: 0;
   line-height: 1.2;
   position: relative;
@@ -147,19 +148,19 @@
 .service-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 20px 0;
+  margin: 0 0 clamp(1.5rem, 3vw, 2rem) 0;
   position: relative;
 }
 
 .service-item {
   position: relative;
-  padding: 4px 0;
-  font-size: clamp(1rem, 2vw + 0.5rem, 1.2rem);
+  padding: clamp(0.5rem, 1.5vw, 0.75rem) 0;
+  font-size: clamp(0.95rem, 2vw + 0.3rem, 1.1rem);
   color: #333;
-  line-height: 1.6;
-  margin-bottom: 6px;
-  display: flex;
-  align-items: center;
+  line-height: 1.5;
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
+  display: block;
+  align-items: flex-start;
 }
 
 .service-bullet {
@@ -167,24 +168,26 @@
   font-size: 1rem;
   font-weight: bold;
   margin-right: 8px;
-  display: inline-block;
+  display: inline;
   flex-shrink: 0;
 }
 
 .service-text {
   flex: 1;
-  color: #333;
+  color: #555;
   font-weight: 400;
+  display: inline;
+  margin-left: 5px;
 }
 
-/* Service Description - No Animations */
+/* Service Description */
 .service-description {
-  font-size: clamp(0.9rem, 2vw + 0.4rem, 1.1rem);
-  color: #333;
-  line-height: 1.7;
+  font-size: clamp(0.95rem, 2vw + 0.2rem, 1.1rem);
+  color: #555;
+  line-height: 1.6;
   font-family: 'Helvetica', Arial, sans-serif;
   font-weight: 400;
-  margin-top: 15px;
+  margin-top: 0;
 }
 
 /* Remove all animation classes */
@@ -201,72 +204,107 @@
   /* No animations */
 }
 
-/* Enhanced Responsive Design */
-
 /* Large Desktop (1200px+) */
 @media (min-width: 1200px) {
-  .about-service-section {
-    padding: 3rem 2rem;
+  .about-service-container {
+    min-height: 550px;
+    gap: 4rem;
   }
   
-  .about-service-container {
-    gap: 3rem;
+  .lazy-image-container {
     min-height: 500px;
   }
   
-  .about-service-image {
-    flex: 0 0 45%;
+  .service-heading {
+    margin-bottom: 2rem;
   }
   
-  .service-heading {
-    margin-bottom: 30px;
+  .service-list {
+    margin-bottom: 2rem;
   }
   
   .service-item {
-    padding: 12px 0;
-    margin-bottom: 10px;
-  }
-  
-  .service-description {
-    margin-top: 20px;
+    padding: 0.75rem 0;
+    margin-bottom: 1rem;
   }
 }
 
 /* Desktop (1024px - 1199px) */
 @media (min-width: 1024px) and (max-width: 1199px) {
-  .about-service-section {
-    padding: 2.5rem 2rem;
-  }
-  
   .about-service-container {
-    gap: 2.5rem;
-  }
-  
-  .service-heading {
-    margin-bottom: 25px;
-  }
-}
-
-/* Tablet Portrait (768px - 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .about-service-section {
-    padding: 2rem 1.5rem;
-  }
-  
-  .about-service-container {
-    gap: 2rem;
-  }
-  
-  .about-service-image {
-    flex: 0 0 40%;
-  }
-  
-  .service-heading {
-    margin-bottom: 20px;
+    min-height: 480px;
+    gap: 3rem;
   }
   
   .lazy-image-container {
-    min-height: 400px;
+    min-height: 450px;
+    padding: 0;
+  }
+  
+  .service-lazy-image {
+    max-width: calc(100% - 36px);
+    max-height: calc(100% - 36px);
+  }
+}
+
+/* Tablet Portrait (768px - 1023px) - FIXED HEIGHT MATCHING */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .about-service-section {
+    padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 3vw, 1.5rem);
+  }
+  
+  .about-service-container {
+    min-height: 450px;
+    gap: 2rem;
+    align-items: stretch;
+  }
+  
+  .about-service-image {
+    flex: 0 0 42%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .about-service-text {
+    flex: 1;
+    padding-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .lazy-image-container {
+    min-height: 450px;
+    height: 100%;
+    padding: 0;
+  }
+  
+  .service-lazy-image {
+    max-width: calc(100% - 30px);
+    max-height: calc(100% - 30px);
+  }
+  
+  .service-heading {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 1.25rem;
+    line-height: 1.3;
+  }
+  
+  .service-list {
+    margin-bottom: 1.25rem;
+  }
+  
+  .service-item {
+    padding: 0.5rem 0;
+    margin-bottom: 0.75rem;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    line-height: 1.4;
+  }
+  
+  .service-description {
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    line-height: 1.5;
+    margin-top: 0;
   }
 }
 
@@ -278,25 +316,34 @@
   
   .about-service-container {
     flex-direction: column;
-    text-align: center;
     gap: 1.5rem;
+    min-height: auto;
   }
 
   .about-service-image {
     flex: none;
     max-width: 100%;
+    order: 1;
   }
 
   .about-service-text {
     flex: none;
     max-width: 100%;
+    order: 2;
+    padding-left: 0;
     text-align: center;
   }
 
   .lazy-image-container {
     max-width: 500px;
     margin: 0 auto;
-    min-height: 280px;
+    min-height: 300px;
+    padding: 0;
+  }
+  
+  .service-lazy-image {
+    max-width: calc(100% - 24px);
+    max-height: calc(100% - 24px);
   }
 
   .service-item {
@@ -306,12 +353,12 @@
 
   .service-heading {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
   }
 
   .service-description {
     text-align: left;
-    margin-top: 12px;
+    margin-top: 0;
   }
 }
 
@@ -324,20 +371,32 @@
   .about-service-container {
     flex-direction: column;
     gap: 1.25rem;
+    min-height: auto;
+  }
+
+  .about-service-image {
+    order: 1;
+  }
+
+  .about-service-text {
+    order: 2;
+    padding-left: 0;
   }
 
   .lazy-image-container {
-    max-width: 450px;
-    min-height: 250px;
+    max-width: 100%;
+    min-height: 280px;
+    padding: 0;
+  }
+  
+  .service-lazy-image {
+    max-width: calc(100% - 20px);
+    max-height: calc(100% - 20px);
   }
 
   .service-item {
-    padding: 8px 0;
-    margin-bottom: 5px;
-  }
-
-  .service-description {
-    margin-top: 10px;
+    padding: 0.4rem 0;
+    margin-bottom: 0.6rem;
   }
 }
 
@@ -350,126 +409,168 @@
   .about-service-container {
     flex-direction: column;
     gap: 1rem;
+    min-height: auto;
+  }
+
+  .about-service-image {
+    order: 1;
+  }
+
+  .about-service-text {
+    order: 2;
+    padding-left: 0;
   }
 
   .lazy-image-container {
-    max-width: 100%;
-    min-height: 220px;
+    min-height: 250px;
+    padding: 0;
+  }
+  
+  .service-lazy-image {
+    max-width: calc(100% - 20px);
+    max-height: calc(100% - 20px);
   }
 
   .service-item {
-    padding: 6px 0;
-    margin-bottom: 3px;
+    padding: 0.4rem 0;
+    margin-bottom: 0.5rem;
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
   }
 
   .service-bullet {
-    margin-right: 8px;
-    margin-bottom: 2px;
-  }
-
-  .service-description {
-    margin-top: 8px;
-    border-radius: 10px;
+    margin-right: 0;
+    margin-bottom: 3px;
   }
 
   .service-heading {
-    margin-bottom: 12px;
+    margin-bottom: 1rem;
     text-align: center;
- }
+  }
 }
 
 /* Landscape Mobile Optimization */
 @media (max-width: 767px) and (orientation: landscape) and (max-height: 500px) {
- .about-service-section {
-   padding: 1rem 0.5rem;
- }
+  .about-service-section {
+    padding: 1rem 0.5rem;
+  }
 
- .about-service-container {
-   flex-direction: row;
-   gap: 1.25rem;
- }
+  .about-service-container {
+    flex-direction: row;
+    gap: 1.5rem;
+    min-height: 300px;
+  }
 
- .about-service-image {
-   flex: 0 0 40%;
- }
+  .about-service-image {
+    flex: 0 0 40%;
+    order: 1;
+  }
 
- .about-service-text {
-   flex: 1;
-   text-align: left;
- }
+  .about-service-text {
+    flex: 1;
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0.5rem;
+    text-align: left;
+  }
 
- .lazy-image-container {
-   height: 220px;
-   min-height: 220px;
- }
+  .lazy-image-container {
+    height: 300px;
+    min-height: 300px;
+    padding: 0;
+  }
+  
+  .service-lazy-image {
+    max-width: calc(100% - 24px);
+    max-height: calc(100% - 24px);
+  }
 
- .service-heading {
-   text-align: left;
-   margin-bottom: 12px;
- }
+  .service-heading {
+    text-align: left;
+    margin-bottom: 0.75rem;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+  }
 
- .service-item {
-   padding: 5px 0;
-   margin-bottom: 2px;
- }
+  .service-list {
+    margin-bottom: 0.75rem;
+  }
 
- .service-description {
-   margin-top: 8px;
- }
+  .service-item {
+    padding: 0.3rem 0;
+    margin-bottom: 0.4rem;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+  }
+
+  .service-description {
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    margin-top: 0;
+  }
 }
 
 /* High Contrast Mode */
 @media (prefers-contrast: high) {
- .service-item {
-   border-bottom: 1px solid #333;
- }
+  .service-item {
+    border-bottom: 1px solid #333;
+  }
 
- .service-heading {
-   border-bottom: 2px solid #000;
-   padding-bottom: 5px;
- }
+  .service-heading {
+    border-bottom: 2px solid #000;
+    padding-bottom: 5px;
+  }
 
- .lazy-image-container {
-   border: 2px solid #000;
- }
+  .lazy-image-container {
+    border: 2px solid #000;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .lazy-image-container {
+    transition: none;
+  }
+  
+  .loading-spinner {
+    animation: none;
+  }
 }
 
 /* Focus States for Accessibility */
 .service-item:focus-visible {
- outline: 3px solid #ff6b35;
- outline-offset: 2px;
- border-radius: 4px;
+  outline: 3px solid #ff6b35;
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 /* Print Styles */
 @media print {
- .about-service-section {
-   background: white !important;
-   padding: 1rem !important;
- }
+  .about-service-section {
+    background: white !important;
+    padding: 1rem !important;
+  }
 
- .about-service-container {
-   flex-direction: column;
-   gap: 1rem;
- }
+  .about-service-container {
+    flex-direction: column;
+    gap: 1rem;
+    min-height: auto;
+  }
 
- .lazy-image-container {
-   height: auto;
-   max-height: 300px;
-   box-shadow: none;
-   border: 1px solid #000;
- }
+  .lazy-image-container {
+    height: auto;
+    max-height: 300px;
+    box-shadow: none;
+    border: 1px solid #000;
+  }
 
- .service-heading,
- .service-item,
- .service-description {
-   color: black !important;
- }
+  .service-heading,
+  .service-item,
+  .service-description {
+    color: black !important;
+  }
 
- .service-bullet {
-   color: black !important;
- }
+  .service-bullet {
+    color: black !important;
+  }
 }
