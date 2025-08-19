@@ -4,7 +4,7 @@ import './Why_Us.css';
 const sections = [
   {
     title: "Risk Management Standards",
-    image: "/images/risky.png",
+    image: "/images/risky.webp",
     points: [
       "Public Liability Policy is issued per site where our food is being supplied/consumed.",
       "All medical expense covered in case of hospitalization caused due the Food poisoning, body injury or property",
@@ -16,7 +16,7 @@ const sections = [
   },
   {
     title: "Quality Standard",
-    image: "/images/qualitystandard.png",
+    image: "/images/qualitystandard.webp",
     points: [
       "Food is cooked in a very hygienic environment under constant quality controlled processes.",
       "Vegetables are procured twice/week for freshness from authorized Distributor (Qtrly Pesticide residual test done)",
@@ -29,7 +29,7 @@ const sections = [
   },
   {
     title: "Manufacturing Unit Standards",
-    image: "/images/Manufacturingunit.png",
+    image: "/images/Manufacturingunit.webp",
     points: [
       "HACCP (Hazard Analysis and Critical Control Points) standards met.",
       "Segregated Veg and Non-Veg cooking & storage sections.",
@@ -42,7 +42,7 @@ const sections = [
   },
   {
     title: "Employee Standard",
-    image: "/images/employeestandard.png",
+    image: "/images/employeestandard.webp",
     points: [
       "All employees undergo quarterly Medical Fitness Test clearance while in service in AMDDAS FOODS.",
       "All staff have segregated dress code based on their job roles.",
@@ -53,7 +53,7 @@ const sections = [
   },
   {
     title: "Certified Kitchen",
-    image: "/images/kitchenstandard.png",
+    image: "/images/kitchenstandard.webp",
     points: [
       "FSSAI Certificate.",
       "Food Testing Report.",

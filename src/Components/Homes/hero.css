@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@400&display=swap');
 /* Hero Section Styles */
 .hero-section {
   position: relative;
   width: 100%;
   height: 100vh;
+  min-height: 600px;
   overflow: hidden;
   background-color: #000;
 }
@@ -22,8 +22,9 @@
   width: 100%;
   height: 100%;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
+  background-attachment: scroll;
 }
 
 /* Dark Overlay */
@@ -33,11 +34,16 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /* background-color: rgba(0, 0, 0, 0.4); */
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
   z-index: 1;
 }
 
-/* Content Overlay - PERFECT CENTERING */
+/* Content Overlay */
 .content-overlay {
   position: absolute;
   top: 0;
@@ -56,25 +62,41 @@
   box-sizing: border-box;
 }
 
+.content-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+/* Typography - Professional Styling */
 .hero-title {
-  font-size: clamp(1.5rem, 2vw, 2rem);
-  font-weight: 700;
-  margin: 0 0 1.5rem 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  letter-spacing: 1px;
-  max-width: 800px;
-  padding: 0 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 2rem 0;
+  letter-spacing: 0.5px;
+  
+  /* Clean Glossy White */
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.6),
+               2px 4px 8px rgba(0, 0, 0, 0.8);
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
 .hero-description {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+  font-weight: 400;
   line-height: 1.6;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  margin: 0;
-  font-weight: 600;
-  font-family: 'Helvetica', Arial, sans-serif;
-  max-width: 90%;
-  text-align: center;
+  margin: 0 auto;
+  max-width: 900px;
+  
+  /* Elegant Gray */
+  color: #d1d5db;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.7);
+  opacity: 0.95;
 }
 
 /* Pagination Dots */
@@ -119,37 +141,169 @@
   outline-offset: 3px;
 }
 
-
-
 /* Responsive Design */
-@media (max-width: 1200px) {
-  .hero-section {
-    height: 100vh;
-  }
-  
-  .hero-description {
-    font-size: clamp(1.3rem, 2.8vw, 2.2rem);
-  }
-}
 
-@media (max-width: 768px) {
+/* Ultra Large Screens (4K+) */
+@media (min-width: 2560px) {
   .hero-section {
     height: 100vh;
+    min-height: 800px;
   }
   
-  .content-overlay {
-    padding: 0 15px;
+  .content-wrapper {
+    max-width: 1600px;
+  }
+  
+  .hero-title {
+    font-size: clamp(3rem, 4vw, 6rem);
+    margin-bottom: 3rem;
   }
   
   .hero-description {
-    font-size: clamp(1.1rem, 4.5vw, 1.8rem);
-    line-height: 1.3;
-    max-width: 95%;
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    line-height: 1.7;
   }
   
   .pagination-dots {
-    bottom: 30px;
-    gap: 12px;
+    bottom: 3rem;
+    gap: 1.5rem;
+  }
+  
+  .pagination-dot {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1920px) and (max-width: 2559px) {
+  .hero-title {
+    font-size: clamp(2.5rem, 4vw, 5rem);
+  }
+  
+  .hero-description {
+    font-size: clamp(1.3rem, 2.5vw, 2.2rem);
+  }
+}
+
+/* Standard Desktop */
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .content-overlay {
+    padding: 0 1.5rem;
+  }
+  
+  .hero-title {
+    font-size: clamp(2rem, 4vw, 4rem);
+  }
+  
+  .hero-description {
+    font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+  }
+}
+
+/* Laptop */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .content-overlay {
+    padding: 0 1rem;
+  }
+  
+  .hero-title {
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-description {
+    font-size: clamp(1rem, 2.2vw, 1.5rem);
+    max-width: 800px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+  .hero-section {
+    min-height: 500px;
+  }
+  
+  .content-overlay {
+    padding: 0 1rem;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 4rem;
+  }
+  
+  .content-wrapper {
+    max-height: 70%;
+    overflow-y: auto;
+  }
+  
+  .hero-title {
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+  
+  .hero-description {
+    font-size: clamp(0.95rem, 2.8vw, 1.3rem);
+    line-height: 1.5;
+    max-width: 700px;
+  }
+  
+  .pagination-dots {
+    bottom: 1.5rem;
+    gap: 0.8rem;
+  }
+  
+  .pagination-dot {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Mobile Large */
+@media (min-width: 576px) and (max-width: 767px) {
+  .hero-section {
+    height: auto;
+    min-height: auto;
+    aspect-ratio: 16/9;
+  }
+
+  .content-overlay {
+    padding: 0 1rem;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-bottom: 4rem;
+  }
+  
+  .content-wrapper {
+    max-height: 60%;
+    overflow-y: auto;
+    width: 100%;
+  }
+  
+  .hero-title {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  
+  .hero-description {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+  
+  .pagination-dots {
+    bottom: 1.5rem;
+    gap: 0.7rem;
   }
   
   .pagination-dot {
@@ -158,45 +312,107 @@
   }
 }
 
-@media (max-width: 480px) {
+/* Mobile Small */
+@media (max-width: 575px) {
   .hero-section {
-    height: 100vh;
+    height: auto;
+    min-height: auto;
+    aspect-ratio: 4/3;
+  }
+
+  .content-overlay {
+    padding: 0 0.75rem;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-bottom: 4rem;
   }
   
-  .content-overlay {
-    padding: 0 10px;
+  .content-wrapper {
+    max-height: 55%;
+    overflow-y: auto;
+    width: 100%;
+  }
+  
+  .hero-title {
+    font-size: clamp(1rem, 5vw, 1.4rem);
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
   
   .hero-description {
-    font-size: clamp(0.9rem, 5.5vw, 1.4rem);
+    font-size: clamp(0.75rem, 3.5vw, 0.9rem);
     line-height: 1.2;
-    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
   
   .pagination-dots {
-    bottom: 25px;
-    gap: 10px;
+    bottom: 1rem;
+    gap: 0.5rem;
   }
   
   .pagination-dot {
     width: 8px;
     height: 8px;
+    border-width: 1px;
   }
 }
 
+/* Very Small Mobile */
 @media (max-width: 320px) {
   .hero-section {
-    height: 100vh;
+    height: auto;
+    min-height: auto;
+    aspect-ratio: 4/3;
+  }
+  
+  .content-overlay {
+    padding: 0 0.5rem;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-bottom: 3rem;
+  }
+  
+  .content-wrapper {
+    max-height: 50%;
+    overflow-y: auto;
+    width: 100%;
+  }
+  
+  .hero-title {
+    font-size: clamp(0.9rem, 6vw, 1.2rem);
+    margin-bottom: 0.3rem;
+    line-height: 1.1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
   
   .hero-description {
-    font-size: clamp(0.8rem, 6vw, 1.2rem);
+    font-size: clamp(0.7rem, 4vw, 0.85rem);
     line-height: 1.1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
   
   .pagination-dots {
-    bottom: 20px;
-    gap: 8px;
+    bottom: 0.75rem;
+    gap: 0.4rem;
   }
   
   .pagination-dot {
@@ -205,27 +421,54 @@
   }
 }
 
-/* Animation Classes for Additional Effects */
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 0.8s ease-in-out forwards;
+/* Landscape Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-section {
+    height: 100vh;
+    min-height: auto;
+  }
+
+  .content-overlay {
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2rem;
+    height: 100%;
+  }
+  
+  .content-wrapper {
+    max-height: 60%;
+    overflow-y: auto;
+  }
+  
+  .hero-title {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  
+  .hero-description {
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  
+  .pagination-dots {
+    bottom: 0.5rem;
+  }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* High Contrast Mode Support */
+/* High Contrast Mode */
 @media (prefers-contrast: high) {
   .dark-overlay {
-    background-color: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.8);
   }
   
   .pagination-dot {
@@ -241,4 +484,33 @@
   .hero-description {
     text-shadow: 2px 2px 0px #000, -2px -2px 0px #000, 2px -2px 0px #000, -2px 2px 0px #000;
   }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-slide {
+    transition: opacity 0.3s ease;
+  }
+  
+  .pagination-dot {
+    transition: all 0.2s ease;
+  }
+}
+
+/* Custom Scrollbar for Content Wrapper */
+.content-wrapper::-webkit-scrollbar {
+  width: 4px;
+}
+
+.content-wrapper::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.content-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.content-wrapper::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
 }

@@ -128,7 +128,7 @@ const Offers = memo(() => {
       <div className="content-wrapperr">
         <div className="image-section">
           <img 
-            src="/images/ganesh-removebg.png" 
+            src="/images/ganesh-removebg.webp" 
             alt="Lord Ganesh" 
             className="ganesh-image"
             loading="lazy"

@@ -25,6 +25,10 @@ function Navbarr() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileEventsOpen, setMobileEventsOpen] = useState(false);
   
+  // Hover states for chevron animation
+  const [servicesHover, setServicesHover] = useState(false);
+  const [eventsHover, setEventsHover] = useState(false);
+  
   // Dropdown timeout for better hover management
   const [dropdownTimeout, setDropdownTimeout] = useState(null);
 
@@ -107,6 +111,8 @@ function Navbarr() {
   const closeAllDropdowns = () => {
     setServicesOpen(false);
     setEventsOpen(false);
+    setServicesHover(false);
+    setEventsHover(false);
     if (dropdownTimeout) {
       clearTimeout(dropdownTimeout);
       setDropdownTimeout(null);
@@ -126,6 +132,8 @@ function Navbarr() {
     navigate(path);
     setServicesOpen(false);
     setEventsOpen(false);
+    setServicesHover(false);
+    setEventsHover(false);
     handleClose();
   };
 
@@ -137,7 +145,7 @@ function Navbarr() {
         // Better scroll calculation with navbar offset
         const elementRect = element.getBoundingClientRect();
         const absoluteElementTop = elementRect.top + window.pageYOffset;
-        const navbarHeight = 80;
+        const navbarHeight = 110; // Updated for new navbar height
         const offset = 20;
         const scrollToPosition = Math.max(0, absoluteElementTop - navbarHeight - offset);
         
@@ -155,7 +163,7 @@ function Navbarr() {
         if (element) {
           const elementRect = element.getBoundingClientRect();
           const absoluteElementTop = elementRect.top + window.pageYOffset;
-          const navbarHeight = 80;
+          const navbarHeight = 110; // Updated for new navbar height
           const offset = 20;
           const scrollToPosition = Math.max(0, absoluteElementTop - navbarHeight - offset);
           
@@ -167,6 +175,7 @@ function Navbarr() {
       }, 800);
     }
     setServicesOpen(false);
+    setServicesHover(false);
     handleClose();
   };
 
@@ -177,7 +186,7 @@ function Navbarr() {
       if (element) {
         const elementRect = element.getBoundingClientRect();
         const absoluteElementTop = elementRect.top + window.pageYOffset;
-        const navbarHeight = 80;
+        const navbarHeight = 110; // Updated for new navbar height
         const offset = 20;
         const scrollToPosition = Math.max(0, absoluteElementTop - navbarHeight - offset);
         
@@ -195,7 +204,7 @@ function Navbarr() {
         if (element) {
           const elementRect = element.getBoundingClientRect();
           const absoluteElementTop = elementRect.top + window.pageYOffset;
-          const navbarHeight = 80;
+          const navbarHeight = 110; // Updated for new navbar height
           const offset = 20;
           const scrollToPosition = Math.max(0, absoluteElementTop - navbarHeight - offset);
           
@@ -207,108 +216,139 @@ function Navbarr() {
       }, 800);
     }
     setEventsOpen(false);
+    setEventsHover(false);
     handleClose();
   };
 
   return (
     <div className={`modern-navbar ${scrolled ? 'scrolled' : ''}`}>
+      {/* Navbar Background - positioned behind logo */}
+      <div className="modern-navbar-bg"></div>
+      
       <Navbar expand="lg" className="modern-nav">
         <Container fluid className="modern-container">
-          {/* Logo */}
+          {/* Logo - Now with overflow effect */}
           <Navbar.Brand as={Link} to="/" className="modern-logo">
             <img src="./images/amd.png" alt="AMDDAS FOODS" className="logo-img" />
           </Navbar.Brand>
 
-          {/* Mobile Toggle */}
-          <button 
-            className="modern-mobile-toggle d-lg-none"
-            onClick={() => setExpanded(!expanded)}
-          >
-            <CiMenuBurger size={24} />
-          </button>
-
-          {/* Desktop Navigation with proper dropdown management */}
-          <div 
-            className="modern-nav-menu d-none d-lg-flex"
-            onMouseLeave={handleNavMouseLeave}
-          >
-            {/* About */}
-            <Link to="/about" className="modern-nav-item">
-              About Us
-            </Link>
-
-            {/* Services with Dropdown */}
+          {/* RIGHT SECTION - Contains Navigation Menu + Social Section */}
+          <div className="modern-right-section">
+            {/* Desktop Navigation */}
             <div 
-              className={`modern-dropdown ${servicesOpen ? 'active' : ''}`}
-              onMouseEnter={() => handleDropdownEnter('services')}
-              onMouseLeave={() => handleDropdownLeave('services')}
+              className="modern-nav-menu d-none d-lg-flex"
+              onMouseLeave={handleNavMouseLeave}
             >
-              <button 
-                className="modern-nav-item modern-dropdown-btn"
-                onClick={() => navigateToPage('/what-we-do')}
+              {/* About */}
+              <Link to="/about" className="modern-nav-item">
+                About Us
+              </Link>
+
+              {/* Services with Dropdown */}
+              <div 
+                className={`modern-dropdown ${servicesOpen ? 'active' : ''}`}
+                onMouseEnter={() => { 
+                  setServicesHover(true); 
+                  handleDropdownEnter('services'); 
+                }}
+                onMouseLeave={() => { 
+                  setServicesHover(false); 
+                  handleDropdownLeave('services'); 
+                }}
               >
-                Services <FaChevronDown size={10} />
-              </button>
-              {servicesOpen && (
-                <div 
-                  className="modern-dropdown-menu"
-                  onMouseEnter={() => handleDropdownEnter('services')}
-                  onMouseLeave={() => handleDropdownLeave('services')}
+                <button 
+                  className="modern-dropdown-btn"
+                  onClick={() => navigateToPage('/what-we-do')}
                 >
-                  <button onClick={() => handleServiceClick('Corporate')}>Corporate</button>
-                  <button onClick={() => handleServiceClick('Educational')}>Educational Institute</button>
-                  <button onClick={() => handleServiceClick('Hospital')}>Hospitals</button>
-                  <button onClick={() => handleServiceClick('Training')}>Training</button>
-                </div>
-              )}
+                  Services {(servicesHover || servicesOpen) ? <FaChevronUp size={10} /> : <FaChevronDown size={10} />}
+                </button>
+                {servicesOpen && (
+                  <div 
+                    className="modern-dropdown-menu"
+                    onMouseEnter={() => { 
+                      setServicesHover(true); 
+                      handleDropdownEnter('services'); 
+                    }}
+                    onMouseLeave={() => { 
+                      setServicesHover(false); 
+                      handleDropdownLeave('services'); 
+                    }}
+                  >
+                    <button onClick={() => handleServiceClick('Corporate')}>Corporate</button>
+                    <button onClick={() => handleServiceClick('Educational')}>Educational Institute</button>
+                    <button onClick={() => handleServiceClick('Hospital')}>Hospitals</button>
+                    <button onClick={() => handleServiceClick('Training')}>Training</button>
+                  </div>
+                )}
+              </div>
+
+              {/* Events with Dropdown */}
+              <div 
+                className={`modern-dropdown ${eventsOpen ? 'active' : ''}`}
+                onMouseEnter={() => { 
+                  setEventsHover(true); 
+                  handleDropdownEnter('events'); 
+                }}
+                onMouseLeave={() => { 
+                  setEventsHover(false); 
+                  handleDropdownLeave('events'); 
+                }}
+              >
+                <button 
+                  className="modern-dropdown-btn"
+                  onClick={() => navigateToPage('/amddas-events')}
+                >
+                  Events {(eventsHover || eventsOpen) ? <FaChevronUp size={10} /> : <FaChevronDown size={10} />}
+                </button>
+                {eventsOpen && (
+                  <div 
+                    className="modern-dropdown-menu"
+                    onMouseEnter={() => { 
+                      setEventsHover(true); 
+                      handleDropdownEnter('events'); 
+                    }}
+                    onMouseLeave={() => { 
+                      setEventsHover(false); 
+                      handleDropdownLeave('events'); 
+                    }}
+                  >
+                    <button onClick={() => handleEventClick('Wedding')}>Wedding</button>
+                    <button onClick={() => handleEventClick('Housewarming')}>House Warming</button>
+                    <button onClick={() => handleEventClick('Birthday')}>Birthday</button>
+                    <button onClick={() => handleEventClick('Engagement')}>Engagement</button>
+                    <button onClick={() => handleEventClick('Festival')}>Community Festivals</button>
+                    <button onClick={() => handleEventClick('Bhandaara')}>Bhandaara</button>
+                  </div>
+                )}
+              </div>
+
+              {/* Other Links */}
+              <Link to="/why-us" className="modern-nav-item">Why Us</Link>
+              <Link to="/festivals" className="modern-nav-item">Festivals</Link>
+              <Link to="/contact" className="modern-nav-item modern-contact-btn">Contact Us</Link>
             </div>
 
-            {/* Events with Dropdown */}
-            <div 
-              className={`modern-dropdown ${eventsOpen ? 'active' : ''}`}
-              onMouseEnter={() => handleDropdownEnter('events')}
-              onMouseLeave={() => handleDropdownLeave('events')}
+            {/* Social + Location */}
+            <div className="modern-social-section d-none d-lg-flex">
+              <div className="modern-social-icons">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
+              </div>
+              <div className="modern-divider"></div>
+              <div className="modern-location">
+                <MdLocationOn /> India
+              </div>
+            </div>
+
+            {/* Mobile Toggle */}
+            <button 
+              className="modern-mobile-toggle d-lg-none"
+              onClick={() => setExpanded(!expanded)}
             >
-              <button 
-                className="modern-nav-item modern-dropdown-btn"
-                onClick={() => navigateToPage('/amddas-events')}
-              >
-                Events <FaChevronDown size={10} />
-              </button>
-              {eventsOpen && (
-                <div 
-                  className="modern-dropdown-menu"
-                  onMouseEnter={() => handleDropdownEnter('events')}
-                  onMouseLeave={() => handleDropdownLeave('events')}
-                >
-                  <button onClick={() => handleEventClick('Wedding')}>Wedding</button>
-                  <button onClick={() => handleEventClick('Housewarming')}>House Warming</button>
-                  <button onClick={() => handleEventClick('Birthday')}>Birthday</button>
-                  <button onClick={() => handleEventClick('Engagement')}>Engagement</button>
-                  <button onClick={() => handleEventClick('Festival')}>Community Festivals</button>
-                  <button onClick={() => handleEventClick('Bhandaara')}>Bhandaara</button>
-                </div>
-              )}
-            </div>
-
-            {/* Other Links */}
-            <Link to="/why-us" className="modern-nav-item">Why Us</Link>
-            <Link to="/festivals" className="modern-nav-item">Festivals</Link>
-            <Link to="/contact" className="modern-nav-item modern-contact-btn">Contact Us</Link>
-          </div>
-
-          {/* Social + Location */}
-          <div className="modern-social-section d-none d-lg-flex">
-            <div className="modern-social-icons">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
-            </div>
-            <div className="modern-divider"></div>
-            <div className="modern-location">
-              <MdLocationOn /> India
-            </div>
+              <CiMenuBurger size={24} />
+            </button>
           </div>
 
           {/* Mobile Menu with Separate Click Areas */}

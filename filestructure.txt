@@ -20,16 +20,23 @@
         |-- amd4.jpg
         |-- amd6.webp
         |-- amdback.jpg
+        |-- Bhandaras.webp
+        |-- Birthday.webp
         |-- Cafeteria1.jpg
         |-- Catering.jpg
         |-- community.jpg
+        |-- CommunityFestival.webp
         |-- contact.jpg
         |-- corporate.jpg
         |-- corporatebanner.jpg
+        |-- CorporateCatering.webp
+        |-- Corporateevent.webp
         |-- doctors.jpg
+        |-- Education.webp
         |-- education1.jpg
         |-- employee.jpg
         |-- employeestandard.png
+        |-- employeestandard.webp
         |-- Engagement1.jpg
         |-- events-bg.jpg
         |-- events.1.jpg
@@ -39,6 +46,7 @@
         |-- experience.jpg
         |-- fest-offer.jpg
         |-- festivalbanner.jpeg
+        |-- festivalbanner.webp
         |-- food-img.jpg
         |-- food-img2.jpg
         |-- food-img3.jpg
@@ -48,18 +56,23 @@
         |-- ganesh-img1.jpg
         |-- ganesh-offer.jpg
         |-- ganesh-removebg.png
+        |-- ganesh-removebg.webp
         |-- ganesha-logo-removebg.png
+        |-- ganesha-logo-removebg.webp
         |-- ganesha-logo.webp
         |-- healthcare_icon1-1.webp
         |-- healthcare_icon2-1.webp
         |-- healthcare_icon3-1.webp
         |-- healthcare_icon4-1.webp
         |-- hospital1.jpg
+        |-- HouseWarming.webp
         |-- img1.jpg
         |-- journeyandcore.jpg
         |-- kitchenstandard.png
+        |-- kitchenstandard.webp
         |-- Manufacturing.jpg
         |-- Manufacturingunit.png
+        |-- Manufacturingunit.webp
         |-- Marriage.jpg
         |-- meal.jpg
         |-- menu1.jpg
@@ -93,10 +106,12 @@
         |-- poonam-rajput-bhM6NzUOxLQ-unsplash.jpg
         |-- quality.jpg
         |-- qualitystandard.png
+        |-- qualitystandard.webp
         |-- qualitystanderds.jpg
         |-- risk.png
         |-- Riskmanagment.jpg
         |-- risky.png
+        |-- risky.webp
         |-- service.jpg
         |-- standard1.jpg
         |-- standard2.jpg
@@ -108,6 +123,8 @@
         |-- sustain.jpg
         |-- Sweets1.jpg
         |-- technology.png
+        |-- weedingandengagement.webp
+        |-- Weedingcatering.webp
     |-- index.html
     |-- manifest.json
     |-- robots.txt
@@ -198,6 +215,22 @@
         |-- Services
             |-- Corporate_new.css
             |-- Corporate_new.jsx
+            |-- Education.css
+            |-- Education.jsx
+            |-- Hospital.css
+            |-- Hospital.jsx
+            |-- images
+                |-- Audit Training.webp
+                |-- Cafeteria Management.webp
+                |-- Corporate CSR.webp
+                |-- Corporateevent.webp
+                |-- Culrinary Training.webp
+                |-- Education.webp
+                |-- Food Handler Training.webp
+                |-- Hospital Catering.webp
+                |-- Kitchen Management Training.webp
+                |-- popup.webp
+                |-- Tuck Shop.webp
             |-- Training.css
             |-- Training.jsx
             |-- whatwedo.css

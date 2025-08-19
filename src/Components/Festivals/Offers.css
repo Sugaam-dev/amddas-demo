@@ -71,7 +71,7 @@
 }
 
 .festival-badge {
-  background: linear-gradient(45deg, #57F6E7, #2DD4BF);
+  background: linear-gradient(45deg, #ffbf00,#e03d00);
   color: #065f46;
   padding: 8px 20px;
   border-radius: 25px;
@@ -129,7 +129,7 @@
 }
 
 .offer-details {
-  background: linear-gradient(135deg, #57F6E7, #2DD4BF);
+   background: linear-gradient(135deg, #ffffff, #f0fdfc);
   color: #065f46;
   padding: 25px;
   border-radius: 15px;
@@ -230,7 +230,7 @@
 }
 
 .cta-button.secondary {
-  background: linear-gradient(45deg, #57F6E7, #2DD4BF);
+  background: linear-gradient(45deg, #ffbf00,#e03d00);
   color: #065f46;
 }
 
