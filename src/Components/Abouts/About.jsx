@@ -329,7 +329,7 @@ const About = memo(() => {
 
   return (
     <div className="about-page-container">
-      <BannerSection />
+      {/* <BannerSection /> */}
       
       <div 
         ref={aboutSectionRef}
@@ -337,25 +337,25 @@ const About = memo(() => {
       >
         <Suspense fallback={<LoadingSkeleton />}>
           <div className={`section-wrapper ${sectionsLoaded.about_all ? 'animate-stagger-1' : ''}`}>
-            <About_all onLoad={() => handleSectionLoad('about_all')} />
+            {/* <About_all onLoad={() => handleSectionLoad('about_all')} /> */}
           </div>
         </Suspense>
 
         <Suspense fallback={<LoadingSkeleton />}>
           <div className={`section-wrapper ${sectionsLoaded.about_service ? 'animate-stagger-2' : ''}`}>
-            <About_service onLoad={() => handleSectionLoad('about_service')} />
+            {/* <About_service onLoad={() => handleSectionLoad('about_service')} /> */}
           </div>
         </Suspense>
 
         <Suspense fallback={<LoadingSkeleton />}>
           <div className={`section-wrapper ${sectionsLoaded.standards ? 'animate-stagger-3' : ''}`}>
-            <Standards onLoad={() => handleSectionLoad('standards')} />
+            {/* <Standards onLoad={() => handleSectionLoad('standards')} /> */}
           </div>
         </Suspense>
 
         <Suspense fallback={<LoadingSkeleton />}>
           <div className={`section-wrapper ${sectionsLoaded.milestones ? 'animate-stagger-4' : ''}`}>
-            <Milestones onLoad={() => handleSectionLoad('milestones')} />
+            {/* <Milestones onLoad={() => handleSectionLoad('milestones')} /> */}
           </div>
         </Suspense>
       </div>
