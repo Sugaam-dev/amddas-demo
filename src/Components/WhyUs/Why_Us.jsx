@@ -16,7 +16,7 @@ const sections = [
   },
   {
     title: "Quality Standard",
-    image: "/images/qualitystandard123.webp",
+    image: "/images/Employeestandard2.png",
     points: [
       "Food is cooked in a very hygienic environment under constant quality controlled processes.",
       "Vegetables are procured twice/week for freshness from authorized Distributor (Qtrly Pesticide residual test done)",
