@@ -224,7 +224,7 @@ const Gallery = () => {
     '/images/Amddaspic7.webp',
     '/images/amddas8.webp',
     '/images/Amddas9.webp',
-    '/images/Amddas10.webp',
+    '/images/amddasgallery110.webp',
   ];
 
   return (
