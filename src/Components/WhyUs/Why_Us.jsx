@@ -5,14 +5,14 @@ const sections = [
   {
     // title: "Risk Management Standards",
     image: '/images/risky.webp',
-    // points: [
-    //   "Public Liability Policy is issued per site where our food is being supplied/consumed.",
-    //   "All medical expense covered in case of hospitalization caused due the Food poisoning, body injury or property",
-    //   "damage caused by AMDDAS FOODs directly or indirectly.",
-    //   "Daily food samples are collected & stored for 72 Hrs. to prove false food poisoning claims reported otherwise.",
-    //   "** NB — Based on client requirement.",
-    //   "Strictly GST compliant along with updated Ledger and bank records. Regular on-time Tax return filing done.",
-    // ]
+    points: [
+      "Public Liability Policy is issued per site where our food is being supplied/consumed.",
+      "All medical expense covered in case of hospitalization caused due the Food poisoning, body injury or property",
+      "damage caused by AMDDAS FOODs directly or indirectly.",
+      "Daily food samples are collected & stored for 72 Hrs. to prove false food poisoning claims reported otherwise.",
+      "** NB — Based on client requirement.",
+      "Strictly GST compliant along with updated Ledger and bank records. Regular on-time Tax return filing done.",
+    ]
   },
   {
     title: "Quality Standard",
