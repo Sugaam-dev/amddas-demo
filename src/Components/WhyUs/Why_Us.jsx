@@ -3,7 +3,7 @@ import './Why_Us.css';
 
 const sections = [
   {
-    // title: "Risk Management Standards",
+    title: "Risk Management Standards",
     image: '/images/risky.webp',
     points: [
       "Public Liability Policy is issued per site where our food is being supplied/consumed.",
