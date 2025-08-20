@@ -158,7 +158,7 @@ const MilestoneHeading = memo(({ isVisible }) => {
   return (
     <h2 className={`milestones-heading ${isVisible ? 'animate-heading-in' : ''}`}>
       <span className="heading-text">Milestones</span>
-      <span className="heading-underline"></span>
+{/*       <span className="heading-underline"></span> */}
     </h2>
   );
 });
