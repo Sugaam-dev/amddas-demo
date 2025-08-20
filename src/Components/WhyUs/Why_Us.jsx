@@ -16,7 +16,7 @@ const sections = [
   },
   {
     title: "Quality Standard",
-    image: "/images/qualitystandard.webp",
+    image: "/images/qualitystandard.png",
     points: [
       "Food is cooked in a very hygienic environment under constant quality controlled processes.",
       "Vegetables are procured twice/week for freshness from authorized Distributor (Qtrly Pesticide residual test done)",
@@ -154,7 +154,7 @@ const AnimatedSection = memo(({ section, index }) => {
         <LazyImage 
           src={section.image} 
           alt={section.title}
-          className="image-container"
+          className="amddas-pic-image-container"
         />
       </div>
     </div>

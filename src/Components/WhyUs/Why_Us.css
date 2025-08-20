@@ -153,7 +153,7 @@
   opacity: 1;
 }
 
-.image-container {
+.amddas-pic-image-container {
   position: relative;
   display: inline-block;
   overflow: hidden;
@@ -161,7 +161,7 @@
   transition: all 0.3s ease;
 }
 
-.image-container:hover {
+.amddas-pic-image-container:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
@@ -176,7 +176,7 @@
   transition: all 0.3s ease;
 }
 
-.image-container:hover img {
+.amddas-pic-image-container:hover img {
   transform: scale(1.05);
 }
 
@@ -385,7 +385,7 @@
 }
 
 /* Loading states and performance improvements */
-.image-container img[style*="opacity: 0"] {
+.amddas-pic-image-container img[style*="opacity: 0"] {
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200% 100%;
   animation: loading 1.5s infinite;
