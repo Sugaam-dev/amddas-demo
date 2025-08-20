@@ -1,35 +1,8 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom/client';
-// import './index.css';
-// import App from './App';
-// import reportWebVitals from './reportWebVitals';
-
-// // Import Redux-related dependencies
-// import { Provider } from 'react-redux';
-// import { PersistGate } from 'redux-persist/integration/react';
-// import store, { persistor } from '../src/Redux/store.js';
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <Provider store={store}>
-//     <PersistGate loading={null} persistor={persistor}>
-//       <App />
-//     </PersistGate>
-//   </Provider>
-// );
-
-// reportWebVitals();
-
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-// Import Redux-related dependencies
-import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
-import store, { persistor } from '../src/Redux/store.js';
 
 // Component to set meta tags for mobile navigation bar
 const MetaTagsProvider = ({ children }) => {
@@ -74,13 +47,9 @@ const MetaTagsProvider = ({ children }) => {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-      <MetaTagsProvider>
-        <App />
-      </MetaTagsProvider>
-    </PersistGate>
-  </Provider>
+  <MetaTagsProvider>
+    <App />
+  </MetaTagsProvider>
 );
 
 reportWebVitals();

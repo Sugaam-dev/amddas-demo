@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar, Nav, Container, Offcanvas } from 'react-bootstrap';
+import { Navbar, Container, Offcanvas } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Styles/Navbar.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { logoutUser } from '../Redux/authActions';
-import { useNavigate, Link, NavLink } from 'react-router-dom';
+
+
+import { useNavigate, Link } from 'react-router-dom';
 import { CiMenuBurger } from "react-icons/ci";
 import { FaLinkedinIn, FaFacebookF, FaInstagram, FaYoutube, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { MdLocationOn } from 'react-icons/md';
 
 function Navbarr() {
-  const dispatch = useDispatch();
+  
   const navigate = useNavigate();
 
-  const jwtToken = useSelector((state) => state.auth.token);
-  const email = useSelector((state) => state.auth.email);
+ 
 
   const [expanded, setExpanded] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -71,10 +70,7 @@ function Navbarr() {
     setMobileEventsOpen(false);
   };
 
-  const handleLogout = () => {
-    dispatch(logoutUser());
-    navigate('/login');
-  };
+
 
   // Enhanced dropdown handlers - proper single dropdown behavior
   const handleDropdownEnter = (dropdownType) => {
