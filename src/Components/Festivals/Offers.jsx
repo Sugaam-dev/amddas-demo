@@ -1,6 +1,7 @@
 import React, { useState, useEffect, memo, useRef } from 'react';
 import './Offers.css';
 
+
 const Offers = memo(() => {
   const [countdown, setCountdown] = useState({
     days: 8,
@@ -9,8 +10,10 @@ const Offers = memo(() => {
     seconds: 15
   });
 
+
   const containerRef = useRef();
   const [isVisible, setIsVisible] = useState(false);
+
 
   // Intersection Observer for performance
   useEffect(() => {
@@ -21,16 +24,20 @@ const Offers = memo(() => {
       { threshold: 0.1 }
     );
 
+
     if (containerRef.current) {
       observer.observe(containerRef.current);
     }
 
+
     return () => observer.disconnect();
   }, []);
+
 
   // Countdown timer effect
   useEffect(() => {
     if (!isVisible) return;
+
 
     const timer = setInterval(() => {
       setCountdown(prev => {
@@ -60,12 +67,15 @@ const Offers = memo(() => {
       });
     }, 1000);
 
+
     return () => clearInterval(timer);
   }, [isVisible]);
+
 
   // Optimized sparkle effect
   useEffect(() => {
     if (!isVisible) return;
+
 
     let sparkleCount = 0;
     const maxSparkles = 2;
@@ -106,15 +116,38 @@ const Offers = memo(() => {
     };
   }, [isVisible]);
 
+
   const orderNow = () => {
-    alert('🍽️ Thank you! Redirecting to our online ordering system...\n\nEnjoy 30% OFF on all Ganesh Festival specials!');
+    const message = encodeURIComponent(
+      "🍽️ Hi! I would like to place an order for the Ganesh Festival special with 30% OFF. Please share the menu and help me place my order.\n\n" +
+      "Items I'm interested in:\n" +
+     
+      "Looking forward to celebrating with authentic flavors!"
+    );
+    const whatsappNumber = "919632764963"; // Replace with your actual WhatsApp number
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+    window.open(whatsappURL, '_blank');
   };
+
 
   const viewMenu = () => {
-    alert('📋 Opening our special Ganesh Festival Menu...\n\nFeaturing traditional sweets, thalis, and festive delicacies!');
+    const message = encodeURIComponent(
+      "📋 Hi! I would like to see the complete Ganesh Festival special menu with 30% OFF offers.\n\n" +
+      "Please share details about:\n" +
+      "• All festival specials\n" +
+      "• Pricing with discount\n" +
+      "• Family combo deals\n" +
+      "• Free home delivery options\n\n" +
+      "Thank you! 🙏"
+    );
+    const whatsappNumber = "9632764963"; // Replace with your actual WhatsApp number
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+    window.open(whatsappURL, '_blank');
   };
 
+
   const formatNumber = (num) => num.toString().padStart(2, '0');
+
 
   return (
     <div ref={containerRef} className="offer-container">
@@ -200,5 +233,6 @@ const Offers = memo(() => {
     </div>
   );
 });
+
 
 export default Offers;

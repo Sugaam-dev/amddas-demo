@@ -13,7 +13,7 @@ function Contact() {
       {/* <Client/> */}
       {/* <WritetoUs/> */}
       <ContactUs/>
-      <WhatsAppFloat/>
+      {/* <WhatsAppFloat/> */}
     </div>
   )
 }

@@ -40,7 +40,7 @@ const Home = () => {
         <Gallery/>
         <Testimonial/>
         {/* <Milestones/> */}
-        <WhatsAppFloat/>
+        {/* <WhatsAppFloat/> */}
       </div>
     </>
   );

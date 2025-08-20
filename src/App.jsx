@@ -29,6 +29,7 @@ import Contact from './Components/Contacts/Contact';
 import Why_Us from './Components/WhyUs/Why_Us';
 import Festivals from './Components/Festivals/Festivals';
 import Footerr from './Components/Footer/Footerr'; // Import the new footer component
+import WhatsAppFloat from './Components/SubComponents/WhatsAppFloat';
 
 
 function ScrollToTop() {
@@ -142,6 +143,7 @@ function App() {
         {/* Catch-all Route for Undefined Paths */}
         <Route path='/*' element={<Error />} />
       </Routes>
+      <WhatsAppFloat/>
       <Footerr />
     </BrowserRouter>
   );
