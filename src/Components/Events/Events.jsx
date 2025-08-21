@@ -397,7 +397,7 @@ export default React.memo(function Carousel() {
     },
     {
       id: EVENT_SECTIONS.bhandaara,
-      title: 'Bhandaara Services',
+      title: 'Bhandara Services',
       image: '/images/Bhandaras.webp',
       imageAlt: 'Bhandaara Service',
       imageName: 'bhandaara',

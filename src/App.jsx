@@ -129,8 +129,8 @@ function App() {
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         <Route path='/about' element={<About/>}/>
         <Route path='/amddas-gallery' element={<Gallery/>}/>
-        <Route path='/amddas-events' element={<Events/>}/>
-        <Route path='/what-we-do' element={<WhatWeDo/>}/>
+        <Route path='/events' element={<Events/>}/>
+        <Route path='/services' element={<WhatWeDo/>}/>
 
        
         <Route path='/contact' element={<Contact/>}/>

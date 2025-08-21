@@ -1,11 +1,17 @@
-
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import './Eve-Section6.css';
+import { useNavigate } from 'react-router-dom';
 
 const EveSection6 = () => {
   const mainContentRef = useRef(null);
   const visualRef = useRef(null);
   const textualRef = useRef(null);
+  const navigate = useNavigate();
+
+  // Constants for scroll behavior (matching other components)
+  const SCROLL_DELAY = 800;
+  const NAVBAR_HEIGHT = 110;
+  const SCROLL_OFFSET = 20;
 
   useEffect(() => {
     const observerOptions = {
@@ -34,10 +40,37 @@ const EveSection6 = () => {
     };
   }, []);
 
-  const handleEventsNavigation = () => {
-    // Navigate to events page - you can replace this with your routing logic
-    window.location.href = '/amddas-events';
-  };
+  // Scroll to section utility function (matching navbar and footer logic)
+  const scrollToSection = useCallback((sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const elementRect = element.getBoundingClientRect();
+      const absoluteElementTop = elementRect.top + window.pageYOffset;
+      const scrollToPosition = Math.max(0, absoluteElementTop - NAVBAR_HEIGHT - SCROLL_OFFSET);
+      
+      window.scrollTo({
+        top: scrollToPosition,
+        behavior: 'smooth'
+      });
+    }
+  }, []);
+
+  // Handle Training navigation using the same logic as navbar and footer
+  const handleEventsNavigation = useCallback(() => {
+    const serviceType = 'Training'; // Training key for services navigation
+    const sectionId = `${serviceType.toLowerCase()}-section`; // Creates 'training-section'
+    const currentPath = window.location.pathname;
+    
+    if (currentPath === '/services') {
+      // If already on services page, scroll to training section
+      scrollToSection(sectionId);
+    } else {
+      // Navigate to services page and then scroll to training section
+      navigate('/services');
+      sessionStorage.setItem('scrollTarget', sectionId);
+      setTimeout(() => scrollToSection(sectionId), SCROLL_DELAY);
+    }
+  }, [navigate, scrollToSection]);
 
   return (
     <div className="experience-section">
@@ -47,7 +80,7 @@ const EveSection6 = () => {
           <div className="visual-wrapper" ref={visualRef}>
             <img 
               src="./images/Kitchen-Essential.jpg" 
-              alt="Outdoor event catering with tents and professional service setup"
+              alt="Kitchen management essentials training with professional guidance"
               className="display-media"
             />
           </div>
