@@ -1,49 +1,63 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback, useMemo } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Training.css';
-import culinaritraining from './images/Culrinary Training.webp'
-import food from './images/Food Handler Training.webp'
-import kitchen from './images/Kitchen Management Training.webp'
-import audit from './images/Audit Training.webp'
+import culinaritraining from './images/Culrinary Training.webp';
+import food from './images/Food Handler Training.webp';
+import kitchen from './images/Kitchen Management Training.webp';
+import audit from './images/Audit Training.webp';
+
 function Training() {
-  const sectionRefs = useRef([]);
+  const observerRef = useRef(null);
+  const sectionsSetRef = useRef(new Set());
+
+  // Memoize observer options to prevent recreation
+  const observerOptions = useMemo(() => ({
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  }), []);
+
+  // Memoized callback for intersection observer
+  const handleIntersection = useCallback((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('training-animate-in');
+      }
+    });
+  }, []);
+
+  // Optimized ref callback using Set for O(1) lookups
+  const addToRefs = useCallback((el) => {
+    if (el && !sectionsSetRef.current.has(el)) {
+      sectionsSetRef.current.add(el);
+      // Only observe if observer exists
+      if (observerRef.current) {
+        observerRef.current.observe(el);
+      }
+    }
+  }, []);
 
   useEffect(() => {
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+    // Create observer once
+    observerRef.current = new IntersectionObserver(handleIntersection, observerOptions);
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('training-animate-in');
-        }
-      });
-    }, observerOptions);
-
-    // Observe all sections
-    sectionRefs.current.forEach((section) => {
-      if (section) {
-        observer.observe(section);
+    // Observe existing sections that were already added to refs
+    sectionsSetRef.current.forEach((section) => {
+      if (observerRef.current) {
+        observerRef.current.observe(section);
       }
     });
 
+    // Cleanup function
     return () => {
-      sectionRefs.current.forEach((section) => {
-        if (section) {
-          observer.unobserve(section);
-        }
-      });
+      if (observerRef.current) {
+        sectionsSetRef.current.forEach((section) => {
+          observerRef.current.unobserve(section);
+        });
+        observerRef.current.disconnect();
+      }
+      sectionsSetRef.current.clear();
     };
-  }, []);
-
-  const addToRefs = (el) => {
-    if (el && !sectionRefs.current.includes(el)) {
-      sectionRefs.current.push(el);
-    }
-  };
+  }, [observerOptions, handleIntersection]);
 
   return (
     <div className="training-container" id="training-section">
@@ -72,6 +86,7 @@ function Training() {
                   alt="Culinary Training" 
                   className="training-main-image"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -109,6 +124,7 @@ function Training() {
                   alt="Food Handler Training" 
                   className="training-main-image"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -130,6 +146,7 @@ function Training() {
                   alt="Kitchen Management Training" 
                   className="training-main-image"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -167,6 +184,7 @@ function Training() {
                   alt="Audit Training" 
                   className="training-main-image"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -177,4 +195,4 @@ function Training() {
   );
 }
 
-export default Training;
+export default React.memo(Training);

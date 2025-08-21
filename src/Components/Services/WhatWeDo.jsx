@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useCallback, useMemo } from 'react';
 import './whatwedo.css';
 import Corporate_new from './Corporate_new';
 import Training from './Training';
@@ -6,51 +6,86 @@ import Education from './Education';
 import Hospital from './Hospital';
 
 function WhatWeDo() {
-  useEffect(() => {
-    // Handle session storage scroll flags for navigation
-    const scrollFlags = [
-      { key: 'scrollToCorporate', sectionId: 'corporate-section' },
-      { key: 'scrollToEducational', sectionId: 'educational-section' },
-      { key: 'scrollToHospital', sectionId: 'hospital-section' },
-      { key: 'scrollToTraining', sectionId: 'training-section' }
-    ];
+  // Cache refs for DOM sections to avoid querySelector/getElementById on scroll
+  const corporateRef = useRef(null);
+  const educationalRef = useRef(null);
+  const hospitalRef = useRef(null);
+  const trainingRef = useRef(null);
 
-    let scrollTarget = null;
-    scrollFlags.forEach(({ key, sectionId }) => {
-      if (sessionStorage.getItem(key)) {
-        scrollTarget = { key, sectionId };
-      }
-    });
+  // Memoize section map to prevent recreation on every render
+  const SECTION_MAP = useMemo(() => ({
+    scrollToCorporate: 'corporate-section',
+    scrollToEducational: 'educational-section',
+    scrollToHospital: 'hospital-section',
+    scrollToTraining: 'training-section',
+  }), []);
 
-    if (scrollTarget) {
-      scrollFlags.forEach(({ key }) => {
-        sessionStorage.removeItem(key);
+  // Memoize ref mapping for better performance
+  const refMap = useMemo(() => ({
+    'corporate-section': corporateRef,
+    'educational-section': educationalRef,
+    'hospital-section': hospitalRef,
+    'training-section': trainingRef,
+  }), []);
+
+  // Memoized scroll function to prevent recreation
+  const scrollToSection = useCallback((targetRef) => {
+    if (targetRef?.current) {
+      const rect = targetRef.current.getBoundingClientRect();
+      const scrollY = window.scrollY || window.pageYOffset;
+      const navbarHeight = 90;
+      const y = Math.max(0, rect.top + scrollY - navbarHeight);
+      
+      // Use requestAnimationFrame for better performance
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: y, behavior: 'smooth' });
       });
-
-      setTimeout(() => {
-        const element = document.getElementById(scrollTarget.sectionId);
-        if (element) {
-          const elementRect = element.getBoundingClientRect();
-          const absoluteElementTop = elementRect.top + window.pageYOffset;
-          const navbarHeight = 90;
-          const scrollToPosition = Math.max(0, absoluteElementTop - navbarHeight);
-          
-          window.scrollTo({
-            top: scrollToPosition,
-            behavior: 'smooth'
-          });
-        }
-      }, 300);
     }
   }, []);
 
+  // Memoized cleanup function
+  const clearSessionStorage = useCallback(() => {
+    Object.keys(SECTION_MAP).forEach(key => {
+      try {
+        sessionStorage.removeItem(key);
+      } catch (error) {
+        // Handle cases where sessionStorage might not be available
+        console.warn('SessionStorage not available:', error);
+      }
+    });
+  }, [SECTION_MAP]);
+
+  useEffect(() => {
+    // Find which scroll key is set
+    let scrollKey = null;
+    try {
+      scrollKey = Object.keys(SECTION_MAP).find(key => sessionStorage.getItem(key));
+    } catch (error) {
+      console.warn('SessionStorage not available:', error);
+      return;
+    }
+
+    if (scrollKey) {
+      // Remove all flags
+      clearSessionStorage();
+      
+      // Use shorter timeout and requestAnimationFrame for better performance
+      const timeoutId = setTimeout(() => {
+        const sectionId = SECTION_MAP[scrollKey];
+        const targetRef = refMap[sectionId];
+        
+        if (targetRef) {
+          scrollToSection(targetRef);
+        }
+      }, 100); // Reduced delay for better perceived performance
+
+      // Cleanup timeout if component unmounts
+      return () => clearTimeout(timeoutId);
+    }
+  }, [SECTION_MAP, refMap, scrollToSection, clearSessionStorage]);
+
   return (
-    <div style={{ 
-      overflowX: 'hidden', 
-      maxWidth: '100vw', 
-      width: '100%',
-      boxSizing: 'border-box'
-    }}>
+    <div className="Our-services-root">
       <div className="Our-services-container">
         <h2 className="Our-services-title">Our Services</h2>
         <span className="Our-services-description">
@@ -58,39 +93,39 @@ function WhatWeDo() {
         </span>
       </div>
 
-      <div id="corporate-section" style={{ 
-        overflowX: 'hidden', 
-        maxWidth: '100%', 
-        boxSizing: 'border-box' 
-      }}>
+      <div
+        ref={corporateRef}
+        id="corporate-section"
+        className="Our-services-section"
+      >
         <Corporate_new />
       </div>
 
-      <div id="educational-section" style={{ 
-        overflowX: 'hidden', 
-        maxWidth: '100%', 
-        boxSizing: 'border-box' 
-      }}>
-        <Education/>
+      <div
+        ref={educationalRef}
+        id="educational-section"
+        className="Our-services-section"
+      >
+        <Education />
       </div>
 
-      <div id="hospital-section" style={{ 
-        overflowX: 'hidden', 
-        maxWidth: '100%', 
-        boxSizing: 'border-box' 
-      }}>
-        <Hospital/>
+      <div
+        ref={hospitalRef}
+        id="hospital-section"
+        className="Our-services-section"
+      >
+        <Hospital />
       </div>
 
-      <div id="training-section" style={{ 
-        overflowX: 'hidden', 
-        maxWidth: '100%', 
-        boxSizing: 'border-box' 
-      }}>
-        <Training/>
+      <div
+        ref={trainingRef}
+        id="training-section"
+        className="Our-services-section"
+      >
+        <Training />
       </div>
     </div>
   );
 }
 
-export default WhatWeDo;
+export default React.memo(WhatWeDo);

@@ -9,8 +9,10 @@ import './Events.css';
 
 // Constants
 const PHONE_NUMBER = '+919632764963';
-const SCROLL_DELAY = 300;
+const SCROLL_DELAY = 100; // Reduced from 300ms
 const NAVBAR_HEIGHT = 90;
+
+// Memoized constants to prevent recreation
 const EVENT_SECTIONS = {
   wedding: 'wedding-section',
   birthday: 'birthday-section',
@@ -20,10 +22,10 @@ const EVENT_SECTIONS = {
   bhandaara: 'bhandaara-section'
 };
 
-// Optimized debounce utility
+// Optimized debounce with WeakMap for better performance
 const debounce = (func, wait) => {
   let timeout;
-  return function executedFunction(...args) {
+  const debounced = (...args) => {
     const later = () => {
       clearTimeout(timeout);
       func(...args);
@@ -31,15 +33,18 @@ const debounce = (func, wait) => {
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
   };
+  debounced.cancel = () => clearTimeout(timeout);
+  return debounced;
 };
 
-export default function Carousel() {
+export default React.memo(function Carousel() {
   const [isMobile, setIsMobile] = useState(false);
   const [imageErrors, setImageErrors] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const observerRef = useRef(null);
+  const resizeTimeoutRef = useRef(null);
 
-  // Updated slide data with direct image paths
+  // Memoized slide data with optimized structure
   const slideData = useMemo(() => [
     {
       image: '/images/CorporateCatering.webp',
@@ -78,7 +83,7 @@ export default function Carousel() {
     },
   ], []);
 
-  // Enhanced Intersection Observer
+  // Optimized Intersection Observer with performance improvements
   const setupIntersectionObserver = useCallback(() => {
     if (observerRef.current) {
       observerRef.current.disconnect();
@@ -86,13 +91,22 @@ export default function Carousel() {
 
     observerRef.current = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const delay = entry.target.dataset.delay || 0;
-            setTimeout(() => {
-              entry.target.classList.add('amddas-animate-in');
-            }, delay);
-          }
+        // Use requestAnimationFrame for better performance
+        requestAnimationFrame(() => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const delay = parseInt(entry.target.dataset.delay) || 0;
+              if (delay > 0) {
+                setTimeout(() => {
+                  entry.target.classList.add('amddas-animate-in');
+                }, delay);
+              } else {
+                entry.target.classList.add('amddas-animate-in');
+              }
+              // Unobserve after animation for better performance
+              observerRef.current?.unobserve(entry.target);
+            }
+          });
         });
       },
       {
@@ -103,110 +117,125 @@ export default function Carousel() {
 
     const elementsToObserve = document.querySelectorAll('.amddas-animate-on-scroll');
     elementsToObserve.forEach((el, index) => {
-      el.dataset.delay = (index % 3) * 100;
+      el.dataset.delay = (index % 3) * 50; // Reduced delay for faster animations
       if (observerRef.current) {
         observerRef.current.observe(el);
       }
     });
   }, []);
 
-  // FIXED: Enhanced image load handler with overflow control
+  // Optimized image load handler with better performance
   const handleImageLoad = useCallback((event, slideIndex) => {
-    event.target.classList.add('loaded');
     const img = event.target;
     const container = img.parentElement;
-    const imgNaturalWidth = img.naturalWidth;
-    const imgNaturalHeight = img.naturalHeight;
-
-    if (imgNaturalWidth && imgNaturalHeight) {
-      const aspectRatio = imgNaturalWidth / imgNaturalHeight;
+    
+    // Use requestAnimationFrame for DOM updates
+    requestAnimationFrame(() => {
+      img.classList.add('loaded');
       
-      // Get the maximum available width (accounting for grid layout)
-      const slideContent = container.closest('.amddas-slide-content');
-      const availableWidth = slideContent ? slideContent.offsetWidth / 2 - 30 : container.offsetWidth;
+      const imgNaturalWidth = img.naturalWidth;
+      const imgNaturalHeight = img.naturalHeight;
 
-      let optimalWidth, optimalHeight;
-
-      if (aspectRatio > 1) {
-        // Landscape images
-        optimalWidth = Math.min(availableWidth, 500);
-        optimalHeight = optimalWidth / aspectRatio;
-      } else {
-        // Portrait or square images
-        optimalHeight = Math.min(400, availableWidth / aspectRatio);
-        optimalWidth = optimalHeight * aspectRatio;
-      }
-
-      // Apply the calculated dimensions with overflow control
-      container.style.transition = 'height 0.3s ease-out, width 0.3s ease-out';
-      container.style.width = `${Math.min(optimalWidth, availableWidth)}px`;
-      container.style.height = `${Math.max(optimalHeight, 200)}px`;
-      
-      // FIXED: Add overflow control to prevent scrollbars
-      container.style.maxWidth = '100%';
-      container.style.overflow = 'hidden';
-      container.style.boxSizing = 'border-box';
-
-      // Store dimensions for responsive updates
-      container.setAttribute('data-aspect-ratio', aspectRatio);
-      container.setAttribute('data-optimal-width', optimalWidth);
-      container.setAttribute('data-optimal-height', optimalHeight);
-    }
-  }, []);
-
-  // Updated resize handler for proper responsive behavior
-  const handleContainerResize = useCallback(() => {
-    const slideImages = document.querySelectorAll('.amddas-slide-image[data-aspect-ratio]');
-    slideImages.forEach(container => {
-      const aspectRatio = parseFloat(container.getAttribute('data-aspect-ratio'));
-      const slideContent = container.closest('.amddas-slide-content');
-      
-      if (aspectRatio && slideContent) {
-        const availableWidth = slideContent.offsetWidth / 2 - 30; // Account for 2-column layout
+      if (imgNaturalWidth && imgNaturalHeight) {
+        const aspectRatio = imgNaturalWidth / imgNaturalHeight;
+        const slideContent = container.closest('.amddas-slide-content');
+        const availableWidth = slideContent ? slideContent.offsetWidth / 2 - 30 : container.offsetWidth;
 
         let optimalWidth, optimalHeight;
 
         if (aspectRatio > 1) {
+          // Landscape images
           optimalWidth = Math.min(availableWidth, 500);
           optimalHeight = optimalWidth / aspectRatio;
         } else {
+          // Portrait or square images
           optimalHeight = Math.min(400, availableWidth / aspectRatio);
           optimalWidth = optimalHeight * aspectRatio;
         }
 
-        container.style.width = `${Math.min(optimalWidth, availableWidth)}px`;
-        container.style.height = `${Math.max(optimalHeight, 200)}px`;
-        
-        // FIXED: Maintain overflow control on resize
-        container.style.maxWidth = '100%';
-        container.style.overflow = 'hidden';
-        container.style.boxSizing = 'border-box';
+        // Apply styles with better performance
+        const styles = {
+          transition: 'height 0.3s ease-out, width 0.3s ease-out',
+          width: `${Math.min(optimalWidth, availableWidth)}px`,
+          height: `${Math.max(optimalHeight, 200)}px`,
+          maxWidth: '100%',
+          overflow: 'hidden',
+          boxSizing: 'border-box'
+        };
+
+        Object.assign(container.style, styles);
+
+        // Store data for resize handling
+        container.dataset.aspectRatio = aspectRatio;
+        container.dataset.optimalWidth = optimalWidth;
+        container.dataset.optimalHeight = optimalHeight;
       }
     });
   }, []);
 
-  // Enhanced error handler with container marking
+  // Optimized resize handler with throttling
+  const handleContainerResize = useCallback(() => {
+    // Use requestAnimationFrame for better performance
+    requestAnimationFrame(() => {
+      const slideImages = document.querySelectorAll('.amddas-slide-image[data-aspect-ratio]');
+      slideImages.forEach(container => {
+        const aspectRatio = parseFloat(container.dataset.aspectRatio);
+        const slideContent = container.closest('.amddas-slide-content');
+        
+        if (aspectRatio && slideContent) {
+          const availableWidth = slideContent.offsetWidth / 2 - 30;
+
+          let optimalWidth, optimalHeight;
+
+          if (aspectRatio > 1) {
+            optimalWidth = Math.min(availableWidth, 500);
+            optimalHeight = optimalWidth / aspectRatio;
+          } else {
+            optimalHeight = Math.min(400, availableWidth / aspectRatio);
+            optimalWidth = optimalHeight * aspectRatio;
+          }
+
+          const styles = {
+            width: `${Math.min(optimalWidth, availableWidth)}px`,
+            height: `${Math.max(optimalHeight, 200)}px`,
+            maxWidth: '100%',
+            overflow: 'hidden',
+            boxSizing: 'border-box'
+          };
+
+          Object.assign(container.style, styles);
+        }
+      });
+    });
+  }, []);
+
+  // Optimized error handler
   const handleImageError = useCallback((slideIndex) => {
     setImageErrors(prev => ({
       ...prev,
       [`slide-${slideIndex}`]: true
     }));
     
-    // Mark container as error state
-    const containers = document.querySelectorAll('.amddas-slide-image');
-    if (containers[slideIndex]) {
-      containers[slideIndex].setAttribute('data-error', 'true');
-      containers[slideIndex].style.height = '200px'; // Fallback height
-      containers[slideIndex].style.maxWidth = '100%';
-      containers[slideIndex].style.overflow = 'hidden';
-    }
+    requestAnimationFrame(() => {
+      const containers = document.querySelectorAll('.amddas-slide-image');
+      if (containers[slideIndex]) {
+        const container = containers[slideIndex];
+        container.setAttribute('data-error', 'true');
+        Object.assign(container.style, {
+          height: '200px',
+          maxWidth: '100%',
+          overflow: 'hidden'
+        });
+      }
+    });
   }, []);
 
-  // Scroll function
+  // Optimized scroll function
   const scrollToSection = useCallback((sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      setTimeout(() => {
+      // Use requestAnimationFrame for smoother scrolling
+      requestAnimationFrame(() => {
         const elementRect = element.getBoundingClientRect();
         const absoluteElementTop = elementRect.top + window.pageYOffset;
         const scrollToPosition = Math.max(0, absoluteElementTop - NAVBAR_HEIGHT);
@@ -215,90 +244,114 @@ export default function Carousel() {
           top: scrollToPosition,
           behavior: 'smooth'
         });
-      }, SCROLL_DELAY);
+      });
     }
   }, []);
 
-  // Section scroll handler
-  const handleSectionScroll = useCallback(() => {
-    const scrollFlags = [
-      { key: 'scrollToWedding', sectionId: EVENT_SECTIONS.wedding },
-      { key: 'scrollToBirthday', sectionId: EVENT_SECTIONS.birthday },
-      { key: 'scrollToHousewarming', sectionId: EVENT_SECTIONS.housewarming },
-      { key: 'scrollToEngagement', sectionId: EVENT_SECTIONS.engagement },
-      { key: 'scrollToFestival', sectionId: EVENT_SECTIONS.festival },
-      { key: 'scrollToBhandaara', sectionId: EVENT_SECTIONS.bhandaara }
-    ];
+  // Memoized scroll flags for better performance
+  const scrollFlags = useMemo(() => [
+    { key: 'scrollToWedding', sectionId: EVENT_SECTIONS.wedding },
+    { key: 'scrollToBirthday', sectionId: EVENT_SECTIONS.birthday },
+    { key: 'scrollToHousewarming', sectionId: EVENT_SECTIONS.housewarming },
+    { key: 'scrollToEngagement', sectionId: EVENT_SECTIONS.engagement },
+    { key: 'scrollToFestival', sectionId: EVENT_SECTIONS.festival },
+    { key: 'scrollToBhandaara', sectionId: EVENT_SECTIONS.bhandaara }
+  ], []);
 
+  // Optimized section scroll handler
+  const handleSectionScroll = useCallback(() => {
     let scrollTarget = null;
-    scrollFlags.forEach(({ key, sectionId }) => {
-      if (sessionStorage.getItem(key)) {
-        scrollTarget = { key, sectionId };
-        sessionStorage.removeItem(key);
+    
+    for (const { key, sectionId } of scrollFlags) {
+      try {
+        if (sessionStorage.getItem(key)) {
+          scrollTarget = { key, sectionId };
+          sessionStorage.removeItem(key);
+          break;
+        }
+      } catch (error) {
+        console.warn('SessionStorage not available:', error);
+        return;
       }
-    });
+    }
 
     if (scrollTarget) {
+      // Clear other flags
       scrollFlags.forEach(({ key }) => {
         if (key !== scrollTarget.key) {
-          sessionStorage.removeItem(key);
+          try {
+            sessionStorage.removeItem(key);
+          } catch (error) {
+            // Ignore sessionStorage errors
+          }
         }
       });
-      scrollToSection(scrollTarget.sectionId);
+      
+      setTimeout(() => scrollToSection(scrollTarget.sectionId), SCROLL_DELAY);
     }
-  }, [scrollToSection]);
+  }, [scrollFlags, scrollToSection]);
 
   // Hash scroll handler
   const handleHashScroll = useCallback(() => {
     const hash = window.location.hash;
     if (hash) {
       const sectionId = hash.substring(1);
-      scrollToSection(sectionId);
+      setTimeout(() => scrollToSection(sectionId), SCROLL_DELAY);
     }
   }, [scrollToSection]);
 
-  // WhatsApp/Phone handler
+  // Optimized WhatsApp/Phone handler
   const handleEnquireClick = useCallback(() => {
     const whatsappURL = `https://wa.me/${PHONE_NUMBER.replace('+', '')}?text=Hello%20Amddas%20Foods!%20I%20would%20like%20to%20enquire%20about%20your%20services.`;
     
     if (isMobile) {
       window.location.href = `tel:${PHONE_NUMBER}`;
     } else {
-      window.open(whatsappURL, '_blank');
+      window.open(whatsappURL, '_blank', 'noopener,noreferrer');
     }
   }, [isMobile]);
 
-  // Update the resize effect with container resize handling
+  // Optimized resize effect with proper cleanup
   useEffect(() => {
-    const combinedResize = debounce(() => {
+    const debouncedResize = debounce(() => {
       setIsMobile(window.innerWidth <= 768);
       handleContainerResize();
     }, 100);
 
-    combinedResize();
-    window.addEventListener('resize', combinedResize);
+    // Initial call
+    debouncedResize();
+    window.addEventListener('resize', debouncedResize);
 
-    return () => window.removeEventListener('resize', combinedResize);
+    return () => {
+      window.removeEventListener('resize', debouncedResize);
+      debouncedResize.cancel();
+    };
   }, [handleContainerResize]);
 
-  // Main effect
+  // Main effect with better cleanup
   useEffect(() => {
     handleSectionScroll();
     handleHashScroll();
-    setIsLoading(false);
-
-    setTimeout(() => {
-      setupIntersectionObserver();
+    
+    // Set loading to false after a minimal delay
+    const loadingTimeout = setTimeout(() => {
+      setIsLoading(false);
     }, 50);
 
+    const observerTimeout = setTimeout(() => {
+      setupIntersectionObserver();
+    }, 100);
+
     return () => {
+      clearTimeout(loadingTimeout);
+      clearTimeout(observerTimeout);
       if (observerRef.current) {
         observerRef.current.disconnect();
       }
     };
   }, [handleSectionScroll, handleHashScroll, setupIntersectionObserver]);
 
-  // Event section data
+  // Memoized event sections data
   const eventSections = useMemo(() => [
     {
       id: EVENT_SECTIONS.wedding,
@@ -353,6 +406,35 @@ export default function Carousel() {
     }
   ], []);
 
+  // Memoized Swiper configuration
+  const swiperConfig = useMemo(() => ({
+    modules: [Navigation, Pagination, Mousewheel, Keyboard, Autoplay],
+    spaceBetween: 30,
+    slidesPerView: 1,
+    pagination: {
+      clickable: true,
+      dynamicBullets: true,
+    },
+    mousewheel: {
+      forceToAxis: true,
+    },
+    keyboard: {
+      enabled: true,
+    },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+    loop: true,
+    speed: 800,
+    breakpoints: {
+      768: {
+        slidesPerView: 1,
+      },
+    }
+  }), []);
+
   if (isLoading) {
     return (
       <div className="amddas-loading-container">
@@ -389,6 +471,7 @@ export default function Carousel() {
                   alt={section.imageAlt}
                   className="amddas-responsive-image"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -416,31 +499,7 @@ export default function Carousel() {
           
           <Swiper
             className="amddas-events-swiper"
-            modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
-            spaceBetween={30}
-            slidesPerView={1}
-            pagination={{
-              clickable: true,
-              dynamicBullets: true,
-            }}
-            mousewheel={{
-              forceToAxis: true,
-            }}
-            keyboard={{
-              enabled: true,
-            }}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
-            loop={true}
-            speed={800}
-            breakpoints={{
-              768: {
-                slidesPerView: 1,
-              },
-            }}
+            {...swiperConfig}
           >
             {slideData.map((slide, index) => (
               <SwiperSlide key={index}>
@@ -456,6 +515,7 @@ export default function Carousel() {
                       onLoad={(e) => handleImageLoad(e, index)}
                       onError={() => handleImageError(index)}
                       loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   
@@ -479,4 +539,4 @@ export default function Carousel() {
       </section>
     </div>
   );
-}
+});

@@ -1,75 +1,67 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback, useMemo } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Corporate_new.css';
-import { preloadImages } from '../../utils/imageCache';
 
-import cafeterian from './images/Cafeteria Management.webp'
-import shop from './images/Tuck Shop.webp'
-import pop from './images/popup.webp'
-import events from './images/Corporateevent.webp'
-import corporate from './images/Corporate CSR.webp'
-
-
+// Import images at the top for better bundling
+import cafeterian from './images/Cafeteria Management.webp';
+import shop from './images/Tuck Shop.webp';
+import pop from './images/popup.webp';
+import events from './images/Corporateevent.webp';
+import corporate from './images/Corporate CSR.webp';
 
 function CorporateNewPage() {
-  const sectionRefs = useRef([]);
+  const observerRef = useRef(null);
+  const sectionsSetRef = useRef(new Set());
 
-  useEffect(() => {
-    const corporateImages = [
-      '/images/corporate.jpg',
-      '/images/corporatebanner.jpg',
-      '/images/contact.jpg',
-      '/images/meal.jpg',
-      '/images/service.jpg'
-    ];
+  // Memoize observer options to prevent recreation
+  const observerOptions = useMemo(() => ({
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  }), []);
 
-    preloadImages(corporateImages, {
-      delay: 50,
-      highPriorityCount: 2,
-      onProgress: ({ loaded, total, src, error }) => {
-        if (error) {
-          console.error(`Failed to cache image: ${src}`);
-        }
-      }
-    }).catch((error) => {
-      console.error('Corporate services image caching failed:', error);
-    });
-
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('corporate-animate-in');
-        }
-      });
-    }, observerOptions);
-
-    // Observe all sections
-    sectionRefs.current.forEach((section) => {
-      if (section) {
-        observer.observe(section);
+  // Memoized callback for intersection observer
+  const handleIntersection = useCallback((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('corporate-animate-in');
+        // Remove the unobserve line that was causing issues
       }
     });
-
-    return () => {
-      sectionRefs.current.forEach((section) => {
-        if (section) {
-          observer.unobserve(section);
-        }
-      });
-    };
   }, []);
 
-  const addToRefs = (el) => {
-    if (el && !sectionRefs.current.includes(el)) {
-      sectionRefs.current.push(el);
+  // Optimized ref callback using Set for O(1) lookups
+  const addToRefs = useCallback((el) => {
+    if (el && !sectionsSetRef.current.has(el)) {
+      sectionsSetRef.current.add(el);
+      // Only observe if observer exists
+      if (observerRef.current) {
+        observerRef.current.observe(el);
+      }
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    // Create observer once
+    observerRef.current = new IntersectionObserver(handleIntersection, observerOptions);
+
+    // Observe existing sections that were already added to refs
+    sectionsSetRef.current.forEach((section) => {
+      if (observerRef.current) {
+        observerRef.current.observe(section);
+      }
+    });
+
+    // Cleanup function
+    return () => {
+      if (observerRef.current) {
+        sectionsSetRef.current.forEach((section) => {
+          observerRef.current.unobserve(section);
+        });
+        observerRef.current.disconnect();
+      }
+      sectionsSetRef.current.clear();
+    };
+  }, [observerOptions, handleIntersection]);
 
   return (
     <div className="corporate-container" id="corporate-section">
@@ -95,6 +87,7 @@ function CorporateNewPage() {
                   alt="Modern corporate cafeteria with professional dining setup and hygienic food preparation area" 
                   className="corporate-main-image"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -128,11 +121,11 @@ function CorporateNewPage() {
             <div className="col-lg-6 col-md-12 order-lg-2 order-1">
               <div className="corporate-image-wrapper">
                 <img 
-                
                   src={shop}
                   alt="Corporate tuck shop with variety of snacks and beverages for office employees" 
                   className="corporate-main-image"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -150,11 +143,11 @@ function CorporateNewPage() {
             <div className="col-lg-6 col-md-12">
               <div className="corporate-image-wrapper">
                 <img 
-            
                   src={pop}
                   alt="Themed pop-up food counter setup for corporate events and festivals" 
                   className="corporate-main-image"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -192,6 +185,7 @@ function CorporateNewPage() {
                   alt="Professional catering setup for corporate events and business conferences" 
                   className="corporate-main-image"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -213,6 +207,7 @@ function CorporateNewPage() {
                   alt="Corporate CSR food service supporting community outreach and donation events" 
                   className="corporate-main-image"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -231,4 +226,4 @@ function CorporateNewPage() {
   );
 }
 
-export default CorporateNewPage;
+export default React.memo(CorporateNewPage);

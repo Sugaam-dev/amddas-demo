@@ -127,7 +127,7 @@
   color: white;
   text-decoration: none;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   padding: 8px 14px;
   border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 20px;
@@ -154,7 +154,7 @@
   color: white;
   text-decoration: none;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   padding: 8px 14px;
   border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 20px;
@@ -597,14 +597,14 @@
 }
 
 /* Focus states for accessibility */
-.modern-nav-item:focus,
-.modern-dropdown-btn:focus,
+/* .modern-nav-item:focus,
+.modern-dropdown:focus,
 .modern-mobile-item:focus,
 .modern-mobile-main-link:focus,
 .modern-mobile-toggle-btn:focus {
   outline: 2px solid #b8860b;
   outline-offset: 2px;
-}
+} */
 
 /* Enhanced backdrop effects with fallbacks */
 @supports not (backdrop-filter: blur(10px)) {

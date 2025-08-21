@@ -1,46 +1,84 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Navbar, Container, Offcanvas } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Styles/Navbar.css';
-
-
 import { useNavigate, Link } from 'react-router-dom';
 import { CiMenuBurger } from "react-icons/ci";
 import { FaLinkedinIn, FaFacebookF, FaInstagram, FaYoutube, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { MdLocationOn } from 'react-icons/md';
 
+// Constants moved outside component to prevent recreation
+const NAVBAR_HEIGHT = 110;
+const SCROLL_OFFSET = 20;
+const DROPDOWN_DELAY = 150;
+const NAV_LEAVE_DELAY = 100;
+const SCROLL_DELAY = 800;
+const SCROLL_THRESHOLD = 50;
+
+// Social links configuration
+const SOCIAL_LINKS = [
+  { href: "https://linkedin.com", icon: FaLinkedinIn, label: "LinkedIn" },
+  { href: "https://facebook.com", icon: FaFacebookF, label: "Facebook" },
+  { href: "https://instagram.com", icon: FaInstagram, label: "Instagram" },
+  { href: "https://youtube.com", icon: FaYoutube, label: "YouTube" }
+];
+
+// Services configuration
+const SERVICES = [
+  { key: 'Corporate', label: 'Corporate' },
+  { key: 'Educational', label: 'Educational Institute' },
+  { key: 'Hospital', label: 'Hospitals' },
+  { key: 'Training', label: 'Training' }
+];
+
+// Events configuration
+const EVENTS = [
+  { key: 'Wedding', label: 'Wedding' },
+  { key: 'Housewarming', label: 'House Warming' },
+  { key: 'Birthday', label: 'Birthday' },
+  { key: 'Engagement', label: 'Engagement' },
+  { key: 'Festival', label: 'Community Festivals' },
+  { key: 'Bhandaara', label: 'Bhandaara' }
+];
+
 function Navbarr() {
-  
   const navigate = useNavigate();
 
- 
-
+  // State management
   const [expanded, setExpanded] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [eventsOpen, setEventsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  
-  // Mobile dropdown states
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileEventsOpen, setMobileEventsOpen] = useState(false);
-  
-  // Hover states for chevron animation
   const [servicesHover, setServicesHover] = useState(false);
   const [eventsHover, setEventsHover] = useState(false);
-  
-  // Dropdown timeout for better hover management
   const [dropdownTimeout, setDropdownTimeout] = useState(null);
 
-  // Handle scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+  // Memoized scroll handler
+  const handleScroll = useCallback(() => {
+    setScrolled(window.scrollY > SCROLL_THRESHOLD);
   }, []);
 
-  // Close dropdowns when clicking outside
+  // Scroll effect with cleanup
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
+
+  // Memoized close all dropdowns function
+  const closeAllDropdowns = useCallback(() => {
+    setServicesOpen(false);
+    setEventsOpen(false);
+    setServicesHover(false);
+    setEventsHover(false);
+    if (dropdownTimeout) {
+      clearTimeout(dropdownTimeout);
+      setDropdownTimeout(null);
+    }
+  }, [dropdownTimeout]);
+
+  // Click outside and escape key handlers
   useEffect(() => {
     const handleClickOutside = (event) => {
       const navMenu = document.querySelector('.modern-nav-menu');
@@ -62,25 +100,21 @@ function Navbarr() {
       document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('keydown', handleEscapeKey);
     };
-  }, []);
+  }, [closeAllDropdowns]);
 
-  const handleClose = () => {
+  // Optimized handlers
+  const handleClose = useCallback(() => {
     setExpanded(false);
     setMobileServicesOpen(false);
     setMobileEventsOpen(false);
-  };
+  }, []);
 
-
-
-  // Enhanced dropdown handlers - proper single dropdown behavior
-  const handleDropdownEnter = (dropdownType) => {
-    // Clear any existing timeout
+  const handleDropdownEnter = useCallback((dropdownType) => {
     if (dropdownTimeout) {
       clearTimeout(dropdownTimeout);
       setDropdownTimeout(null);
     }
     
-    // Open requested dropdown and close the other
     if (dropdownType === 'services') {
       setServicesOpen(true);
       setEventsOpen(false);
@@ -88,159 +122,134 @@ function Navbarr() {
       setEventsOpen(true);
       setServicesOpen(false);
     }
-  };
+  }, [dropdownTimeout]);
 
-  const handleDropdownLeave = (dropdownType) => {
-    // Set timeout to close the dropdown after delay
+  const handleDropdownLeave = useCallback((dropdownType) => {
     const timeout = setTimeout(() => {
       if (dropdownType === 'services') {
         setServicesOpen(false);
       } else if (dropdownType === 'events') {
         setEventsOpen(false);
       }
-    }, 150); // 150ms delay for better UX
+    }, DROPDOWN_DELAY);
     
     setDropdownTimeout(timeout);
-  };
+  }, []);
 
-  // Close all dropdowns immediately
-  const closeAllDropdowns = () => {
-    setServicesOpen(false);
-    setEventsOpen(false);
-    setServicesHover(false);
-    setEventsHover(false);
-    if (dropdownTimeout) {
-      clearTimeout(dropdownTimeout);
-      setDropdownTimeout(null);
-    }
-  };
-
-  // Close dropdowns when mouse leaves navigation area
-  const handleNavMouseLeave = () => {
+  const handleNavMouseLeave = useCallback(() => {
     const timeout = setTimeout(() => {
       closeAllDropdowns();
-    }, 100);
+    }, NAV_LEAVE_DELAY);
     setDropdownTimeout(timeout);
-  };
+  }, [closeAllDropdowns]);
 
-  // Simple navigation handlers
-  const navigateToPage = (path) => {
+  const navigateToPage = useCallback((path) => {
     navigate(path);
-    setServicesOpen(false);
-    setEventsOpen(false);
-    setServicesHover(false);
-    setEventsHover(false);
+    closeAllDropdowns();
     handleClose();
-  };
+  }, [navigate, closeAllDropdowns, handleClose]);
 
-  const handleServiceClick = (serviceType) => {
+  // Optimized scroll utility function
+  const scrollToSection = useCallback((sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const elementRect = element.getBoundingClientRect();
+      const absoluteElementTop = elementRect.top + window.pageYOffset;
+      const scrollToPosition = Math.max(0, absoluteElementTop - NAVBAR_HEIGHT - SCROLL_OFFSET);
+      
+      window.scrollTo({
+        top: scrollToPosition,
+        behavior: 'smooth'
+      });
+    }
+  }, []);
+
+  const handleServiceClick = useCallback((serviceType) => {
+    const sectionId = `${serviceType.toLowerCase()}-section`;
     const currentPath = window.location.pathname;
+    
     if (currentPath === '/what-we-do') {
-      const element = document.getElementById(`${serviceType.toLowerCase()}-section`);
-      if (element) {
-        // Better scroll calculation with navbar offset
-        const elementRect = element.getBoundingClientRect();
-        const absoluteElementTop = elementRect.top + window.pageYOffset;
-        const navbarHeight = 110; // Updated for new navbar height
-        const offset = 20;
-        const scrollToPosition = Math.max(0, absoluteElementTop - navbarHeight - offset);
-        
-        window.scrollTo({
-          top: scrollToPosition,
-          behavior: 'smooth'
-        });
-      }
+      scrollToSection(sectionId);
     } else {
       navigate('/what-we-do');
-      sessionStorage.setItem('scrollTarget', `${serviceType.toLowerCase()}-section`);
-      
-      setTimeout(() => {
-        const element = document.getElementById(`${serviceType.toLowerCase()}-section`);
-        if (element) {
-          const elementRect = element.getBoundingClientRect();
-          const absoluteElementTop = elementRect.top + window.pageYOffset;
-          const navbarHeight = 110; // Updated for new navbar height
-          const offset = 20;
-          const scrollToPosition = Math.max(0, absoluteElementTop - navbarHeight - offset);
-          
-          window.scrollTo({
-            top: scrollToPosition,
-            behavior: 'smooth'
-          });
-        }
-      }, 800);
+      sessionStorage.setItem('scrollTarget', sectionId);
+      setTimeout(() => scrollToSection(sectionId), SCROLL_DELAY);
     }
+    
     setServicesOpen(false);
     setServicesHover(false);
     handleClose();
-  };
+  }, [navigate, scrollToSection, handleClose]);
 
-  const handleEventClick = (eventType) => {
+  const handleEventClick = useCallback((eventType) => {
+    const sectionId = `${eventType.toLowerCase()}-section`;
     const currentPath = window.location.pathname;
+    
     if (currentPath === '/amddas-events') {
-      const element = document.getElementById(`${eventType.toLowerCase()}-section`);
-      if (element) {
-        const elementRect = element.getBoundingClientRect();
-        const absoluteElementTop = elementRect.top + window.pageYOffset;
-        const navbarHeight = 110; // Updated for new navbar height
-        const offset = 20;
-        const scrollToPosition = Math.max(0, absoluteElementTop - navbarHeight - offset);
-        
-        window.scrollTo({
-          top: scrollToPosition,
-          behavior: 'smooth'
-        });
-      }
+      scrollToSection(sectionId);
     } else {
       navigate('/amddas-events');
-      sessionStorage.setItem('scrollTarget', `${eventType.toLowerCase()}-section`);
-      
-      setTimeout(() => {
-        const element = document.getElementById(`${eventType.toLowerCase()}-section`);
-        if (element) {
-          const elementRect = element.getBoundingClientRect();
-          const absoluteElementTop = elementRect.top + window.pageYOffset;
-          const navbarHeight = 110; // Updated for new navbar height
-          const offset = 20;
-          const scrollToPosition = Math.max(0, absoluteElementTop - navbarHeight - offset);
-          
-          window.scrollTo({
-            top: scrollToPosition,
-            behavior: 'smooth'
-          });
-        }
-      }, 800);
+      sessionStorage.setItem('scrollTarget', sectionId);
+      setTimeout(() => scrollToSection(sectionId), SCROLL_DELAY);
     }
+    
     setEventsOpen(false);
     setEventsHover(false);
     handleClose();
-  };
+  }, [navigate, scrollToSection, handleClose]);
+
+  // Memoized social icons
+  const socialIcons = useMemo(() => 
+    SOCIAL_LINKS.map(({ href, icon: Icon, label }) => (
+      <Link 
+        key={label}
+        to={href}
+        target="_blank" 
+        rel="noopener noreferrer"
+        aria-label={label}
+      >
+        <Icon />
+      </Link>
+    )), []
+  );
+
+  // Memoized service items
+  const serviceItems = useMemo(() => 
+    SERVICES.map(({ key, label }) => (
+      <button key={key} onClick={() => handleServiceClick(key)}>
+        {label}
+      </button>
+    )), [handleServiceClick]
+  );
+
+  // Memoized event items
+  const eventItems = useMemo(() => 
+    EVENTS.map(({ key, label }) => (
+      <button key={key} onClick={() => handleEventClick(key)}>
+        {label}
+      </button>
+    )), [handleEventClick]
+  );
 
   return (
     <div className={`modern-navbar ${scrolled ? 'scrolled' : ''}`}>
-      {/* Navbar Background - positioned behind logo */}
       <div className="modern-navbar-bg"></div>
       
       <Navbar expand="lg" className="modern-nav">
         <Container fluid className="modern-container">
-          {/* Logo - Now with overflow effect */}
           <Navbar.Brand as={Link} to="/" className="modern-logo">
             <img src="./images/amd.png" alt="AMDDAS FOODS" className="logo-img" />
           </Navbar.Brand>
 
-          {/* RIGHT SECTION - Contains Navigation Menu + Social Section */}
           <div className="modern-right-section">
-            {/* Desktop Navigation */}
             <div 
               className="modern-nav-menu d-none d-lg-flex"
               onMouseLeave={handleNavMouseLeave}
             >
-              {/* About */}
               <Link to="/about" className="modern-nav-item">
                 About Us
               </Link>
 
-              {/* Services with Dropdown */}
               <div 
                 className={`modern-dropdown ${servicesOpen ? 'active' : ''}`}
                 onMouseEnter={() => { 
@@ -270,15 +279,11 @@ function Navbarr() {
                       handleDropdownLeave('services'); 
                     }}
                   >
-                    <button onClick={() => handleServiceClick('Corporate')}>Corporate</button>
-                    <button onClick={() => handleServiceClick('Educational')}>Educational Institute</button>
-                    <button onClick={() => handleServiceClick('Hospital')}>Hospitals</button>
-                    <button onClick={() => handleServiceClick('Training')}>Training</button>
+                    {serviceItems}
                   </div>
                 )}
               </div>
 
-              {/* Events with Dropdown */}
               <div 
                 className={`modern-dropdown ${eventsOpen ? 'active' : ''}`}
                 onMouseEnter={() => { 
@@ -308,29 +313,19 @@ function Navbarr() {
                       handleDropdownLeave('events'); 
                     }}
                   >
-                    <button onClick={() => handleEventClick('Wedding')}>Wedding</button>
-                    <button onClick={() => handleEventClick('Housewarming')}>House Warming</button>
-                    <button onClick={() => handleEventClick('Birthday')}>Birthday</button>
-                    <button onClick={() => handleEventClick('Engagement')}>Engagement</button>
-                    <button onClick={() => handleEventClick('Festival')}>Community Festivals</button>
-                    <button onClick={() => handleEventClick('Bhandaara')}>Bhandaara</button>
+                    {eventItems}
                   </div>
                 )}
               </div>
 
-              {/* Other Links */}
               <Link to="/why-us" className="modern-nav-item">Why Us</Link>
               <Link to="/festivals" className="modern-nav-item">Festivals</Link>
               <Link to="/contact" className="modern-nav-item modern-contact-btn">Contact Us</Link>
             </div>
 
-            {/* Social + Location */}
             <div className="modern-social-section d-none d-lg-flex">
               <div className="modern-social-icons">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
+                {socialIcons}
               </div>
               <div className="modern-divider"></div>
               <div className="modern-location">
@@ -338,16 +333,15 @@ function Navbarr() {
               </div>
             </div>
 
-            {/* Mobile Toggle */}
             <button 
               className="modern-mobile-toggle d-lg-none"
               onClick={() => setExpanded(!expanded)}
+              aria-label="Toggle navigation menu"
             >
               <CiMenuBurger size={24} />
             </button>
           </div>
 
-          {/* Mobile Menu with Separate Click Areas */}
           <Navbar.Offcanvas
             show={expanded}
             onHide={handleClose}
@@ -361,70 +355,64 @@ function Navbarr() {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <div className="modern-mobile-menu">
-                {/* About */}
                 <Link to="/about" className="modern-mobile-item" onClick={handleClose}>
                   About Us
                 </Link>
 
-                {/* Services with Separate Click Areas */}
                 <div className="modern-mobile-dropdown">
                   <div className="modern-mobile-dropdown-header">
-                    {/* Main Services Link */}
                     <span 
                       className="modern-mobile-main-link"
                       onClick={() => navigateToPage('/what-we-do')}
                     >
                       Services
                     </span>
-                    {/* Dropdown Toggle Button */}
                     <button 
                       className="modern-mobile-toggle-btn"
                       onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                      aria-label="Toggle services menu"
                     >
                       {mobileServicesOpen ? <FaChevronUp size={12} /> : <FaChevronDown size={12} />}
                     </button>
                   </div>
                   {mobileServicesOpen && (
                     <div className="modern-mobile-submenu">
-                      <button onClick={() => handleServiceClick('Corporate')}>Corporate</button>
-                      <button onClick={() => handleServiceClick('Educational')}>Educational Institute</button>
-                      <button onClick={() => handleServiceClick('Hospital')}>Hospitals</button>
-                      <button onClick={() => handleServiceClick('Training')}>Training</button>
+                      {SERVICES.map(({ key, label }) => (
+                        <button key={key} onClick={() => handleServiceClick(key)}>
+                          {label}
+                        </button>
+                      ))}
                     </div>
                   )}
                 </div>
 
-                {/* Events with Separate Click Areas */}
                 <div className="modern-mobile-dropdown">
                   <div className="modern-mobile-dropdown-header">
-                    {/* Main Events Link */}
                     <span 
                       className="modern-mobile-main-link"
                       onClick={() => navigateToPage('/amddas-events')}
                     >
                       Events
                     </span>
-                    {/* Dropdown Toggle Button */}
                     <button 
                       className="modern-mobile-toggle-btn"
                       onClick={() => setMobileEventsOpen(!mobileEventsOpen)}
+                      aria-label="Toggle events menu"
                     >
                       {mobileEventsOpen ? <FaChevronUp size={12} /> : <FaChevronDown size={12} />}
                     </button>
                   </div>
                   {mobileEventsOpen && (
                     <div className="modern-mobile-submenu">
-                      <button onClick={() => handleEventClick('Wedding')}>Wedding</button>
-                      <button onClick={() => handleEventClick('Housewarming')}>House Warming</button>
-                      <button onClick={() => handleEventClick('Birthday')}>Birthday</button>
-                      <button onClick={() => handleEventClick('Engagement')}>Engagement</button>
-                      <button onClick={() => handleEventClick('Festival')}>Community Festivals</button>
-                      <button onClick={() => handleEventClick('Bhandaara')}>Bhandaara</button>
+                      {EVENTS.map(({ key, label }) => (
+                        <button key={key} onClick={() => handleEventClick(key)}>
+                          {label}
+                        </button>
+                      ))}
                     </div>
                   )}
                 </div>
 
-                {/* Other Links */}
                 <Link to="/why-us" className="modern-mobile-item" onClick={handleClose}>
                   Why Us
                 </Link>
@@ -436,12 +424,8 @@ function Navbarr() {
                 </Link>
               </div>
               
-              {/* Mobile Social */}
               <div className="modern-mobile-social">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
+                {socialIcons}
               </div>
               
               <div className="modern-mobile-location">
