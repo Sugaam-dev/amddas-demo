@@ -274,7 +274,7 @@ const Testimonial = () => {
         setCurrentIndex((prevIndex) => 
           prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
         );
-      }, 5000); // Change slide every 5 seconds
+      }, 2000); // Change slide every 2 seconds
     }
     return () => clearInterval(interval);
   }, [isAutoPlaying, testimonials.length]);
@@ -282,12 +282,12 @@ const Testimonial = () => {
   // Handle dot click
   const handleDotClick = (index) => {
     setCurrentIndex(index);
-    setIsAutoPlaying(false); // Pause auto-play when user interacts
+    setIsAutoPlaying(true); // Pause auto-play when user interacts
     
-    // Resume auto-play after 10 seconds of no interaction
+    // Resume auto-play after 2 seconds of no interaction
     setTimeout(() => {
       setIsAutoPlaying(true);
-    }, 10000);
+    }, 2000);
   };
 
   // Pause auto-play on hover
