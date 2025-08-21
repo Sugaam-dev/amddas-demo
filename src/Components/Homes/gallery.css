@@ -39,7 +39,7 @@
 }
 
 .gallery-swiper {
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
   border-radius: 20px;
   overflow: hidden; /* Hide overflow to prevent side images from showing */
   margin: 0 auto; /* Center the swiper */
