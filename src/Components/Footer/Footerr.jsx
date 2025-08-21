@@ -1,51 +1,141 @@
-import React from "react";
+import React, { useCallback } from "react";
 import "./Footerr.css";
 import { FaLinkedinIn, FaFacebookF, FaInstagram, FaYoutube, FaPhone } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoLocationSharp } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+// Constants for scroll behavior
+const NAVBAR_HEIGHT = 110;
+const SCROLL_OFFSET = 20;
+const SCROLL_DELAY = 800;
+
+// Services configuration (matching navbar)
+const SERVICES = [
+  { key: 'Corporate', label: 'Corporate' },
+  { key: 'Educational', label: 'Educational Institute' },
+  { key: 'Hospital', label: 'Hospitals' },
+  { key: 'Training', label: 'Training' }
+];
+
+// Events configuration (matching navbar)
+const EVENTS = [
+  { key: 'Wedding', label: 'Weddings' },
+  { key: 'Housewarming', label: 'Housewarming / Grihapravesh' },
+  { key: 'Birthday', label: 'Birthday Parties' },
+  { key: 'Engagement', label: 'Anniversary Ceremonies' },
+  { key: 'Festival', label: 'Community Festivals' },
+  { key: 'Bhandaara', label: 'Bhandara' }
+];
+
+// Social links configuration
+const SOCIAL_LINKS = [
+  { href: "https://linkedin.com/company/amddas", icon: FaLinkedinIn, label: "LinkedIn" },
+  { href: "https://facebook.com/amddas", icon: FaFacebookF, label: "Facebook" },
+  { href: "https://instagram.com/amddas", icon: FaInstagram, label: "Instagram" },
+  { href: "https://youtube.com/@amddas", icon: FaYoutube, label: "YouTube" }
+];
 
 const Footerr = () => {
+  const navigate = useNavigate();
+
+  // Scroll to section utility function
+  const scrollToSection = useCallback((sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const elementRect = element.getBoundingClientRect();
+      const absoluteElementTop = elementRect.top + window.pageYOffset;
+      const scrollToPosition = Math.max(0, absoluteElementTop - NAVBAR_HEIGHT - SCROLL_OFFSET);
+      
+      window.scrollTo({
+        top: scrollToPosition,
+        behavior: 'smooth'
+      });
+    }
+  }, []);
+
+  // Handle service navigation
+  const handleServiceClick = useCallback((serviceType) => {
+    const sectionId = `${serviceType.toLowerCase()}-section`;
+    const currentPath = window.location.pathname;
+    
+    if (currentPath === '/services') {
+      scrollToSection(sectionId);
+    } else {
+      navigate('/services');
+      sessionStorage.setItem('scrollTarget', sectionId);
+      setTimeout(() => scrollToSection(sectionId), SCROLL_DELAY);
+    }
+  }, [navigate, scrollToSection]);
+
+  // Handle event navigation
+  const handleEventClick = useCallback((eventType) => {
+    const sectionId = `${eventType.toLowerCase()}-section`;
+    const currentPath = window.location.pathname;
+    
+    if (currentPath === '/events') {
+      scrollToSection(sectionId);
+    } else {
+      navigate('/events');
+      sessionStorage.setItem('scrollTarget', sectionId);
+      setTimeout(() => scrollToSection(sectionId), SCROLL_DELAY);
+    }
+  }, [navigate, scrollToSection]);
+
   return (
     <footer className="footer">
       <div className="footer-top">
         {/* Logo */}
         <div className="footer-logo">
-          <img src="./images/amd.png" alt="Compass Group" />
+          <img src="./images/amd.png" alt="AMDDAS Foods" />
         </div>
 
         {/* Links Section */}
         <div className="footer-columns">
-
-              <div className="footer-column">
+          <div className="footer-column">
             <h4>Important Links</h4>
             <ul>
               <li><Link to="/why-us">Why Us</Link></li>
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/contact">Contact Us</Link></li>
-               <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-              <li><Link to="/contact">Terms & Conditions</Link></li>
-            </ul>
-          </div>
-          <div className="footer-column">
-            <h4>Services</h4>
-            <ul>
-              <li><Link to="/corporate">Corporate</Link></li>
-              <li><Link to="/what-we-do">Educational Institute</Link></li>
-              <li><Link to="/what-we-do">Hospitals</Link></li>
-              <li><Link to="/corporate-experience">Training</Link></li>
+              <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+              <li><Link to="/privacy-policy">Terms & Conditions</Link></li>
             </ul>
           </div>
 
           <div className="footer-column">
-            <h4>Events</h4>
+            <h4>
+              <Link to="/services" className="footer-heading-link">Services</Link>
+            </h4>
             <ul>
-              <li><Link to="/amddas-events">Wedding</Link></li>
-              <li><Link to="/amddas-events">House Warming</Link></li>
-              <li><Link to="/amddas-events">Birthday</Link></li>
-              <li><Link to="/amddas-events">Engagement</Link></li>
-              <li><Link to="/festivals">Community Festivals</Link></li>
-              <li><Link to="/festivals">Bhandaara</Link></li>
+              {SERVICES.map(({ key, label }) => (
+                <li key={key}>
+                  <button 
+                    onClick={() => handleServiceClick(key)}
+                    className="footer-link-button"
+                  >
+                    {label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="footer-column">
+            <h4>
+              <Link to="/events" className="footer-heading-link">Events</Link>
+            </h4>
+            <ul>
+              {EVENTS.map(({ key, label }) => (
+                <li key={key}>
+                  <button 
+                    onClick={() => handleEventClick(key)}
+                    className="footer-link-button"
+                  >
+                    {label}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -59,7 +149,7 @@ const Footerr = () => {
                 </Link>
               </div>
               <div className="location">
-                <Link to={'https://maps.app.goo.gl/fYZzn7KQt2BfN2us5'}>
+                <Link to={'https://maps.app.goo.gl/fYZzn7KQt2BfN2us5'} target="_blank" rel="noopener noreferrer">
                   <IoLocationSharp style={{ fontSize: "24px", marginRight: "10px", marginTop: "2px", flexShrink: 0 }} />
                   AMDDAS Foods Pvt Ltd <br /> Sy No: 67,
                   Seegehalli Village, <br /> Bidarahalli Hobli,
@@ -80,19 +170,22 @@ const Footerr = () => {
       {/* Bottom Bar */}
       <div className="footer-bottom">
         <p>
-          copyright © 2025 Designed by Sugaam.in All Rights Reserved &nbsp; | &nbsp;
-          {/* <a href="#">Terms of Use</a> &nbsp; | &nbsp;
-          <a href="#">Annual Return - Food Service</a> &nbsp; | &nbsp;
-          <a href="#">Annual Return - Support Service</a> &nbsp; | &nbsp;
-          <a href="#">Privacy Policy & Cookies Policy</a> */}
+          copyright © 2025 Designed by <Link to={'https://www.pmrgsolution.com/'}>PMRG Solution</Link> All Rights Reserved &nbsp; | &nbsp;
         </p>
 
         {/* Social Icons */}
         <div className="footer-social">
-          <a href="https://linkedin.com/company/amddas" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
-          <a href="https://facebook.com/amddas" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-          <a href="https://instagram.com/amddas" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-          <a href="https://youtube.com/@amddas" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
+          {SOCIAL_LINKS.map(({ href, icon: Icon, label }) => (
+            <Link 
+              key={label}
+              to={href} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label={label}
+            >
+              <Icon />
+            </Link>
+          ))}
         </div>
       </div>
     </footer>

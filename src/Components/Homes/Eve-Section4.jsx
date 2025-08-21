@@ -1,12 +1,18 @@
-
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import './Eve-Section4.css';
+import { useNavigate } from 'react-router-dom';
 
 const EveSection4 = () => {
   const bannerRef = useRef(null);
   const featureRef = useRef(null);
   const mediaRef = useRef(null);
   const infoRef = useRef(null);
+  const navigate = useNavigate();
+
+  // Constants for scroll behavior (matching other components)
+  const SCROLL_DELAY = 800;
+  const NAVBAR_HEIGHT = 110;
+  const SCROLL_OFFSET = 20;
 
   useEffect(() => {
     const observerOptions = {
@@ -37,10 +43,37 @@ const EveSection4 = () => {
     };
   }, []);
 
-  const handleEventsRedirect = () => {
-    // Navigate to events page - you can replace this with your routing logic
-    window.location.href = '/amddas-events';
-  };
+  // Scroll to section utility function (matching navbar and footer logic)
+  const scrollToSection = useCallback((sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const elementRect = element.getBoundingClientRect();
+      const absoluteElementTop = elementRect.top + window.pageYOffset;
+      const scrollToPosition = Math.max(0, absoluteElementTop - NAVBAR_HEIGHT - SCROLL_OFFSET);
+      
+      window.scrollTo({
+        top: scrollToPosition,
+        behavior: 'smooth'
+      });
+    }
+  }, []);
+
+  // Handle Training navigation using the same logic as navbar and footer
+  const handleEventsRedirect = useCallback(() => {
+    const serviceType = 'Training'; // Training key for services navigation
+    const sectionId = `${serviceType.toLowerCase()}-section`; // Creates 'training-section'
+    const currentPath = window.location.pathname;
+    
+    if (currentPath === '/services') {
+      // If already on services page, scroll to training section
+      scrollToSection(sectionId);
+    } else {
+      // Navigate to services page and then scroll to training section
+      navigate('/services');
+      sessionStorage.setItem('scrollTarget', sectionId);
+      setTimeout(() => scrollToSection(sectionId), SCROLL_DELAY);
+    }
+  }, [navigate, scrollToSection]);
 
   return (
     <div className="showcase-section">
@@ -53,7 +86,7 @@ const EveSection4 = () => {
           </h1>
           
           <p className="hero-description">
-         AMDDAS offers comprehensive training programs designed to equip. you with the skills and knowledge needed to excel in the culinary arts and food service industry. Our courses cover everything from basic cooking techniques to advanced kitchen management, ensuring you're ready for any challenge. Join us and take your career to the next level!
+            AMDDAS offers comprehensive training programs designed to equip you with the skills and knowledge needed to excel in the culinary arts and food service industry. Our courses cover everything from basic cooking techniques to advanced kitchen management, ensuring you're ready for any challenge. Join us and take your career to the next level!
           </p>
         </div>
       </div>
@@ -64,7 +97,7 @@ const EveSection4 = () => {
           <div className="media-wrapper" ref={mediaRef}>
             <img 
               src="./images/Culinary-Arts-Fundamentals.jpeg" 
-              alt="Community festival catering with diverse food options and happy people"
+              alt="Culinary Arts Fundamentals training program with professional cooking"
               className="feature-media"
             />
           </div>
@@ -76,7 +109,7 @@ const EveSection4 = () => {
             </h2>
             
             <p className="feature-text">
-              Master the essential techniques of cooking, baking, and pastry arts. Our program provides a solid foundation for a successful culinary career. Learn from industry experts. and refine your skills
+              Master the essential techniques of cooking, baking, and pastry arts. Our program provides a solid foundation for a successful culinary career. Learn from industry experts and refine your skills.
             </p>
             
             <button className="discover-btn" onClick={handleEventsRedirect}>

@@ -33,12 +33,12 @@ const SERVICES = [
 
 // Events configuration
 const EVENTS = [
-  { key: 'Wedding', label: 'Wedding' },
-  { key: 'Housewarming', label: 'House Warming' },
-  { key: 'Birthday', label: 'Birthday' },
-  { key: 'Engagement', label: 'Engagement' },
+  { key: 'Wedding', label: 'Weddings' },
+  { key: 'Housewarming', label: 'Housewarming / Grihapravesh' },
+  { key: 'Birthday', label: 'Birthday Parties' },
+  { key: 'Engagement', label: 'Anniversary Ceremonies' },
   { key: 'Festival', label: 'Community Festivals' },
-  { key: 'Bhandaara', label: 'Bhandaara' }
+  { key: 'Bhandaara', label: 'Bhandara' }
 ];
 
 function Navbarr() {
@@ -168,10 +168,10 @@ function Navbarr() {
     const sectionId = `${serviceType.toLowerCase()}-section`;
     const currentPath = window.location.pathname;
     
-    if (currentPath === '/what-we-do') {
+    if (currentPath === '/services') {
       scrollToSection(sectionId);
     } else {
-      navigate('/what-we-do');
+      navigate('/services');
       sessionStorage.setItem('scrollTarget', sectionId);
       setTimeout(() => scrollToSection(sectionId), SCROLL_DELAY);
     }
@@ -185,10 +185,10 @@ function Navbarr() {
     const sectionId = `${eventType.toLowerCase()}-section`;
     const currentPath = window.location.pathname;
     
-    if (currentPath === '/amddas-events') {
+    if (currentPath === '/events') {
       scrollToSection(sectionId);
     } else {
-      navigate('/amddas-events');
+      navigate('/events');
       sessionStorage.setItem('scrollTarget', sectionId);
       setTimeout(() => scrollToSection(sectionId), SCROLL_DELAY);
     }
@@ -263,7 +263,7 @@ function Navbarr() {
               >
                 <button 
                   className="modern-dropdown-btn"
-                  onClick={() => navigateToPage('/what-we-do')}
+                  onClick={() => navigateToPage('/services')}
                 >
                   Services {(servicesHover || servicesOpen) ? <FaChevronUp size={10} /> : <FaChevronDown size={10} />}
                 </button>
@@ -297,7 +297,7 @@ function Navbarr() {
               >
                 <button 
                   className="modern-dropdown-btn"
-                  onClick={() => navigateToPage('/amddas-events')}
+                  onClick={() => navigateToPage('/events')}
                 >
                   Events {(eventsHover || eventsOpen) ? <FaChevronUp size={10} /> : <FaChevronDown size={10} />}
                 </button>
@@ -363,7 +363,7 @@ function Navbarr() {
                   <div className="modern-mobile-dropdown-header">
                     <span 
                       className="modern-mobile-main-link"
-                      onClick={() => navigateToPage('/what-we-do')}
+                      onClick={() => navigateToPage('/services')}
                     >
                       Services
                     </span>
@@ -390,7 +390,7 @@ function Navbarr() {
                   <div className="modern-mobile-dropdown-header">
                     <span 
                       className="modern-mobile-main-link"
-                      onClick={() => navigateToPage('/amddas-events')}
+                      onClick={() => navigateToPage('/events')}
                     >
                       Events
                     </span>
