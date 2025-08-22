@@ -190,7 +190,7 @@
     right: auto;
     text-align: center;
     /* margin-top: 30px; */
-     margin-top: 400px;
+     margin-top: 110px;
   }
   
   .see-more-btn {
@@ -248,7 +248,14 @@
     width: 10px;
     height: 10px;
   }
-  
+   .see-more-container {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    text-align: center;
+    /* margin-top: 30px; */
+     margin-top: 150px;
+  }
   .testimonial-dots {
    top: 311px;
   }
