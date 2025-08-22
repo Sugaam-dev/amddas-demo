@@ -206,10 +206,9 @@
 
 /* See More Button */
 .see-more-container {
-  position: absolute;
-  bottom: 80px;
-  right: 60px;
-  z-index: 3;
+  margin-top: 400px;
+  text-align: center;
+  width: 100%;
 }
 
 .see-more-btn {
@@ -239,6 +238,7 @@
 .see-more-btn:active {
   transform: translateY(-1px);
 }
+
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -316,7 +316,8 @@
     bottom: auto;
     right: auto;
     text-align: center;
-    margin-top: 30px;
+    /* margin-top: 30px; */
+     margin-top: 400px;
   }
   
   .see-more-btn {
