@@ -119,13 +119,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
       
-        {/* <Route path='/login' element={<Log />} />
-        <Route path='/signup' element={<SignUp />} />
-        <Route path='/getotp' element={<Otp />} /> */}
-        {/* <Route path='/forgot-password' element={<Forget />} />
-        <Route path='/done' element={<Done />} />
-        <Route path='/verify-otp' element={<Otpforget />} />
-        <Route path='/confirmpassword' element={<Cnfpassword />} /> */}
+     
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         <Route path='/about' element={<About/>}/>
         <Route path='/amddas-gallery' element={<Gallery/>}/>

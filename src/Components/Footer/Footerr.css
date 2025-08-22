@@ -26,8 +26,11 @@
 .footer-column h4 {
   font-weight: bold;
   margin-bottom: 15px;
-}
 
+}
+.footer-heading-link{
+  text-decoration: none;
+}
 .footer-column ul {
   list-style: none;
   padding: 0;
