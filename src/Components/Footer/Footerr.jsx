@@ -10,6 +10,9 @@ const NAVBAR_HEIGHT = 110;
 const SCROLL_OFFSET = 20;
 const SCROLL_DELAY = 800;
 
+
+
+const year =new Date().getFullYear();
 // Services configuration (matching navbar)
 const SERVICES = [
   { key: 'Corporate', label: 'Corporate' },
@@ -104,9 +107,11 @@ const Footerr = () => {
           </div>
 
           <div className="footer-column">
-            <h4>
-              <Link to="/services" className="footer-heading-link">Services</Link>
-            </h4>
+          <h4>
+  <Link to="/services" style={{ textDecoration: 'none' }} className="footer-heading-link">
+    Services
+  </Link>
+</h4>
             <ul>
               {SERVICES.map(({ key, label }) => (
                 <li key={key}>
@@ -123,7 +128,7 @@ const Footerr = () => {
 
           <div className="footer-column">
             <h4>
-              <Link to="/events" className="footer-heading-link">Events</Link>
+              <Link to="/events" className="footer-heading-link"  style={{ textDecoration: 'none' }}>Events</Link>
             </h4>
             <ul>
               {EVENTS.map(({ key, label }) => (
@@ -170,7 +175,7 @@ const Footerr = () => {
       {/* Bottom Bar */}
       <div className="footer-bottom">
         <p>
-          copyright © 2025 Designed by <Link to={'https://www.pmrgsolution.com/'}>PMRG Solution</Link> All Rights Reserved &nbsp; | &nbsp;
+          copyright © {year} Designed by <Link to={'https://www.pmrgsolution.com/'}>PMRG Solution</Link> All Rights Reserved &nbsp; | &nbsp;
         </p>
 
         {/* Social Icons */}
