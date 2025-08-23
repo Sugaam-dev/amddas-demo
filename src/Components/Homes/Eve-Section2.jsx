@@ -80,7 +80,7 @@ const EveSection2 = () => {
           <div className="text-content-wrapper" ref={contentContainerRef}>
             <h2 className="section-heading">
               Corporate Event Catering Solutions
-              <div className="heading-underline"></div>
+              <div className="heading-underlinee"></div>
             </h2>
             
             <p className="section-text">
