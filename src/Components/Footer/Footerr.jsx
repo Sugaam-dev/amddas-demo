@@ -35,7 +35,7 @@ const EVENTS = [
 const SOCIAL_LINKS = [
   { href: "https://linkedin.com/company/amddas", icon: FaLinkedinIn, label: "LinkedIn" },
   { href: "https://facebook.com/amddas", icon: FaFacebookF, label: "Facebook" },
-  { href: "https://instagram.com/amddas", icon: FaInstagram, label: "Instagram" },
+  { href: "https://www.instagram.com/amddasgroup/", icon: FaInstagram, label: "Instagram" },
   { href: "https://youtube.com/@amddas", icon: FaYoutube, label: "YouTube" }
 ];
 

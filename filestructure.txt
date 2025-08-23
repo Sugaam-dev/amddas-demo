@@ -105,7 +105,6 @@
         |-- pexels-zvolskiy-2253643.jpg
         |-- poonam-rajput-bhM6NzUOxLQ-unsplash.jpg
         |-- quality.jpg
-        |-- qualitystandard.png
         |-- qualitystandard.webp
         |-- qualitystanderds.jpg
         |-- risk.png

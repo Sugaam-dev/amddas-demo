@@ -80,7 +80,7 @@ const EveSection1 = () => {
         <div className="content-container">
           <div className="image-wrapperr" ref={imageRef}>
             <img 
-              src="./images/weeding-and-engagement.jpg" 
+              src="./images/weedingandengagement.webp" 
               alt="Wedding and engagement catering services"
               className="section-image"
             />

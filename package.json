@@ -1,7 +1,6 @@
 {
   "name": "amddas",
   "version": "0.1.0",
-  "proxy": "https://backend.amddas.net",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.13.3",

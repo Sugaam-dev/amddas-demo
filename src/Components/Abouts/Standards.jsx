@@ -209,19 +209,19 @@ const Standards = memo(({ onLoad }) => {
       id: 'risk-management',
       title: 'Risk Management Standards',
       description: 'Public Liability Policy is issued per site where our food is being supplied/consumed. Strictly GST compliant with updated ledger and bank records. Regular on-time tax return filing done.',
-      image: '/images/risky.png'
+      image: '/images/risky.webp'
     },
     {
       id: 'employee-standards',
       title: 'Employee Standards',
       description: 'All employees undergo quarterly medical fitness test clearance while in service at AMDDAS Foods. All staff have segregated dress codes based on their job roles. Company-provided staff quarters .',
-      image: '/images/Employeestandard2.png'
+      image: '/images/employeestandard.webp'
     },
     {
       id: 'manufacturing-standards',
       title: 'Manufacturing Unit Standards',
       description: 'HACCP (Hazard Analysis and Critical Control Points) standards met. Segregated veg and non-veg cooking & storage sections. Gas bank located outside the kitchen. Fire extinguishers installed .',
-      image: '/images/ManufacturingunitStandard.png'
+      image: '/images/Manufacturingunit.webp'
     },
     {
       id: 'certified-kitchen',
@@ -233,7 +233,7 @@ const Standards = memo(({ onLoad }) => {
       id: 'quality-standards',
       title: 'Quality Standards',
       description: 'ISO 22000 food safety management system implementation. Stringent quality control measures at every stage of food preparation. Fresh ingredients sourced daily from verified suppliers. Regular taste testing and nutritional analysis of all menu items.',
-      image: '/images/QualityStandard2.png'
+      image: '/images/qualitystandard123.webp'
     }
   ];
 

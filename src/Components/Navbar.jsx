@@ -19,7 +19,7 @@ const SCROLL_THRESHOLD = 50;
 const SOCIAL_LINKS = [
   { href: "https://linkedin.com", icon: FaLinkedinIn, label: "LinkedIn" },
   { href: "https://facebook.com", icon: FaFacebookF, label: "Facebook" },
-  { href: "https://instagram.com", icon: FaInstagram, label: "Instagram" },
+  { href: "https://www.instagram.com/amddasgroup/", icon: FaInstagram, label: "Instagram" },
   { href: "https://youtube.com", icon: FaYoutube, label: "YouTube" }
 ];
 

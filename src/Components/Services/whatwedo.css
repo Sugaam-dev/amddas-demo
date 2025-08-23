@@ -28,6 +28,7 @@ body {
   font-family: 'Open Sans', Arial, sans-serif;
   overflow: clip;
   text-align: center;
+  height: 500px;
 }
 
 /* Title */
@@ -79,6 +80,7 @@ body {
 @media (max-width: 768px) {
   .Our-services-container {
     padding: 15% 5%;
+    height: 400px;
   }
   .Our-services-title {
     font-size: clamp(26px, 6vw, 36px);
@@ -92,6 +94,7 @@ body {
 @media (max-width: 480px) {
   .Our-services-container {
     padding: 20% 5%;
+    height: 300px;
   }
  
   .Our-services-description {
