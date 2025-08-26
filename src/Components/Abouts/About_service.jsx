@@ -160,7 +160,7 @@ const ServiceList = memo(({ services }) => {
           key={`service-item-${index}`}
           className="service-item"
         >
-          <span className="service-bullet">•</span>
+          <span className="service-bullet"></span>
           <span className="service-text">{service}</span>
         </li>
       ))}
