@@ -335,9 +335,9 @@
 
   .amddas-content-overlay {
     justify-content: flex-end;
-    padding: 0 0.75rem;
-    padding-bottom: 70px; /* Space above dots */
-    padding-top: 20px;
+   padding: 0px 5px;
+    padding-bottom: 25px; /* Space above dots */
+    padding-top: 0px;
   }
   
   .amddas-content-wrapper {
@@ -348,9 +348,9 @@
   }
   
   .amddas-hero-title {
-    font-size: clamp(1.1rem, 6vw, 1.6rem);
-    margin-bottom: 0.8rem;
-    line-height: 1.2;
+    font-size: clamp(1.1rem, 6vw, 1.3rem);
+    margin-bottom: 0.3rem;
+    line-height: 1.1;
     overflow: visible;
     text-overflow: unset;
     display: block;
@@ -391,9 +391,10 @@
   
   .amddas-content-overlay {
     justify-content: flex-end;
-    padding: 0 0.5rem;
-    padding-bottom: 20px; /* Space above dots */
-    padding-top: 15px;
+    padding-top: 0px;
+    padding: 0px 5px;
+    padding-bottom: 15px; /* Space above dots */
+   
   }
   
   .amddas-content-wrapper {
@@ -404,9 +405,9 @@
   }
   
   .amddas-hero-title {
-    font-size: clamp(1rem, 7vw, 1.4rem);
-    margin-bottom: 0.4rem;
-    line-height: 1.2;
+    font-size: clamp(1rem, 6vw, 1.1rem);
+    margin-bottom: 0.2rem;
+    line-height: 1.1;
     overflow: visible;
     text-overflow: unset;
     display: block;

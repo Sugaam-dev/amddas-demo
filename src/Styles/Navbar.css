@@ -434,10 +434,7 @@
   text-decoration: none;
 }
 
-.modern-mobile-contact {
-  color: #b8860b !important;
-  font-weight: 600 !important;
-}
+
 
 /* Mobile Dropdown Styles with Separate Click Areas */
 .modern-mobile-dropdown {
@@ -448,7 +445,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0;
+  padding: 0px;
   border-bottom: 1px solid #f0f0f0;
 }
 
@@ -847,11 +844,11 @@
   .modern-mobile-item,
   .modern-mobile-main-link {
     font-size: 15px;
-    padding: 12px 0;
+    padding: 0px;
   }
   
   .modern-mobile-dropdown-header {
-    padding: 12px 0;
+    padding: 0px;
   }
   
   .modern-mobile-social a {
