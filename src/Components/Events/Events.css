@@ -114,7 +114,7 @@
   color: var(--amddas-text-light);
   margin-bottom: var(--amddas-element-spacing);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  letter-spacing: 2px;
+
   opacity: 0;
   transform: translateY(30px);
   animation: amddas-title-slide-in 0.6s ease-out 0.5s forwards;
@@ -124,7 +124,7 @@
 }
 
 .amddas-banner-subtitle {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-size: clamp(14px, 4vw, 18px);
   color: var(--amddas-text-light);
   line-height: 1.6;
   opacity: 0;
@@ -683,7 +683,9 @@
   }
   
   .amddas-banner-content {
+  
     padding: 15px;
+  margin-top: 40px;
   }
   
   .amddas-event-image-wrapper {
