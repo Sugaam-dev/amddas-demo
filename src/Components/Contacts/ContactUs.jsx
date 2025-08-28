@@ -18,11 +18,16 @@ const ContactUs = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const services = [
-    "Corporate Catering",
-    "Corporate Event Management",
-    "Cafeteria Management", 
-    "Birthday Celebrations",
-    "Weddings & Private Parties"
+    "Corporate",
+    "Educational Institute",
+    "Hospitals",
+    "Training", 
+    "Weddings",
+    "Birthday Parties",
+    "Housewarming / Grihapravesh",
+    "Anniversary Ceremonies",
+    "Community Festivals",
+    "Bhandara / Langar",
   ];
 
   const locations = [
