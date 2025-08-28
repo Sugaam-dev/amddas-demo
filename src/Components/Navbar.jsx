@@ -36,7 +36,7 @@ const EVENTS = [
   { key: 'Wedding', label: 'Weddings' },
   { key: 'Housewarming', label: 'Housewarming / Grihapravesh' },
   { key: 'Birthday', label: 'Birthday Parties' },
-  { key: 'Engagement', label: 'Anniversary Ceremonies' },
+  { key: 'Engagement', label: 'Anniversaries' },
   { key: 'Festival', label: 'Community Festivals' },
   { key: 'Bhandaara', label: 'Bhandara / Langar' }
 ];

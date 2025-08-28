@@ -26,7 +26,7 @@ const EVENTS = [
   { key: 'Wedding', label: 'Weddings' },
   { key: 'Housewarming', label: 'Housewarming / Grihapravesh' },
   { key: 'Birthday', label: 'Birthday Parties' },
-  { key: 'Engagement', label: 'Anniversary Ceremonies' },
+  { key: 'Engagement', label: 'Anniversaries' },
   { key: 'Festival', label: 'Community Festivals' },
   { key: 'Bhandara/Langar', label: 'Bhandara / Langar' }
 ];
@@ -98,7 +98,7 @@ const Footerr = () => {
           <div className="footer-column">
             <h4>Important Links</h4>
             <ul>
-              <li><Link to="/why-Amddas">Why Us</Link></li>
+              <li><Link to="/why-Amddas">Why Amddas</Link></li>
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/contact">Contact Us</Link></li>
               {/* <li><Link to="/privacy-policy">Privacy Policy</Link></li>
