@@ -101,8 +101,8 @@ const Footerr = () => {
               <li><Link to="/why-us">Why Us</Link></li>
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/contact">Contact Us</Link></li>
-              <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-              <li><Link to="/privacy-policy">Terms & Conditions</Link></li>
+              {/* <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+              <li><Link to="/privacy-policy">Terms & Conditions</Link></li> */}
             </ul>
           </div>
 

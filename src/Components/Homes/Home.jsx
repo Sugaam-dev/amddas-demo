@@ -21,7 +21,7 @@ const Home = () => {
     <>
       <div className="homepage">
         <Hero/>
-        <Whyus_home/>
+        {/* <Whyus_home/> */}
         <JourneyValues/>
         {/* <AboutAmddas/> */}
         {/* <OurStory/> */}
