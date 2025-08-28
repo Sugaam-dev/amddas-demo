@@ -165,9 +165,9 @@ const StandardCard = memo(({ standard, index, isVisible }) => {
           onLoad={handleImageLoad}
           onError={handleImageError}
         />
-        <div className="standard-overlay">
+        {/* <div className="standard-overlay">
           <span className="standard-number">{String(index + 1).padStart(2, '0')}</span>
-        </div>
+        </div> */}
       </div>
       
       <div className="standard-info">

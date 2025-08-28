@@ -807,11 +807,12 @@ const Testimonial = () => {
     <div className="testimonial-container">
       <div className="testimonial-header">
         <h1 className="testimonial-title">
-          TESTIMONIAL <span className="highlight">REVIEWS</span>
+         Testimonials
+          {/* //<span className="highlight">REVIEWS</span> */}
         </h1>
         <div className="header-line"></div>
         <p className="header-subtitl">
-          Discover what our customers say about their AMDDAS experience
+           ""discover what our customers have to say about AMDDAS foods""
         </p>
       </div>
 

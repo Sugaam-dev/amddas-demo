@@ -25,7 +25,7 @@ const Gallery = () => {
       {/* Banner Section with Animation */}
       <div className="banner-section-gallery">
         <h1 className="banner-title-gallery fade-in-up">
-          Our Gallery
+         Gallery
         </h1>
         <p className="gallery-subtitle fade-in-up stagger-1">
           Discover the visual journey of Amddas Foods through our curated collection
