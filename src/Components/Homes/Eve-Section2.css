@@ -312,10 +312,12 @@ h1, h2, h3, h4, h5, h6, p, span, div {
   
   .section-heading {
     font-size: 28px;
+    text-align: left;
   }
   
   .section-text {
     font-size: 15px;
+    text-align: left;
   }
   
   .cta-buttonn {

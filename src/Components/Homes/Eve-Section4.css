@@ -387,10 +387,12 @@ font-size: clamp(1rem, 1vw, 1.1rem);
   
   .Head-title{
     font-size: 28px;
+    text-align: left;
   }
   
   .hero-description {
     font-size: 14px;
+    text-align: left;
   }
   
   .content-section {
@@ -404,10 +406,12 @@ font-size: clamp(1rem, 1vw, 1.1rem);
   
   .feature-title {
     font-size: 28px;
+    text-align: left;
   }
   
   .feature-text {
     font-size: 15px;
+    text-align: left;
   }
   
   .discover-btn {

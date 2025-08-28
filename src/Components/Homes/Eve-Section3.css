@@ -293,10 +293,12 @@
   
   .primary-heading {
     font-size: 28px;
+    text-align: left;
   }
   
   .primary-description {
     font-size: 15px;
+    text-align: left;
   }
   
   .action-button {

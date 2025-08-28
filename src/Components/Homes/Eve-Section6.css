@@ -311,10 +311,12 @@ font-size: clamp(1rem, 1vw, 1.1rem);
   
   .display-title {
     font-size: 28px;
+    text-align: left;
   }
   
   .display-content {
     font-size: 15px;
+    
   }
   
   .navigate-btn {

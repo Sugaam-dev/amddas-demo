@@ -312,10 +312,12 @@ font-size: clamp(1rem, 1vw, 1.1rem);
   
   .story-heading {
     font-size: 28px;
+    text-align: left;
   }
   
   .story-narrative {
     font-size: 15px;
+    text-align: left;
   }
   
   .explore-button {

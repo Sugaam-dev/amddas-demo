@@ -225,11 +225,13 @@
   .journey-title {
     font-size: 1.5rem;
     margin-bottom: 15px;
+    text-align: left;
   }
   
   .section-description {
     font-size: 0.95rem;
     margin-bottom: 25px;
+    text-align: left;
   }
   
   .image-sectionn {

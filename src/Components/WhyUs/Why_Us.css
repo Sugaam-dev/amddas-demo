@@ -367,6 +367,7 @@
   .whyus-text li {
     font-size: 14px;
     margin-bottom: 10px;
+    text-align: left;
   }
 
   .whyus-image img {
