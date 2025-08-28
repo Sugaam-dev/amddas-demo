@@ -241,7 +241,6 @@ function CorporateNewPage() {
           </div>
         </div>
       </section>
-
       {/* Corporate CSR Section */}
       <section 
         className="corporate-life-section" 
