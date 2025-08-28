@@ -4,57 +4,52 @@
 |-- package.json
 |-- public
     |-- images
-        |-- about-all.jpg
-        |-- about-ser.jpg
-        |-- about-service.jpg
         |-- about.jpeg
         |-- aboutus.png
-        |-- about_service.jpg
         |-- amd.png
-        |-- amd0.jpeg
-        |-- amd1.jpeg
-        |-- amd10.jpg
-        |-- amd11.jpg
-        |-- amd2.jpg
-        |-- amd3.webp
-        |-- amd4.jpg
-        |-- amd6.webp
-        |-- amdback.jpg
+        |-- amddas6.webp
+        |-- amddas8.webp
+        |-- amddas9.webp
+        |-- amddasgallery110.webp
+        |-- Amddaspic1.webp
+        |-- amddaspic2.webp
+        |-- amddaspic3.webp
+        |-- Amddaspic4.webp
+        |-- Amddaspic5.webp
+        |-- Amddaspic7.webp
+        |-- Baner-Corporate-events.jpeg
+        |-- Banner-Corporate.jpeg
+        |-- Banner-Festivals.jpeg
+        |-- Banner-Marriage.jpeg
+        |-- Banner1.jpeg
         |-- Bhandaras.webp
         |-- Birthday.webp
         |-- Cafeteria1.jpg
         |-- Catering.jpg
+        |-- CertifiedKitchen.png
+        |-- Community-Festival.jpg
         |-- community.jpg
         |-- CommunityFestival.webp
+        |-- ComprehensiveServices.png
         |-- contact.jpg
+        |-- Corporate-Events.jpg
         |-- corporate.jpg
         |-- corporatebanner.jpg
         |-- CorporateCatering.webp
         |-- Corporateevent.webp
+        |-- Culinary-Arts-Fundamentals.jpeg
+        |-- Culinary-training.png
         |-- doctors.jpg
         |-- Education.webp
-        |-- education1.jpg
-        |-- employee.jpg
-        |-- employeestandard.png
         |-- employeestandard.webp
         |-- Engagement1.jpg
-        |-- events-bg.jpg
         |-- events.1.jpg
         |-- events.jpg
         |-- events.webp
-        |-- experience.avif
-        |-- experience.jpg
         |-- fest-offer.jpg
-        |-- festivalbanner.jpeg
         |-- festivalbanner.webp
-        |-- food-img.jpg
-        |-- food-img2.jpg
-        |-- food-img3.jpg
-        |-- food-img4.jpg
-        |-- gallery.jpg
+        |-- Food-Sefty.jpeg
         |-- ganapati-banner.jpg
-        |-- ganesh-img1.jpg
-        |-- ganesh-offer.jpg
         |-- ganesh-removebg.png
         |-- ganesh-removebg.webp
         |-- ganesha-logo-removebg.png
@@ -64,63 +59,25 @@
         |-- healthcare_icon2-1.webp
         |-- healthcare_icon3-1.webp
         |-- healthcare_icon4-1.webp
-        |-- hospital1.jpg
         |-- HouseWarming.webp
         |-- img1.jpg
         |-- journeyandcore.jpg
+        |-- Kitchen-Essential.jpg
         |-- kitchenstandard.png
         |-- kitchenstandard.webp
         |-- Manufacturing.jpg
-        |-- Manufacturingunit.png
         |-- Manufacturingunit.webp
         |-- Marriage.jpg
         |-- meal.jpg
-        |-- menu1.jpg
-        |-- menu1.png
-        |-- menu2.jpg
-        |-- menu2.png
-        |-- menu3.jpg
-        |-- menu3.png
-        |-- menu4.jpg
-        |-- menu4.png
-        |-- menu5.jpg
-        |-- milestone-img.jpg
         |-- milestone-img.png
-        |-- Milestone.jpg
-        |-- Milestone.png
         |-- mission-img.jpg
         |-- mission.jpg
-        |-- offsite.jpg
-        |-- offsitebanner.jpg
-        |-- pexels-alteredsnaps-13722609.jpg
-        |-- pexels-chinarianphotographer-14846583.jpg
-        |-- pexels-lan-yao-324969-6750621.jpg
-        |-- pexels-mike-jones-9052279.jpg
-        |-- pexels-myatezhny39-3570077.jpg
-        |-- pexels-rdne-4921164.jpg
-        |-- pexels-receptcelik-7881910.jpg
-        |-- pexels-vanmalidate-784633.jpg
-        |-- pexels-vince-32968567.jpg
-        |-- pexels-yelenaodintsova-15792129.jpg
-        |-- pexels-zvolskiy-2253643.jpg
-        |-- poonam-rajput-bhM6NzUOxLQ-unsplash.jpg
-        |-- quality.jpg
-        |-- qualitystandard.webp
+        |-- OurCommitment.png
+        |-- OurCommitment1.png
+        |-- qualitystandard123.webp
         |-- qualitystanderds.jpg
-        |-- risk.png
-        |-- Riskmanagment.jpg
-        |-- risky.png
         |-- risky.webp
         |-- service.jpg
-        |-- standard1.jpg
-        |-- standard2.jpg
-        |-- standard3.jpeg
-        |-- standard4.jpg
-        |-- standard5.jpg
-        |-- story.jpg
-        |-- supply.jfif
-        |-- sustain.jpg
-        |-- technology.png
         |-- weedingandengagement.webp
         |-- Weedingcatering.webp
     |-- index.html
@@ -143,11 +100,11 @@
             |-- About_service.jsx
             |-- Milestone.css
             |-- Milestones.jsx
+            |-- OurCommitment.css
+            |-- OurCommitment.jsx
             |-- Standards.css
             |-- Standards.jsx
         |-- AutoTyping.jsx
-        |-- Cal.jsx
-        |-- Cnfpassword.jsx
         |-- Contacts
             |-- client.css
             |-- Client.jsx
@@ -157,12 +114,7 @@
             |-- ContactUs.jsx
             |-- writetous.css
             |-- WritetoUs.jsx
-        |-- Corporate
-        |-- Corporate-main.jsx
-        |-- DeleteAccount.jsx
         |-- Delpopup.jsx
-        |-- Demo.jsx
-        |-- Done.jsx
         |-- Error.jsx
         |-- Events
             |-- Events.css
@@ -179,9 +131,19 @@
         |-- Footers
             |-- foot.css
             |-- Foot.jsx
-        |-- Forget.jsx
-        |-- Hh.jsx
         |-- Homes
+            |-- Eve-Section1.css
+            |-- Eve-Section1.jsx
+            |-- Eve-Section2.css
+            |-- Eve-Section2.jsx
+            |-- Eve-Section3.css
+            |-- Eve-Section3.jsx
+            |-- Eve-Section4.css
+            |-- Eve-Section4.jsx
+            |-- Eve-Section5.css
+            |-- Eve-Section5.jsx
+            |-- Eve-Section6.css
+            |-- Eve-Section6.jsx
             |-- gallery.css
             |-- Gallery.jsx
             |-- hero.css
@@ -199,17 +161,8 @@
             |-- Vision.jsx
             |-- Whyus_home.css
             |-- Whyus_home.jsx
-        |-- Log.jsx
-        |-- Login.jsx
-        |-- Menu.jsx
-        |-- MissionVisionValues.jsx
-        |-- Nav.jsx
         |-- Navbar.jsx
-        |-- Otp-Forget.jsx
-        |-- Otp.jsx
-        |-- OurStory-main.jsx
         |-- PrivacyPolicy.jsx
-        |-- PrivateRoute.jsx
         |-- Services
             |-- Corporate_new.css
             |-- Corporate_new.jsx
@@ -233,7 +186,6 @@
             |-- Training.jsx
             |-- whatwedo.css
             |-- WhatWeDo.jsx
-        |-- SignUp.jsx
         |-- SubComponents
             |-- Amddascorporate.css
             |-- AmddasEvents.css
@@ -247,35 +199,11 @@
             |-- CorporateBanner.jsx
             |-- CorporateExperience.jsx
             |-- exprience.css
-            |-- meal.css
-            |-- Mission.css
-            |-- MyMeal.jsx
-            |-- MyMealMain.jsx
-            |-- offsite.css
-            |-- offsitemain.css
-            |-- OffsiteMain.jsx
-            |-- Ourmeal-main.css
-            |-- OurStory.css
-            |-- OurStory.jsx
-            |-- Supply.jsx
-            |-- SupplyChain.css
-            |-- SupplyChain.jsx
-            |-- Sustain.css
-            |-- Sustain.jsx
-            |-- Sustainability.css
-            |-- Sustainability.jsx
-            |-- technology.css
-            |-- Technology.jsx
-            |-- TechnologyPage.css
-            |-- TechnologyPage.jsx
-            |-- Video.css
-            |-- VideoAmdas.jsx
             |-- WhatsAppFloat.css
             |-- WhatsAppFloat.jsx
         |-- WhyUs
             |-- Why_Us.css
             |-- Why_Us.jsx
-    |-- db.json
     |-- fonts
         |-- Junction-bold.otf
         |-- Junction-light.otf
@@ -742,40 +670,14 @@
         |-- WhatsApp Image 2024-09-28 at 5.54.20 PM.jpeg
     |-- index.css
     |-- index.js
-    |-- logo.svg
-    |-- port
-        |-- portno.js
-    |-- Redux
-        |-- authActions.js
-        |-- authSlice.js
-        |-- cancel.js
-        |-- store.js
     |-- reportWebVitals.js
     |-- ScrollAnimations.css
     |-- setupTests.js
     |-- Styles
-        |-- about.css
-        |-- cal.css
-        |-- cnf.css
-        |-- DeleteAccount.css
-        |-- done.css
         |-- ErrorPage.css
         |-- footer.css
-        |-- forget.css
-        |-- gallery.css
-        |-- hero.css
-        |-- Home.css
-        |-- ll.css
-        |-- log.css
-        |-- login.css
-        |-- menu.css
-        |-- MissionVision.css
-        |-- nav.css
         |-- Navbar.css
-        |-- otp.css
-        |-- OurStory-main.css
         |-- privacy.css
-        |-- signup.css
         |-- SubStyles
             |-- ourstory.css
     |-- utils

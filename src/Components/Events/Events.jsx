@@ -397,7 +397,7 @@ export default React.memo(function Carousel() {
     },
     {
       id: EVENT_SECTIONS.housewarming,
-      title: 'HouseWarming Celebration',
+      title: 'Housewarming / Grihapravesh Celebration',
       image: '/images/HouseWarming.webp',
       imageAlt: 'House Warming Celebration',
       imageName: 'housewarming',
@@ -406,7 +406,7 @@ export default React.memo(function Carousel() {
     },
     {
       id: EVENT_SECTIONS.birthday,
-      title: 'Birthday Party',
+      title: 'Birthday Parties',
       image: '/images/Birthday.webp',
       imageAlt: 'Birthday Celebration',
       imageName: 'birthday',
@@ -431,7 +431,7 @@ export default React.memo(function Carousel() {
     },
     {
       id: EVENT_SECTIONS.bhandaara,
-      title: 'Bhandara Services',
+      title: 'Bhandara / Langar',
       image: '/images/Bhandaras.webp',
       imageAlt: 'Bhandaara Service',
       imageName: 'bhandaara',
