@@ -397,7 +397,7 @@ export default React.memo(function Carousel() {
     },
     {
       id: EVENT_SECTIONS.housewarming,
-      title: 'Housewarming / Grihapravesh Celebration',
+      title: 'Housewarming / Grihapravesh',
       image: '/images/HouseWarming.webp',
       imageAlt: 'House Warming Celebration',
       imageName: 'housewarming',

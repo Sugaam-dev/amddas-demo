@@ -155,7 +155,7 @@ import './about.css';
 const About_all = lazy(() => import('./About_all'));
 const OurCommitment = lazy(() => import('./OurCommitment'));
 const About_service = lazy(() => import('./About_service'));
-const Standards = lazy(() => import('./Standards'));
+// const Standards = lazy(() => import('./Standards'));
 const Milestones = lazy(() => import('./Milestones'));
 
 // Loading skeleton component
@@ -220,11 +220,11 @@ const About = memo(() => {
           </div>
         </Suspense>
 
-        <Suspense fallback={<LoadingSkeleton />}>
+        {/* <Suspense fallback={<LoadingSkeleton />}>
           <div className="section-wrapper">
             <Standards />
           </div>
-        </Suspense>
+        </Suspense> */}
 
         <Suspense fallback={<LoadingSkeleton />}>
           <div className="section-wrapper">

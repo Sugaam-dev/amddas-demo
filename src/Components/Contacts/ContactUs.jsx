@@ -31,8 +31,9 @@ const ContactUs = () => {
   ];
 
   const locations = [
+    "Bengaluru",
     "Pune",
-    "Bengaluru"
+    
   ];
 
   // Enhanced email validation

@@ -127,10 +127,6 @@
         |-- Footer
             |-- Footerr.css
             |-- Footerr.jsx
-        |-- Footer.jsx
-        |-- Footers
-            |-- foot.css
-            |-- Foot.jsx
         |-- Homes
             |-- Eve-Section1.css
             |-- Eve-Section1.jsx
@@ -152,7 +148,6 @@
             |-- Home.jsx
             |-- Journeyvalues.css
             |-- Journeyvalues.jsx
-            |-- JournyValues.css
             |-- Mission.css
             |-- Mission.jsx
             |-- Testimonial.css
