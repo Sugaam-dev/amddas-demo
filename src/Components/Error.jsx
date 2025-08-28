@@ -24,11 +24,11 @@ const Error = () => {
             Please use the options below to navigate further.
           </p>
 
-          <div className="buttons">
+          {/* <div className="buttons">
             <Link to="/" className="button">Return Login Page</Link>
          
-            {/* <a href="mailto:support@example.com" className="button">Report this issue</a> */}
-          </div>
+            <a href="mailto:support@example.com" className="button">Report this issue</a>
+          </div> */}
         </div>
       </div>
     </div>
