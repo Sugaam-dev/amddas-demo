@@ -98,8 +98,9 @@ const Footerr = () => {
           <div className="footer-column">
             <h4>Important Links</h4>
             <ul>
-              <li><Link to="/why-Amddas">Why Amddas</Link></li>
+              
               <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/why-Amddas">Why Amddas</Link></li>
               <li><Link to="/contact">Contact Us</Link></li>
               {/* <li><Link to="/privacy-policy">Privacy Policy</Link></li>
               <li><Link to="/privacy-policy">Terms & Conditions</Link></li> */}
