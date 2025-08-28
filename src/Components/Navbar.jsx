@@ -38,7 +38,7 @@ const EVENTS = [
   { key: 'Birthday', label: 'Birthday Parties' },
   { key: 'Engagement', label: 'Anniversary Ceremonies' },
   { key: 'Festival', label: 'Community Festivals' },
-  { key: 'Bhandaara', label: 'Bhandara' }
+  { key: 'Bhandaara', label: 'Bhandara / Langar' }
 ];
 
 function Navbarr() {
@@ -249,7 +249,7 @@ function Navbarr() {
               <Link to="/about" className="modern-nav-item">
                 About Us
               </Link>
-
+   <Link to="/why-Amddas" className="modern-nav-item">Why Amddas</Link>
               <div 
                 className={`modern-dropdown ${servicesOpen ? 'active' : ''}`}
                 onMouseEnter={() => { 
@@ -318,8 +318,8 @@ function Navbarr() {
                 )}
               </div>
 
-              <Link to="/why-us" className="modern-nav-item">Why Us</Link>
-              <Link to="/festivals" className="modern-nav-item">Festivals</Link>
+           
+              {/* <Link to="/festivals" className="modern-nav-item">Festivals</Link> */}
               <Link to="/contact" className="modern-nav-item modern-contact-btn">Contact Us</Link>
             </div>
 
@@ -358,7 +358,9 @@ function Navbarr() {
                 <Link to="/about" className="modern-mobile-item" onClick={handleClose}>
                   About Us
                 </Link>
-
+ <Link to="/why-us" className="modern-mobile-item" onClick={handleClose}>
+                  Why Amddas
+                </Link>
                 <div className="modern-mobile-dropdown">
                   <div className="modern-mobile-dropdown-header">
                     <span 
@@ -413,12 +415,10 @@ function Navbarr() {
                   )}
                 </div>
 
-                <Link to="/why-us" className="modern-mobile-item" onClick={handleClose}>
-                  Why Us
-                </Link>
-                <Link to="/festivals" className="modern-mobile-item" onClick={handleClose}>
+               
+                {/* <Link to="/festivals" className="modern-mobile-item" onClick={handleClose}>
                   Festivals
-                </Link>
+                </Link> */}
                 <Link to="/contact" className="modern-mobile-item modern-mobile-contact" onClick={handleClose}>
                   Contact Us
                 </Link>
