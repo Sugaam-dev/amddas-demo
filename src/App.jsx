@@ -120,7 +120,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
       
      
-        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+        {/* <Route path='/privacy-policy' element={<PrivacyPolicy />} /> */}
         <Route path='/about' element={<About/>}/>
         <Route path='/amddas-gallery' element={<Gallery/>}/>
         <Route path='/events' element={<Events/>}/>
@@ -128,8 +128,8 @@ function App() {
 
        
         <Route path='/contact' element={<Contact/>}/>
-        <Route path="/why-us" element={<Why_Us />} />
-        <Route path="/festivals" element={<Festivals />} />
+        <Route path="/why-Amddas" element={<Why_Us />} />
+        {/* <Route path="/festivals" element={<Festivals />} /> */}
 
       
        
