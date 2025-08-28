@@ -32,32 +32,43 @@ const EveSection1 = () => {
     };
   }, []);
 
-  // Button handler
+  // Updated scroll to section utility function with proper centering
+  const scrollToSection = useCallback((sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const elementRect = element.getBoundingClientRect();
+      const absoluteElementTop = elementRect.top + window.pageYOffset;
+      const elementHeight = elementRect.height;
+      const viewportHeight = window.innerHeight;
+      
+      // Calculate position to center the element in viewport
+      const centerPosition = absoluteElementTop - (viewportHeight / 2) + (elementHeight / 2);
+      const scrollToPosition = Math.max(0, centerPosition);
+      
+      window.scrollTo({
+        top: scrollToPosition,
+        behavior: 'smooth'
+      });
+    }
+  }, []);
+
+  // Button handler with improved centering
   const handleEventsNavigation = useCallback(() => {
     const eventType = 'Wedding';
     const sectionId = `${eventType.toLowerCase()}-section`; // 'wedding-section'
     const currentPath = window.location.pathname;
 
     if (currentPath === '/events') {
-      // If already on the events page, scroll now.
+      // If already on the events page, scroll with centering
       setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const NAVBAR_HEIGHT = 110;
-          const SCROLL_OFFSET = 20;
-          const elementRect = element.getBoundingClientRect();
-          const absoluteElementTop = elementRect.top + window.pageYOffset;
-          const scrollToPosition = Math.max(0, absoluteElementTop - NAVBAR_HEIGHT - SCROLL_OFFSET);
-
-          window.scrollTo({ top: scrollToPosition, behavior: 'smooth' });
-        }
+        scrollToSection(sectionId);
       }, 100); // Short delay to ensure DOM ready
     } else {
       // Navigate and trigger scroll on next page load
       sessionStorage.setItem('scrollTarget', sectionId);
       navigate('/events');
     }
-  }, [navigate]);
+  }, [navigate, scrollToSection]);
 
   return (
     <div className="events-section">
