@@ -107,7 +107,7 @@
   left: 0;
   width: 60px;
   height: 3px;
-  background-color: #e6fff9;
+  background: linear-gradient(90deg, #ff6b35, #f7931e);
   border-radius: 2px;
 }
 
@@ -130,7 +130,7 @@
 
 .whyus-text li::before {
   content: '•';
-  color: #00CCCC;
+  color: #ff6b35;
   font-weight: bold;
   position: absolute;
   left: 0;

@@ -198,7 +198,7 @@ left: 50%;
 transform: translateX(-50%);
 width: 0;
 height: 4px;
-background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+background: linear-gradient(90deg, #ff6b35, #f7931e);
 border-radius: 2px;
 transition: width 0.8s ease-out;
 }

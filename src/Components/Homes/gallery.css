@@ -178,7 +178,7 @@
   transform: translateX(-50%);
   width: 0;
   height: 4px;
-  background: linear-gradient(90deg, #b8860b 0%, #d4af37 100%);
+  background: linear-gradient(90deg, #ff6b35, #f7931e);
   border-radius: 2px;
   transition: width 0.8s ease 0.5s;
 }
