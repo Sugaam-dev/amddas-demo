@@ -13,6 +13,10 @@ function CorporateNewPage() {
   const observerRef = useRef(null);
   const sectionsSetRef = useRef(new Set());
 
+  // Constants for scroll behavior
+  const NAVBAR_HEIGHT = 110;
+  const SCROLL_OFFSET = 20;
+
   // Memoize observer options to prevent recreation
   const observerOptions = useMemo(() => ({
     threshold: 0.1,
@@ -24,7 +28,6 @@ function CorporateNewPage() {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('corporate-animate-in');
-        // Remove the unobserve line that was causing issues
       }
     });
   }, []);
@@ -40,6 +43,36 @@ function CorporateNewPage() {
     }
   }, []);
 
+  // Scroll handling function
+  const scrollToSection = useCallback((sectionId) => {
+    const scrollAttempt = () => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const elementRect = element.getBoundingClientRect();
+        const absoluteElementTop = elementRect.top + window.pageYOffset;
+        const scrollToPosition = Math.max(0, absoluteElementTop - NAVBAR_HEIGHT - SCROLL_OFFSET);
+        
+        window.scrollTo({
+          top: scrollToPosition,
+          behavior: 'smooth'
+        });
+        return true;
+      }
+      return false;
+    };
+
+    // Try immediate scroll first
+    if (!scrollAttempt()) {
+      // If element not found, try again after a short delay
+      setTimeout(() => {
+        if (!scrollAttempt()) {
+          // Final attempt with longer delay
+          setTimeout(scrollAttempt, 500);
+        }
+      }, 100);
+    }
+  }, []);
+
   useEffect(() => {
     // Create observer once
     observerRef.current = new IntersectionObserver(handleIntersection, observerOptions);
@@ -51,6 +84,22 @@ function CorporateNewPage() {
       }
     });
 
+    // Handle scroll target from session storage
+    const handleScrollTarget = () => {
+      const scrollTarget = sessionStorage.getItem('scrollTarget');
+      if (scrollTarget) {
+        sessionStorage.removeItem('scrollTarget');
+        
+        // Wait for component to fully render
+        setTimeout(() => {
+          scrollToSection(scrollTarget);
+        }, 300);
+      }
+    };
+
+    // Handle scroll target on component mount
+    handleScrollTarget();
+
     // Cleanup function
     return () => {
       if (observerRef.current) {
@@ -61,7 +110,7 @@ function CorporateNewPage() {
       }
       sectionsSetRef.current.clear();
     };
-  }, [observerOptions, handleIntersection]);
+  }, [observerOptions, handleIntersection, scrollToSection]);
 
   return (
     <div className="corporate-container" id="corporate-section">
