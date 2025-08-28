@@ -3,65 +3,63 @@ import './Why_Us.css';
 
 const sections = [
   {
-    title: "Risk Management Standards",
-    image: '/images/risky.webp',
-    points: [
-      "Public Liability Policy is issued per site where our food is being supplied/consumed.",
-      "All medical expense covered in case of hospitalization caused due the Food poisoning, body injury or property",
-      "damage caused by AMDDAS FOODs directly or indirectly.",
-      "Daily food samples are collected & stored for 72 Hrs. to prove false food poisoning claims reported otherwise.",
-      "** NB — Based on client requirement.",
-      "Strictly GST compliant along with updated Ledger and bank records. Regular on-time Tax return filing done.",
-    ]
-  },
-  {
-    title: "Quality Standard",
-    image: "/images/qualitystandard123.webp",
-    points: [
-      "Food is cooked in a very hygienic environment under constant quality controlled processes.",
-      "Vegetables are procured twice/week for freshness from authorized Distributor (Qtrly Pesticide residual test done)",
-      "We undergo water testing from Eurofins every quarter or on need basis. (Payable by client)",
-      "We undergo food testing from Vimta Labs every quarter or on need basis (Payable by client)",
-      "Food tasting done daily before moving it to dispatching/packaging area.",
-      "Hoffman Insulated boxes are used for packaging/transportation which keeps food hot and fresh for 8—10 hrs.",
-      "Food is transported in covered vehicles at all given point of time.",
-    ]
-  },
-  {
-    title: "Manufacturing Unit Standards",
-    image: "/images/Manufacturingunit.webp",
-    points: [
-      "HACCP (Hazard Analysis and Critical Control Points) standards met.",
-      "Segregated Veg and Non-Veg cooking & storage sections.",
-      "Gas bank located outside the kitchen. Fire extinguishers installed at all strategic locations.",
-      "Restricted access with 24/7 surveillance inside and outside the manufacturing areas.",
-      "Every weekend deep cleaning is done throughout the facility apart from daily cleaning post cooking.",
-      "Pest control done every week.",
-      "24/7 power back up for seamless execution of operations.",
-    ]
-  },
-  {
-    title: "Employee Standard",
-    image: "/images/employeestandard.webp",
-    points: [
-      "All employees undergo quarterly Medical Fitness Test clearance while in service in AMDDAS FOODS.",
-      "All staff have segregated dress code based on their job roles.",
-      "All shoes are kept outside and the staff and visitors move around with kitchen shoes for in-house usage only.",
-      "PF & ESI for all permanent employees done.",
-      "Company provided staff quarters adjacent to the Manufacturing unit to avoid hassle free operation.",
-    ]
-  },
-  {
-    title: "Certified Kitchen",
+    title: "Manufacturing Certifications",
     image: "/images/kitchenstandard.webp",
     points: [
-      "FSSAI Certificate.",
-      "Food Testing Report.",
-      "MSME Udhyam Certificate.",
-      "Pest Control Certificate.",
-      "Water Testing Report.",
+      "FSSAI Certification – Fully licensed and compliant with Food Safety and Standards Authority of India regulations",
+      "Food Testing Reports – Regular laboratory testing to ensure food safety, hygiene, and compliance with health standards",
+      "MSME Udhyam Certification – Recognized under the Ministry of Micro, Small & Medium Enterprises, validating business credibility.",
+      "Pest Control Certification – Regularly conducted pest control with official certification for a safe and hygienic facility.",
+      "Water Testing Reports – Periodic lab testing to ensure the use of clean, safe, and high-quality water in all food preparation.",
+    ]
+  },
+  {
+    title: "Uncompromising Quality",
+    image: "/images/qualitystandard123.webp",
+    points: [
+      "Hygienic Food Preparation – All meals are prepared in a sanitized kitchen under strict quality-controlled processes",
+      "Fresh & Safe Ingredients – Vegetables are sourced twice a week from authorized distributors, with quarterly pesticide residue testing for safety and compliance.",
+      "Rigorous Testing – Regular water testing (Eurofins) and food testing (Vimta Labs) conducted quarterly or as needed (client-requested services, chargeable separately)",
+      "Daily Quality Check – Every dish undergoes tasting before packaging to ensure taste, freshness, and consistency.",
+      "Safe Transportation – Food is always delivered in covered vehicles, ensuring hygiene throughout transit.",
+    ]
+  },
+  {
+    title: "State-of-the-Art Manufacturing Facility",
+    image: "/images/Manufacturingunit.webp",
+    points: [
+      "International Safety Compliance – Fully aligned with HACCP (Hazard Analysis and Critical Control Points) standards for food safety and quality.",
+      "Dedicated Cooking Zones – Separate kitchens and storage areas for vegetarian and non-vegetarian food to maintain purity and compliance.",
+      "Comprehensive Fire & Safety Measures – Centralized gas bank located outside the kitchen, with fire extinguishers strategically placed across the unit.",
+      "Secure & Monitored Facility – Restricted access with 24/7 surveillance inside and outside the premises for maximum security.",
+      "Rigorous Cleaning & Pest Control – Daily cleaning post-cooking, weekly pest control, and scheduled deep cleaning every weekend.",
+      "Uninterrupted Operations – 24/7 power backup to ensure seamless food preparation and delivery without disruptions.",
+      
+    ]
+  },
+  {
+    title: "Robust Risk Management",
+    image: '/images/risky.webp',
+    points: [
+      "Food Safety Assurance – Daily food samples are collected and securely stored for 72 hours to safeguard against false food poisoning claims. (Extended storage available based on client requirements.)",
+      "Regulatory & Legal Compliance – 100% GST compliant operations with transparent ledger management, updated bank records, and timely tax return filings.",
+      "Proactive Safeguards – Preventive checks, hygiene audits, and safety protocols implemented to minimize risks and ensure uninterrupted catering services.",
+      "Client Trust & Transparency – Every process is documented and monitored, ensuring accountability and peace of mind for our clients.",
+    ]
+  },
+  {
+    title: "Employee Excellence & Welfare",
+    image: "/images/employeestandard.webp",
+    points: [
+      "Health & Safety First – All employees undergo quarterly medical fitness tests to ensure they are fit for service at AMDDAS FOODS.",
+      "Professional Dress Code – Staff uniforms are clearly defined based on job roles, ensuring hygiene, safety, and easy identification.",
+      "Strict Hygiene Protocols – Outdoor footwear is prohibited; staff and visitors use dedicated in-house kitchen shoes only.",
+      "Employee Benefits & Security – PF and ESI facilities provided to all permanent employees, reinforcing stability and welfare.",
+      "On-Site Accommodation – Company-provided staff quarters located adjacent to the manufacturing unit ensure hassle-free and timely operations.",
     ]
   }
+  
+  
 ];
 
 const LazyImage = memo(({ src, alt, className }) => {
