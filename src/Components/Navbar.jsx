@@ -358,7 +358,7 @@ function Navbarr() {
                 <Link to="/about" className="modern-mobile-item" onClick={handleClose}>
                   About Us
                 </Link>
- <Link to="/why-us" className="modern-mobile-item" onClick={handleClose}>
+ <Link to="/why-Amddas" className="modern-mobile-item" onClick={handleClose}>
                   Why Amddas
                 </Link>
                 <div className="modern-mobile-dropdown">
