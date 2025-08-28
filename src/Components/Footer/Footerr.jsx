@@ -28,7 +28,7 @@ const EVENTS = [
   { key: 'Birthday', label: 'Birthday Parties' },
   { key: 'Engagement', label: 'Anniversary Ceremonies' },
   { key: 'Festival', label: 'Community Festivals' },
-  { key: 'Bhandara/Langar', label: 'Bhandara/Langar' }
+  { key: 'Bhandara/Langar', label: 'Bhandara / Langar' }
 ];
 
 // Social links configuration
@@ -98,7 +98,7 @@ const Footerr = () => {
           <div className="footer-column">
             <h4>Important Links</h4>
             <ul>
-              <li><Link to="/why-us">Why Us</Link></li>
+              <li><Link to="/why-Amddas">Why Us</Link></li>
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/contact">Contact Us</Link></li>
               {/* <li><Link to="/privacy-policy">Privacy Policy</Link></li>
