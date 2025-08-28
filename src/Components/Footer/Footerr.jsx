@@ -28,7 +28,7 @@ const EVENTS = [
   { key: 'Birthday', label: 'Birthday Parties' },
   { key: 'Engagement', label: 'Anniversary Ceremonies' },
   { key: 'Festival', label: 'Community Festivals' },
-  { key: 'Bhandaara', label: 'Bhandara' }
+  { key: 'Bhandara/Langar', label: 'Bhandara/Langar' }
 ];
 
 // Social links configuration
