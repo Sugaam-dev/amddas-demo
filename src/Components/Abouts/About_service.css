@@ -1,4 +1,4 @@
-/* Enhanced About_service.css - Fixed Heights */
+/* Enhanced About_service.css - Fixed Heights with Text Hover Effects */
 
 /* Global Styles */
 * {
@@ -152,9 +152,9 @@
   position: relative;
 }
 
+/* Service Items */
 .service-item {
   position: relative;
- 
   font-size: clamp(0.95rem, 2vw + 0.3rem, 1.1rem);
   color: #333;
   line-height: 1.5;
@@ -170,6 +170,7 @@
   margin-right: 8px;
   display: inline;
   flex-shrink: 0;
+  transition: all 0.3s ease;
 }
 
 .service-text {
@@ -178,9 +179,10 @@
   font-weight: 400;
   display: inline;
   margin-left: 5px;
+  transition: all 0.3s ease;
 }
 
-/* Service Description */
+/* Service Description with Hover Effects */
 .service-description {
   font-size: clamp(0.95rem, 2vw + 0.2rem, 1.1rem);
   color: #555;
@@ -188,6 +190,49 @@
   font-family: 'Helvetica', Arial, sans-serif;
   font-weight: 400;
   margin-top: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  padding: 1rem;
+  border-radius: 12px;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-description::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  /* background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent); */
+  transition: left 0.6s ease;
+}
+
+.service-description:hover {
+  /* background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(255, 107, 53, 0.08)); */
+  color: #2b2b2b;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(70, 70, 69, 0.12);
+  /* border: 1px solid rgba(99, 96, 96, 0.2); */
+}
+
+.service-description:hover::before {
+  left: 100%;
+}
+
+/* Additional Hover Animation for Text Section */
+/* .about-service-text:hover .service-heading {
+  color: #ff6b35;
+} */
+
+.about-service-text:hover .service-item {
+  opacity: 0.7;
+}
+
+.about-service-text .service-item:hover {
+  opacity: 1;
 }
 
 /* Remove all animation classes */
@@ -224,7 +269,6 @@
   }
   
   .service-item {
- 
     margin-bottom: 1rem;
   }
 }
@@ -295,16 +339,17 @@
   }
   
   .service-item {
-   
     margin-bottom: 0.75rem;
     font-size: clamp(0.85rem, 2vw, 1rem);
     line-height: 1.4;
+    padding: 0.6rem 0.8rem;
   }
   
   .service-description {
     font-size: clamp(0.85rem, 2vw, 1rem);
     line-height: 1.5;
     margin-top: 0;
+    padding: 0.8rem;
   }
 }
 
@@ -349,6 +394,7 @@
   .service-item {
     justify-content: center;
     text-align: center;
+    padding: 0.5rem 0.7rem;
   }
 
   .service-heading {
@@ -359,6 +405,7 @@
   .service-description {
     text-align: left;
     margin-top: 0;
+    padding: 0.7rem;
   }
 }
 
@@ -395,8 +442,12 @@
   }
 
   .service-item {
-    padding: 0.4rem 0;
+    padding: 0.4rem 0.6rem;
     margin-bottom: 0.6rem;
+  }
+
+  .service-description {
+    padding: 0.6rem;
   }
 }
 
@@ -432,11 +483,11 @@
   }
 
   .service-item {
-   
     margin-bottom: 0.5rem;
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
+    padding: 0.4rem 0.5rem;
   }
 
   .service-bullet {
@@ -447,6 +498,10 @@
   .service-heading {
     margin-bottom: 1rem;
     text-align: center;
+  }
+
+  .service-description {
+    padding: 0.5rem;
   }
 }
 
@@ -499,7 +554,7 @@
   }
 
   .service-item {
-    padding: 0.3rem 0;
+    padding: 0.3rem 0.5rem;
     margin-bottom: 0.4rem;
     font-size: clamp(0.8rem, 2vw, 0.9rem);
   }
@@ -507,6 +562,7 @@
   .service-description {
     font-size: clamp(0.8rem, 2vw, 0.9rem);
     margin-top: 0;
+    padding: 0.4rem;
   }
 }
 
@@ -528,18 +584,29 @@
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
-  .lazy-image-container {
+  .lazy-image-container,
+  .service-heading,
+  .service-item,
+  .service-description,
+  .service-bullet,
+  .service-text {
     transition: none;
   }
   
   .loading-spinner {
     animation: none;
   }
+
+  .service-description::before {
+    display: none;
+  }
 }
 
 /* Focus States for Accessibility */
-.service-item:focus-visible {
-  outline: 3px solid #ff6b35;
+.service-item:focus-visible,
+.service-heading:focus-visible,
+.service-description:focus-visible {
+  outline: 3px solid #f0f0f0;
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -572,5 +639,15 @@
 
   .service-bullet {
     color: black !important;
+  }
+
+  /* Remove hover effects in print */
+  .service-heading:hover,
+  .service-item:hover,
+  .service-description:hover {
+    transform: none;
+    background: none;
+    color: black !important;
+    box-shadow: none;
   }
 }
