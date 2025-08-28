@@ -355,7 +355,7 @@ export default React.memo(function Carousel() {
   const eventSections = useMemo(() => [
     {
       id: EVENT_SECTIONS.wedding,
-      title: 'Wedding Functions',
+      title: 'Weddings',
       image: '/images/weedingandengagement.webp',
       imageAlt: 'Wedding Celebration',
       imageName: 'marriage',
@@ -363,7 +363,7 @@ export default React.memo(function Carousel() {
     },
     {
       id: EVENT_SECTIONS.housewarming,
-      title: 'House Warming Celebrations',
+      title: 'HouseWarming Celebration',
       image: '/images/HouseWarming.webp',
       imageAlt: 'House Warming Celebration',
       imageName: 'housewarming',
@@ -372,7 +372,7 @@ export default React.memo(function Carousel() {
     },
     {
       id: EVENT_SECTIONS.birthday,
-      title: 'Birthday Celebrations',
+      title: 'Birthday Party',
       image: '/images/Birthday.webp',
       imageAlt: 'Birthday Celebration',
       imageName: 'birthday',
@@ -380,7 +380,7 @@ export default React.memo(function Carousel() {
     },
     {
       id: EVENT_SECTIONS.engagement,
-      title: 'Anniversary Ceremonies',
+      title: 'Anniversaries',
       image: '/images/Engagement1.jpg',
       imageAlt: 'Engagement Celebration',
       imageName: 'engagement',
