@@ -230,7 +230,7 @@ export default React.memo(function Carousel() {
     });
   }, []);
 
-  // Optimized scroll function
+  // Updated scroll function with proper centering
   const scrollToSection = useCallback((sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -238,11 +238,30 @@ export default React.memo(function Carousel() {
       requestAnimationFrame(() => {
         const elementRect = element.getBoundingClientRect();
         const absoluteElementTop = elementRect.top + window.pageYOffset;
-        const scrollToPosition = Math.max(0, absoluteElementTop - NAVBAR_HEIGHT);
+        const elementHeight = elementRect.height;
+        const viewportHeight = window.innerHeight;
+        
+        // Calculate position to center the element in viewport
+        const centerPosition = absoluteElementTop - (viewportHeight / 2) + (elementHeight / 2);
+        const scrollToPosition = Math.max(0, centerPosition);
         
         window.scrollTo({
           top: scrollToPosition,
           behavior: 'smooth'
+        });
+      });
+    }
+  }, []);
+
+  // Alternative method using scrollIntoView with center block
+  const scrollToSectionAlternative = useCallback((sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      requestAnimationFrame(() => {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+          inline: 'nearest'
         });
       });
     }
@@ -258,10 +277,22 @@ export default React.memo(function Carousel() {
     { key: 'scrollToBhandaara', sectionId: EVENT_SECTIONS.bhandaara }
   ], []);
 
-  // Optimized section scroll handler
+  // Enhanced section scroll handler with scrollTarget support
   const handleSectionScroll = useCallback(() => {
+    // First check for scrollTarget (from other pages)
     let scrollTarget = null;
-    
+    try {
+      scrollTarget = sessionStorage.getItem('scrollTarget');
+      if (scrollTarget) {
+        sessionStorage.removeItem('scrollTarget');
+        setTimeout(() => scrollToSection(scrollTarget), SCROLL_DELAY);
+        return;
+      }
+    } catch (error) {
+      console.warn('SessionStorage not available:', error);
+    }
+
+    // Then check for regular scroll flags
     for (const { key, sectionId } of scrollFlags) {
       try {
         if (sessionStorage.getItem(key)) {
@@ -350,6 +381,9 @@ export default React.memo(function Carousel() {
       }
     };
   }, [handleSectionScroll, handleHashScroll, setupIntersectionObserver]);
+
+  // Rest of your component remains the same...
+  // (eventSections, swiperConfig, etc.)
 
   // Memoized event sections data
   const eventSections = useMemo(() => [
@@ -479,7 +513,7 @@ export default React.memo(function Carousel() {
             <div className="amddas-event-content amddas-animate-on-scroll">
               <h2 className="amddas-event-title amddas-animate-on-scroll">{section.title}</h2>
               <div className="amddas-event-description">
-                {section.description.split('\n').map((paragraph, index) => (
+                {section.description.split('\\n').map((paragraph, index) => (
                   <p key={index} className="amddas-event-paragraph">
                     {paragraph}
                   </p>

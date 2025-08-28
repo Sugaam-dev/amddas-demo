@@ -120,7 +120,6 @@
         |-- story.jpg
         |-- supply.jfif
         |-- sustain.jpg
-        |-- Sweets1.jpg
         |-- technology.png
         |-- weedingandengagement.webp
         |-- Weedingcatering.webp

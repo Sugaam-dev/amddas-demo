@@ -43,32 +43,37 @@ const EveSection4 = () => {
     };
   }, []);
 
-  // Scroll to section utility function (matching navbar and footer logic)
-  const scrollToSection = useCallback((sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const elementRect = element.getBoundingClientRect();
-      const absoluteElementTop = elementRect.top + window.pageYOffset;
-      const scrollToPosition = Math.max(0, absoluteElementTop - NAVBAR_HEIGHT - SCROLL_OFFSET);
-      
-      window.scrollTo({
-        top: scrollToPosition,
-        behavior: 'smooth'
-      });
-    }
-  }, []);
+// Scroll to section utility function with improved centering
+const scrollToSection = useCallback((sectionId) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    const elementRect = element.getBoundingClientRect();
+    const absoluteElementTop = elementRect.top + window.pageYOffset;
+    const elementHeight = elementRect.height;
+    const viewportHeight = window.innerHeight;
+    
+    // Calculate position to center the element
+    const centerPosition = absoluteElementTop - (viewportHeight / 2) + (elementHeight / 2);
+    const scrollToPosition = Math.max(0, centerPosition);
+    
+    window.scrollTo({
+      top: scrollToPosition,
+      behavior: 'smooth'
+    });
+  }
+}, []);
+
 
   // Handle Training navigation using the same logic as navbar and footer
   const handleEventsRedirect = useCallback(() => {
-    const serviceType = 'Training'; // Training key for services navigation
-    const sectionId = `${serviceType.toLowerCase()}-section`; // Creates 'training-section'
+    const sectionId = 'culinary-training-section'; // Specific section ID
     const currentPath = window.location.pathname;
     
     if (currentPath === '/services') {
-      // If already on services page, scroll to training section
+      // If already on services page, scroll to culinary training section
       scrollToSection(sectionId);
     } else {
-      // Navigate to services page and then scroll to training section
+      // Navigate to services page and then scroll to culinary training section
       navigate('/services');
       sessionStorage.setItem('scrollTarget', sectionId);
       setTimeout(() => scrollToSection(sectionId), SCROLL_DELAY);

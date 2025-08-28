@@ -28,17 +28,45 @@ function WhatWeDo() {
     'training-section': trainingRef,
   }), []);
 
-  // Memoized scroll function to prevent recreation
+  // Updated scroll function to center sections properly
   const scrollToSection = useCallback((targetRef) => {
     if (targetRef?.current) {
       const rect = targetRef.current.getBoundingClientRect();
       const scrollY = window.scrollY || window.pageYOffset;
-      const navbarHeight = 90;
-      const y = Math.max(0, rect.top + scrollY - navbarHeight);
+      const elementHeight = rect.height;
+      const viewportHeight = window.innerHeight;
+      
+      // Calculate position to center the element in viewport
+      const absoluteElementTop = rect.top + scrollY;
+      const centerPosition = absoluteElementTop - (viewportHeight / 2) + (elementHeight / 2);
+      const scrollToPosition = Math.max(0, centerPosition);
       
       // Use requestAnimationFrame for better performance
       requestAnimationFrame(() => {
-        window.scrollTo({ top: y, behavior: 'smooth' });
+        window.scrollTo({ 
+          top: scrollToPosition, 
+          behavior: 'smooth' 
+        });
+      });
+    }
+  }, []);
+
+  // Function to handle scrolling to specific training sections
+  const scrollToTrainingSection = useCallback((sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const elementRect = element.getBoundingClientRect();
+      const absoluteElementTop = elementRect.top + window.pageYOffset;
+      const elementHeight = elementRect.height;
+      const viewportHeight = window.innerHeight;
+      
+      // Calculate position to center the element
+      const centerPosition = absoluteElementTop - (viewportHeight / 2) + (elementHeight / 2);
+      const scrollToPosition = Math.max(0, centerPosition);
+      
+      window.scrollTo({
+        top: scrollToPosition,
+        behavior: 'smooth'
       });
     }
   }, []);
@@ -56,7 +84,17 @@ function WhatWeDo() {
   }, [SECTION_MAP]);
 
   useEffect(() => {
-    // Find which scroll key is set
+    // Check for specific training section scroll targets first
+    const scrollTarget = sessionStorage.getItem('scrollTarget');
+    if (scrollTarget) {
+      setTimeout(() => {
+        scrollToTrainingSection(scrollTarget);
+        sessionStorage.removeItem('scrollTarget');
+      }, 100);
+      return;
+    }
+
+    // Find which scroll key is set for main sections
     let scrollKey = null;
     try {
       scrollKey = Object.keys(SECTION_MAP).find(key => sessionStorage.getItem(key));
@@ -82,7 +120,7 @@ function WhatWeDo() {
       // Cleanup timeout if component unmounts
       return () => clearTimeout(timeoutId);
     }
-  }, [SECTION_MAP, refMap, scrollToSection, clearSessionStorage]);
+  }, [SECTION_MAP, refMap, scrollToSection, scrollToTrainingSection, clearSessionStorage]);
 
   return (
     <div className="Our-services-root">

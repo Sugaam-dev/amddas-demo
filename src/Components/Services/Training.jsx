@@ -65,6 +65,7 @@ function Training() {
       <section 
         className="training-life-section" 
         ref={addToRefs}
+        id="culinary-training-section"
       >
         <div className="training-container-fluid">
           {/* Header within section */}
@@ -106,6 +107,7 @@ function Training() {
       <section 
         className="training-learning-section" 
         ref={addToRefs}
+        id="food-handler-training-section"
       >
         <div className="training-container-fluid">
           <div className="row align-items-center">
@@ -136,6 +138,7 @@ function Training() {
       <section 
         className="training-life-section" 
         ref={addToRefs}
+        id="kitchen-management-training-section"
       >
         <div className="training-container-fluid">
           <div className="row align-items-center">
@@ -166,6 +169,7 @@ function Training() {
       <section 
         className="training-learning-section" 
         ref={addToRefs}
+        id="audit-training-section"
       >
         <div className="training-container-fluid">
           <div className="row align-items-center">
