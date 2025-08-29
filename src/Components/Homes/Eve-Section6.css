@@ -320,6 +320,7 @@ font-size: clamp(1rem, 1vw, 1.1rem);
   
   .display-content {
     font-size: 15px;
+    text-align: left;
     
   }
   

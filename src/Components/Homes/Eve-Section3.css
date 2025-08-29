@@ -187,16 +187,16 @@
   transition: left 0.5s;
 }
 
-.action-button:hover::before {
+/* .action-button:hover::before {
   left: 100%;
   background: linear-gradient(135deg, #007bff, #17a2b8);
-}
+} */
 
-/* .action-button:hover {
+.action-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
-  background: linear-gradient(135deg, #20c997, #28a745);
-} */
+  background: linear-gradient(135deg, #007bff, #17a2b8);
+}
 
 .action-button:active {
   transform: translateY(-1px);
