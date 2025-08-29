@@ -198,7 +198,7 @@ bottom: -12px;
 left: 0; /* Changed from 50% to 0 for left alignment */
 transform: none; /* Removed translateX(-50%) */
 width: 0;
-height: 4px;
+height: 3px;
 background: linear-gradient(90deg, #ff6b35, #f7931e);
 border-radius: 2px;
 transition: width 0.8s ease-out;
@@ -300,10 +300,7 @@ transform: translateY(0);
 }
 
 /* Hover Effects - Updated for left alignment */
-.corporate-content-wrapper:hover .corporate-section-title::after {
-width: 120px;
-background: linear-gradient(45deg, var(--gradient-end), var(--gradient-start));
-}
+
 
 /* Responsive Design with Auto Heights */
 /* Extra Large screens (1400px and up) */
