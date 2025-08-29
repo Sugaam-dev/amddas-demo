@@ -272,6 +272,7 @@ h1, h2, h3, h4, h5, h6, p, span, div {
     margin: 15px auto 30px;
   }
   
+  
   .section-text {
     font-size: 16px;
     text-align: center;
@@ -309,6 +310,11 @@ h1, h2, h3, h4, h5, h6, p, span, div {
     padding: 0 15px;
     margin: 10px 5px;
   }
+
+   .heading-underlinee {
+     margin: 2px;
+  }
+  
   
   .section-heading {
     font-size: 28px;

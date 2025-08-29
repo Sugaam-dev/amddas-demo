@@ -189,6 +189,7 @@
 
 .action-button:hover::before {
   left: 100%;
+  background: linear-gradient(135deg, #007bff, #17a2b8);
 }
 
 /* .action-button:hover {
@@ -294,6 +295,10 @@
   .primary-heading {
     font-size: 28px;
     text-align: left;
+  }
+
+  .primary-underline {
+    margin: 2px;
   }
   
   .primary-description {

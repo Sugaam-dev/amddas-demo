@@ -387,12 +387,16 @@ font-size: clamp(1rem, 1vw, 1.1rem);
   
   .Head-title{
     font-size: 28px;
-    text-align: left;
+    /* text-align: left; */
+  }
+
+  .feature-underline {
+    margin: 2px;
   }
   
   .hero-description {
     font-size: 14px;
-    text-align: left;
+    /* text-align: left; */
   }
   
   .content-section {

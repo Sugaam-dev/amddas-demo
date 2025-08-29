@@ -313,6 +313,10 @@ font-size: clamp(1rem, 1vw, 1.1rem);
     font-size: 28px;
     text-align: left;
   }
+
+  .display-underline {
+    margin: 2px;
+  }
   
   .display-content {
     font-size: 15px;
