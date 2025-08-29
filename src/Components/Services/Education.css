@@ -79,8 +79,8 @@ html, body {
   left: 0;
   bottom: -10px;
   width: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--education-accent), var(--education-secondary));
+  height: 3px;
+  background: linear-gradient(90deg, #ff6b35, #f7931e);
   border-radius: 2px;
   transition: width 0.8s ease-out;
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Navbar, Container, Offcanvas } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Styles/Navbar.css';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, NavLink, useLocation } from 'react-router-dom';
 import { CiMenuBurger } from "react-icons/ci";
 import { FaLinkedinIn, FaFacebookF, FaInstagram, FaYoutube, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { MdLocationOn } from 'react-icons/md';
@@ -43,6 +43,7 @@ const EVENTS = [
 
 function Navbarr() {
   const navigate = useNavigate();
+  const location = useLocation(); // Add this hook to track current route
 
   // State management
   const [expanded, setExpanded] = useState(false);
@@ -54,6 +55,16 @@ function Navbarr() {
   const [servicesHover, setServicesHover] = useState(false);
   const [eventsHover, setEventsHover] = useState(false);
   const [dropdownTimeout, setDropdownTimeout] = useState(null);
+
+  // Function to check if a route is active
+  const isActiveRoute = useCallback((path) => {
+    return location.pathname === path;
+  }, [location.pathname]);
+
+  // Function to check if dropdown should be active
+  const isDropdownActive = useCallback((routes) => {
+    return routes.some(route => location.pathname === route);
+  }, [location.pathname]);
 
   // Memoized scroll handler
   const handleScroll = useCallback(() => {
@@ -246,12 +257,22 @@ function Navbarr() {
               className="modern-nav-menu d-none d-lg-flex"
               onMouseLeave={handleNavMouseLeave}
             >
-              <Link to="/about" className="modern-nav-item">
+              <NavLink 
+                to="/about" 
+                className={({ isActive }) => `modern-nav-item ${isActive ? 'active' : ''}`}
+              >
                 About Us
-              </Link>
-   <Link to="/why-Amddas" className="modern-nav-item">Why Amddas</Link>
+              </NavLink>
+              
+              <NavLink 
+                to="/why-Amddas" 
+                className={({ isActive }) => `modern-nav-item ${isActive ? 'active' : ''}`}
+              >
+                Why Amddas
+              </NavLink>
+              
               <div 
-                className={`modern-dropdown ${servicesOpen ? 'active' : ''}`}
+                className={`modern-dropdown ${servicesOpen || isActiveRoute('/services') ? 'active' : ''}`}
                 onMouseEnter={() => { 
                   setServicesHover(true); 
                   handleDropdownEnter('services'); 
@@ -262,7 +283,7 @@ function Navbarr() {
                 }}
               >
                 <button 
-                  className="modern-dropdown-btn"
+                  className={`modern-dropdown-btn ${isActiveRoute('/services') ? 'active' : ''}`}
                   onClick={() => navigateToPage('/services')}
                 >
                   Services {(servicesHover || servicesOpen) ? <FaChevronUp size={10} /> : <FaChevronDown size={10} />}
@@ -285,7 +306,7 @@ function Navbarr() {
               </div>
 
               <div 
-                className={`modern-dropdown ${eventsOpen ? 'active' : ''}`}
+                className={`modern-dropdown ${eventsOpen || isActiveRoute('/events') ? 'active' : ''}`}
                 onMouseEnter={() => { 
                   setEventsHover(true); 
                   handleDropdownEnter('events'); 
@@ -296,7 +317,7 @@ function Navbarr() {
                 }}
               >
                 <button 
-                  className="modern-dropdown-btn"
+                  className={`modern-dropdown-btn ${isActiveRoute('/events') ? 'active' : ''}`}
                   onClick={() => navigateToPage('/events')}
                 >
                   Events {(eventsHover || eventsOpen) ? <FaChevronUp size={10} /> : <FaChevronDown size={10} />}
@@ -318,9 +339,12 @@ function Navbarr() {
                 )}
               </div>
 
-           
-              {/* <Link to="/festivals" className="modern-nav-item">Festivals</Link> */}
-              <Link to="/contact" className="modern-nav-item modern-contact-btn">Contact Us</Link>
+              <NavLink 
+                to="/contact" 
+                className={({ isActive }) => `modern-nav-item modern-contact-btn ${isActive ? 'active' : ''}`}
+              >
+                Contact Us
+              </NavLink>
             </div>
 
             <div className="modern-social-section d-none d-lg-flex">
@@ -355,16 +379,26 @@ function Navbarr() {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <div className="modern-mobile-menu">
-                <Link to="/about" className="modern-mobile-item" onClick={handleClose}>
+                <NavLink 
+                  to="/about" 
+                  className={({ isActive }) => `modern-mobile-item ${isActive ? 'active' : ''}`}
+                  onClick={handleClose}
+                >
                   About Us
-                </Link>
- <Link to="/why-Amddas" className="modern-mobile-item" onClick={handleClose}>
+                </NavLink>
+                
+                <NavLink 
+                  to="/why-Amddas" 
+                  className={({ isActive }) => `modern-mobile-item ${isActive ? 'active' : ''}`}
+                  onClick={handleClose}
+                >
                   Why Amddas
-                </Link>
+                </NavLink>
+                
                 <div className="modern-mobile-dropdown">
                   <div className="modern-mobile-dropdown-header">
                     <span 
-                      className="modern-mobile-main-link"
+                      className={`modern-mobile-main-link ${isActiveRoute('/services') ? 'active' : ''}`}
                       onClick={() => navigateToPage('/services')}
                     >
                       Services
@@ -391,7 +425,7 @@ function Navbarr() {
                 <div className="modern-mobile-dropdown">
                   <div className="modern-mobile-dropdown-header">
                     <span 
-                      className="modern-mobile-main-link"
+                      className={`modern-mobile-main-link ${isActiveRoute('/events') ? 'active' : ''}`}
                       onClick={() => navigateToPage('/events')}
                     >
                       Events
@@ -415,13 +449,13 @@ function Navbarr() {
                   )}
                 </div>
 
-               
-                {/* <Link to="/festivals" className="modern-mobile-item" onClick={handleClose}>
-                  Festivals
-                </Link> */}
-                <Link to="/contact" className="modern-mobile-item modern-mobile-contact" onClick={handleClose}>
+                <NavLink 
+                  to="/contact" 
+                  className={({ isActive }) => `modern-mobile-item modern-mobile-contact ${isActive ? 'active' : ''}`}
+                  onClick={handleClose}
+                >
                   Contact Us
-                </Link>
+                </NavLink>
               </div>
               
               <div className="modern-mobile-social">
