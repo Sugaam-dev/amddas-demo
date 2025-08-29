@@ -135,7 +135,7 @@ h1, h2, h3, h4, h5, h6, p, span, div {
 .story-accent {
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #17a2b8, #007bff);
+  background: linear-gradient(90deg, #ff6b35, #f7931e);
   margin: 15px 0 10px 0;
   border-radius: 2px;
 }
@@ -151,7 +151,7 @@ font-size: clamp(1rem, 1vw, 1.1rem);
 }
 
 .explore-button {
-  background: linear-gradient(135deg, #17a2b8, #007bff);
+   background: linear-gradient(45deg, #ffbf00, #e03d00);
   color: white;
   border: none;
   padding: 15px 30px;
@@ -312,10 +312,12 @@ font-size: clamp(1rem, 1vw, 1.1rem);
   
   .story-heading {
     font-size: 28px;
+    text-align: left;
   }
   
   .story-narrative {
     font-size: 15px;
+    text-align: left;
   }
   
   .explore-button {

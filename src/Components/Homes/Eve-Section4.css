@@ -229,7 +229,7 @@ font-size: clamp(1rem, 4vw, 2.3rem);
 .feature-underline {
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #17a2b8, #007bff);
+  background: linear-gradient(90deg, #ff6b35, #f7931e);
   margin: 15px 0 10px 0;
   border-radius: 2px;
 }
@@ -245,7 +245,7 @@ font-size: clamp(1rem, 1vw, 1.1rem);
 }
 
 .discover-btn {
-  background: linear-gradient(135deg, #17a2b8, #007bff);
+   background: linear-gradient(45deg, #ffbf00, #e03d00);
   color: white;
   border: none;
   padding: 15px 30px;
@@ -387,10 +387,12 @@ font-size: clamp(1rem, 1vw, 1.1rem);
   
   .Head-title{
     font-size: 28px;
+    text-align: left;
   }
   
   .hero-description {
     font-size: 14px;
+    text-align: left;
   }
   
   .content-section {
@@ -404,10 +406,12 @@ font-size: clamp(1rem, 1vw, 1.1rem);
   
   .feature-title {
     font-size: 28px;
+    text-align: left;
   }
   
   .feature-text {
     font-size: 15px;
+    text-align: left;
   }
   
   .discover-btn {

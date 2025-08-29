@@ -201,7 +201,7 @@ left: 0; /* Changed from 50% to 0 for left alignment */
 transform: none; /* Removed translateX(-50%) */
 width: 0;
 height: 4px;
-background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+background: linear-gradient(90deg, #ff6b35, #f7931e);
 border-radius: 2px;
 transition: width 0.8s ease-out;
 }
