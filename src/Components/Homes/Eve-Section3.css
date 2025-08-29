@@ -187,10 +187,10 @@
   transition: left 0.5s;
 }
 
-/* .action-button:hover::before {
+.action-button:hover::before {
   left: 100%;
-  background: linear-gradient(135deg, #007bff, #17a2b8);
-} */
+  
+}
 
 .action-button:hover {
   transform: translateY(-3px);
