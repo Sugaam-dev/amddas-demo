@@ -263,6 +263,7 @@
   
   .header-subtitle {
     font-size: 16px;
+    text-align: left;
   }
   
   .form-container h2 {
@@ -294,6 +295,10 @@
   
   .form-container h2 {
     font-size: 22px;
+    text-align: left;
+  }
+  .form-description {
+    text-align: left;
   }
   
   .form-group input,

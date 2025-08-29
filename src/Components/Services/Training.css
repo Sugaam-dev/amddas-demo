@@ -31,7 +31,7 @@ overflow-x: clip;
 .training-container {
 font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
 background-color: transparent !important;
-overflow: clip; /* Changed from overflow-x: hidden */
+overflow: clip;
 line-height: 1.6;
 }
 
@@ -80,7 +80,7 @@ background-color: transparent !important;
 opacity: 0;
 transform: translateY(60px);
 transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-overflow: clip; /* Added overflow control */
+overflow: clip;
 }
 
 .training-life-section.training-animate-in,
@@ -94,7 +94,7 @@ transform: translateY(0);
 max-width: 1400px;
 margin: 0 auto;
 padding: 0 1rem;
-overflow: clip; /* Added overflow control */
+overflow: clip;
 }
 
 /* Image Container Styles with Animation */
@@ -139,18 +139,19 @@ filter: brightness(0.95);
 
 .training-main-image:hover {
 transform: translateY(-12px) scale(1.03);
-
+box-shadow: var(--shadow-heavy);
 filter: brightness(1);
 }
 
-/* Content Wrapper with Auto Height */
+/* Content Wrapper with Auto Height - LEFT ALIGNED */
 .training-content-wrapper {
-padding: 1.5rem;
+padding: 2rem; /* Increased padding for better spacing */
 display: flex;
 flex-direction: column;
 justify-content: center;
 height: auto;
 min-height: auto;
+text-align: left; /* Changed from center to left */
 opacity: 0;
 transform: translateX(-60px);
 transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -170,14 +171,15 @@ transform: translateX(60px);
 transform: translateX(0);
 }
 
+/* LEFT ALIGNED Section Title */
 .training-section-title {
 font-size: clamp(1.75rem, 3vw, 2.5rem);
 font-weight: 700;
 color: var(--primary-dark);
-margin-bottom: 1rem;
+margin-bottom: 1.5rem; /* Increased margin for better spacing */
 line-height: 1.3;
 position: relative;
-text-align: center;
+text-align: left; /* Changed from center to left */
 letter-spacing: -0.01em;
 opacity: 0;
 transform: translateY(20px);
@@ -190,14 +192,15 @@ transform: translateY(0);
 transition-delay: 0.4s;
 }
 
+/* LEFT ALIGNED Animated Line */
 .training-section-title::after {
 content: '';
 position: absolute;
 bottom: -12px;
-left: 50%;
-transform: translateX(-50%);
+left: 0; /* Changed from 50% to 0 for left alignment */
+transform: none; /* Removed translateX(-50%) */
 width: 0;
-height: 4px;
+height: 3px;
 background: linear-gradient(90deg, #ff6b35, #f7931e);
 border-radius: 2px;
 transition: width 0.8s ease-out;
@@ -208,16 +211,17 @@ width: 80px;
 transition-delay: 0.6s;
 }
 
+/* LEFT ALIGNED Subtitle */
 .training-section-subtitle {
 font-size: clamp(1rem, 2vw, 1.2rem);
 color: var(--primary-light);
-margin-bottom: 1.5rem;
+margin-bottom: 2rem; /* Increased margin for better spacing */
 line-height: 1.6;
-text-align: center;
+text-align: left; /* Changed from center to left */
 font-weight: 400;
-max-width: 500px;
-margin-left: auto;
-margin-right: auto;
+max-width: none; /* Removed max-width restriction */
+margin-left: 0; /* Reset to left align */
+margin-right: 0; /* Reset to left align */
 opacity: 0;
 transform: translateY(20px);
 transition: all 0.6s ease-out;
@@ -233,21 +237,22 @@ transition-delay: 0.7s;
 .training-features-list {
 list-style: none;
 padding: 0;
-margin: 1rem 0 0 0;
-max-width: 500px;
-margin-left: auto;
-margin-right: auto;
+margin: 1.5rem 0 0 0; /* Increased top margin */
+max-width: none; /* Removed max-width restriction */
+margin-left: 0; /* Reset to left align */
+margin-right: 0; /* Reset to left align */
 }
 
 .training-features-list li {
 position: relative;
-padding: 0.4rem 0 0.4rem 2rem;
+padding: 0.6rem 0 0.6rem 2rem; /* Increased padding for better spacing */
 font-size: clamp(0.9rem, 1.5vw, 1rem);
 color: var(--primary-light);
 line-height: 1.6;
 opacity: 0;
 transform: translateX(-20px);
 transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+margin-bottom: 0.5rem; /* Added margin between list items */
 }
 
 .training-animate-in .training-features-list li {
@@ -264,7 +269,7 @@ transform: translateX(0);
 content: '●';
 position: absolute;
 left: 0;
-top: 0.4rem;
+top: 0.6rem; /* Adjusted to match new padding */
 color: var(--gradient-start);
 font-size: 1.2rem;
 font-weight: bold;
@@ -296,11 +301,7 @@ transform: translateY(0);
 }
 }
 
-/* Hover Effects */
-.training-content-wrapper:hover .training-section-title::after {
-width: 120px;
-background: linear-gradient(45deg, var(--gradient-end), var(--gradient-start));
-}
+
 
 /* Responsive Design with Auto Heights */
 /* Extra Large screens (1400px and up) */
@@ -320,7 +321,7 @@ min-height: auto;
 }
 
 .training-content-wrapper {
-padding: 2rem;
+padding: 2.5rem; /* Increased padding for larger screens */
 }
 
 .training-main-image {
@@ -335,7 +336,7 @@ padding: 0 1.5rem;
 }
 
 .training-content-wrapper {
-padding: 1.75rem;
+padding: 2.25rem; /* Adjusted padding */
 }
 
 .training-image-wrapper {
@@ -351,7 +352,7 @@ min-height: auto;
 }
 
 .training-content-wrapper {
-padding: 1.5rem;
+padding: 2rem; /* Maintained proper spacing */
 }
 
 .training-image-wrapper {
@@ -376,9 +377,9 @@ min-height: auto;
 }
 
 .training-content-wrapper {
-padding: 1.25rem 1rem;
+padding: 1.75rem 1.5rem; /* Maintained left alignment with proper spacing */
 min-height: auto;
-text-align: center;
+text-align: left; /* Keep left aligned */
 }
 
 .training-image-wrapper {
@@ -392,11 +393,11 @@ aspect-ratio: 16/9;
 }
 
 .training-section-title {
-margin-bottom: 0.75rem;
+margin-bottom: 1.25rem; /* Maintained spacing */
 }
 
 .training-section-subtitle {
-margin-bottom: 1rem;
+margin-bottom: 1.5rem; /* Maintained spacing */
 }
 }
 
@@ -413,9 +414,9 @@ padding: 0.75rem 0;
 }
 
 .training-content-wrapper {
-padding: 1rem 0.75rem;
+padding: 1.5rem 1rem; /* Maintained proper spacing */
 min-height: auto;
-text-align: center;
+text-align: left; /* Keep left aligned */
 transform: translateY(40px);
 }
 
@@ -437,7 +438,7 @@ border-radius: 12px;
 
 .training-features-list {
 text-align: left;
-max-width: 400px;
+max-width: none; /* Removed restriction */
 }
 }
 
@@ -458,9 +459,9 @@ padding: 0 0.5rem;
 }
 
 .training-content-wrapper {
-padding: 0.75rem 0.5rem;
+padding: 1.25rem 0.75rem; /* Maintained proper spacing */
 min-height: auto;
-text-align: center;
+text-align: left; /* Keep left aligned */
 transform: translateY(30px);
 }
 
@@ -491,17 +492,17 @@ width: 60px;
 }
 
 .training-features-list {
-max-width: 300px;
-margin-top: 0.5rem;
+max-width: none; /* Removed restriction */
+margin-top: 1rem; /* Maintained spacing */
 }
 
 .training-features-list li {
-padding: 0.4rem 0 0.4rem 1.5rem;
+padding: 0.5rem 0 0.5rem 1.5rem; /* Maintained spacing */
 }
 
 .training-features-list li::before {
 font-size: 1rem;
-top: 0.4rem;
+top: 0.5rem; /* Adjusted to match padding */
 }
 }
 
@@ -512,7 +513,7 @@ padding: 1rem 0.5rem;
 }
 
 .training-content-wrapper {
-padding: 0.5rem 0.25rem;
+padding: 1rem 0.5rem; /* Maintained spacing */
 }
 
 .training-image-wrapper {
