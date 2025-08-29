@@ -943,3 +943,52 @@
     display: none;
   }
 }
+
+
+
+/* Active state styles for navigation items */
+.modern-nav-item.active,
+.modern-dropdown-btn.active {
+  background-color: #b8860b !important;
+  color: white !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
+}
+
+/* Scrolled state active styles */
+.modern-navbar.scrolled .modern-nav-item.active,
+.modern-navbar.scrolled .modern-dropdown-btn.active {
+  background-color: #b8860b !important;
+  color: white !important;
+}
+
+/* Mobile active states */
+.modern-mobile-item.active,
+.modern-mobile-main-link.active {
+  color: #b8860b !important;
+  font-weight: 600;
+  border-left: 3px solid #b8860b;
+  padding-left: 10px !important;
+}
+
+/* Dropdown active state */
+.modern-dropdown.active {
+  z-index: 1004;
+}
+
+.modern-dropdown.active .modern-dropdown-btn {
+  background-color: #b8860b !important;
+  color: white !important;
+}
+
+/* Contact button active state */
+.modern-contact-btn.active {
+  background-color: #997108 !important;
+  border-color: #997108 !important;
+  color: white !important;
+}
+
+.modern-mobile-contact.active {
+  background-color: rgba(184, 134, 11, 0.1) !important;
+  border-radius: 5px;
+}
