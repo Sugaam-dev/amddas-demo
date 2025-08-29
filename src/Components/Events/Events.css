@@ -92,37 +92,38 @@
   animation: amddas-overlay-fade-in 1s ease-out;
 }
 
+/* LEFT ALIGNED Banner Content */
 .amddas-banner-content {
   position: relative;
   z-index: 2;
-  text-align: center;
+  text-align: left; /* Changed from center to left */
   padding: var(--amddas-element-spacing);
   max-width: 900px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start; /* Changed from center to flex-start */
   justify-content: center;
   opacity: 0;
   transform: translateY(50px);
   animation: amddas-banner-content-slide-up 0.8s ease-out 0.3s forwards;
 }
 
+/* LEFT ALIGNED Banner Title */
 .amddas-banner-title {
   font-size: clamp(26px, 5vw, 48px);
   font-weight: 700;
   color: var(--amddas-text-light);
   margin-bottom: var(--amddas-element-spacing);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
   opacity: 0;
   transform: translateY(30px);
   animation: amddas-title-slide-in 0.6s ease-out 0.5s forwards;
   line-height: 1.1;
-  text-align: center;
-  
+  text-align: left; /* Changed from center to left */
 }
 
+/* LEFT ALIGNED Banner Subtitle */
 .amddas-banner-subtitle {
   font-size: clamp(14px, 4vw, 18px);
   color: var(--amddas-text-light);
@@ -132,7 +133,7 @@
   transform: translateY(20px);
   animation: amddas-subtitle-slide-in 0.6s ease-out 0.8s forwards;
   max-width: 100%;
-  text-align: center;
+  text-align: left; /* Changed from center to left */
 }
 
 /* Banner Animation Keyframes */
@@ -281,7 +282,7 @@
   transform: scale(1.05);
 }
 
-/* Event Content */
+/* LEFT ALIGNED Event Content */
 .amddas-event-content {
   padding: var(--amddas-element-spacing);
   width: 100%;
@@ -289,9 +290,10 @@
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  text-align: center;
+  text-align: left; /* Changed from center to left */
 }
 
+/* LEFT ALIGNED Event Title */
 .amddas-event-title {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 700;
@@ -299,31 +301,35 @@
   margin-bottom: var(--amddas-element-spacing);
   position: relative;
   line-height: 1.2;
-  text-align: center;
+  text-align: left; /* Changed from center to left */
 }
 
+/* LEFT ALIGNED Animated Line for Event Titles */
 .amddas-event-title::after {
-  content: '';
+   content: '';
   position: absolute;
   bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%) scaleX(0);
-  width: clamp(40px, 10vw, 60px);
+  left: 0;
+  width: clamp(70px, 10vw, 60px);
   height: 3px;
   background: linear-gradient(45deg, var(--amddas-primary-color), var(--amddas-primary-hover));
   border-radius: 2px;
+  /* Start scale from 0 (completely shrunk from left, not middle): */
+  transform-origin: left;
+  transform: scaleX(0);
   transition: transform 0.6s ease-out 0.3s;
 }
 
 .amddas-event-title.amddas-animate-in::after {
-  transform: translateX(-50%) scaleX(1);
+  transform: scaleX(1); /* Changed from translateX(-50%) scaleX(1) */
 }
 
+/* LEFT ALIGNED Event Description */
 .amddas-event-description {
   color: var(--amddas-text-secondary);
   font-size: clamp(0.95rem, 2.2vw, 1.05rem);
   line-height: 1.7;
-  text-align: center;
+  text-align: left; /* Changed from center to left */
 }
 
 .amddas-event-paragraph {
@@ -337,8 +343,9 @@
   width: 100%;
 }
 
+/* KEEP CENTERED: Our Signature Services Section */
 .amddas-swiper-heading {
-  text-align: center;
+  text-align: center; /* Keep centered */
   color: var(--amddas-text-primary);
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 700;
@@ -346,12 +353,13 @@
   position: relative;
 }
 
+/* KEEP CENTERED: Swiper Heading Animated Line */
 .amddas-swiper-heading::after {
   content: '';
   position: absolute;
   bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%) scaleX(0);
+  left: 50%; /* Keep centered */
+  transform: translateX(-50%) scaleX(0); /* Keep centered transform */
   width: clamp(60px, 12vw, 90px);
   height: 3px;
   background: linear-gradient(45deg, var(--amddas-primary-color), var(--amddas-primary-hover));
@@ -360,7 +368,7 @@
 }
 
 .amddas-swiper-heading.amddas-animate-in::after {
-  transform: translateX(-50%) scaleX(1);
+  transform: translateX(-50%) scaleX(1); /* Keep centered transform */
 }
 
 .amddas-swiper-container {
@@ -560,14 +568,28 @@
 /* Desktop layout */
 @media (min-width: 1024px) {
   .amddas-event-content {
-    text-align: left;
+    text-align: left; /* Ensure left alignment on desktop */
   }
   
   .amddas-event-title {
-    text-align: center;
+    text-align: left; /* Ensure left alignment on desktop */
   }
   
   .amddas-event-description {
+    text-align: left; /* Ensure left alignment on desktop */
+  }
+
+  /* Keep banner content left aligned on desktop too */
+  .amddas-banner-content {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .amddas-banner-title {
+    text-align: left;
+  }
+
+  .amddas-banner-subtitle {
     text-align: left;
   }
 }
@@ -595,6 +617,20 @@
     height: 400px;
     background-attachment: scroll;
   }
+
+  /* Mobile - Keep left alignment for events but center banner for readability */
+  .amddas-banner-content {
+    text-align: center; /* Center banner on mobile for better readability */
+    align-items: center;
+  }
+
+  .amddas-banner-title {
+    text-align: center;
+  }
+
+  .amddas-banner-subtitle {
+    text-align: center;
+  }
   
   .amddas-event-container {
     grid-template-columns: 1fr;
@@ -613,24 +649,25 @@
   }
   
   .amddas-event-content {
-    text-align: center;
+    text-align: left; /* Keep events left-aligned on mobile */
   }
   
   .amddas-event-title {
-    text-align: center;
+    text-align: left;
   }
   
   .amddas-event-description {
-    text-align: center;
+    text-align: left;
   }
   
+  /* Left-aligned animated line on mobile too */
   .amddas-event-title::after {
-    left: 50%;
-    transform: translateX(-50%) scaleX(0);
+    left: 0;
+    transform: scaleX(0);
   }
   
   .amddas-event-title.amddas-animate-in::after {
-    transform: translateX(-50%) scaleX(1);
+    transform: scaleX(1);
   }
   
   /* Reset scroll animations for single column layout */
@@ -683,15 +720,29 @@
   }
   
   .amddas-banner-content {
-  
     padding: 15px;
-  margin-top: 40px;
+    margin-top: 40px;
+    text-align: center; /* Keep banner centered on small screens */
+    align-items: center;
   }
   
   .amddas-event-image-wrapper {
     height: 250px;
     margin: 0 auto;
     max-width: 100%;
+  }
+
+  /* Maintain left alignment for event content even on small screens */
+  .amddas-event-content {
+    text-align: left;
+  }
+
+  .amddas-event-title {
+    text-align: left;
+  }
+
+  .amddas-event-description {
+    text-align: left;
   }
   
   .amddas-slide-content {
@@ -716,7 +767,6 @@
   .amddas-banner-section {
     height: 300px;
   }
-  
   
   .amddas-event-image-wrapper {
     height: 200px;
