@@ -227,6 +227,10 @@
     margin-bottom: 15px;
     text-align: left;
   }
+
+    .title-underline {
+    margin: 2px;
+  }
   
   .section-description {
     font-size: 0.95rem;

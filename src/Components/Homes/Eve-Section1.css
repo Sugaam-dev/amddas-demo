@@ -366,12 +366,14 @@ font-size: clamp(1rem, 1vw, 1.1rem);
   
   .mainn-title {
     font-size: 28px;
-    text-align: left;
+  }
+
+   .content-underline {
+    margin: 2px;
   }
   
   .main-description {
     font-size: 14px;
-    text-align: left;
   }
   
   .content-section {
