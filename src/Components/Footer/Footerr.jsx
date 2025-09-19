@@ -28,7 +28,7 @@ const EVENTS = [
   { key: 'Birthday', label: 'Birthday Parties' },
   { key: 'Engagement', label: 'Anniversaries' },
   { key: 'Festival', label: 'Community Festivals' },
-  { key: 'Bhandara/Langar', label: 'Bhandara / Langar' }
+  { key: 'Bhandara', label: 'Bhandara / Langar' }
 ];
 
 // Social links configuration
@@ -36,7 +36,7 @@ const SOCIAL_LINKS = [
   { href: "https://linkedin.com/company/amddas", icon: FaLinkedinIn, label: "LinkedIn" },
   { href: "https://facebook.com/amddas", icon: FaFacebookF, label: "Facebook" },
   { href: "https://www.instagram.com/amddasgroup/", icon: FaInstagram, label: "Instagram" },
-  { href: "https://youtube.com/@amddas", icon: FaYoutube, label: "YouTube" }
+  { href: "https://youtube.com", icon: FaYoutube, label: "YouTube" }
 ];
 
 const Footerr = () => {

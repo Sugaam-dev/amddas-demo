@@ -19,7 +19,7 @@ const EVENT_SECTIONS = {
   housewarming: 'housewarming-section',
   engagement: 'engagement-section',
   festival: 'festival-section',
-  bhandaara: 'bhandaara-section'
+  bhandaara: 'bhandara-section'
 };
 
 // Optimized debounce with WeakMap for better performance

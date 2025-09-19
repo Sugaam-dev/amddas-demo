@@ -45,10 +45,10 @@ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    // const interval = setInterval(() => {
-    //   setCurrentSlide((prev) => (prev + 1) % bannerImages.length);
-    // }, 5000);
-    // return () => clearInterval(interval);
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % bannerImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
   }, []);
 
   const goToSlide = (index) => {

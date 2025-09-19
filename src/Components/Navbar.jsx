@@ -38,7 +38,7 @@ const EVENTS = [
   { key: 'Birthday', label: 'Birthday Parties' },
   { key: 'Engagement', label: 'Anniversaries' },
   { key: 'Festival', label: 'Community Festivals' },
-  { key: 'Bhandaara', label: 'Bhandara / Langar' }
+  { key: 'Bhandara', label: 'Bhandara / Langar' }
 ];
 
 function Navbarr() {
