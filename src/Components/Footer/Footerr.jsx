@@ -164,7 +164,7 @@ const Footerr = () => {
                 <div className="address-mobile">
                   <Link to={'tel:+919632764963'}>
                     <FaPhone style={{ fontSize: "18px", marginRight: "8px" }} />
-                    +91-9632764963 | +91-8217077255
+                    +91-9632764963
                   </Link>
                 </div>
                 
