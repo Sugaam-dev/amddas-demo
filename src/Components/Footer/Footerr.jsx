@@ -162,10 +162,10 @@ const Footerr = () => {
                   Bengaluru, <br /> East Taluk, Bangalore-67
                 </Link>
                 <div className="address-mobile">
-                  <a href="tel:+919632764963" style={{ display: 'inline-flex', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}>
+                  <Link to={'tel:+919632764963'}>
                     <FaPhone style={{ fontSize: "18px", marginRight: "8px" }} />
                     +91-9632764963
-                  </a>
+                  </Link>
                 </div>
                 
               </div>
