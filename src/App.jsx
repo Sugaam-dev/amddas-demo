@@ -1,31 +1,17 @@
 // App.jsx
 import './App.css';
 import './ScrollAnimations.css'; // Add scroll animations CSS
-
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-
 import Home from './Components/Homes/Home';
-
 import Navbarr from './Components/Navbar';
 import Error from './Components/Error';
-
-
-// import Foot from './Components/Footers/Foot';
 import PrivacyPolicy from './Components/PrivacyPolicy';
-// import DeleteAccount from './Components/DeleteAccount';
-
 import About from './Components/Abouts/About';
 import Gallery from './Components/Homes/Gallery';
 import Events from "./Components/Events/Events";
-
-
 import WhatWeDo from './Components/Services/WhatWeDo';
-
-
-
 import Contact from './Components/Contacts/Contact';
-
 import Why_Us from './Components/WhyUs/Why_Us';
 import Festivals from './Components/Festivals/Festivals';
 import Footerr from './Components/Footer/Footerr'; // Import the new footer component
@@ -118,23 +104,12 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home/>}/>
-      
-     
-        {/* <Route path='/privacy-policy' element={<PrivacyPolicy />} /> */}
         <Route path='/about' element={<About/>}/>
         <Route path='/amddas-gallery' element={<Gallery/>}/>
         <Route path='/events' element={<Events/>}/>
         <Route path='/services' element={<WhatWeDo/>}/>
-
-       
         <Route path='/contact' element={<Contact/>}/>
         <Route path="/why-Amddas" element={<Why_Us />} />
-        {/* <Route path="/festivals" element={<Festivals />} /> */}
-
-      
-       
-
-        {/* Catch-all Route for Undefined Paths */}
         <Route path='/*' element={<Error />} />
       </Routes>
       <WhatsAppFloat/>
