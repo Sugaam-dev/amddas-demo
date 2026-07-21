@@ -1019,7 +1019,7 @@
   cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.3);
   letter-spacing: 0.5px;
-  text-transform: uppercase;
+  text-transform: none;
   animation: gradient-bg 4s ease infinite, glow-pulse 2.5s infinite;
 }
 
@@ -1133,7 +1133,7 @@
   margin-top: 15px;
   margin-bottom: 20px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 0.5px;
   animation: gradient-bg 4s ease infinite;
 }
