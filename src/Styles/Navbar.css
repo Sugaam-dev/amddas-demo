@@ -204,8 +204,8 @@
 }
 
 .modern-contact-btn:hover {
-  background-color: #997108 !important;
-  border-color: #997108 !important;
+  background-color: #b8860b !important;
+  border-color: #b8860b !important;
 }
 
 /* Scrolled state - maintain same alignment */
@@ -983,12 +983,179 @@
 
 /* Contact button active state */
 .modern-contact-btn.active {
-  background-color: #997108 !important;
-  border-color: #997108 !important;
+  background-color: #b8860b !important;
+  border-color: #b8860b !important;
   color: white !important;
 }
 
 .modern-mobile-contact.active {
   background-color: rgba(184, 134, 11, 0.1) !important;
   border-radius: 5px;
+}
+
+/* --- External Navigation Button Styles --- */
+
+/* Desktop Button */
+.modern-nav-external-btn {
+  position: relative;
+  overflow: hidden;
+  color: white !important;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500; /* Regular-medium weight (not bold) */
+  height: 32px; /* Explicit height for perfect vertical centering */
+  padding: 0 18px; /* Horizontal padding only */
+  border-radius: 20px;
+  background: linear-gradient(270deg, #00b09b, #38ef7d, #00f2fe, #4facfe);
+  background-size: 300% auto;
+  box-shadow: 0 4px 15px rgba(0, 176, 155, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: inline-flex;
+  align-items: center; /* Perfect vertical alignment */
+  justify-content: center; /* Perfect horizontal alignment */
+  gap: 8px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  animation: gradient-bg 4s ease infinite, glow-pulse 2.5s infinite;
+}
+
+/* Ensure inner text span has no extra margins/line-height offsets */
+.modern-nav-external-btn span,
+.modern-mobile-external-btn span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: normal;
+}
+
+/* Shimmer shine overlay */
+.modern-nav-external-btn::after,
+.modern-mobile-external-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: button-shimmer 4.5s infinite;
+  pointer-events: none;
+}
+
+/* Animated shifting gradient background */
+@keyframes gradient-bg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Button pulse keyframes using green and cyan light */
+@keyframes glow-pulse {
+  0% {
+    box-shadow: 0 4px 15px rgba(0, 176, 155, 0.4), 0 0 0 0 rgba(0, 242, 254, 0.45);
+  }
+  70% {
+    box-shadow: 0 4px 15px rgba(0, 176, 155, 0.4), 0 0 0 10px rgba(0, 242, 254, 0);
+  }
+  100% {
+    box-shadow: 0 4px 15px rgba(0, 176, 155, 0.4), 0 0 0 0 rgba(0, 242, 254, 0);
+  }
+}
+
+/* Shimmer sweep keyframes */
+@keyframes button-shimmer {
+  0% {
+    left: -150%;
+  }
+  30% {
+    left: 150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+/* No scaling on hover so that text size remains stable */
+.modern-nav-external-btn:hover {
+  transform: translateY(-2px); /* Lift animation only, no scale transition */
+  box-shadow: 0 6px 20px rgba(0, 176, 155, 0.6);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.modern-nav-external-btn .btn-icon,
+.modern-mobile-external-btn .btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.modern-nav-external-btn:hover .btn-icon,
+.modern-mobile-external-btn:hover .btn-icon {
+  transform: translate(3px, -3px);
+}
+
+/* Mobile Button */
+.modern-mobile-external-btn {
+  position: relative;
+  overflow: hidden;
+  color: white !important;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500; /* Regular-medium weight (not bold) */
+  height: 44px; /* Explicit height for perfect vertical centering */
+  padding: 0 24px; /* Horizontal padding only */
+  border-radius: 25px;
+  background: linear-gradient(270deg, #00b09b, #38ef7d, #00f2fe, #4facfe);
+  background-size: 300% auto;
+  box-shadow: 0 4px 15px rgba(0, 176, 155, 0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center; /* Perfect vertical alignment */
+  justify-content: center; /* Perfect horizontal alignment */
+  gap: 10px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  animation: gradient-bg 4s ease infinite;
+}
+
+.modern-mobile-external-btn:hover {
+  transform: translateY(-2px); /* Lift animation only, no scale transition */
+  box-shadow: 0 6px 20px rgba(0, 176, 155, 0.5);
+}
+
+/* Responsive adjustments */
+@media (min-width: 1400px) {
+  .modern-nav-external-btn {
+    font-size: 14px;
+    padding: 0 20px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .modern-nav-external-btn {
+    font-size: 12px;
+    padding: 0 15px;
+    height: 30px;
+  }
 }
